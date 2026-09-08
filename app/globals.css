@@ -41,9 +41,17 @@
 /* ─── Base Reset & Typography ─────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  /* Anchored sections must clear the fixed header when jumped to. */
+  scroll-padding-top: 104px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Same allowance for scrollIntoView(), which honours scroll-margin, not padding. */
+section[id],
+div[id] {
+  scroll-margin-top: 104px;
 }
 
 body {

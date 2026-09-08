@@ -16,6 +16,7 @@ import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import {
   featuredInsight,
   secondaryInsights,
@@ -62,12 +63,19 @@ export default async function BlogsPage({ searchParams }: PageProps) {
         <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
           <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
           <Container size="default" className="relative pb-16 lg:pb-20">
+            <Breadcrumbs
+              className="mb-8"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Insights" },
+              ]}
+            />
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
                 <Sparkles className="size-3.5" />
                 Blogs &amp; PR
               </div>
-              <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl text-[#0b1524]">
+              <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
                 Insights From the Delivery Floor
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-stone-600">

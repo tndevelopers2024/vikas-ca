@@ -39,7 +39,7 @@ export function Insights() {
         <SectionHeading
           eyebrow="Security & Practice Intelligence"
           title="Information Security & Standards"
-          description="Our operating approach is designed around recognized information security principles, ISO/IEC 27001, and AASB requirements for Australian practices."
+          description="Our operating approach is designed around recognized information security principles, ISO/IEC 27001, and the reporting standards professional practices work to."
           align="split"
           action={
             <Button

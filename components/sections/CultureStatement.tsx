@@ -53,7 +53,7 @@ export function CultureStatement() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                 <Image
                   src="/images/team.avif"
-                  alt="NICS team collaborating with Australian practices"
+                  alt="NICS team collaborating with client practices"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -138,7 +138,7 @@ export function CultureStatement() {
               </div>
 
               <ArrowLink href="#stories" variant="navy" size="md">
-                Why Australian businesses work with NICS
+                Why businesses work with NICS
               </ArrowLink>
             </div>
           </div>

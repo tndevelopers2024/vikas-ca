@@ -30,7 +30,7 @@ export const servicesData: ServiceCategory[] = [
     number: "01",
     title: "Accounting & Finance",
     subtitle: "Accounting & Finance Operations",
-    leadSummary: "Your finance function needs more than transaction processing. It needs reliable information, disciplined processes and timely reporting. NICS supports Australian accounting practices and businesses across the finance function.",
+    leadSummary: "Your finance function needs more than transaction processing. It needs reliable information, disciplined processes and timely reporting. NICS supports accounting practices and businesses across the finance function.",
     fullDescription: "From general ledger maintenance to monthly management packs and forecasting models, we ensure your financial data is accurate, compliant, and actionable.",
     keyMetric: {
       value: "Timely & Accurate",
@@ -46,7 +46,7 @@ export const servicesData: ServiceCategory[] = [
     ],
     image: "/images/accounting.avif",
     featuredCaseStudy: {
-      client: "Australian Commercial Enterprise",
+      client: "Commercial Enterprise",
       outcome: "Optimised end-to-end accounts payable and monthly management reporting with structured workflows."
     }
   },
@@ -54,15 +54,15 @@ export const servicesData: ServiceCategory[] = [
     id: "accounting-practices",
     number: "02",
     title: "Practice Support",
-    subtitle: "Support for Australian Accounting Practices",
+    subtitle: "Support for Accounting Practices",
     leadSummary: "NICS works with accounting firms that need additional delivery capacity without continually increasing their internal headcount. We can support recurring compliance and accounting workflows.",
-    fullDescription: "Where professional registration, review or lodgement is required, the relevant responsibility remains with the Australian practitioner or registered entity. Our role is to strengthen your delivery capability—not replace your professional responsibility.",
+    fullDescription: "Where professional registration, review or lodgement is required, the relevant responsibility remains with your registered practitioner or entity. Our role is to strengthen your delivery capability—not replace your professional responsibility.",
     keyMetric: {
       value: "Flexible Scale",
       label: "Capacity without increasing internal headcount"
     },
     subServices: [
-      { name: "Workpaper Preparation", description: "Structured workpaper preparation aligned with Australian accounting practice standards." },
+      { name: "Workpaper Preparation", description: "Structured workpaper preparation aligned with professional accounting practice standards." },
       { name: "Financial Statements", description: "Preparation of interim and annual financial statements for entities and trusts." },
       { name: "GST / BAS Data Preparation", description: "Accurate processing of transaction data and schedules for GST and BAS lodgements." },
       { name: "Tax Return Preparation Support", description: "Drafting tax return workpapers and supporting schedules across entity types." },
@@ -72,7 +72,7 @@ export const servicesData: ServiceCategory[] = [
     image: "/images/support.avif",
     featuredCaseStudy: {
       client: "Mid-Tier Accounting Practice",
-      outcome: "Strengthened compliance delivery capacity during peak tax season while Australian partners retained review and sign-off."
+      outcome: "Strengthened compliance delivery capacity during peak tax season while partners retained review and sign-off."
     }
   },
   {
@@ -81,7 +81,7 @@ export const servicesData: ServiceCategory[] = [
     title: "SMSF & Audit",
     subtitle: "SMSF Back-Office & Flexible Audit Support",
     leadSummary: "SMSF work requires attention to detail, consistency and strong documentation. Audit teams often experience uneven workloads — NICS provides flexible audit and SMSF support without expanding your permanent team.",
-    fullDescription: "Your Australian team retains responsibility for professional review, judgement, conclusions and sign-off. We provide the disciplined documentation and back-office processing behind them.",
+    fullDescription: "Your onshore team retains responsibility for professional review, judgement, conclusions and sign-off. We provide the disciplined documentation and back-office processing behind them.",
     keyMetric: {
       value: "Even Workloads",
       label: "Flexible audit & SMSF support when required"
@@ -105,8 +105,8 @@ export const servicesData: ServiceCategory[] = [
     number: "04",
     title: "Financial Services",
     subtitle: "Financial Planning & Mortgage Processing Support",
-    leadSummary: "Australian financial services businesses often have significant administrative workloads sitting behind client-facing professionals. NICS can support these activities while your authorised professionals remain responsible for advice.",
-    fullDescription: "Regulated advice and lending decisions remain with the appropriately authorised Australian professional or licensee. NICS handles the time-consuming administrative workflows behind them.",
+    leadSummary: "Financial services businesses often have significant administrative workloads sitting behind client-facing professionals. NICS can support these activities while your authorised professionals remain responsible for advice.",
+    fullDescription: "Regulated advice and lending decisions remain with the appropriately authorised professional or licensee. NICS handles the time-consuming administrative workflows behind them.",
     keyMetric: {
       value: "Seamless Admin",
       label: "Support behind client-facing professionals"
@@ -131,7 +131,7 @@ export const servicesData: ServiceCategory[] = [
     title: "Operations & Admin",
     subtitle: "Legal Ops, Customer Admin, KYC & Virtual Support",
     leadSummary: "Your customer-facing team should not spend its day maintaining databases and processing administrative tasks. NICS provides structured back-office assistance across legal ops, customer admin, data, KYC, and virtual support.",
-    fullDescription: "NICS provides administrative and operational support and does not replace Australian legal advice or the services of an Australian legal practitioner. Processes are performed according to your policies and regulatory requirements.",
+    fullDescription: "NICS provides administrative and operational support and does not replace legal advice or the services of a qualified legal practitioner. Processes are performed according to your policies and regulatory requirements.",
     keyMetric: {
       value: "High-Value Focus",
       label: "Routine operations managed with disciplined SOPs"

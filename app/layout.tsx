@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     template: "%s | NICS",
   },
   description:
-    "NICS provides Australian businesses and accounting practices with a flexible offshore delivery model across accounting, SMSF, audit, financial services, legal operations, and business administration.",
+    "NICS International provides businesses and accounting practices with a flexible offshore delivery model across accounting, SMSF, audit, financial services, legal operations, and business administration.",
   keywords: [
     "NICS",
     "outsourcing",
     "BPO",
-    "Australian accounting outsourcing",
+    "accounting outsourcing",
     "SMSF back-office support",
     "audit support",
     "financial planning support",
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NICS | Scale Your Business Without Building Every Function In-House",
     description:
-      "A flexible offshore delivery model giving Australian businesses and practices access to experienced accounting, finance, and operational professionals.",
+      "A flexible offshore delivery model giving businesses and practices access to experienced accounting, finance, and operational professionals.",
     url: "https://www.nics.com",
     siteName: "NICS",
-    locale: "en_AU",
+    locale: "en_US",
     type: "website",
     images: [
       {
@@ -74,9 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NICS | Scale Your Business Without Building Every Function In-House",
     description:
-      "Flexible offshore delivery model for Australian businesses. Increase capacity, access specialist capability, and reduce operational pressure.",
-    site: "@NICS",
-    creator: "@NICS",
+      "Flexible offshore delivery model for growing businesses. Increase capacity, access specialist capability, and reduce operational pressure.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -100,22 +98,21 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "NICS",
+    name: "NICS International",
     alternateName: "NICS Offshore Delivery",
     url: "https://www.nics.com",
     logo: "https://www.nics.com/logo.png",
     description:
-      "NICS provides Australian businesses and accounting practices with a flexible offshore delivery model across accounting, finance, SMSF, audit, legal, and operational support.",
-    sameAs: [
-      "https://twitter.com/NICS",
-      "https://www.linkedin.com/company/nics/"
-    ],
+      "NICS International provides businesses and accounting practices with a flexible offshore delivery model across accounting, finance, SMSF, audit, legal, and operational support.",
+    sameAs: ["https://www.linkedin.com/company/nics/"],
+    telephone: "+91 9632 466 477",
+    email: "vikas@abcdca.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Tidel Park, Tharamani",
+      streetAddress: "Prince Centre 4th Floor Left wing 709, Pathari Road, Anna Salai",
       addressLocality: "Chennai",
       addressRegion: "Tamil Nadu",
-      postalCode: "600113",
+      postalCode: "600006",
       addressCountry: "IN",
     },
   };

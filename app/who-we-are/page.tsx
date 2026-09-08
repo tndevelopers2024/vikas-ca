@@ -20,6 +20,7 @@ import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ const service = servicesData.find((item) => item.id === "financial-services")!;
 const historyParagraphs = [
   "Traditional BPO was built for large corporations. For small and medium businesses and independent accounting practitioners, the models on offer were too rigid, too large, and too far removed from how a practice actually works — so most firms simply carried the load themselves.",
   "NICS was founded to invent a different category: an outsourcing partnership that is holistic and genuinely fits SMEs and accounting practices. Not a call-centre model bolted onto professional work, but a delivery team that operates inside your systems, to your standards, under your direction.",
-  "Today NICS is a business process outsourcing partner for accounting, compliance, operational, and administrative processes, with a delivery centre in Chennai and client relationships across Australia and the USA. The business is built on rich business acumen and human capital, with a broader vision to offer value-based, technically brilliant and functionally sound service.",
+  "Today NICS is a business process outsourcing partner for accounting, compliance, operational, and administrative processes, with a delivery centre in Chennai and client relationships across international markets. The business is built on rich business acumen and human capital, with a broader vision to offer value-based, technically brilliant and functionally sound service.",
 ];
 
 const visionPoints = [
@@ -128,13 +129,21 @@ export default function WhoWeArePage() {
         <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
           <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
           <Container size="default" className="relative pb-20 lg:pb-28">
+            <Breadcrumbs
+              className="mb-8"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Why NICS", href: "/why-outsourcing" },
+                { label: "Who We Are" },
+              ]}
+            />
             <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
                   <Sparkles className="size-3.5" />
                   About NICS
                 </div>
-                <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl text-[#0b1524]">
+                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
                   Who We Are
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
@@ -222,8 +231,7 @@ export default function WhoWeArePage() {
                   <ul className="mt-4 space-y-3">
                     {[
                       "Chennai — HQ delivery centre",
-                      "Sydney — Australian client relations",
-                      "Marlton, New Jersey — USA office",
+                      "Sydney — client relations",
                     ].map((loc, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-stone-600">
                         <CheckCircle2 className="size-4 shrink-0 text-[#0056b3] mt-0.5" />

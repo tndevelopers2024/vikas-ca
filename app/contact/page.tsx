@@ -8,7 +8,7 @@ import { PremiumCursor } from "@/components/ui/PremiumCursor";
 export const metadata: Metadata = {
   title: "Contact NICS | Talk to Our Practice Advisory Team",
   description:
-    "Get in touch with NICS in Sydney, Chennai, and USA. Request a practice consultation for offshore accounting, SMSF, paraplanning, and back-office delivery support.",
+    "Get in touch with NICS. Request a practice consultation for offshore accounting, SMSF, paraplanning, and back-office delivery support from our Chennai head office.",
 };
 
 export default function ContactPage() {

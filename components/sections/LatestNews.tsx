@@ -25,7 +25,7 @@ export function LatestNews() {
             </div>
 
             <p className="text-sm text-stone-600 leading-relaxed">
-              Stay informed on information security practices, Australian compliance benchmarks, and offshore delivery workflows with our regular briefings.
+              Stay informed on information security practices, compliance benchmarks, and offshore delivery workflows with our regular briefings.
             </p>
 
             <div className="p-5 bg-white border border-[#e6e4dc] rounded-xs space-y-3">
@@ -34,7 +34,7 @@ export function LatestNews() {
                 Practice & Security Briefings
               </div>
               <p className="text-xs text-stone-600">
-                Receive structured updates on Australian standards, security controls, and operational workflows.
+                Receive structured updates on standards, security controls, and operational workflows.
               </p>
               <ArrowLink href="#contact" variant="blue" size="sm">
                 Get in touch with NICS

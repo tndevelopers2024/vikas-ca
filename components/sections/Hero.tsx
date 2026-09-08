@@ -22,20 +22,20 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#f8fafc] via-transparent to-[#f8fafc]/30" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[680px] max-w-[1360px] items-center px-5 pb-16 pt-32 sm:px-8 md:px-12 lg:min-h-[720px] lg:px-16">
+      <div className="relative mx-auto flex min-h-[700px] w-full max-w-[1600px] items-center px-5 pb-20 pt-36 sm:px-8 md:px-10 lg:min-h-[760px] lg:px-12 xl:px-14">
         <motion.div
-          className="max-w-2xl"
+          className="max-w-3xl lg:max-w-4xl"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#0056b3]">
+          <p className="mb-6 text-xs font-bold uppercase tracking-[0.18em] text-[#0056b3] sm:text-sm">
             Offshore delivery, made flexible
           </p>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="text-[2.75rem] font-extrabold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
             Scale your business without building every function in-house.
           </h1>
-          <p className="mt-7 max-w-xl text-base leading-relaxed text-stone-600 sm:text-lg">
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-stone-600 sm:text-xl">
             Add experienced accounting, finance, and operational capacity when you need it—without the cost and complexity of expanding in-house.
           </p>
 

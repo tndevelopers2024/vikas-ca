@@ -27,6 +27,41 @@ export default function HomePage() {
     setPreloaderDone(true);
   }, []);
 
+  /**
+   * Homepage sections only mount once the preloader finishes, so arriving from
+   * another page on a link like "/#stories" leaves the browser with nothing to
+   * scroll to and the visitor stranded at the top. Honour the hash as soon as
+   * the sections are actually on the page, and on any later hash change.
+   */
+  useEffect(() => {
+    if (!preloaderDone) return;
+
+    let frame = 0;
+
+    const scrollToHash = () => {
+      const id = window.location.hash.slice(1);
+      if (!id) return;
+
+      let attempts = 0;
+      const attempt = () => {
+        const target = document.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (attempts++ < 40) {
+          frame = requestAnimationFrame(attempt);
+        }
+      };
+      frame = requestAnimationFrame(attempt);
+    };
+
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, [preloaderDone]);
+
   // Cursor glow tracker
   useEffect(() => {
     const handler = (e: MouseEvent) => {

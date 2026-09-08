@@ -48,10 +48,10 @@ export const featuredCaseStudy: ClientStory = {
 };
 
 export const podcastStory: ClientStory = {
-  id: "why-australian-businesses-work-with-nics",
+  id: "why-businesses-work-with-nics",
   badge: "The NICS Advantage",
   category: "Client Value",
-  headline: "Why Australian Businesses Work With NICS",
+  headline: "Why Businesses Work With NICS",
   subheadline: "Eight core advantages that make NICS a disciplined extension of your existing team.",
   synopsis: "Access flexible capacity when workloads peak, professional capability across accounting and operations, structured delivery with SOPs, scalable resourcing, technology enablement in your existing software, quality review focus, cost efficiency, and true integration.",
   linkText: "Read about our client advantages",

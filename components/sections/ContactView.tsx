@@ -24,6 +24,7 @@ import {
   Check,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { locationsData } from "@/data/locationsData";
 
@@ -34,9 +35,9 @@ const faqs = [
       "For standard roles in accounting, SMSF, bookkeeping, and virtual administration, our typical placement and onboarding timeline is 10 to 14 business days. For specialized paraplanners or custom enterprise functions, we conduct tailored talent mapping within 2 to 3 weeks.",
   },
   {
-    question: "How is client data security and Australian Privacy compliance maintained?",
+    question: "How is client data security and privacy compliance maintained?",
     answer:
-      "All NICS delivery hubs operate under strict ISO/IEC 27001-aligned security protocols, full compliance with the Australian Privacy Principles (APPs), clean-desk policies, dual-factor authentication, endpoint management, and zero local data storage. Your data remains in your secure cloud environment.",
+      "All NICS delivery hubs operate under strict ISO/IEC 27001-aligned security protocols, compliance with the privacy principles applicable in your jurisdiction, clean-desk policies, dual-factor authentication, endpoint management, and zero local data storage. Your data remains in your secure cloud environment.",
   },
   {
     question: "Can we interview and select our own dedicated team members?",
@@ -46,7 +47,7 @@ const faqs = [
   {
     question: "Which accounting, financial, and mortgage software do your teams use?",
     answer:
-      "Our specialists are experienced across the entire Australian software ecosystem, including Xero, MYOB, APS, Reckon, Class Super, BGL 360, Simple Fund, Xplan, Midwinter, ApplyOnline, Mercury, Salesforce, and all major practice management platforms.",
+      "Our specialists are experienced across the leading practice software ecosystem, including Xero, MYOB, APS, Reckon, Class Super, BGL 360, Simple Fund, Xplan, Midwinter, ApplyOnline, Mercury, Salesforce, and all major practice management platforms.",
   },
   {
     question: "What happens if our workload fluctuates seasonally (e.g. tax season)?",
@@ -56,7 +57,7 @@ const faqs = [
   {
     question: "Who retains final compliance and review responsibility?",
     answer:
-      "All professional review, judgement, signing, and regulatory lodgements remain with your appropriately registered Australian practitioner, licensee, or onshore directors. NICS provides the accurate preparation, workpapers, and disciplined execution behind you.",
+      "All professional review, judgement, signing, and regulatory lodgements remain with your appropriately registered practitioner, licensee, or onshore directors. NICS provides the accurate preparation, workpapers, and disciplined execution behind you.",
   },
 ];
 
@@ -99,13 +100,18 @@ export function ContactView() {
       <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-stone-200">
         <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
         <Container size="default" className="relative">
+          <Breadcrumbs
+            className="mb-8"
+            items={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+          />
+
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
               <Sparkles className="size-3.5" />
               Get in Touch with NICS
             </div>
 
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-[#0b1524] leading-[1.08]">
+            <h1 className="mt-6 text-[2.5rem] font-extrabold tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524] leading-[1.03]">
               Let’s build your offshore delivery team.
             </h1>
 
@@ -145,19 +151,19 @@ export function ContactView() {
                 <Phone className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Direct Phone Support</h3>
-              <p className="mt-1 text-xs text-stone-500">Mon–Fri · 8:30 AM – 6:00 PM AEDT</p>
+              <p className="mt-1 text-xs text-stone-500">Mon–Fri · Business hours</p>
               <div className="mt-4 space-y-1">
                 <a
-                  href="tel:+61290001234"
+                  href="tel:+919632466477"
                   className="block text-sm font-semibold text-[#0056b3] hover:underline"
                 >
-                  +61 2 9000 1234 (Sydney)
+                  +91 9632 466 477 (Chennai HQ)
                 </a>
                 <a
-                  href="tel:+61406727061"
+                  href="tel:+919632466477"
                   className="block text-xs text-stone-600 hover:text-[#0056b3]"
                 >
-                  +61 406 727 061 (Mobile)
+                  +61 2 9000 1234 (Sydney)
                 </a>
               </div>
             </div>
@@ -170,10 +176,10 @@ export function ContactView() {
               <p className="mt-1 text-xs text-stone-500">Fast response within 1 business day</p>
               <div className="mt-4 space-y-1">
                 <a
-                  href="mailto:hello@nics.com"
+                  href="mailto:vikas@abcdca.com"
                   className="block text-sm font-semibold text-[#0056b3] hover:underline"
                 >
-                  hello@nics.com
+                  vikas@abcdca.com
                 </a>
                 <a
                   href="mailto:operations@nics.com"
@@ -189,10 +195,10 @@ export function ContactView() {
                 <Building2 className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Global Practice Hubs</h3>
-              <p className="mt-1 text-xs text-stone-500">3 Strategic Office Hubs</p>
+              <p className="mt-1 text-xs text-stone-500">Chennai HQ &amp; client relations</p>
               <div className="mt-4 text-xs text-stone-700 leading-relaxed">
-                <span className="font-semibold text-[#0b1524]">Sydney:</span> Pymble NSW <br />
-                <span className="font-semibold text-[#0b1524]">Chennai HQ:</span> Tidel Park, Tharamani
+                <span className="font-semibold text-[#0b1524]">Chennai HQ:</span> Prince Centre, Anna Salai <br />
+                <span className="font-semibold text-[#0b1524]">Sydney:</span> Pymble NSW
               </div>
             </div>
 
@@ -308,7 +314,7 @@ export function ContactView() {
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="david@mitchellpartners.com.au"
+                          placeholder="name@yourfirm.com"
                           className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         />
                       </div>
@@ -323,7 +329,7 @@ export function ContactView() {
                           type="tel"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="+61 400 000 000"
+                          placeholder="Include your country code"
                           className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         />
                       </div>
@@ -351,7 +357,7 @@ export function ContactView() {
                         onChange={(e) => setPracticeType(e.target.value)}
                         className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                       >
-                        <option value="accounting-firm">Australian Accounting & Tax Practice</option>
+                        <option value="accounting-firm">Accounting & Tax Practice</option>
                         <option value="financial-planning">Financial Planning & Wealth Advisory</option>
                         <option value="mortgage-broking">Mortgage Broking & Lending</option>
                         <option value="smsf-audit">SMSF Administration & Audit Specialist</option>
@@ -547,7 +553,7 @@ export function ContactView() {
                   Data Privacy & Compliance
                 </div>
                 <h4 className="mt-2 text-lg font-bold text-[#0b1524]">
-                  Australian Privacy & ISO 27001 Discipline
+                  Privacy & ISO 27001 Discipline
                 </h4>
                 <p className="mt-2 text-xs text-stone-600 leading-relaxed">
                   Our delivery operations operate in clean-room environments with strict physical security, no external storage devices, and zero local hard drive caching.
@@ -580,11 +586,11 @@ export function ContactView() {
                   </div>
                   <div>
                     <div className="text-sm font-bold text-[#0b1524]">Boobalan Madhavan</div>
-                    <div className="text-xs text-stone-500">Founder & Managing Director · Sydney Office</div>
+                    <div className="text-xs text-stone-500">Founder &amp; Managing Director</div>
                   </div>
                 </div>
                 <p className="mt-3 text-xs text-stone-600 leading-relaxed">
-                  &ldquo;We work with Australian firms to relieve delivery bottlenecks while ensuring full professional ownership stays firmly in your hands.&rdquo;
+                  &ldquo;We work with firms to relieve delivery bottlenecks while ensuring full professional ownership stays firmly in your hands.&rdquo;
                 </p>
               </div>
             </div>
@@ -601,10 +607,10 @@ export function ContactView() {
               Global Practice Presence
             </div>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-[#0b1524]">
-              Our Offices in Australia, India & USA
+              Our Global Offices
             </h2>
             <p className="mt-3 text-base text-stone-600">
-              A core delivery hub in Chennai paired with client-facing practice directors in Sydney and the United States.
+              A core delivery hub in Chennai paired with client-facing practice directors close to the markets we serve.
             </p>
           </div>
 
@@ -782,11 +788,11 @@ export function ContactView() {
               <ArrowRight className="size-4" />
             </a>
             <a
-              href="tel:+61290001234"
+              href="tel:+919632466477"
               className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
             >
               <Phone className="size-4" />
-              Call +61 2 9000 1234
+              Call +91 9632 466 477
             </a>
           </div>
         </Container>

@@ -43,7 +43,7 @@ export function ContactCTA() {
               </h2>
 
               <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-xl">
-                You do not need to choose between growth and control. You can retain your Australian leadership, client relationships and decision-making while building additional delivery capacity through NICS.
+                You do not need to choose between growth and control. You can retain your onshore leadership, client relationships and decision-making while building additional delivery capacity through NICS.
               </p>
               <p className="text-sm text-stone-600 leading-relaxed max-w-xl">
                 Whether you need one dedicated professional, a project team or a complete offshore support function, we can design a model around your requirements.
@@ -153,7 +153,7 @@ export function ContactCTA() {
                       className="w-full text-sm px-3.5 py-2.5 bg-stone-50/70 border border-stone-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:bg-white focus:outline-none"
                     >
                       <option value="accounting-finance">Accounting & Finance Operations</option>
-                      <option value="practice-support">Support for Australian Accounting Practices</option>
+                      <option value="practice-support">Support for Accounting Practices</option>
                       <option value="smsf-support">SMSF Back-Office Support</option>
                       <option value="audit-support">Audit Support</option>
                       <option value="financial-planning">Financial Planning Support</option>

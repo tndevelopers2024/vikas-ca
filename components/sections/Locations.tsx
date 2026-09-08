@@ -22,14 +22,14 @@ export function Locations() {
       <Container size="default">
         {/* Section Heading */}
         <SectionHeading
-          eyebrow="India Delivery, Australian Governance"
+          eyebrow="India Delivery, Global Governance"
           title="NICS Delivery & Practice Offices"
-          description="An India-based core delivery capability paired with client-facing leadership in Australia and the USA."
+          description="An India-based core delivery capability paired with client-facing leadership close to the markets we serve."
           align="split"
           action={
             <div className="flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-                India · Australia · USA
+                Global delivery network
               </span>
             </div>
           }

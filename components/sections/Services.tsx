@@ -24,7 +24,7 @@ export function Services() {
         <SectionHeading
           eyebrow="Delivery Capabilities & Solutions"
           title="Our Services"
-          description="Disciplined accounting, SMSF, audit, financial services, legal operations, and business administrative capabilities engineered for Australian businesses and practices."
+          description="Disciplined accounting, SMSF, audit, financial services, legal operations, and business administrative capabilities engineered for accounting practices and growing businesses."
           align="split"
           action={
             <Button

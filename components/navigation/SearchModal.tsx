@@ -166,7 +166,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   }, [query, allSearchableItems]);
 
   const popularSearches = [
-    "AASB 18 Disclosures",
+    "Reporting Standards",
     "Family Business Succession",
     "Debt Advisory",
     "UN Global Compact",

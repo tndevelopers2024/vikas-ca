@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/Button";
 const highlights = [
   {
     icon: Award,
-    title: "Australian Standards & Requirements",
-    description: "AASB requirements, Australian taxation and GST, privacy obligations, and Australian business practices.",
+    title: "Local Standards & Requirements",
+    description: "Local accounting standards, taxation and indirect tax requirements, privacy obligations, and established business practices.",
   },
   {
     icon: Compass,
@@ -51,7 +51,7 @@ export function CareersBanner() {
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight-title text-[#0b1524] leading-[1.07]">
-              Australian Requirements.{" "}
+              Local Requirements.{" "}
               <br />
               <span
                 style={{
@@ -66,7 +66,7 @@ export function CareersBanner() {
             </h2>
 
             <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-xl">
-              NICS combines an India-based delivery capability with processes designed to support Australian businesses. Our work can be aligned with relevant Australian requirements and internationally recognised frameworks, maintaining the process discipline expected by Australian practices.
+              NICS combines an India-based delivery capability with processes designed to support businesses internationally. Our work can be aligned with the requirements of your jurisdiction and internationally recognised frameworks, maintaining the process discipline professional practices expect.
             </p>
 
             {/* Highlights */}
@@ -112,7 +112,7 @@ export function CareersBanner() {
               <div className="relative aspect-[4/3] sm:aspect-[1/1] rounded-2xl overflow-hidden border border-stone-200 shadow-xl">
                 <Image
                   src="/images/quality.avif"
-                  alt="NICS Australian standard offshore delivery processes"
+                  alt="NICS standards-aligned offshore delivery processes"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -124,7 +124,7 @@ export function CareersBanner() {
                       <Award className="w-4 h-4 text-[#916524]" />
                       <div>
                         <div className="text-[10px] font-bold uppercase tracking-wider text-[#0056b3]">Quality & Compliance</div>
-                        <div className="text-xs font-bold text-[#0b1524]">AASB & ISO/IEC 27001 Aligned</div>
+                        <div className="text-xs font-bold text-[#0b1524]">Standards & ISO/IEC 27001 Aligned</div>
                       </div>
                     </div>
                   </div>

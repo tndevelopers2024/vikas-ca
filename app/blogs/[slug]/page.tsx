@@ -19,6 +19,7 @@ import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import {
   featuredInsight,
   secondaryInsights,
@@ -73,9 +74,17 @@ export default async function ArticlePage({ params }: PageProps) {
         <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
           <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
           <Container size="default" className="relative pb-16 lg:pb-20">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Insights", href: "/blogs" },
+                { label: article.title },
+              ]}
+            />
+
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0056b3] transition-colors hover:text-[#004494]"
+              className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#0056b3] transition-colors hover:text-[#004494]"
             >
               <ArrowLeft className="size-3.5" />
               Back to Blogs &amp; PR
@@ -88,7 +97,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   {article.category}
                 </span>
 
-                <h1 className="mt-6 text-3xl font-extrabold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
+                <h1 className="mt-6 text-[2.25rem] font-extrabold leading-[1.06] tracking-[-0.02em] sm:text-4xl lg:text-5xl xl:text-6xl text-[#0b1524]">
                   {article.title}
                 </h1>
 

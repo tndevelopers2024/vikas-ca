@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Logo } from "@/components/ui/Logo";
+import { BrandLockup } from "@/components/ui/BrandLockup";
 
 const LOAD_STEPS = [
   { pct: 12 },
@@ -187,7 +187,11 @@ export function Preloader({ onComplete }: PreloaderProps) {
                 transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="relative z-10 flex flex-col items-center"
               >
-                <Logo className="h-8" priority />
+                <BrandLockup
+                  logoClassName="h-12"
+                  wordClassName="text-[9px] tracking-[0.32em] indent-[0.32em]"
+                  priority
+                />
               </motion.div>
             </div>
 

@@ -1,3 +1,5 @@
+import { primaryNavItems } from "./navItemsData";
+
 export interface FooterColumn {
   heading: string;
   links: {
@@ -7,49 +9,54 @@ export interface FooterColumn {
   }[];
 }
 
+/** Pulls the sub-links of a primary nav item so the footer mirrors the header. */
+function navLinks(label: string) {
+  const item = primaryNavItems.find((entry) => entry.label === label);
+  return (item?.links ?? []).map((link) => ({
+    title: link.label,
+    href: link.href,
+  }));
+}
+
+/**
+ * Footer directory. The first three columns are generated from — or ordered to
+ * match — `primaryNavItems`, so the menu at the bottom of the page and the menu
+ * in the header describe the same site. Section links are written root-relative
+ * ("/#services", not "#services") so they resolve from every page, not just the
+ * homepage.
+ */
 export const footerColumns: FooterColumn[] = [
   {
     heading: "Services",
-    links: [
-      { title: "Accounting & Finance Operations", href: "#services" },
-      { title: "Support for Australian Practices", href: "#services" },
-      { title: "SMSF & Audit Back-Office", href: "#services" },
-      { title: "Financial Planning & Mortgages", href: "#services" },
-      { title: "Legal & Business Operations", href: "#services" },
-    ],
+    links: navLinks("Services"),
   },
   {
     heading: "Delivery Models",
     links: [
-      { title: "Dedicated Resource", href: "#stories" },
-      { title: "Managed Function", href: "#stories" },
-      { title: "Project Support", href: "#stories" },
-      { title: "Build–Operate–Transfer (BOT)", href: "#stories" },
-      { title: "What You Keep vs What We Manage", href: "#stories" },
+      { title: "Dedicated Resource", href: "/#stories" },
+      { title: "Managed Function", href: "/#stories" },
+      { title: "Project Support", href: "/#stories" },
+      { title: "Build–Operate–Transfer (BOT)", href: "/#stories" },
+      { title: "What You Keep vs What We Manage", href: "/#stories" },
     ],
   },
   {
-    heading: "Standards & Why NICS",
+    heading: "Why NICS",
     links: [
-      { title: "Who We Are", href: "/who-we-are" },
-      { title: "Build Your Team", href: "/build-your-team" },
+      ...navLinks("Why NICS"),
       { title: "Blogs & PR", href: "/blogs" },
-      { title: "Why Outsourcing", href: "/why-outsourcing" },
-      { title: "How It Works", href: "/how-it-works" },
-      { title: "Discover More (FAQs)", href: "/discover-more" },
-      { title: "Flexible Capacity", href: "#culture" },
-      { title: "Professional Capability", href: "#culture" },
-      { title: "ISO/IEC 27001 Information Security", href: "#insights" },
-      { title: "AASB & Australian Tax Alignment", href: "#careers-banner" },
-      { title: "From One Person to Function", href: "#careers-banner" },
+      { title: "Flexible Capacity", href: "/#culture" },
+      { title: "Professional Capability", href: "/#culture" },
+      { title: "ISO/IEC 27001 Information Security", href: "/#insights" },
+      { title: "Standards & Requirements", href: "/#careers-banner" },
+      { title: "From One Person to Function", href: "/#careers-banner" },
     ],
   },
   {
     heading: "Locations & Contact",
     links: [
-      { title: "Chennai (HQ Delivery Centre)", href: "#locations" },
-      { title: "Sydney (Australian Client Relations)", href: "#locations" },
-      { title: "Marlton, NJ (USA Office)", href: "#locations" },
+      { title: "Chennai (HQ Delivery Centre)", href: "/#locations" },
+      { title: "Sydney (Client Relations)", href: "/#locations" },
       { title: "Discuss What to Move Offshore", href: "/contact" },
     ],
   },
@@ -57,8 +64,6 @@ export const footerColumns: FooterColumn[] = [
 
 export const legalLinks = [
   { title: "Privacy Policy", href: "/privacy-policy" },
-  { title: "Terms of Engagement", href: "#terms" },
-  { title: "Information Security", href: "#insights" },
-  { title: "Australian Standards & Compliance", href: "#careers-banner" },
-  { title: "Accessibility", href: "#accessibility" },
+  { title: "Information Security", href: "/#insights" },
+  { title: "Standards & Compliance", href: "/#careers-banner" },
 ];

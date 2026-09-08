@@ -31,7 +31,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 52;
   pointer-events: none;
   width: 100%;
 }
@@ -44,9 +44,9 @@
 /* ── Two-Stage Morphing Nav Container ─────────────────────────────────── */
 .navContainer {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 16px 28px;
+  padding: 14px 40px;
   border-radius: 0;
   border: 1px solid transparent;
   background-color: transparent;
@@ -55,10 +55,7 @@
     max-width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
     margin-top 0.45s cubic-bezier(0.22, 1, 0.36, 1),
     border-radius 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Stage 0 (Top of Page / scrollY === 0) */
@@ -73,13 +70,13 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--hairline);
-  padding: 12px 28px;
+  padding: 10px 40px;
 }
 
 /* Stage 2 (scrollY > 80px — Centered Floating Pill Capsule like Screenshot) */
 .stage2 {
   width: fit-content;
-  max-width: min(1180px, calc(100vw - 32px));
+  max-width: min(1400px, calc(100vw - 32px));
   margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
@@ -105,7 +102,6 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
   text-decoration: none;
   color: var(--ink);
   flex-shrink: 0;
@@ -114,19 +110,28 @@
 }
 
 .brandLogo {
-  height: 40px;
+  height: 56px;
   display: block;
+  transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.brandSub {
-  padding-left: 8px;
-  border-left: 1px solid var(--hairline);
+/* "International" sits directly beneath the wordmark. */
+.brandWord {
+  font-size: 0.6875rem;
+  letter-spacing: 0.34em;
+  /* Optically centres the tracked-out word under the wordmark. */
+  text-indent: 0.34em;
+  margin-top: -2px;
+}
+
+.stage2 .brandLogo {
+  height: 44px;
+}
+
+.stage2 .brandWord {
   font-size: 0.5625rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  white-space: nowrap;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
 }
 
 /* ── Desktop Navigation List (Center of Pill) ─────────────────────────── */
@@ -141,6 +146,13 @@
 
 .navItem {
   position: relative;
+}
+
+.navItemRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 999px;
 }
 
 .navButton {
@@ -170,6 +182,92 @@
   color: var(--accent);
   background-color: var(--accent-light);
   font-weight: 700;
+}
+
+/* "You are here" marker under the section that owns the current page. */
+.navButtonActive::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.navDisclosure {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: -4px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.navDisclosure:hover,
+.navDisclosure:focus-visible {
+  color: var(--accent);
+  background-color: var(--accent-light);
+}
+
+/* ── Compact Section Dropdown ─────────────────────────────────────────── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 46;
+  min-width: 310px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  box-shadow: var(--shadow-dropdown);
+}
+
+/* Keeps the pointer from falling through the gap between item and panel. */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.dropdownOpen {
+  animation: dropdownIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translate(-50%, -6px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.dropdownIntro {
+  margin: 0 8px 10px 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.subLinkItemActive {
+  background-color: var(--accent-light);
+}
+
+.subLinkItemActive .subLinkLabel {
+  color: var(--accent);
 }
 
 .navChevron {
@@ -558,8 +656,8 @@
 .mobileDrawer {
   position: fixed;
   inset: 0;
-  z-index: 48;
-  background: color-mix(in srgb, var(--bg) 96%, transparent);
+  z-index: 51;
+  background: #ffffff;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;
@@ -598,6 +696,13 @@
 .mobileDrawerOpen .mobileNavItem {
   opacity: 1;
   transform: translateY(0);
+}
+
+.mobileNavRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .mobileNavButton {
@@ -678,6 +783,15 @@
   color: var(--accent);
 }
 
+.mobileNavButtonActive,
+.mobileSubLinkActive {
+  color: var(--accent);
+}
+
+.mobileSubLinkActive {
+  font-weight: 700;
+}
+
 .mobileFooterActions {
   margin-top: auto;
   display: flex;
@@ -701,12 +815,25 @@
     padding: 12px 18px;
   }
 
-  .brandLogo {
-    height: 30px;
+  .brandLogo,
+  .stage2 .brandLogo {
+    height: 40px;
   }
 
-  .brandSub {
+  .brandWord,
+  .stage2 .brandWord {
+    font-size: 0.5rem;
+    letter-spacing: 0.26em;
+    text-indent: 0.26em;
+  }
+
+  /* Dropdowns become accordions inside the drawer on small screens. */
+  .dropdown {
     display: none;
+  }
+
+  .stage1 {
+    background-color: #ffffff;
   }
 
   .stage2 {
@@ -714,11 +841,11 @@
     margin-top: 10px;
     border-radius: 999px;
     padding: 8px 12px 8px 16px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: none;
+    box-shadow: 0 6px 24px -6px rgba(15, 23, 42, 0.16);
   }
 }
 

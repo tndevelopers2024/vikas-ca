@@ -18,10 +18,10 @@ export function Container({
       className={clsx(
         "mx-auto w-full",
         {
-          "max-w-[1360px] px-5 sm:px-8 md:px-12 lg:px-16": size === "default",
-          "max-w-[1080px] px-5 sm:px-8 md:px-10": size === "narrow",
-          "max-w-[1520px] px-5 sm:px-8 md:px-12 lg:px-16": size === "wide",
-          "max-w-full px-5 sm:px-8 md:px-12": size === "full",
+          "max-w-[1600px] px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14": size === "default",
+          "max-w-[1180px] px-5 sm:px-8 md:px-10": size === "narrow",
+          "max-w-[1800px] px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14": size === "wide",
+          "max-w-full px-5 sm:px-8 md:px-10 lg:px-12": size === "full",
         },
         className
       )}

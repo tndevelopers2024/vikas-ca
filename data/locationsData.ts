@@ -20,12 +20,12 @@ export const locationsData: OfficeLocation[] = [
     name: "Chennai (HQ)",
     state: "Tamil Nadu",
     country: "India",
-    address: "Tidel Park, Tharamani, Chennai, Tamil Nadu 600113",
-    phone: "+91 44 2254 1234",
-    email: "operations@nics.com",
+    address: "Prince Centre 4th Floor Left wing 709, Pathari Road, Anna Salai, Chennai, Tamil Nadu 600006",
+    phone: "+91 9632 466 477",
+    email: "vikas@abcdca.com",
     description: "NICS operates its core delivery capability in Chennai, with disciplined processes, structured workflows, and information security aligned with ISO/IEC 27001 principles.",
-    leadPartner: "Gorav Gupta",
-    leadPartnerTitle: "Co-Founder & Director",
+    leadPartner: "CA Vikas Jangid",
+    leadPartnerTitle: "Office Leader",
     partnersCount: 12,
     specialties: ["Global Delivery Centre", "Accounting & Finance Ops", "SMSF & Audit Support", "Information Security"],
     image: "/images/global-office.avif"
@@ -45,19 +45,11 @@ export const locationsData: OfficeLocation[] = [
     specialties: ["Australian Practice Liaison", "Engagement Models", "AASB Process Alignment", "Client Governance"],
     image: "/images/global-office.avif"
   },
-  {
-    id: "usa-marlton",
-    name: "Marlton",
-    state: "New Jersey",
-    country: "USA",
-    address: "1000 Lincoln Drive East, Marlton, NJ 08053",
-    phone: "+1 856 555 0199",
-    email: "us.sales@nics.com",
-    description: "Our US office supports North American client engagements, delivering structured operational and back-office services across corporate functions.",
-    leadPartner: "Andrew Noble",
-    leadPartnerTitle: "Co-Founder",
-    partnersCount: 3,
-    specialties: ["International Operations", "Workflow Transition", "Business Operations", "Client Relations"],
-    image: "/images/global-office.avif"
-  }
 ];
+
+/**
+ * NOTE: the Sydney record is left exactly as it was. The change request removes
+ * Marlton and asks for Australia-focused positioning to be dropped, but also
+ * says "Sydney – let me check with the Rajiv", so the office details are a
+ * pending client decision rather than something to rewrite here.
+ */

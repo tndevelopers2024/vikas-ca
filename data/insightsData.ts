@@ -39,7 +39,7 @@ export const featuredInsight: InsightArticle = {
   author: {
     name: "Information Security Team",
     role: "Governance & Security",
-    office: "Chennai & Sydney"
+    office: "Chennai"
   },
   featured: true,
   tags: ["ISO/IEC 27001", "Access Control", "Confidentiality", "Data Protection"],
@@ -58,7 +58,7 @@ export const featuredInsight: InsightArticle = {
       },
       {
         heading: "Confidentiality & Compliance Alignment",
-        body: "All engagements are governed by Australian Privacy Principles (APPs) and contractual non-disclosure agreements, ensuring complete alignment with Australian regulatory expectations."
+        body: "All engagements are governed by the privacy principles applicable in your jurisdiction and contractual non-disclosure agreements, ensuring alignment with your regulatory expectations."
       }
     ],
     bullets: [
@@ -73,26 +73,26 @@ export const featuredInsight: InsightArticle = {
 
 export const secondaryInsights: InsightArticle[] = [
   {
-    id: "australian-accounting-practice-support",
+    id: "accounting-practice-support",
     category: "Practice Operations",
-    title: "Support for Australian Accounting Practices: Expanding Capacity Without Permanent Overhead",
-    excerpt: "How accounting firms maintain delivery capacity for workpapers, financial statements, GST/BAS data, and year-end accounting while Australian partners retain professional judgement and sign-off.",
+    title: "Support for Accounting Practices: Expanding Capacity Without Permanent Overhead",
+    excerpt: "How accounting firms maintain delivery capacity for workpapers, financial statements, indirect tax data, and year-end accounting while partners retain professional judgement and sign-off.",
     date: "Practice Briefing",
     readTime: "6 min read",
     author: {
       name: "Boobalan Madhavan",
       role: "Founder & MD",
-      office: "Sydney"
+      office: "Chennai"
     },
-    tags: ["AASB", "Tax Return Support", "Workpapers", "Australian Practices"],
+    tags: ["Reporting Standards", "Tax Return Support", "Workpapers", "Accounting Practices"],
     image: "/images/security.avif",
     href: "#insights",
     fullContent: {
-      overview: "Australian accounting practices face acute seasonal bottlenecks during peak BAS and year-end compliance cycles. Adding permanent local headcount often introduces unsustainable fixed overheads. NICS provides structured offshore accounting pods that integrate directly into your firm's existing software stack and working paper templates.",
+      overview: "Accounting practices face acute seasonal bottlenecks during peak indirect tax and year-end compliance cycles. Adding permanent local headcount often introduces unsustainable fixed overheads. NICS provides structured offshore accounting pods that integrate directly into your firm's existing software stack and working paper templates.",
       sections: [
         {
-          heading: "Standardized Workpapers & AASB Compliance",
-          body: "Our analysts prepare rigorous electronic workpapers with supporting schedules, lead sheets, and clear cross-references aligned with AASB reporting requirements."
+          heading: "Standardized Workpapers & Reporting Compliance",
+          body: "Our analysts prepare rigorous electronic workpapers with supporting schedules, lead sheets, and clear cross-references aligned with the reporting requirements you work to."
         },
         {
           heading: "Year-End Financials & Tax Pack Assembly",
@@ -104,7 +104,7 @@ export const secondaryInsights: InsightArticle[] = [
         },
         {
           heading: "Clear Separation of Duties & Sign-Off",
-          body: "Australian registered practitioners retain full professional responsibility, client advisory, and statutory sign-off, while offshore pods handle the time-intensive preparation."
+          body: "Registered practitioners retain full professional responsibility, client advisory, and statutory sign-off, while offshore pods handle the time-intensive preparation."
         }
       ],
       bullets: [
@@ -132,7 +132,7 @@ export const secondaryInsights: InsightArticle[] = [
     image: "/images/security.avif",
     href: "#insights",
     fullContent: {
-      overview: "Audit workflows and SMSF compliance are characterized by severe seasonal compression and strict documentation mandates under Australian Auditing Standards (ASAs). NICS delivers dedicated audit support analysts who meticulously assemble, cross-reference, and verify evidentiary files before Australian auditor review.",
+      overview: "Audit workflows and SMSF compliance are characterized by severe seasonal compression and strict documentation mandates under the auditing standards you work to. NICS delivers dedicated audit support analysts who meticulously assemble, cross-reference, and verify evidentiary files before auditor review.",
       sections: [
         {
           heading: "Structured Lead Schedules & Evidence Gathering",
@@ -170,7 +170,7 @@ export const secondaryInsights: InsightArticle[] = [
     author: {
       name: "Andrew Noble",
       role: "Co-Founder",
-      office: "USA"
+      office: "Chennai"
     },
     tags: ["Scalable Model", "Offshore Function", "Dedicated Resource", "BOT Transition"],
     image: "/images/security.avif",
@@ -217,8 +217,8 @@ export const latestNewsItems = [
   },
   {
     id: "news-2",
-    category: "AASB & GST",
-    title: "Supporting Australian accounting practices with structured workpapers and GST data prep",
+    category: "Reporting & Indirect Tax",
+    title: "Supporting accounting practices with structured workpapers and indirect tax data prep",
     date: "Practice Update",
     readTime: "5 min",
     href: "#insights"
@@ -234,7 +234,7 @@ export const latestNewsItems = [
   {
     id: "news-4",
     category: "Financial Services",
-    title: "Streamlining mortgage processing and SOA preparation support for Australian advisers",
+    title: "Streamlining mortgage processing and SOA preparation support for advisers",
     date: "Operations Alert",
     readTime: "5 min",
     href: "#services"

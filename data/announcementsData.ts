@@ -23,11 +23,11 @@ export const announcementsData: AnnouncementItem[] = [
     image: "/images/global-office.avif"
   },
   {
-    id: "australian-standards-alignment",
-    category: "Australian Standards",
-    badge: "AASB & GST",
-    title: "Processes Aligned with Australian Requirements & International Standards",
-    summary: "NICS combines India-based delivery capability with processes designed for AASB requirements, Australian taxation and GST, privacy obligations, and professional practice standards.",
+    id: "standards-alignment",
+    category: "Standards & Compliance",
+    badge: "Standards & Tax",
+    title: "Processes Aligned with Local Requirements & International Standards",
+    summary: "NICS combines India-based delivery capability with processes designed for local accounting standards, taxation and indirect tax requirements, privacy obligations, and professional practice standards.",
     date: "Delivery Framework",
     linkText: "Learn about our compliance standards",
     href: "#careers-banner",
