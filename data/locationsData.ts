@@ -20,7 +20,7 @@ export const locationsData: OfficeLocation[] = [
     name: "Chennai (HQ)",
     state: "Tamil Nadu",
     country: "India",
-    address: "Prince Centre 4th Floor Left wing 709, Pathari Road, Anna Salai, Chennai, Tamil Nadu 600006",
+    address: "NICS International Prince Centre 4th Floor Left wing 709, Pathari Road, Anna Salai, Chennai, Tamil Nadu 600006",
     phone: "+91 9632 466 477",
     email: "vikas@abcdca.com",
     description: "NICS operates its core delivery capability in Chennai, with disciplined processes, structured workflows, and information security aligned with ISO/IEC 27001 principles.",

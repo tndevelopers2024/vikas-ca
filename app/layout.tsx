@@ -109,7 +109,7 @@ export default function RootLayout({
     email: "vikas@abcdca.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Prince Centre 4th Floor Left wing 709, Pathari Road, Anna Salai",
+      streetAddress: "NICS International Prince Centre 4th Floor Left wing 709, Pathari Road, Anna Salai",
       addressLocality: "Chennai",
       addressRegion: "Tamil Nadu",
       postalCode: "600006",
