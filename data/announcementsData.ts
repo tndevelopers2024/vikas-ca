@@ -20,7 +20,7 @@ export const announcementsData: AnnouncementItem[] = [
     date: "Current Practice",
     linkText: "Read about our security approach",
     href: "#insights",
-    image: "/images/photos/data-security.avif"
+    image: "/images/bright/page-compliance.jpg"
   },
   {
     id: "standards-alignment",
@@ -31,7 +31,7 @@ export const announcementsData: AnnouncementItem[] = [
     date: "Delivery Framework",
     linkText: "Learn about our compliance standards",
     href: "#careers-banner",
-    image: "/images/photos/document-review.avif"
+    image: "/images/bright/page-legal.jpg"
   },
   {
     id: "scalable-delivery-model",
@@ -42,6 +42,6 @@ export const announcementsData: AnnouncementItem[] = [
     date: "Engagement Model",
     linkText: "Explore our delivery models",
     href: "#stories",
-    image: "/images/photos/delivery-floor.avif"
+    image: "/images/bright/page-how-it-works.jpg"
   }
 ];

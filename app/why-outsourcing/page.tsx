@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
@@ -28,11 +29,11 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/photos/focused-work.avif";
+const heroImage = "/images/bright/page-why-outsourcing.jpg";
 
 const pillars = [
   {
-    id: "full-control",
+    id: "control",
     eyebrow: "01 — Control",
     icon: SlidersHorizontal,
     navLabel: "You retain full control",
@@ -134,85 +135,26 @@ export default function WhyOutsourcingPage() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-20 lg:pb-28">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Why NICS", href: "/why-outsourcing" },
-                { label: "Why Outsourcing" },
-              ]}
-            />
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Sparkles className="size-3.5" />
-                  Enhance Productivity & Efficiency
-                </div>
-                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                  Why Outsourcing
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-                  The number one reason companies opt for outsourcing services is increased productivity and greater efficiency. Perhaps it’s time for you to join the winning team.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Get Started
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="#pillars"
-                    className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50"
-                  >
-                    Why It Works
-                  </a>
-                </div>
-
-                <div className="mt-10 flex flex-wrap gap-2 border-t border-stone-200 pt-6">
-                  {pillars.map((p) => (
-                    <a
-                      key={p.id}
-                      href={`#${p.id}`}
-                      className="rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-stone-600 transition-colors hover:border-[#0056b3]/40 hover:text-[#0056b3]"
-                    >
-                      {p.navLabel}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
-                  <Image
-                    src={heroImage}
-                    alt="Offshore team working as an extension of your business"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/80 via-[#0b1524]/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <div className="inline-block rounded-md bg-[#0056b3]/80 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc7ff]">
-                      Your Extended Team
-                    </div>
-                    <div className="mt-2 text-xl font-bold">You Provide the Direction, We Operate the Team</div>
-                    <p className="mt-1 text-xs text-slate-200">
-                      Communicate requirements, monitor performance, give feedback — we handle everything else.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Why Outsourcing" }]}
+          badge="Why Outsourcing"
+          badgeHighlight="Full Strategic Control"
+          title="Why Choose Outsourcing"
+          description="Retain full strategic and operational control of your workflows while seamlessly scaling capacity and driving down overheads. We recruit, train, and manage dedicated professionals who work as an extension of your firm."
+          primaryCta={{ label: "Discuss Your Needs", href: "/contact" }}
+          secondaryCta={{ label: "Explore Advantages", href: "#control" }}
+          metrics={[
+            { value: "80%", label: "Routine Work Delegated" },
+            { value: "100%", label: "Client IP Protection" },
+            { value: "Zero", label: "Infrastructure CapEx" },
+          ]}
+          image={heroImage}
+          cardBadge="Your Extended Team"
+          cardTitle="Retain 100% Onshore Control"
+          cardSubtitle="Delegate routine processing while keeping client relationships, strategy, and judgment in-house."
+          imageAlt="Strategic business growth and global team collaboration in bright conference room"
+        />
 
         {/* INTRO NARRATIVE */}
         <section className="border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-24">

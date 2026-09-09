@@ -5,12 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BrandLockup } from "@/components/ui/BrandLockup";
 
 const LOAD_STEPS = [
-  { pct: 12 },
-  { pct: 30 },
-  { pct: 54 },
-  { pct: 75 },
-  { pct: 91 },
-  { pct: 99 },
+  { pct: 45 },
+  { pct: 85 },
+  { pct: 100 },
 ];
 
 interface PreloaderProps {
@@ -25,20 +22,19 @@ export function Preloader({ onComplete }: PreloaderProps) {
     let step = 0;
     const advance = () => {
       if (step >= LOAD_STEPS.length) {
-        // Shoot to 100 then exit
         setProgress(100);
         setTimeout(() => {
           setDone(true);
-          setTimeout(onComplete, 750);
-        }, 400);
+          setTimeout(onComplete, 300);
+        }, 150);
         return;
       }
       const { pct } = LOAD_STEPS[step];
       setProgress(pct);
       step++;
-      setTimeout(advance, step === 1 ? 220 : step === LOAD_STEPS.length ? 150 : 280);
+      setTimeout(advance, 80);
     };
-    const id = setTimeout(advance, 150);
+    const id = setTimeout(advance, 50);
     return () => clearTimeout(id);
   }, [onComplete]);
 

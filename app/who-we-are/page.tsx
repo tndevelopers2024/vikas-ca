@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/photos/workspace-sunlit.avif";
+const heroImage = "/images/bright/page-who-we-are.jpg";
 
 const historyParagraphs = [
   "Traditional BPO was built for large corporations. For small and medium businesses and independent accounting practitioners, the models on offer were too rigid, too large, and too far removed from how a practice actually works — so most firms simply carried the load themselves.",
@@ -125,90 +126,26 @@ export default function WhoWeArePage() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-20 lg:pb-28">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Why NICS", href: "/why-outsourcing" },
-                { label: "Who We Are" },
-              ]}
-            />
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Sparkles className="size-3.5" />
-                  About NICS
-                </div>
-                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                  Who We Are
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-                  A business process outsourcing partner built for SMEs and accounting practices — not scaled down from a model designed for large corporations. Here is where we came from, where we are going, and how we work.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Contact Us
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="#history"
-                    className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50"
-                  >
-                    Read Our Story
-                  </a>
-                </div>
-
-                <div className="mt-10 flex flex-wrap gap-2 border-t border-stone-200 pt-6">
-                  {[
-                    { id: "history", label: "History" },
-                    { id: "vision", label: "Vision" },
-                    { id: "mission", label: "Mission" },
-                    { id: "culture", label: "Culture" },
-                  ].map((item) => (
-                    <a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      className="rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-stone-600 transition-colors hover:border-[#0056b3]/40 hover:text-[#0056b3]"
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
-                  <Image
-                    src={heroImage}
-                    alt="The NICS delivery team"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/80 via-[#0b1524]/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <div className="inline-block rounded-md bg-[#0056b3]/80 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc7ff]">
-                      People Powered
-                    </div>
-                    <div className="mt-2 text-xl font-bold">Built on Business Acumen and Human Capital</div>
-                    <p className="mt-1 text-xs text-slate-200">
-                      Human capital is the powerline to everything we deliver.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Who We Are" }]}
+          badge="About NICS"
+          badgeHighlight="People Powered"
+          title="Who We Are"
+          description="A dedicated business process outsourcing partner built specifically for SMEs and accounting practices. Rooted in deep business acumen and exceptional human capital, we deliver technically brilliant, value-based support that scales your firm."
+          primaryCta={{ label: "Contact Us", href: "/contact" }}
+          secondaryCta={{ label: "Read Our Story", href: "#history" }}
+          metrics={[
+            { value: "15+ Yrs", label: "Combined Leadership" },
+            { value: "100%", label: "Client Retention SLA" },
+            { value: "ISO 27001", label: "Enterprise Governance" },
+          ]}
+          image={heroImage}
+          cardBadge="People Powered"
+          cardTitle="Strategic Human Capital & SME Focus"
+          cardSubtitle="Exceptional business acumen and delivery excellence scaling alongside your leadership."
+          imageAlt="Diverse corporate leadership and delivery team collaborating in sunlit modern headquarters"
+        />
 
         {/* HISTORY */}
         <section id="history" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">

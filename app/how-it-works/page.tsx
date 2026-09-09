@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/photos/workshop-session.avif";
+const heroImage = "/images/bright/page-how-it-works.jpg";
 
 const steps = [
   {
@@ -134,86 +135,27 @@ export default function HowItWorksPage() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-20 lg:pb-28">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Why NICS", href: "/why-outsourcing" },
-                { label: "How It Works" },
-              ]}
-            />
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Sparkles className="size-3.5" />
-                  Four Steps, Start to Steady State
-                </div>
-                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                  How Does It Work
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-                  From the first conversation about your objectives through to a team reporting to you every day — here is exactly what happens, who does what, and where your control sits at each stage.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Start the Conversation
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="#steps"
-                    className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50"
-                  >
-                    See the Four Steps
-                  </a>
-                </div>
-
-                <div className="mt-10 flex flex-wrap gap-2 border-t border-stone-200 pt-6">
-                  {steps.map((s) => (
-                    <a
-                      key={s.id}
-                      href={`#${s.id}`}
-                      className="rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-stone-600 transition-colors hover:border-[#0056b3]/40 hover:text-[#0056b3]"
-                    >
-                      <span className="mr-1.5 font-bold text-[#0056b3]">{s.number}</span>
-                      {s.navLabel}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
-                  <Image
-                    src={heroImage}
-                    alt="Onboarding and managing an offshore delivery team"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/80 via-[#0b1524]/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <div className="inline-block rounded-md bg-[#0056b3]/80 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc7ff]">
-                      Engagement Process
-                    </div>
-                    <div className="mt-2 text-xl font-bold">Reports Every Day, Control Every Step</div>
-                    <p className="mt-1 text-xs text-slate-200">
-                      You approve the hire, set the priorities, and see progress daily.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "How It Works" }]}
+          badge="How It Works"
+          badgeHighlight="Structured 4-Step Journey"
+          title="How It Works"
+          description="A structured 4-step onboarding journey designed for effortless integration: Communicate requirements, Setup infrastructure, Manage daily execution, and continuously refine performance through Feedback loops."
+          primaryCta={{ label: "Get Started", href: "/contact" }}
+          secondaryCta={{ label: "See The Steps", href: "#steps" }}
+          metrics={[
+            { value: "Step 01", label: "Communicate Needs" },
+            { value: "Step 02", label: "Setup & Security" },
+            { value: "Step 03", label: "Daily Execution" },
+            { value: "Step 04", label: "Continuous Feedback" },
+          ]}
+          image={heroImage}
+          cardBadge="Seamless Onboarding"
+          cardTitle="Structured 4-Step Integration"
+          cardSubtitle="From initial communication to daily execution and ongoing feedback loops."
+          imageAlt="Workflow planning and onboarding journey roadmap in sunlit meeting space"
+        />
 
         {/* STEPS TIMELINE */}
         <section id="steps" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">

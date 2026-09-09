@@ -87,78 +87,68 @@ export default function HomePage() {
       <PremiumCursor />
 
       {/* ── Main site content ───────────────────────── */}
-      <AnimatePresence>
-        {preloaderDone && (
-          <motion.div
-            key="site"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col min-h-screen bg-white text-[#0f172a]"
-          >
-            {/* Floating Navbar */}
-            <Header />
+      <div className="flex flex-col min-h-screen bg-white text-[#0f172a]">
+        {/* Floating Navbar */}
+        <Header />
 
-            {/* Main scrollable content */}
-            <ScrollReveal>
-              <main>
-                {/* 1. Cinematic parallax hero */}
-                <Hero />
+        {/* Main scrollable content */}
+        <ScrollReveal>
+          <main>
+            {/* 1. Cinematic parallax hero */}
+            <Hero />
 
-                {/* 2. News slider */}
-                <div className="reveal">
-                  <AnnouncementBar />
-                </div>
+            {/* 2. News slider */}
+            <div className="reveal">
+              <AnnouncementBar />
+            </div>
 
-                {/* 3. Culture statement */}
-                <div className="reveal">
-                  <CultureStatement />
-                </div>
+            {/* 3. Culture statement */}
+            <div className="reveal">
+              <CultureStatement />
+            </div>
 
-                {/* 4. Interactive services explorer */}
-                <div className="reveal">
-                  <Services />
-                </div>
+            {/* 4. Interactive services explorer */}
+            <div className="reveal">
+              <Services />
+            </div>
 
-                {/* 5. Client stories & case studies */}
-                <div className="reveal">
-                  <ClientStories />
-                </div>
+            {/* 5. Client stories & case studies */}
+            <div className="reveal">
+              <ClientStories />
+            </div>
 
-                {/* 6. Careers banner */}
-                <div className="reveal">
-                  <CareersBanner />
-                </div>
+            {/* 6. Careers banner */}
+            <div className="reveal">
+              <CareersBanner />
+            </div>
 
-                {/* 7. Locations explorer */}
-                <div className="reveal">
-                  <Locations />
-                </div>
+            {/* 7. Locations explorer */}
+            <div className="reveal">
+              <Locations />
+            </div>
 
-                {/* 8. Insights magazine */}
-                <div className="reveal">
-                  <Insights />
-                </div>
+            {/* 8. Insights magazine */}
+            <div className="reveal">
+              <Insights />
+            </div>
 
-                {/* 9. Latest news */}
-                <div className="reveal">
-                  <LatestNews />
-                </div>
+            {/* 9. Latest News & Announcements */}
+            <div className="reveal">
+              <LatestNews />
+            </div>
 
-                {/* 10. Contact CTA */}
-                <div className="reveal">
-                  <ContactCTA />
-                </div>
-              </main>
+            {/* 10. Final contact CTA */}
+            <div className="reveal">
+              <ContactCTA />
+            </div>
+          </main>
 
-              {/* Floating footer */}
-              <Footer />
+          {/* Floating footer */}
+          <Footer />
 
-              <FloatingActions />
-            </ScrollReveal>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <FloatingActions />
+        </ScrollReveal>
+      </div>
     </>
   );
 }

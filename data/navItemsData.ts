@@ -97,6 +97,11 @@ export const primaryNavItems: NavItem[] = [
         description: "Tell us the role and experience level you need",
       },
       {
+        label: "Information Technology",
+        href: "/information-technology",
+        description: "IT security, data confidentiality & customer privacy",
+      },
+      {
         label: "Discover More (FAQs)",
         href: "/discover-more",
         description: "Confidentiality, data security, quality and SLAs",

@@ -12,6 +12,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
@@ -59,46 +60,26 @@ export default async function BlogsPage({ searchParams }: PageProps) {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-16 lg:pb-20">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Insights" },
-              ]}
-            />
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                <Sparkles className="size-3.5" />
-                Blogs &amp; PR
-              </div>
-              <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                Insights From the Delivery Floor
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-stone-600">
-                Technical briefings and practice notes from the people who run the work — on security, compliance, audit capacity, and what actually changes when you build a team offshore.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-4 border-t border-stone-200 pt-6">
-                <div>
-                  <div className="text-2xl font-bold text-[#0056b3]">{allArticles.length}</div>
-                  <div className="text-xs text-stone-500 font-medium">Articles</div>
-                </div>
-                <div className="ml-6">
-                  <div className="text-2xl font-bold text-[#0056b3]">{categories.length}</div>
-                  <div className="text-xs text-stone-500 font-medium">Categories</div>
-                </div>
-                <div className="ml-6">
-                  <div className="text-2xl font-bold text-[#0056b3]">{latestNewsItems.length}</div>
-                  <div className="text-xs text-stone-500 font-medium">Latest Updates</div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Insights" }]}
+          badge="Blogs & PR"
+          badgeHighlight="Delivery Intelligence"
+          title="Insights From the Delivery Floor"
+          description="Technical briefings, practice notes, ATO compliance updates, and operational analysis from our senior delivery directors — real-world insights on managing capacity, compliance standards, and offshore scaling."
+          primaryCta={{ label: "Browse Insights", href: "#articles" }}
+          secondaryCta={{ label: "Contact Advisory", href: "/contact" }}
+          metrics={[
+            { value: `${allArticles.length}`, label: "Published Articles" },
+            { value: `${categories.length}`, label: "Practice Categories" },
+            { value: `${latestNewsItems.length}`, label: "Industry Updates" },
+          ]}
+          image="/images/bright/page-blogs.jpg"
+          cardBadge="Industry Intelligence"
+          cardTitle="Briefings From the Delivery Floor"
+          cardSubtitle="Technical practice notes, ATO updates, and operational analysis."
+          imageAlt="Industry research, financial briefings, and practice intelligence publishing"
+        />
 
         {/* ARTICLES */}
         <section id="articles" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-16 lg:py-24">

@@ -12,6 +12,7 @@ export interface Crumb {
 interface BreadcrumbsProps {
   items: Crumb[];
   className?: string;
+  variant?: "default" | "light";
 }
 
 /**
@@ -19,27 +20,28 @@ interface BreadcrumbsProps {
  * plus the section the page belongs to. The last crumb is the current page and
  * is not a link.
  */
-export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className, variant = "default" }: BreadcrumbsProps) {
+  const isLight = variant === "light";
   return (
     <nav aria-label="Breadcrumb" className={clsx("text-xs sm:text-[13px]", className)}>
-      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-stone-500">
+      <ol className={clsx("flex flex-wrap items-center gap-x-1.5 gap-y-1", isLight ? "text-white/70" : "text-stone-500")}>
         {items.map((crumb, index) => {
           const isLast = index === items.length - 1;
 
           return (
             <li key={`${crumb.label}-${index}`} className="flex items-center gap-x-1.5">
               {index > 0 && (
-                <ChevronRight className="size-3.5 shrink-0 text-stone-400" aria-hidden="true" />
+                <ChevronRight className={clsx("size-3.5 shrink-0", isLight ? "text-white/40" : "text-stone-400")} aria-hidden="true" />
               )}
               {crumb.href && !isLast ? (
                 <Link
                   href={crumb.href}
-                  className="font-medium transition-colors hover:text-[#0056b3]"
+                  className={clsx("font-medium transition-colors", isLight ? "text-white/80 hover:text-white" : "hover:text-[#0056b3]")}
                 >
                   {crumb.label}
                 </Link>
               ) : (
-                <span className="font-semibold text-[#0b1524]" aria-current="page">
+                <span className={clsx("font-semibold", isLight ? "text-white" : "text-[#0b1524]")} aria-current="page">
                   {crumb.label}
                 </span>
               )}

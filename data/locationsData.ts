@@ -28,7 +28,7 @@ export const locationsData: OfficeLocation[] = [
     leadPartnerTitle: "Office Leader",
     partnersCount: 12,
     specialties: ["Global Delivery Centre", "Accounting & Finance Ops", "SMSF & Audit Support", "Information Security"],
-    image: "/images/photos/office-team.avif"
+    image: "/images/bright/location-chennai.jpg"
   },
   {
     id: "sydney-client-relations",
@@ -43,7 +43,7 @@ export const locationsData: OfficeLocation[] = [
     leadPartnerTitle: "Founder & MD",
     partnersCount: 5,
     specialties: ["Client Practice Liaison", "Engagement Models", "Reporting Standards Alignment", "Client Governance"],
-    image: "/images/photos/sydney.avif"
+    image: "/images/bright/location-sydney.jpg"
   },
 ];
 

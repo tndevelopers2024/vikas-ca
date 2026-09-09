@@ -19,6 +19,7 @@ import {
   Scale,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
@@ -31,8 +32,7 @@ export const metadata: Metadata = {
     "Explore Legal Process Outsourcing (LPO) services and delivery models at NICS. Contract Management, Contract Abstract & Summary, Contract Drafting, Due Diligence, General Legal Administration, and Legal Research.",
 };
 
-/** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/photos/team-collaboration.avif";
+const heroImage = "/images/bright/page-legal.jpg";
 
 const legalServices = [
   {
@@ -214,91 +214,26 @@ export default function LegalPage() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-20 lg:pb-28">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/#services" },
-                { label: "Legal Process Outsourcing" },
-              ]}
-            />
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Sparkles className="size-3.5" />
-                  Legal Process Outsourcing (LPO)
-                </div>
-                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                  Legal Process Outsourcing (LPO)
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-                  Managing the back-office work required for a legal firm can be challenging. You can build capacity to help your legal team with a trained offshore legal support unit, without having to spend a whole lot of time in hiring, training and retaining staff. If hiring legals has been taxing on your margins when your clients expect more value and a smaller bill, here&apos;s where you can find a solution with your trained legal support team at NICS.
-                </p>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-600">
-                  Your trained legal team at NICS is prepared to aid lawyers and corporate legal departments in several aspects including legal research, document review, and case management. Your legal team at NICS can be customised to suit your business requirements including assisting your legal teams in organizing documentation, case summaries, and preparing evidence for legal proceedings.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Make an Enquiry
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50"
-                  >
-                    Explore 6 LPO Services
-                  </a>
-                </div>
-
-                <div className="mt-10 grid grid-cols-3 gap-4 border-t border-stone-200 pt-6">
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">6</div>
-                    <div className="text-xs text-stone-500 font-medium">Core LPO Services</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">4</div>
-                    <div className="text-xs text-stone-500 font-medium">Outsourcing Models</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">ISO 27001</div>
-                    <div className="text-xs text-stone-500 font-medium">Confidentiality Aligned</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
-                  <Image
-                    src={heroImage}
-                    alt="Legal process outsourcing and contract support"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/85 via-[#0b1524]/25 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <div className="inline-block rounded-md bg-[#0056b3]/80 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc7ff]">
-                      NICS Legal Ops
-                    </div>
-                    <div className="mt-2 text-xl font-bold">High-Precision Legal Back-Office Support</div>
-                    <p className="mt-1 text-xs text-slate-200">
-                      Trained paralegals and legal documentation experts working under strict NDA & APPs governance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Legal Process Outsourcing" }]}
+          badge="Legal Process Outsourcing"
+          badgeHighlight="100% Confidentiality & NDA"
+          title="Legal Process Outsourcing (LPO)"
+          description="Empower your legal practice with specialized contract management, meticulous due diligence, and high-precision legal administration. At NICS, our trained paralegals and legal support specialists assist corporate counsel and law firms with document review, lease abstraction, litigation prep, and compliance collation—scaling capacity while safeguarding margins."
+          primaryCta={{ label: "Make an Enquiry", href: "/contact" }}
+          secondaryCta={{ label: "Explore LPO Services", href: "#services" }}
+          metrics={[
+            { value: "100%", label: "Confidentiality & NDA" },
+            { value: "Strict SLAs", label: "Matter Turnaround" },
+            { value: "ISO 27001", label: "Data Governance" },
+          ]}
+          image={heroImage}
+          cardBadge="NICS Legal Operations"
+          cardTitle="Contract Management & Due Diligence"
+          cardSubtitle="Paralegal support for law firms and corporate counsel under strict ISO 27001 data governance."
+          imageAlt="Legal contract administration, law volumes, and corporate due diligence"
+        />
 
         {/* SERVICES SECTION */}
         <section id="services" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">

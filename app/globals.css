@@ -473,3 +473,56 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.08), transparent);
 }
+
+/* Banner progress bar fill animation */
+@keyframes bannerFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.animate-banner-fill {
+  animation-name: bannerFill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* Dante-style banner rise animations */
+@keyframes bannerRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-banner-rise-1 {
+  animation: bannerRise 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.10s both;
+}
+.animate-banner-rise-2 {
+  animation: bannerRise 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+.animate-banner-rise-3 {
+  animation: bannerRise 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+.animate-banner-rise-4 {
+  animation: bannerRise 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
+}
+
+/* Dante-style subtle photo Ken Burns drift */
+@keyframes bannerDrift {
+  from {
+    transform: scale(1.065);
+  }
+  to {
+    transform: scale(1.00);
+  }
+}
+
+.animate-banner-drift {
+  animation: bannerDrift 8.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+

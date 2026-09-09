@@ -1,82 +1,404 @@
 "use client";
 
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowRight, MapPin } from "lucide-react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+} from "lucide-react";
+import { Container } from "@/components/ui/Container";
+
+const slides = [
+  {
+    id: "capacity-growth",
+    badge: "Offshore Delivery Partner",
+    badgeHighlight: "ISO/IEC 27001 Aligned",
+    headline: "Scale your business without building every function in-house",
+    description:
+      "Shoulder up to 80% of routine accounting, tax compliance, and back-office administration so your onshore leadership can focus on high-value client advisory and business growth.",
+    primaryCta: {
+      label: "Explore our services",
+      href: "#services",
+    },
+    secondaryCta: {
+      label: "Discuss what to delegate",
+      href: "#contact",
+    },
+    image: "/images/bright/hero-main.jpg",
+    imageAlt: "Modern sunlit corporate advisory office with panoramic skyline views",
+  },
+  {
+    id: "systems-talent",
+    badge: "Certified Accounting Talent",
+    badgeHighlight: "Direct Cloud Integration",
+    headline: "Certified accounting talent working inside your systems",
+    description:
+      "From daily bookkeeping and end-to-end P2P/O2C cycles to SMSF audit preparations and monthly management reporting—experienced professionals working directly in your preferred cloud software.",
+    primaryCta: {
+      label: "View accounting services",
+      href: "/accounting",
+    },
+    secondaryCta: {
+      label: "Compliance & SMSF",
+      href: "/compliance",
+    },
+    image: "/images/bright/page-accounting.jpg",
+    imageAlt: "Chartered accountant analyzing ledgers and financial data in bright daylight",
+  },
+  {
+    id: "dedicated-teams",
+    badge: "Dedicated Teams & BOT",
+    badgeHighlight: "Retain 100% Control",
+    headline: "Your own dedicated team with zero management burden",
+    description:
+      "Choose dedicated insourcing, team leads with managed QA governance, or Build-Operate-Transfer. Scale from one dedicated analyst to a full multi-tier department with complete transparency.",
+    primaryCta: {
+      label: "Build your team",
+      href: "/build-your-team",
+    },
+    secondaryCta: {
+      label: "Why choose outsourcing",
+      href: "/why-outsourcing",
+    },
+    image: "/images/bright/page-build-your-team.jpg",
+    imageAlt: "Diverse executive leadership and delivery specialists collaborating in bright corporate space",
+  },
+  {
+    id: "client-ownership",
+    badge: "Shared Governance Architecture",
+    badgeHighlight: "Australia & Global Standards",
+    headline: "Outsource the repetitive work. Keep the core business.",
+    description:
+      "You retain client relationships, commercial decisions, professional judgement, and final approvals. NICS manages resource allocation, day-to-day processing, staff coordination, and quality review.",
+    primaryCta: {
+      label: "Explore delivery models",
+      href: "#stories",
+    },
+    secondaryCta: {
+      label: "Schedule consultation",
+      href: "#contact",
+    },
+    image: "/images/bright/page-why-outsourcing.jpg",
+    imageAlt: "Strategic business growth and global team collaboration in conference room",
+  },
+];
+
+const promises = [
+  {
+    n: "01",
+    title: "Flexible Capacity",
+    text: "Shoulder peak workloads and back-office volume without permanent in-house headcount overhead.",
+    href: "/why-outsourcing",
+  },
+  {
+    n: "02",
+    title: "ISO/IEC 27001 Security",
+    text: "Enterprise data segregation, biometric access controls, clean-desk policy, and secure client environments.",
+    href: "/discover-more",
+  },
+  {
+    n: "03",
+    title: "Certified CA/CPA Talent",
+    text: "Pre-vetted accountants and specialists trained on Australian and international statutory standards.",
+    href: "/accounting",
+  },
+  {
+    n: "04",
+    title: "100% Onshore Control",
+    text: "You retain client relationships, decision-making and final approvals while we execute behind the scenes.",
+    href: "/how-it-works",
+  },
+  {
+    n: "05",
+    title: "Guaranteed SLA Governance",
+    text: "Audit-ready deliverables, transparent tracking, daily standups, and rigorous partner-level QA review.",
+    href: "/build-your-team",
+  },
+];
 
 export function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const totalSlides = slides.length;
+  const slideDuration = 7500;
+
+  // Mobile swipe support
+  const touchStartXRef = useRef<number | null>(null);
+  const touchEndXRef = useRef<number | null>(null);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentSlide(index);
+  }, []);
+
+  // Timer resets on manual navigation or pause/hover
+  useEffect(() => {
+    if (!isPlaying || isHovered) return;
+    const timer = setInterval(nextSlide, slideDuration);
+    return () => clearInterval(timer);
+  }, [isPlaying, isHovered, nextSlide, slideDuration, currentSlide]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndXRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartXRef.current || !touchEndXRef.current) return;
+    const distance = touchStartXRef.current - touchEndXRef.current;
+    const minSwipeDistance = 50;
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      prevSlide();
+    }
+    touchStartXRef.current = null;
+    touchEndXRef.current = null;
+  };
+
   return (
-    <section id="home" className="relative isolate overflow-hidden bg-[#f8fafc] text-[#0b1524]">
-      <div className="absolute inset-0 hero-mesh pointer-events-none opacity-70" />
+    <>
+      {/* ══════════════════════════════════════════════════════════════════════
+          1. FULL-BLEED HERO BANNER CAROUSEL (matching dante-new.vercel.app)
+         ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        id="home"
+        data-banner
+        className="hero hero--full hero--banner relative isolate w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[78vh] xl:min-h-[84vh] overflow-hidden bg-[#e8f1fb] text-[#0b1524] flex items-center"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        aria-roledescription="carousel"
+        aria-label="NICS Offshore Delivery Banner"
+      >
+        {/* ── Slide Stage: Simultaneous DOM Stack (zero blank flash on transition) ── */}
+        <div className="hero__stage absolute inset-0 z-0">
+          {slides.map((s, idx) => {
+            const isActive = currentSlide === idx;
 
-      {/*
-        The delivery floor carries the whole proposition — capacity you can see.
-        The gradients only need to protect the headline where the copy overlaps,
-        so they fade out well before the right edge and leave the photograph
-        readable rather than washing it to near-white.
-      */}
-      <div className="absolute inset-y-0 right-0 hidden w-[58%] lg:block">
-        <Image
-          src="/images/photos/delivery-floor.avif"
-          alt="NICS delivery floor: analysts working at workstations across an open-plan centre"
-          fill
-          priority
-          sizes="58vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc] via-[#f8fafc]/55 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#f8fafc]/70 via-transparent to-transparent" />
-      </div>
+            return (
+              <article
+                key={s.id}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`Slide ${idx + 1} of ${totalSlides}: ${s.badge}`}
+                aria-hidden={!isActive}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  isActive
+                    ? "opacity-100 z-10 pointer-events-auto"
+                    : "opacity-0 z-0 pointer-events-none"
+                }`}
+              >
+                {/* Full-Bleed Photograph (.hero__still) with Ken Burns Drift */}
+                <div className="hero__still absolute inset-0 overflow-hidden" aria-hidden="true">
+                  <Image
+                    src={s.image}
+                    alt={s.imageAlt}
+                    fill
+                    priority={idx === 0}
+                    sizes="100vw"
+                    className={`object-cover object-[75%_center] lg:object-center filter saturate-[1.06] contrast-[1.02] ${
+                      isActive ? "animate-banner-drift" : "scale-100"
+                    }`}
+                  />
+                </div>
 
-      <div className="relative mx-auto flex min-h-[700px] w-full max-w-[1600px] items-center px-5 pb-20 pt-36 sm:px-8 md:px-10 lg:min-h-[760px] lg:px-12 xl:px-14">
-        <motion.div
-          className="max-w-3xl lg:max-w-4xl"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="mb-6 text-xs font-bold uppercase tracking-[0.18em] text-[#0056b3] sm:text-sm">
-            Offshore delivery, made flexible
-          </p>
-          <h1 className="text-[2.75rem] font-extrabold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
-            Scale your business without building every function in-house.
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-stone-600 sm:text-xl">
-            Add experienced accounting, finance, and operational capacity when you need it—without the cost and complexity of expanding in-house.
-          </p>
+                {/* Calibrated Directional Scrim matching Dante — ensures 100% crisp contrast */}
+                <div
+                  className="hero__scrim absolute inset-0 z-[2] pointer-events-none hidden sm:block"
+                  style={{
+                    background:
+                      "linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 40%, rgba(255, 255, 255, 0.78) 60%, rgba(255, 255, 255, 0.28) 80%, rgba(255, 255, 255, 0) 100%)",
+                  }}
+                  aria-hidden="true"
+                />
+                {/* Mobile Scrim Layer */}
+                <div
+                  className="hero__scrim-mobile absolute inset-0 z-[2] pointer-events-none sm:hidden"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 55%, rgba(255, 255, 255, 0.75) 100%)",
+                  }}
+                  aria-hidden="true"
+                />
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#services"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-[#0056b3]/20 transition-colors hover:bg-[#004494] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0056b3]"
-            >
-              Explore our services
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] transition-colors hover:border-stone-400 hover:bg-stone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0056b3]"
-            >
-              <MapPin className="size-4 text-stone-500 group-hover:text-[#0056b3]" />
-              Discuss your needs
-            </a>
-          </div>
+                {/* Floating Content Overlay (.hero__overlay) with clean spacing */}
+                <div className="hero__overlay absolute inset-0 z-[3] flex items-center pt-24 pb-24 sm:pt-28 sm:pb-28 lg:pt-32 lg:pb-32">
+                  <Container size="default" className="w-full">
+                    <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
+                      {/* Eyebrow Pill */}
+                      <div className={isActive ? "animate-banner-rise-1" : ""}>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md px-3.5 sm:px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0056b3] shadow-xs">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0056b3] opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0056b3]" />
+                          </span>
+                          <span>{s.badge}</span>
+                          <span className="text-stone-300">·</span>
+                          <span className="text-stone-600 font-semibold">{s.badgeHighlight}</span>
+                        </div>
+                      </div>
 
-          {/* The desktop hero photograph sits behind the copy; below lg there is
-              no room for that, so the same image runs full width under the CTAs
-              rather than leaving small screens with no photography at all. */}
-          <div className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 lg:hidden">
-            <Image
-              src="/images/photos/delivery-floor.avif"
-              alt="NICS delivery floor: analysts working at workstations across an open-plan centre"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-        </motion.div>
-      </div>
-    </section>
+                      {/* Display Headline */}
+                      <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.10] tracking-[-0.03em] text-[#0b1524] text-balance max-w-2xl ${isActive ? "animate-banner-rise-2" : ""}`}>
+                        {s.headline}
+                      </h1>
+
+                      {/* Descriptive Subtitle */}
+                      <p className={`text-base sm:text-lg text-stone-700 leading-relaxed font-normal max-w-xl ${isActive ? "animate-banner-rise-3" : ""}`}>
+                        {s.description}
+                      </p>
+
+                      {/* Action CTAs */}
+                      <div className={`pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 ${isActive ? "animate-banner-rise-4" : ""}`}>
+                        <Link
+                          href={s.primaryCta.href}
+                          className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0056b3] px-7 py-3.5 sm:py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all duration-200 hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30 hover:-translate-y-0.5 active:translate-y-0"
+                        >
+                          <span>{s.primaryCta.label}</span>
+                          <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                        <Link
+                          href={s.secondaryCta.href}
+                          className="inline-flex items-center justify-center gap-2 rounded-xl border border-stone-300/90 bg-white/90 backdrop-blur-md px-6 py-3.5 sm:py-4 text-sm font-semibold text-[#0b1524] shadow-2xs transition-all duration-200 hover:border-stone-400 hover:bg-white hover:text-[#0056b3]"
+                        >
+                          <span>{s.secondaryCta.label}</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </Container>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* ── Standing Foot Controls (.hero__foot) exactly matching Dante ── */}
+        <div className="hero__foot absolute bottom-5 sm:bottom-7 left-0 right-0 z-20 pointer-events-none">
+          <Container size="default">
+            <div className="flex items-center gap-3 pointer-events-auto">
+              {/* Prev Button */}
+              <button
+                onClick={prevSlide}
+                type="button"
+                aria-label="Previous banner"
+                className="size-10 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
+              >
+                <ChevronLeft className="size-4" />
+              </button>
+
+              {/* Dots with Animated Progress Bar */}
+              <div className="flex items-center gap-2 px-1" role="tablist" aria-label="Choose a banner">
+                {slides.map((s, idx) => {
+                  const isActive = currentSlide === idx;
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      aria-label={`Go to banner ${idx + 1}: ${s.badge}`}
+                      onClick={() => goToSlide(idx)}
+                      className={`relative h-2.5 rounded-full transition-all duration-300 cursor-pointer overflow-hidden ${
+                        isActive ? "w-12 bg-stone-300/80" : "w-2.5 bg-stone-400/50 hover:bg-stone-600"
+                      }`}
+                    >
+                      {isActive && (
+                        <div
+                          key={`bar-${currentSlide}`}
+                          style={{
+                            animationDuration: `${slideDuration}ms`,
+                            animationPlayState: isPlaying && !isHovered ? "running" : "paused",
+                          }}
+                          className="h-full bg-[#0056b3] rounded-full animate-banner-fill"
+                        />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={nextSlide}
+                type="button"
+                aria-label="Next banner"
+                className="size-10 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
+              >
+                <ChevronRight className="size-4" />
+              </button>
+
+              {/* Play/Pause Toggle Button */}
+              <button
+                onClick={() => setIsPlaying(!isPlaying)}
+                type="button"
+                aria-label={isPlaying ? "Pause the banner" : "Play the banner"}
+                className="size-10 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md text-[#0b1524] hover:bg-white hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer ml-1"
+              >
+                {isPlaying ? (
+                  <Pause className="size-3.5 text-stone-700" />
+                ) : (
+                  <Play className="size-3.5 text-stone-700 fill-current ml-0.5" />
+                )}
+              </button>
+
+              {/* Counter */}
+              <span className="text-xs font-mono text-stone-500 font-semibold ml-2">
+                0{currentSlide + 1} / 0{totalSlides}
+              </span>
+            </div>
+          </Container>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          2. THE PROMISES RAIL (.section--promises) SEPARATELY BENEATH BANNER
+         ══════════════════════════════════════════════════════════════════════ */}
+      <section className="section section--promises relative z-10 border-b border-stone-200 bg-[#faf9f6]">
+        <Container size="default">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-stone-200/90 py-6 sm:py-7">
+            {promises.map((p) => (
+              <li key={p.n} className="py-3 sm:py-0 px-0 sm:px-4 lg:px-5 first:pl-0 last:pr-0">
+                <Link
+                  href={p.href}
+                  className="group block h-full transition-transform duration-200 hover:-translate-y-1"
+                >
+                  <span className="font-mono text-xs font-bold text-[#c89d5c] tracking-wider block mb-1">
+                    {p.n}
+                  </span>
+                  <span className="text-sm font-bold text-[#0b1524] group-hover:text-[#0056b3] transition-colors block line-clamp-1">
+                    {p.title}
+                  </span>
+                  <span className="text-xs text-stone-500 leading-relaxed block mt-1 line-clamp-2">
+                    {p.text}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0056b3] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all mt-2">
+                    Learn more
+                    <ArrowRight className="size-3" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+    </>
   );
 }

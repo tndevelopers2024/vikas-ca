@@ -47,7 +47,7 @@ export const footerColumns: FooterColumn[] = [
       { title: "Blogs & PR", href: "/blogs" },
       { title: "Flexible Capacity", href: "/#culture" },
       { title: "Professional Capability", href: "/#culture" },
-      { title: "ISO/IEC 27001 Information Security", href: "/#insights" },
+      { title: "ISO/IEC 27001 Information Security", href: "/information-technology" },
       { title: "Standards & Requirements", href: "/#careers-banner" },
       { title: "From One Person to Function", href: "/#careers-banner" },
     ],
@@ -64,6 +64,6 @@ export const footerColumns: FooterColumn[] = [
 
 export const legalLinks = [
   { title: "Privacy Policy", href: "/privacy-policy" },
-  { title: "Information Security", href: "/#insights" },
+  { title: "Information Security", href: "/information-technology" },
   { title: "Standards & Compliance", href: "/#careers-banner" },
 ];

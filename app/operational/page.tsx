@@ -21,12 +21,12 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Operational Services We Provide | NICS",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Explore the operational services we provide and our flexible outsourcing models at NICS. Inbound Call Centre, CRM Management, 24/7 Live Chat, Complaints Resolution, Client Onboarding, Data Validation, Technical Support, Claim Services, and KYC Verification.",
 };
 
-const service = servicesData.find((item) => item.id === "business-operations")!;
+const heroImage = "/images/bright/page-operational.jpg";
 
 const operationalServices = [
   {
@@ -258,88 +258,26 @@ export default function OperationalPage() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-20 lg:pb-28">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/#services" },
-                { label: "Operational Services" },
-              ]}
-            />
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Sparkles className="size-3.5" />
-                  Operational Services
-                </div>
-                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                  Operational Services We Provide
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-                  Your team at NICS can be an upgrade to your set of problem-solvers with an eye for detail and outstanding time and resource management capabilities. Coupled with the finest technology to ensure accuracy, you can bank on high performance from the very first time. From preparing, compiling and sorting files to scanning images and documents for swift documentation, tech support to everyday clerical work, you are covered.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Make an Enquiry
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50"
-                  >
-                    Explore 9 Services
-                  </a>
-                </div>
-
-                <div className="mt-10 grid grid-cols-3 gap-4 border-t border-stone-200 pt-6">
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">9</div>
-                    <div className="text-xs text-stone-500 font-medium">Operational Services</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">24/7</div>
-                    <div className="text-xs text-stone-500 font-medium">Support Capabilities</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">ISO 27001</div>
-                    <div className="text-xs text-stone-500 font-medium">Security Discipline</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
-                  <Image
-                    src={service.image}
-                    alt="Operational and business support"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/80 via-[#0b1524]/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <div className="inline-block rounded-md bg-[#0056b3]/80 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc7ff]">
-                      NICS Operations
-                    </div>
-                    <div className="mt-2 text-xl font-bold">Disciplined Execution & Reliable Performance</div>
-                    <p className="mt-1 text-xs text-slate-200">
-                      Expert problem-solvers equipped with modern tools and multi-tiered QA.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Operational" }]}
+          badge="Operational Services"
+          badgeHighlight="24/7 Availability"
+          title="Operational Services We Provide"
+          description="Scale your customer care, 24/7 inbound contact center, precision KYC verification, and proactive CRM support with high-performing offshore operational teams. At NICS, our trained specialists resolve customer queries, streamline account onboarding, and safeguard workflow accuracy from day one."
+          primaryCta={{ label: "Make an Enquiry", href: "/contact" }}
+          secondaryCta={{ label: "Explore Operations", href: "#services" }}
+          metrics={[
+            { value: "24/7", label: "Availability" },
+            { value: "SLA Backed", label: "Performance Standards" },
+            { value: "Multi-Channel", label: "Voice, Chat & Email" },
+          ]}
+          image={heroImage}
+          cardBadge="NICS Operations"
+          cardTitle="24/7 Contact Centre & KYC Support"
+          cardSubtitle="Scalable customer care and back-office operations with guaranteed SLA performance."
+          imageAlt="Customer operations specialist with headset managing CRM workflows in bright modern office"
+        />
 
         {/* SERVICES SECTION */}
         <section id="services" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">

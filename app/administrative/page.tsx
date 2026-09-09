@@ -20,6 +20,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
@@ -32,8 +33,7 @@ export const metadata: Metadata = {
     "Find out the administrative services we provide and the outsourcing models of NICS. Virtual Assistant, Data Entry, Back Office Admin, SOA Preparation, Transcription, and Mortgage Broking.",
 };
 
-/** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/photos/office-team.avif";
+const heroImage = "/images/bright/page-administrative.jpg";
 
 const administrativeServices = [
   {
@@ -229,88 +229,26 @@ export default function AdministrativePage() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
-          <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-          <Container size="default" className="relative pb-20 lg:pb-28">
-            <Breadcrumbs
-              className="mb-8"
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/#services" },
-                { label: "Administrative Services" },
-              ]}
-            />
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Sparkles className="size-3.5" />
-                  Administrative Services
-                </div>
-                <h1 className="mt-6 max-w-4xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
-                  Administrative Services We Provide
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
-                  Your team at NICS can enable you to seize new trends and opportunities by partnering with experts for superior process automation and optimizing all your routine administrative business processes.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Make an Enquiry
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50"
-                  >
-                    Explore Services
-                  </a>
-                </div>
-
-                <div className="mt-10 grid grid-cols-3 gap-4 border-t border-stone-200 pt-6">
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">7+</div>
-                    <div className="text-xs text-stone-500 font-medium">Core Admin Services</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">4</div>
-                    <div className="text-xs text-stone-500 font-medium">Outsourcing Models</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#0056b3]">100%</div>
-                    <div className="text-xs text-stone-500 font-medium">Process Automation</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
-                  <Image
-                    src={heroImage}
-                    alt="Administrative and operations support"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/80 via-[#0b1524]/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <div className="inline-block rounded-md bg-[#0056b3]/80 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc7ff]">
-                      NICS Operations
-                    </div>
-                    <div className="mt-2 text-xl font-bold">Superior Process Automation & Admin Optimization</div>
-                    <p className="mt-1 text-xs text-slate-200">
-                      Eliminate routine operational friction with dedicated, trained offshore specialists.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+        <PageBanner
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Administrative" }]}
+          badge="Administrative Services"
+          badgeHighlight="99.9% Data Accuracy"
+          title="Administrative Services We Provide"
+          description="Elevate organizational productivity with dedicated virtual assistants, end-to-end back office administration, and meticulous data validation. At NICS, our offshore administrative specialists manage scheduling, document preparation, database hygiene, and routine clerical workflows with speed and precision."
+          primaryCta={{ label: "Make an Enquiry", href: "/contact" }}
+          secondaryCta={{ label: "Explore Services", href: "#services" }}
+          metrics={[
+            { value: "99.9%", label: "Data Accuracy" },
+            { value: "Dedicated", label: "Virtual Assistants" },
+            { value: "ISO 27001", label: "Information Security" },
+          ]}
+          image={heroImage}
+          cardBadge="NICS Administration"
+          cardTitle="Dedicated Virtual Assistants & Data Hygiene"
+          cardSubtitle="High-accuracy clerical, scheduling, and document preparation workflows."
+          imageAlt="Executive virtual assistant modern sunlit desk setup with productivity tools"
+        />
 
         {/* SERVICES SECTION */}
         <section id="services" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">

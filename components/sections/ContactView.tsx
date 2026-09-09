@@ -24,6 +24,7 @@ import {
   Check,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { locationsData } from "@/data/locationsData";
@@ -96,51 +97,27 @@ export function ContactView() {
 
   return (
     <div className="bg-white text-[#0b1524]">
-      {/* 1. HERO SECTION */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-stone-200">
-        <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
-        <Container size="default" className="relative">
-          <Breadcrumbs
-            className="mb-8"
-            items={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-          />
-
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-              <Sparkles className="size-3.5" />
-              Get in Touch with NICS
-            </div>
-
-            <h1 className="mt-6 text-[2.5rem] font-extrabold tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524] leading-[1.03]">
-              Let’s build your offshore delivery team.
-            </h1>
-
-            <p className="mt-6 text-lg leading-relaxed text-stone-600">
-              Talk to our practice advisors about structuring dedicated capacity, compliance workflows, or administrative support. Retain full onshore client control while scaling your back-office effortlessly.
-            </p>
-
-            {/* Trust highlights */}
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 border-t border-stone-200 pt-8">
-              <div className="text-center sm:text-left">
-                <div className="text-2xl font-bold text-[#0056b3]">24 Hours</div>
-                <div className="text-xs text-stone-500 font-medium">Guaranteed Response SLA</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl font-bold text-[#0056b3]">10–14 Days</div>
-                <div className="text-xs text-stone-500 font-medium">Fast Team Onboarding</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl font-bold text-[#0056b3]">ISO 27001</div>
-                <div className="text-xs text-stone-500 font-medium">Aligned Security Standard</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl font-bold text-[#0056b3]">100%</div>
-                <div className="text-xs text-stone-500 font-medium">Onshore Control Retained</div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      {/* 1. HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
+      <PageBanner
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+        badge="Get in Touch with NICS"
+        badgeHighlight="24-Hour Response SLA"
+        title="Let’s build your offshore delivery team."
+        description="Talk to our practice advisory team about structuring dedicated capacity, compliance workflows, or back-office support. We operate under a guaranteed 24-hour response SLA so you can evaluate talent, confirm scope, and retain 100% onshore control from day one."
+        primaryCta={{ label: "Request Consultation", href: "#consultation-form" }}
+        secondaryCta={{ label: "Call +91 9632 466 477", href: "tel:+919632466477" }}
+        metrics={[
+          { value: "24h", label: "Guaranteed Response SLA" },
+          { value: "10–14d", label: "Fast Team Onboarding" },
+          { value: "ISO 27001", label: "Aligned Security Standard" },
+          { value: "100%", label: "Onshore Control Retained" },
+        ]}
+        image="/images/bright/page-contact.jpg"
+        cardBadge="Global Advisory"
+          cardTitle="Corporate Consultation Suite"
+          cardSubtitle="Connect directly with our leadership to evaluate scope, SLAs, and dedicated talent."
+          imageAlt="Corporate reception and practice consultation suite in bright architectural space"
+      />
 
       {/* 2. DIRECT COMMUNICATION CHANNELS */}
       <section className="border-b border-stone-200 bg-[#fbfbfa] py-12">
