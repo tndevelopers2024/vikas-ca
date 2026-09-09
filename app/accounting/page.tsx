@@ -139,6 +139,7 @@ const accountingServices = [
 const industrySolutions = [
   {
     title: "Accounting Industry",
+    anchor: "accounting-industry",
     icon: Building2,
     description:
       "Keep up with statutory obligations and tight deadlines without stretching margins — dedicated preparers handle the ledger work behind your client service.",
@@ -150,6 +151,7 @@ const industrySolutions = [
   },
   {
     title: "Business Enterprises",
+    anchor: "business-enterprises",
     icon: TrendingUp,
     description:
       "Run complete P2P and O2C cycles, inventory ledgers, and monthly reporting packs with a trained offshore finance team embedded in your systems.",
@@ -161,6 +163,7 @@ const industrySolutions = [
   },
   {
     title: "Financial Planning & Mortgage Brokers",
+    anchor: "financial-services",
     icon: Users,
     description:
       "Add paraplanning, virtual assistant, and loan processing capacity so advisers and brokers spend their time with clients rather than paperwork.",
@@ -404,7 +407,8 @@ export default function AccountingPage() {
                 return (
                   <div
                     key={ind.title}
-                    className="flex flex-col justify-between rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
+                    id={ind.anchor}
+                    className="scroll-mt-32 flex flex-col justify-between rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
                   >
                     <div>
                       <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">

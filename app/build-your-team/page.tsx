@@ -26,7 +26,6 @@ import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Build Your Team | NICS",
@@ -34,7 +33,8 @@ export const metadata: Metadata = {
     "Build your offshore team with NICS. Tell us the role, experience level, and location you need — accountancy, bookkeeping, SMSF, tax and compliance, paraplanning, mortgage broking, paralegal, and practice administration.",
 };
 
-const service = servicesData.find((item) => item.id === "accounting-practices")!;
+/** This page's own hero photograph — pages no longer share the category image. */
+const heroImage = "/images/photos/interview.avif";
 
 const roles = [
   {
@@ -111,7 +111,7 @@ const experienceLevels = [
   { label: "10+ years", detail: "Team lead calibre with oversight capability" },
 ];
 
-const locations = ["Australia", "United Kingdom", "United States"];
+const locations = ["Asia Pacific", "United Kingdom & Europe", "United States", "Middle East"];
 
 const steps = [
   {
@@ -203,7 +203,7 @@ export default function BuildYourTeamPage() {
               <div className="relative lg:col-span-5">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
                   <Image
-                    src={service.image}
+                    src={heroImage}
                     alt="Building an offshore team of accounting professionals"
                     fill
                     priority
@@ -320,7 +320,7 @@ export default function BuildYourTeamPage() {
 
                   <div className="mt-7 border-t border-stone-200 pt-5">
                     <p className="text-xs leading-relaxed text-stone-500">
-                      Delivery runs from our Chennai centre, with client relations in Sydney.
+                      Delivery runs from our Chennai centre, with client relations handled from Sydney.
                     </p>
                     <Link
                       href="/contact"

@@ -21,7 +21,6 @@ import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Who We Are | NICS",
@@ -29,7 +28,8 @@ export const metadata: Metadata = {
     "Our history, vision, mission, and culture. NICS is a business process outsourcing partner for accounting, compliance, operational, and administrative processes serving SMEs and accounting practices.",
 };
 
-const service = servicesData.find((item) => item.id === "financial-services")!;
+/** This page's own hero photograph — pages no longer share the category image. */
+const heroImage = "/images/photos/workspace-sunlit.avif";
 
 const historyParagraphs = [
   "Traditional BPO was built for large corporations. For small and medium businesses and independent accounting practitioners, the models on offer were too rigid, too large, and too far removed from how a practice actually works — so most firms simply carried the load themselves.",
@@ -187,7 +187,7 @@ export default function WhoWeArePage() {
               <div className="relative lg:col-span-5">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
                   <Image
-                    src={service.image}
+                    src={heroImage}
                     alt="The NICS delivery team"
                     fill
                     priority

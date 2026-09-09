@@ -22,7 +22,6 @@ import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Discover More | NICS FAQs",
@@ -30,7 +29,8 @@ export const metadata: Metadata = {
     "Learn more about NICS and find answers to common questions on outsourcing, confidentiality and data security, quality, employees and training, NDAs, and SLAs.",
 };
 
-const service = servicesData.find((item) => item.id === "financial-services")!;
+/** This page's own hero photograph — pages no longer share the category image. */
+const heroImage = "/images/photos/team-meeting.avif";
 
 const faqCategories = [
   {
@@ -236,7 +236,7 @@ export default function DiscoverMorePage() {
               <div className="relative lg:col-span-5">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
                   <Image
-                    src={service.image}
+                    src={heroImage}
                     alt="Talking through how an outsourcing partnership works"
                     fill
                     priority

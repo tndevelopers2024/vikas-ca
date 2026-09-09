@@ -24,7 +24,6 @@ import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Legal Process Outsourcing (LPO) | NICS",
@@ -32,7 +31,8 @@ export const metadata: Metadata = {
     "Explore Legal Process Outsourcing (LPO) services and delivery models at NICS. Contract Management, Contract Abstract & Summary, Contract Drafting, Due Diligence, General Legal Administration, and Legal Research.",
 };
 
-const service = servicesData.find((item) => item.id === "business-operations")!;
+/** This page's own hero photograph — pages no longer share the category image. */
+const heroImage = "/images/photos/team-collaboration.avif";
 
 const legalServices = [
   {
@@ -277,7 +277,7 @@ export default function LegalPage() {
               <div className="relative lg:col-span-5">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
                   <Image
-                    src="/images/operational-principle.avif"
+                    src={heroImage}
                     alt="Legal process outsourcing and contract support"
                     fill
                     priority

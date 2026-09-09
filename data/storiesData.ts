@@ -33,7 +33,7 @@ export const featuredCaseStudy: ClientStory = {
     name: "Operating Principle",
     title: "Shared Governance Framework",
     firm: "NICS Delivery Model",
-    avatar: "/images/team.avif"
+    avatar: "/images/photos/team-collaboration.avif"
   },
   synopsis: "There is no standard outsourcing package at NICS. Some clients need one accountant. Others need an entire finance support team. Some require assistance only during month-end or tax season, while others want a long-term offshore operation. Our delivery model is structured around your exact requirements.",
   stats: [
@@ -43,7 +43,7 @@ export const featuredCaseStudy: ClientStory = {
   ],
   linkText: "Discuss how we structure ownership",
   href: "#contact",
-  image: "/images/operational-principle.avif",
+  image: "/images/photos/team-meeting.avif",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Model"]
 };
 
@@ -56,7 +56,7 @@ export const podcastStory: ClientStory = {
   synopsis: "Access flexible capacity when workloads peak, professional capability across accounting and operations, structured delivery with SOPs, scalable resourcing, technology enablement in your existing software, quality review focus, cost efficiency, and true integration.",
   linkText: "Read about our client advantages",
   href: "#contact",
-  image: "/images/svg-webinar.svg",
+  image: "/images/photos/workshop-session.avif",
   tags: ["Flexible Capacity", "Structured Delivery", "Quality Focus", "Cost Efficiency"]
 };
 
@@ -71,10 +71,10 @@ export const peopleQAStory: ClientStory = {
     name: "Delivery Leadership",
     title: "Client Solutions Team",
     firm: "NICS",
-    avatar: "/images/team.avif"
+    avatar: "/images/photos/workspace-sunlit.avif"
   },
   linkText: "Explore our 4 engagement models",
   href: "#contact",
-  image: "/images/svg-team-interview.svg",
+  image: "/images/photos/interview.avif",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Transition"]
 };

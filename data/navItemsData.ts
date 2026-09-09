@@ -26,13 +26,16 @@ export interface NavItem {
  * header menu and the menu at the bottom of every page stay in step. Order is
  * deliberate: Services comes before Delivery Models.
  *
- * NOTE (awaiting client confirmation): the change request asks that the
- * "yellow" items in the content document — Legal & Professional Services,
- * Business Operations, KYC & Client Administration, Virtual & Administrative
- * Support — are not surfaced "at this point of time". Those map to the
- * /legal, /operational and /administrative pages below. The pages are built and
- * working, so they are left in the menu until the client confirms; hiding them
- * is a matter of deleting the three marked entries.
+ * NOTE: the change request asks that the "yellow" items in the content document
+ * — Legal & Professional Services, Business Operations, KYC & Client
+ * Administration, Virtual & Administrative Support — are not surfaced "at this
+ * point of time". Those map to /legal, /operational and /administrative, which
+ * are therefore absent from this list. The pages themselves are built and still
+ * routable; restoring them to the menu means adding their entries back below.
+ *
+ * The remaining Services labels follow the headings in the content document. The
+ * two that have no page of their own — SMSF & Audit, and Financial Services —
+ * deep-link into the sections that already cover them.
  */
 export const primaryNavItems: NavItem[] = [
   { label: "Home", href: "/" },
@@ -42,32 +45,24 @@ export const primaryNavItems: NavItem[] = [
     description: "Offshore support across core business functions.",
     links: [
       {
-        label: "Accounting Services",
+        label: "Accounting & Finance Operations",
         href: "/accounting",
         description: "Bookkeeping, AP/AR, inventory & management reporting",
       },
       {
-        label: "Compliance Services",
+        label: "Compliance & Practice Support",
         href: "/compliance",
         description: "Statutory filings, tax returns & audit back office",
       },
-      // Pending client confirmation — see note above.
       {
-        label: "Legal Process Outsourcing",
-        href: "/legal",
-        description: "Contract management, due diligence & legal research",
+        label: "SMSF & Audit Back-Office",
+        href: "/compliance#smsf-audit",
+        description: "Fund accounting through to audit documentation",
       },
-      // Pending client confirmation — see note above.
       {
-        label: "Operational Services",
-        href: "/operational",
-        description: "Customer administration, support & KYC verification",
-      },
-      // Pending client confirmation — see note above.
-      {
-        label: "Administrative Services",
-        href: "/administrative",
-        description: "Virtual assistance, data entry & back-office admin",
+        label: "Financial Planning & Mortgage Support",
+        href: "/accounting#financial-services",
+        description: "Paraplanning, loan processing & adviser support",
       },
     ],
   },

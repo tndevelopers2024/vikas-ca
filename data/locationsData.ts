@@ -28,28 +28,29 @@ export const locationsData: OfficeLocation[] = [
     leadPartnerTitle: "Office Leader",
     partnersCount: 12,
     specialties: ["Global Delivery Centre", "Accounting & Finance Ops", "SMSF & Audit Support", "Information Security"],
-    image: "/images/global-office.avif"
+    image: "/images/photos/office-team.avif"
   },
   {
-    id: "australia-pymble",
+    id: "sydney-client-relations",
     name: "Sydney",
-    state: "NSW",
-    country: "Australia",
+    state: "Client Relations",
+    country: "International",
     address: "Bridgeport Business Park, Pymble NSW 2073",
     phone: "+61 2 9000 1234",
     email: "hello@nics.com",
-    description: "Our Australian office manages client relationships, practice onboarding, and strategic alignment for Australian accounting firms and growing enterprises.",
+    description: "Our client relations office manages client relationships, practice onboarding, and strategic alignment for accounting firms and growing enterprises across our international markets.",
     leadPartner: "Boobalan Madhavan",
     leadPartnerTitle: "Founder & MD",
     partnersCount: 5,
-    specialties: ["Australian Practice Liaison", "Engagement Models", "AASB Process Alignment", "Client Governance"],
-    image: "/images/global-office.avif"
+    specialties: ["Client Practice Liaison", "Engagement Models", "Reporting Standards Alignment", "Client Governance"],
+    image: "/images/photos/sydney.avif"
   },
 ];
 
 /**
- * NOTE: the Sydney record is left exactly as it was. The change request removes
- * Marlton and asks for Australia-focused positioning to be dropped, but also
- * says "Sydney – let me check with the Rajiv", so the office details are a
- * pending client decision rather than something to rewrite here.
+ * NOTE: the change request removes Marlton and asks for the Australia-focused
+ * positioning to be dropped, so the Sydney record now reads as an international
+ * client relations office rather than an Australian one. The office's address
+ * and phone number are left untouched: "Sydney – let me check with the Rajiv"
+ * makes those a pending client decision.
  */

@@ -9,17 +9,23 @@ export function Hero() {
     <section id="home" className="relative isolate overflow-hidden bg-[#f8fafc] text-[#0b1524]">
       <div className="absolute inset-0 hero-mesh pointer-events-none opacity-70" />
 
-      <div className="absolute inset-y-0 right-0 hidden w-[54%] lg:block">
+      {/*
+        The delivery floor carries the whole proposition — capacity you can see.
+        The gradients only need to protect the headline where the copy overlaps,
+        so they fade out well before the right edge and leave the photograph
+        readable rather than washing it to near-white.
+      */}
+      <div className="absolute inset-y-0 right-0 hidden w-[58%] lg:block">
         <Image
-          src="/images/svg-hero.svg"
-          alt=""
+          src="/images/photos/delivery-floor.avif"
+          alt="NICS delivery floor: analysts working at workstations across an open-plan centre"
           fill
           priority
-          sizes="54vw"
+          sizes="58vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc] via-[#f8fafc]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#f8fafc] via-transparent to-[#f8fafc]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc] via-[#f8fafc]/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f8fafc]/70 via-transparent to-transparent" />
       </div>
 
       <div className="relative mx-auto flex min-h-[700px] w-full max-w-[1600px] items-center px-5 pb-20 pt-36 sm:px-8 md:px-10 lg:min-h-[760px] lg:px-12 xl:px-14">
@@ -54,6 +60,20 @@ export function Hero() {
               <MapPin className="size-4 text-stone-500 group-hover:text-[#0056b3]" />
               Discuss your needs
             </a>
+          </div>
+
+          {/* The desktop hero photograph sits behind the copy; below lg there is
+              no room for that, so the same image runs full width under the CTAs
+              rather than leaving small screens with no photography at all. */}
+          <div className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 lg:hidden">
+            <Image
+              src="/images/photos/delivery-floor.avif"
+              alt="NICS delivery floor: analysts working at workstations across an open-plan centre"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
           </div>
         </motion.div>
       </div>

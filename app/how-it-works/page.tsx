@@ -20,7 +20,6 @@ import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "How It Works | NICS",
@@ -28,7 +27,8 @@ export const metadata: Metadata = {
     "How outsourcing with NICS works — communicate your requirements, set up the process and onboarding, manage the team with daily reporting, and run a continuous feedback mechanism.",
 };
 
-const service = servicesData.find((item) => item.id === "accounting-practices")!;
+/** This page's own hero photograph — pages no longer share the category image. */
+const heroImage = "/images/photos/workshop-session.avif";
 
 const steps = [
   {
@@ -192,7 +192,7 @@ export default function HowItWorksPage() {
               <div className="relative lg:col-span-5">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
                   <Image
-                    src={service.image}
+                    src={heroImage}
                     alt="Onboarding and managing an offshore delivery team"
                     fill
                     priority

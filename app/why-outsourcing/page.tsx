@@ -20,7 +20,6 @@ import { FloatingActions } from "@/components/ui/FloatingActions";
 import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Why Outsourcing | NICS",
@@ -28,7 +27,8 @@ export const metadata: Metadata = {
     "Outsourcing answers your concerns on efficiency, timeliness and productivity. Retain full control of your offshore team while NICS handles recruitment, training, IT, compliance, and support services.",
 };
 
-const service = servicesData.find((item) => item.id === "business-operations")!;
+/** This page's own hero photograph — pages no longer share the category image. */
+const heroImage = "/images/photos/focused-work.avif";
 
 const pillars = [
   {
@@ -191,7 +191,7 @@ export default function WhyOutsourcingPage() {
               <div className="relative lg:col-span-5">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
                   <Image
-                    src={service.image}
+                    src={heroImage}
                     alt="Offshore team working as an extension of your business"
                     fill
                     priority

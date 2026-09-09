@@ -111,7 +111,7 @@ export function CareersBanner() {
             >
               <div className="relative aspect-[4/3] sm:aspect-[1/1] rounded-2xl overflow-hidden border border-stone-200 shadow-xl">
                 <Image
-                  src="/images/quality.avif"
+                  src="/images/photos/workshop-session.avif"
                   alt="NICS standards-aligned offshore delivery processes"
                   fill
                   className="object-cover"

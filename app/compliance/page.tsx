@@ -79,6 +79,7 @@ const complianceServices = [
 const industrySolutions = [
   {
     title: "Accounting Industry",
+    anchor: "accounting-industry",
     icon: Building2,
     description:
       "Give your practice consistent compliance capacity through peak season — workpapers, financial statements, and returns prepared to your templates and review standards.",
@@ -90,6 +91,7 @@ const industrySolutions = [
   },
   {
     title: "Business Enterprises",
+    anchor: "business-enterprises",
     icon: TrendingUp,
     description:
       "Keep statutory obligations on schedule with dedicated support for indirect tax returns, year-end reporting packs, and audit readiness across entities.",
@@ -101,6 +103,7 @@ const industrySolutions = [
   },
   {
     title: "SMSF Specialists",
+    anchor: "smsf-audit",
     icon: Scale,
     description:
       "A one-stop bundled service for SMSF administrators and specialist firms, covering fund accounting through to audit documentation under one delivery workflow.",
@@ -344,7 +347,8 @@ export default function CompliancePage() {
                 return (
                   <div
                     key={ind.title}
-                    className="flex flex-col justify-between rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
+                    id={ind.anchor}
+                    className="scroll-mt-32 flex flex-col justify-between rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
                   >
                     <div>
                       <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">

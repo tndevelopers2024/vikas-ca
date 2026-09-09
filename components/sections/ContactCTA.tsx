@@ -85,11 +85,11 @@ export function ContactCTA() {
             <div className="flex items-center gap-6 text-xs text-stone-600 pt-2">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#0056b3]" />
-                <span>National: +61 406 727 061</span>
+                <span>Head office: +91 9632 466 477</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#0056b3]" />
-                <span>info@nics.com</span>
+                <span>vikas@abcdca.com</span>
               </div>
             </div>
           </div>

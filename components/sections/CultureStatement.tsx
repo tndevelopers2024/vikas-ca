@@ -52,7 +52,7 @@ export function CultureStatement() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                 <Image
-                  src="/images/team.avif"
+                  src="/images/photos/team-collaboration.avif"
                   alt="NICS team collaborating with client practices"
                   fill
                   className="object-cover"
