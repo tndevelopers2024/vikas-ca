@@ -41,7 +41,7 @@ export const featuredCaseStudy: ClientStory = {
   ],
   linkText: "Discuss how we structure ownership",
   href: "#contact",
-  image: "/images/bright/story-governance.jpg",
+  image: "/images/nics/administrative-partners.jpg",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Model"]
 };
 
@@ -54,7 +54,7 @@ export const podcastStory: ClientStory = {
   synopsis: "Access flexible capacity when workloads peak, professional capability across accounting and operations, structured delivery with SOPs, scalable resourcing, technology enablement in your existing software, quality review focus, cost efficiency, and true integration.",
   linkText: "Read about our client advantages",
   href: "#contact",
-  image: "/images/bright/story-advantage.jpg",
+  image: "/images/nics/accounting-analyst.jpg",
   tags: ["Flexible Capacity", "Structured Delivery", "Quality Focus", "Cost Efficiency"]
 };
 
@@ -72,6 +72,6 @@ export const peopleQAStory: ClientStory = {
   },
   linkText: "Explore our 4 engagement models",
   href: "#contact",
-  image: "/images/bright/story-engagement.jpg",
+  image: "/images/nics/how-it-works-collaboration.jpg",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Transition"]
 };

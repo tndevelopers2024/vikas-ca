@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/bright/page-build-your-team.jpg";
+const heroImage = "/images/nics/build-team-celebration.jpg";
 
 const roles = [
   {
@@ -162,7 +162,7 @@ export default function BuildYourTeamPage() {
           cardBadge="Dedicated Specialists"
           cardTitle="Pre-Vetted Talent Selection"
           cardSubtitle="Interview and select accountants and specialists matched to your software stack."
-          imageAlt="Indian talent acquisition director and senior partners conducting recruitment consultation for pre-vetted accountants"
+          imageAlt="Team celebrating together around a boardroom table"
         />
 
         {/* ROLES */}

@@ -28,9 +28,8 @@ const slides = [
       label: "Discuss what to delegate",
       href: "#contact",
     },
-    image: "/images/bright/hero-indian-professionals.jpg",
-    imageAlt:
-      "Indian corporate advisory and finance professionals reviewing documents in a modern sunlit office",
+    image: "/images/nics/home-boardroom.jpg",
+    imageAlt: "Leadership team meeting around a boardroom table with skyline views",
   },
   {
     id: "systems-talent",
@@ -47,9 +46,8 @@ const slides = [
       label: "Compliance & SMSF",
       href: "/compliance",
     },
-    image: "/images/bright/hero-indian-accountant.jpg",
-    imageAlt:
-      "Indian professional accountant analyzing financial reports and cloud software at modern workstation",
+    image: "/images/nics/accounting-tax.jpg",
+    imageAlt: "Accountant preparing a tax return with a calculator and laptop",
   },
   {
     id: "dedicated-teams",
@@ -66,9 +64,8 @@ const slides = [
       label: "Why choose outsourcing",
       href: "/why-outsourcing",
     },
-    image: "/images/bright/hero-indian-dedicated-team.jpg",
-    imageAlt:
-      "Indian dedicated offshore delivery team lead and analysts collaborating at modern workstations",
+    image: "/images/nics/blog-video-call.jpg",
+    imageAlt: "Offshore team on a video call with their onshore colleagues",
   },
   {
     id: "client-ownership",
@@ -85,9 +82,8 @@ const slides = [
       label: "Schedule consultation",
       href: "#contact",
     },
-    image: "/images/bright/hero-governance-partnership.jpg",
-    imageAlt:
-      "Indian corporate executives and managing partner reviewing strategic documentation in bright boardroom",
+    image: "/images/nics/why-outsourcing-analysis.jpg",
+    imageAlt: "Two professionals reviewing financial charts and budget reports",
   },
 ];
 

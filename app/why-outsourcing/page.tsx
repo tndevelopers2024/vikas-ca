@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/bright/why-outsourcing-banner.jpg";
+const heroImage = "/images/nics/why-outsourcing-analysis.jpg";
 
 const pillars = [
   {
@@ -153,7 +153,7 @@ export default function WhyOutsourcingPage() {
           cardBadge="Your Extended Team"
           cardTitle="Retain 100% Onshore Control"
           cardSubtitle="Delegate routine processing while keeping client relationships, strategy, and judgment in-house."
-          imageAlt="Indian practice delivery director and international firm executive reviewing offshore capacity scaling in high-rise corporate suite"
+          imageAlt="Two professionals reviewing financial charts and budget reports at a desk"
         />
 
         {/* INTRO NARRATIVE */}
@@ -183,8 +183,8 @@ export default function WhyOutsourcingPage() {
                 <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-2.5 shadow-xl transition-all hover:shadow-2xl">
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
                     <Image
-                      src="/images/bright/why-outsourcing-collaboration.jpg"
-                      alt="Dedicated finance and accounting team collaborating at modern workstations"
+                      src="/images/nics/how-it-works-collaboration.jpg"
+                      alt="Finance team gathered around a laptop reviewing work together"
                       fill
                       className="object-cover"
                       sizes="(min-width: 1024px) 40vw, 90vw"

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "Find out the accounting services we provide at NICS — Bookkeeping, Inventory Management, Accounts Payable (P2P), Accounts Receivable (O2C), Management Reporting, Financial Planning support, and Mortgage Brokering.",
 };
 
-const heroImage = "/images/bright/page-accounting.jpg";
+const heroImage = "/images/nics/accounting-reporting.jpg";
 
 const accountingServices = [
   {
@@ -250,7 +250,7 @@ export default function AccountingPage() {
           cardBadge="NICS Accounting"
           cardTitle="Ledgers, Cycles & Reporting Handled End to End"
           cardSubtitle="Deadline-driven accounting capacity that protects your margins and elevates your client experience."
-          imageAlt="Indian Chartered Accountant reviewing general ledgers, trial balances, and cloud management dashboards in a modern sunlit office"
+          imageAlt="Accountant reviewing management reports and financial dashboards at a multi-screen workstation"
         />
 
         {/* SERVICES SECTION */}

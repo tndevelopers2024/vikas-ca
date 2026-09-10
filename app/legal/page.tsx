@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "Explore Legal Process Outsourcing (LPO) services and delivery models at NICS. Contract Management, Contract Abstract & Summary, Contract Drafting, Due Diligence, General Legal Administration, and Legal Research.",
 };
 
-const heroImage = "/images/bright/page-legal.jpg";
+const heroImage = "/images/nics/legal-contract.jpg";
 
 const legalServices = [
   {
@@ -232,7 +232,7 @@ export default function LegalPage() {
           cardBadge="NICS Legal Operations"
           cardTitle="Contract Management & Due Diligence"
           cardSubtitle="Paralegal support for law firms and corporate counsel under strict ISO 27001 data governance."
-          imageAlt="Indian corporate paralegal and legal counsel reviewing commercial contracts, MSAs, and due diligence dossiers"
+          imageAlt="Legal professional reviewing a contract beside the scales of justice"
         />
 
         {/* SERVICES SECTION */}

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/bright/page-who-we-are.jpg";
+const heroImage = "/images/nics/who-we-are-team.jpg";
 
 const historyParagraphs = [
   "Traditional BPO was built for large corporations. For small and medium businesses and independent accounting practitioners, the models on offer were too rigid, too large, and too far removed from how a practice actually works — so most firms simply carried the load themselves.",
@@ -144,7 +144,7 @@ export default function WhoWeArePage() {
           cardBadge="People Powered"
           cardTitle="Strategic Human Capital & SME Focus"
           cardSubtitle="Exceptional business acumen and delivery excellence scaling alongside your leadership."
-          imageAlt="Indian corporate founders and executive leadership team collaborating in the modern architectural headquarters"
+          imageAlt="Team joining hands over a shared worktable with laptops"
         />
 
         {/* HISTORY */}

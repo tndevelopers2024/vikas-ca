@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ShieldCheck, Mail, Lock, BadgeCheck } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
@@ -310,7 +311,8 @@ export default function PrivacyPolicyPage() {
                 { label: "Privacy Policy" },
               ]}
             />
-            <div className="max-w-3xl">
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="max-w-3xl lg:col-span-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
                 <BadgeCheck className="size-3.5" />
                 Legal
@@ -331,6 +333,20 @@ export default function PrivacyPolicyPage() {
                   Last updated: {LAST_UPDATED}
                 </span>
               </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xl">
+                <Image
+                  src="/images/nics/privacy-support.jpg"
+                  alt="Client support specialist handling an enquiry by phone at her desk"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
             </div>
           </Container>
         </section>

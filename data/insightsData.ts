@@ -43,7 +43,7 @@ export const featuredInsight: InsightArticle = {
   },
   featured: true,
   tags: ["ISO/IEC 27001", "Access Control", "Confidentiality", "Data Protection"],
-  image: "/images/bright/insight-security.jpg",
+  image: "/images/nics/blog-books.jpg",
   href: "#insights",
   fullContent: {
     overview: "When delegating sensitive financial, tax, or operational workflows offshore, information governance is paramount. NICS embeds ISO/IEC 27001 security principles directly into every layer of our operating architecture—from physical workstation controls in Chennai to encrypted cloud access protocols.",
@@ -85,7 +85,7 @@ export const secondaryInsights: InsightArticle[] = [
       office: "Chennai"
     },
     tags: ["Reporting Standards", "Tax Return Support", "Workpapers", "Accounting Practices"],
-    image: "/images/bright/insight-practice.jpg",
+    image: "/images/nics/blog-strategy.jpg",
     href: "#insights",
     fullContent: {
       overview: "Accounting practices face acute seasonal bottlenecks during peak indirect tax and year-end compliance cycles. Adding permanent local headcount often introduces unsustainable fixed overheads. NICS provides structured offshore accounting pods that integrate directly into your firm's existing software stack and working paper templates.",
@@ -129,7 +129,7 @@ export const secondaryInsights: InsightArticle[] = [
       office: "Chennai"
     },
     tags: ["SMSF", "Audit Files", "Lead Schedules", "Evidence Organisation"],
-    image: "/images/bright/insight-smsf.jpg",
+    image: "/images/nics/blog-sales-review.jpg",
     href: "#insights",
     fullContent: {
       overview: "Audit workflows and SMSF compliance are characterized by severe seasonal compression and strict documentation mandates under the auditing standards you work to. NICS delivers dedicated audit support analysts who meticulously assemble, cross-reference, and verify evidentiary files before auditor review.",
@@ -173,7 +173,7 @@ export const secondaryInsights: InsightArticle[] = [
       office: "Chennai"
     },
     tags: ["Scalable Model", "Offshore Function", "Dedicated Resource", "BOT Transition"],
-    image: "/images/bright/insight-scaling.jpg",
+    image: "/images/nics/blog-video-call.jpg",
     href: "#insights",
     fullContent: {
       overview: "Building offshore operational capability does not require high upfront capital or large initial team commitments. The most successful organizations begin with a single dedicated specialist, establish documented Standard Operating Procedures (SOPs), and systematically scale into a dedicated division.",

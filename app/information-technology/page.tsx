@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "With NICS outsourcing, your premise on IT security, privacy, information management and data integrity is upheld and sustained across every engagement model.",
 };
 
-const heroImage = "/images/bright/page-information-technology.jpg";
+const heroImage = "/images/nics/accounting-analyst.jpg";
 
 export default function InformationTechnologyPage() {
   return (
@@ -57,7 +57,7 @@ export default function InformationTechnologyPage() {
             { value: "256-bit", label: "Enterprise AES Encryption", unit: "SSL" },
           ]}
           image={heroImage}
-          imageAlt="Indian cybersecurity and cloud systems engineers monitoring enterprise server security and ISO 27001 protocols in Network Operations Center"
+          imageAlt="Specialist working at a desktop workstation in a modern delivery centre"
         />
 
         {/* Section 1: Overview & Value Narrative */}

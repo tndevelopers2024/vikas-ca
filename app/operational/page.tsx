@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Explore the operational services we provide and our flexible outsourcing models at NICS. Inbound Call Centre, CRM Management, 24/7 Live Chat, Complaints Resolution, Client Onboarding, Data Validation, Technical Support, Claim Services, and KYC Verification.",
 };
 
-const heroImage = "/images/bright/page-operational.jpg";
+const heroImage = "/images/nics/operational-support-desk.jpg";
 
 const operationalServices = [
   {

@@ -113,11 +113,11 @@ export function ContactView() {
           { value: "ISO 27001", label: "Aligned Security Standard" },
           { value: "100%", label: "Onshore Control Retained" },
         ]}
-        image="/images/bright/page-contact.jpg"
+        image="/images/nics/contact-connect.jpg"
         cardBadge="Global Advisory"
         cardTitle="Corporate Consultation Suite"
         cardSubtitle="Connect directly with our leadership to evaluate scope, SLAs, and dedicated talent."
-        imageAlt="Indian corporate client consultation suite and practice advisory reception at Chennai delivery headquarters"
+        imageAlt="Professional in a suit using a smartphone to get in touch"
       />
 
       {/* 2. DIRECT COMMUNICATION CHANNELS */}

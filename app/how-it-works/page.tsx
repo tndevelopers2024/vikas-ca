@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     "How outsourcing with NICS works — communicate your requirements, set up the process and onboarding, manage the team with daily reporting, and run a continuous feedback mechanism.",
 };
 
-/** Indian genre hero image for how-it-works onboarding page */
-const heroImage = "/images/bright/page-how-it-works.jpg";
+/** This page's own hero photograph, from the NICS image set. */
+const heroImage = "/images/nics/how-it-works-presentation.jpg";
 
 const steps = [
   {
@@ -153,7 +153,7 @@ export default function HowItWorksPage() {
           cardBadge="Seamless Onboarding"
           cardTitle="Structured 4-Step Integration"
           cardSubtitle="From initial communication to daily execution and ongoing feedback loops."
-          imageAlt="Indian operations delivery managers mapping client onboarding milestones and 4-step workflow integration on a planning board"
+          imageAlt="Team lead presenting a plan at a whiteboard to colleagues"
         />
 
         {/* STEPS TIMELINE */}

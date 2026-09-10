@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/bright/page-discover-more.jpg";
+const heroImage = "/images/nics/discover-analytics.jpg";
 
 const faqCategories = [
   {
@@ -198,7 +198,7 @@ export default function DiscoverMorePage() {
           cardBadge="Client Knowledge Hub"
           cardTitle="Operational Guidance & SLAs"
           cardSubtitle="Everything you need to know about IT security, data privacy, and governance."
-          imageAlt="Indian practice delivery director and operations team reviewing ISO 27001 governance frameworks and SLA metrics"
+          imageAlt="Analyst reviewing financial charts on a laptop beside a calculator"
         />
 
         {/* FAQ SECTION */}

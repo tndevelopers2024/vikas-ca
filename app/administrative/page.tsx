@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "Find out the administrative services we provide and the outsourcing models of NICS. Virtual Assistant, Data Entry, Back Office Admin, SOA Preparation, Transcription, and Mortgage Broking.",
 };
 
-const heroImage = "/images/bright/page-administrative.jpg";
+const heroImage = "/images/nics/administrative-review.jpg";
 
 const administrativeServices = [
   {
@@ -247,7 +247,7 @@ export default function AdministrativePage() {
           cardBadge="NICS Administration"
           cardTitle="Dedicated Virtual Assistants & Data Hygiene"
           cardSubtitle="High-accuracy clerical, scheduling, and document preparation workflows."
-          imageAlt="Indian administrative coordinator and executive support specialist managing multi-channel scheduling and back-office operations"
+          imageAlt="Administrative specialists reviewing work together at a laptop in a bright office"
         />
 
         {/* SERVICES SECTION */}

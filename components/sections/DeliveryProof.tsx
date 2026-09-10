@@ -48,8 +48,8 @@ export function DeliveryProof() {
           <div className="lg:col-span-6">
             <div className="relative aspect-[4/3] overflow-hidden border border-[#e4e2da]">
               <Image
-                src="/images/bright/delivery-floor.jpg"
-                alt="Accountants at work on the NICS delivery floor in Chennai"
+                src="/images/nics/operational-support-desk.jpg"
+                alt="Specialists with headsets at work on a modern delivery floor"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

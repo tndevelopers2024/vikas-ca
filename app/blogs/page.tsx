@@ -74,11 +74,11 @@ export default async function BlogsPage({ searchParams }: PageProps) {
             { value: `${categories.length}`, label: "Practice Categories" },
             { value: `${latestNewsItems.length}`, label: "Industry Updates" },
           ]}
-          image="/images/bright/page-blogs.jpg"
+          image="/images/nics/blog-library.jpg"
           cardBadge="Industry Intelligence"
           cardTitle="Briefings From the Delivery Floor"
           cardSubtitle="Technical practice notes, ATO updates, and operational analysis."
-          imageAlt="Indian financial research analysts and practice directors reviewing statutory compliance briefings and industry insights"
+          imageAlt="Laptop beside a stack of reference books in a library setting"
         />
 
         {/* ARTICLES */}
