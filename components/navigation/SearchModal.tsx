@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Link from "next/link";
-import { Search, X, ArrowRight, Building, FileText, Briefcase, MapPin, Sparkles } from "lucide-react";
+import { Search, X, ArrowRight, Building, FileText, Briefcase, MapPin, BadgeCheck } from "lucide-react";
 import { servicesData } from "@/data/servicesData";
 import { locationsData } from "@/data/locationsData";
 import { latestNewsItems, secondaryInsights, featuredInsight } from "@/data/insightsData";
@@ -182,11 +182,11 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="search-modal-title"
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-slate-950/40 backdrop-blur-sm animate-fade-in-fast"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-slate-950/40 animate-fade-in-fast"
       onClick={handleClose}
     >
       <div
-        className="w-full max-w-2xl bg-white shadow-2xl border border-stone-200 overflow-hidden transform transition-all animate-slide-down rounded-2xl"
+        className="w-full max-w-2xl bg-white shadow-sm border border-stone-200 overflow-hidden transform transition-all animate-slide-down rounded-sm"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
@@ -222,7 +222,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           {query.trim() === "" ? (
             <div>
               <div className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-stone-400 uppercase mb-3">
-                <Sparkles className="w-3.5 h-3.5 text-[#0056b3]" />
+                <BadgeCheck className="w-3.5 h-3.5 text-[#0056b3]" />
                 Popular Searches
               </div>
               <div className="flex flex-wrap gap-2 mb-6">
@@ -244,7 +244,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Link
                   href="#services"
                   onClick={handleClose}
-                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-xl transition-colors"
+                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-sm transition-colors"
                 >
                   <Briefcase className="w-4 h-4 mb-2 text-[#0056b3] group-hover:text-white transition-colors" />
                   <span className="text-xs font-semibold block">5 Core Services</span>
@@ -252,7 +252,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Link
                   href="#locations"
                   onClick={handleClose}
-                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-xl transition-colors"
+                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-sm transition-colors"
                 >
                   <MapPin className="w-4 h-4 mb-2 text-[#0056b3] group-hover:text-white transition-colors" />
                   <span className="text-xs font-semibold block">3 Global Offices</span>
@@ -260,7 +260,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Link
                   href="#insights"
                   onClick={handleClose}
-                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-xl transition-colors"
+                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-sm transition-colors"
                 >
                   <FileText className="w-4 h-4 mb-2 text-[#0056b3] group-hover:text-white transition-colors" />
                   <span className="text-xs font-semibold block">The Bottom Line</span>
@@ -268,7 +268,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 <Link
                   href="#stories"
                   onClick={handleClose}
-                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-xl transition-colors"
+                  className="p-3 bg-stone-50 hover:bg-[#0056b3] hover:text-white text-[#0b1524] group border border-stone-200 rounded-sm transition-colors"
                 >
                   <Building className="w-4 h-4 mb-2 text-[#0056b3] group-hover:text-white transition-colors" />
                   <span className="text-xs font-semibold block">Client Stories</span>

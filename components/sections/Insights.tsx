@@ -8,7 +8,7 @@ import {
   ArrowRight,
   User,
   ChevronUp,
-  Sparkles,
+  BadgeCheck,
   CheckCircle2,
   BookOpen,
   ShieldCheck,
@@ -56,7 +56,7 @@ export function Insights() {
         {/* Major Editorial Grid: 1 Dominant Feature + 3 Secondary Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 items-start">
           {/* Dominant Flagship Publication Card */}
-          <div className="lg:col-span-6 xl:col-span-6 bg-white text-[#0b1524] rounded-xl overflow-hidden border border-stone-200 shadow-md flex flex-col justify-between group transition-all duration-300">
+          <div className="lg:col-span-6 xl:col-span-6 bg-white text-[#0b1524] rounded-sm overflow-hidden border border-stone-200 shadow-md flex flex-col justify-between group transition-all duration-300">
             <div className="relative aspect-[16/10] w-full overflow-hidden">
               <Image
                 src={featuredInsight.image}
@@ -142,7 +142,7 @@ export function Insights() {
                       {featuredInsight.fullContent.bullets && (
                         <div className="p-3.5 bg-[#f0f7ff] border border-[#bcd7f5] rounded-xs space-y-2">
                           <div className="text-xs font-bold text-[#0056b3] uppercase tracking-wider flex items-center gap-1.5">
-                            <Sparkles className="w-3.5 h-3.5 text-[#0056b3]" />
+                            <BadgeCheck className="w-3.5 h-3.5 text-[#0056b3]" />
                             Security Highlights
                           </div>
                           <ul className="space-y-1.5 text-xs text-stone-700">
@@ -293,7 +293,7 @@ export function Insights() {
                           {art.fullContent.bullets && (
                             <div className="p-3.5 bg-[#f0f7ff] border border-[#bcd7f5] rounded-xs space-y-2">
                               <div className="text-[11px] font-bold text-[#0056b3] uppercase tracking-wider flex items-center gap-1.5">
-                                <Sparkles className="w-3.5 h-3.5 text-[#0056b3]" />
+                                <BadgeCheck className="w-3.5 h-3.5 text-[#0056b3]" />
                                 Key Practice Highlights
                               </div>
                               <ul className="space-y-1.5 text-[11px] text-stone-700">

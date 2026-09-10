@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Mic, Building2, UserCheck, Play, Quote } from "lucide-react";
+import { Building2, ShieldCheck, Layers, Quote } from "lucide-react";
 import { featuredCaseStudy, podcastStory, peopleQAStory } from "@/data/storiesData";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -28,9 +28,9 @@ export function ClientStories() {
             <div className="lg:col-span-6 relative aspect-[16/11] lg:aspect-auto min-h-[340px] lg:min-h-[480px]">
               <Image
                 src={featuredCaseStudy.image}
-                alt="NICS offshore team delivery model"
+                alt="NICS Shared Governance & Clear Ownership Framework"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -88,7 +88,7 @@ export function ClientStories() {
                   <div className="grid grid-cols-3 gap-4 pt-4 border-t border-stone-200">
                     {featuredCaseStudy.stats.map((st, i) => (
                       <div key={i}>
-                        <div className="text-xl sm:text-2xl font-extrabold text-[#0b1524] font-mono">
+                        <div className="text-xl sm:text-2xl font-extrabold text-[#0b1524] tabular-nums">
                           {st.value}
                         </div>
                         <div className="text-[11px] text-stone-500 font-medium mt-0.5">
@@ -111,29 +111,25 @@ export function ClientStories() {
 
         {/* Secondary Story Cards: Podcast & People Q&A */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Card 1: Talking Family Business Podcast */}
+          {/* Card 1: The NICS Advantage */}
           <div className="bg-white border border-[#e7e5dc] rounded-xs p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-stone-400 transition-colors group">
             <div className="space-y-4">
               <div className="relative aspect-[16/9] w-full rounded-xs overflow-hidden">
                 <Image
                   src={podcastStory.image}
-                  alt="Talking Family Business podcast recording studio"
+                  alt="Why Businesses Work With NICS — Accounting & Finance Capability"
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute top-3 left-3">
                   <Badge variant="navy" size="sm">
                     {podcastStory.badge}
                   </Badge>
                 </div>
-                <div className="absolute bottom-3 right-3 p-2.5 bg-[#0056b3] text-white rounded-full shadow-lg group-hover:scale-110 transition-transform">
-                  <Play className="w-4 h-4 fill-current" />
-                </div>
               </div>
 
               <div className="text-xs font-semibold uppercase tracking-wider text-[#0056b3] flex items-center gap-1.5">
-                <Mic className="w-3.5 h-3.5" />
+                <ShieldCheck className="w-3.5 h-3.5" />
                 {podcastStory.category}
               </div>
 
@@ -164,17 +160,16 @@ export function ClientStories() {
             </div>
           </div>
 
-          {/* Card 2: People Q&A with Will & Rémi */}
+          {/* Card 2: Engagement Models */}
           <div className="bg-white border border-[#e7e5dc] rounded-xs p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-stone-400 transition-colors group">
             <div className="space-y-4">
               <div className="relative aspect-[16/9] w-full rounded-xs overflow-hidden">
                 <Image
                   src={peopleQAStory.image}
-                  alt="NICS professionals Will and Rémi collaborating"
+                  alt="NICS Delivery Models — Dedicated Resources, Managed Functions, and BOT"
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute top-3 left-3">
                   <Badge variant="navy" size="sm">
                     {peopleQAStory.badge}
@@ -183,7 +178,7 @@ export function ClientStories() {
               </div>
 
               <div className="text-xs font-semibold uppercase tracking-wider text-[#0056b3] flex items-center gap-1.5">
-                <UserCheck className="w-3.5 h-3.5" />
+                <Layers className="w-3.5 h-3.5" />
                 {peopleQAStory.category}
               </div>
 

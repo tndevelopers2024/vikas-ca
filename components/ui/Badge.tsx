@@ -20,7 +20,7 @@ export function Badge({
     gold: "bg-[#c89d5c]/15 text-[#916524] border border-[#c89d5c]/30",
     stone: "bg-[#f4f3ef] text-[#2b2926] border border-[#e7e5dc]",
     outline: "bg-transparent text-stone-700 border border-stone-300",
-    white: "bg-white/90 text-[#0b1524] backdrop-blur-sm border border-white/40 shadow-xs",
+    white: "bg-white/90 text-[#0b1524] border border-white/40 shadow-xs",
   };
 
   const sizeStyles = {

@@ -18,13 +18,13 @@ import {
   ShieldCheck,
   Zap,
   ArrowUpRight,
-  Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -299,7 +299,7 @@ export default function OperationalPage() {
                 return (
                   <div
                     key={item.id}
-                    className={`group relative flex flex-col justify-between rounded-2xl border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                    className={`group relative flex flex-col justify-between rounded-sm border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm ${
                       isFeatured
                         ? "border-[#0056b3]/40 shadow-md ring-1 ring-[#0056b3]/20 md:col-span-2 lg:col-span-1"
                         : "border-stone-200 hover:border-[#0056b3]/30"
@@ -307,7 +307,7 @@ export default function OperationalPage() {
                   >
                     <div>
                       <div className="flex items-center justify-between">
-                        <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3] transition-colors group-hover:bg-[#0056b3] group-hover:text-white">
+                        <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3] transition-colors group-hover:bg-[#0056b3] group-hover:text-white">
                           <IconComponent className="size-6" />
                         </div>
                         <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-semibold text-stone-600">
@@ -371,10 +371,10 @@ export default function OperationalPage() {
                 return (
                   <div
                     key={ind.title}
-                    className="flex flex-col justify-between rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
+                    className="flex flex-col justify-between rounded-sm border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
                   >
                     <div>
-                      <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                      <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                         <IndIcon className="size-6" />
                       </div>
                       <h3 className="mt-5 text-xl font-bold text-[#0b1524]">{ind.title}</h3>
@@ -428,7 +428,7 @@ export default function OperationalPage() {
               {outsourcingModels.map((model) => (
                 <div
                   key={model.title}
-                  className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
+                  className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
                 >
                   <div>
                     <div className="flex items-center justify-between">
@@ -468,42 +468,11 @@ export default function OperationalPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <ShieldCheck className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Let’s set up a truly customisable model to help you structure and run your process efficiently.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              Partner with experienced operational specialists to optimize customer touchpoints, automate workflows, and maintain pristine dataset accuracy.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Make an Enquiry
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href="#services"
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Review All 9 Services
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

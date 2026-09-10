@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronRight, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronRight, BadgeCheck } from "lucide-react";
 import clsx from "clsx";
 import { servicesData } from "@/data/servicesData";
 import { Container } from "@/components/ui/Container";
@@ -59,7 +59,7 @@ export function Services() {
                 >
                   <div
                     className={clsx(
-                      "text-xs font-mono font-bold tracking-wider mb-1.5 transition-colors",
+                      "text-xs tabular-nums font-bold tracking-wider mb-1.5 transition-colors",
                       isActive ? "text-[#0056b3]" : "text-stone-400 group-hover:text-stone-600"
                     )}
                   >
@@ -101,7 +101,7 @@ export function Services() {
                 className="space-y-6"
               >
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono font-bold bg-[#0b1524] text-white px-2.5 py-1 rounded-xs">
+              <span className="text-xs tabular-nums font-bold bg-[#0b1524] text-white px-2.5 py-1 rounded-xs">
                 SERVICE {activeService.number}
               </span>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#0056b3]">
@@ -123,7 +123,7 @@ export function Services() {
 
             {/* Key Metric Card */}
             <div className="p-4 bg-white border border-[#e7e5dc] rounded-xs flex items-center gap-4">
-              <div className="text-2xl xl:text-3xl font-extrabold text-[#0056b3] font-mono whitespace-nowrap">
+              <div className="text-2xl xl:text-3xl font-extrabold text-[#0056b3] tabular-nums whitespace-nowrap">
                 {activeService.keyMetric.value}
               </div>
               <div className="text-xs text-stone-600 font-medium">
@@ -134,7 +134,7 @@ export function Services() {
             {/* Sub-services Grid */}
             <div className="pt-4 border-t border-[#e7e5dc]">
               <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#0056b3]" />
+                <BadgeCheck className="w-3.5 h-3.5 text-[#0056b3]" />
                 Key Practice Capabilities
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -173,7 +173,7 @@ export function Services() {
 
           {/* Right Visual & Case Study Column */}
           <div className="col-span-5 space-y-6">
-            <div className="relative aspect-[4/3] xl:aspect-[5/4] w-full overflow-hidden rounded-xl border border-stone-300 shadow-md group">
+            <div className="relative aspect-[4/3] xl:aspect-[5/4] w-full overflow-hidden rounded-sm border border-stone-300 shadow-md group">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeService.id}
@@ -235,7 +235,7 @@ export function Services() {
                   aria-expanded={isExpanded}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#0056b3]">
+                    <span className="text-xs tabular-nums font-bold text-[#0056b3]">
                       {svc.number}
                     </span>
                     <div>

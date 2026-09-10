@@ -22,7 +22,7 @@ export function ContactCTA() {
   const activeOffice = locationsData.find((l) => l.id === selectedOffice) || locationsData[0];
 
   return (
-    <section id="contact" className="bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] text-[#0b1524] py-24 lg:py-36 relative overflow-hidden border-b border-stone-200">
+    <section id="contact" className="bg-[#f8f7f4] text-[#0b1524] py-24 lg:py-36 relative overflow-hidden border-b border-stone-200">
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0056b3]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0099db]/5 rounded-full blur-3xl pointer-events-none" />
@@ -51,10 +51,10 @@ export function ContactCTA() {
             </div>
 
             {/* Direct office quick details card */}
-            <div className="p-6 bg-white border border-stone-200 shadow-sm rounded-xl space-y-4">
+            <div className="p-6 bg-white border border-stone-200 shadow-sm rounded-sm space-y-4">
               <div className="flex items-center justify-between text-xs text-stone-500 border-b border-stone-100 pb-3">
                 <span className="uppercase tracking-wider font-bold text-stone-600">Direct Office Connection</span>
-                <span className="text-[#0056b3] font-mono font-bold">3 GLOBAL OFFICES</span>
+                <span className="text-[#0056b3] tabular-nums font-bold">3 GLOBAL OFFICES</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -95,7 +95,7 @@ export function ContactCTA() {
           </div>
 
           {/* Right Column: Advisory Inquiry Form */}
-          <div className="lg:col-span-6 bg-white text-[#0b1524] p-8 sm:p-10 rounded-2xl shadow-xl border border-stone-200">
+          <div className="lg:col-span-6 bg-white text-[#0b1524] p-8 sm:p-10 rounded-sm shadow-sm border border-stone-200">
             {isSubmitted ? (
               <div className="py-12 text-center space-y-4">
                 <div className="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center mx-auto">

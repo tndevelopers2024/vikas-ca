@@ -7,7 +7,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Layers,
-  Sparkles,
+  BadgeCheck,
   Award,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -68,8 +68,8 @@ export function CareersBanner() {
       <Container className="relative z-10">
         <div className="max-w-4xl space-y-6">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-white/90 backdrop-blur-md px-3.5 py-1.5 shadow-2xs">
-            <Sparkles className="size-4 text-[#0056b3]" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-white px-3.5 py-1.5 shadow-2xs">
+            <BadgeCheck className="size-4 text-[#0056b3]" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#0056b3]">
               Capacity & Quality Assurance
             </span>
@@ -101,10 +101,10 @@ export function CareersBanner() {
               return (
                 <div
                   key={h.title}
-                  className="group rounded-2xl bg-white/90 backdrop-blur-md p-4 border border-stone-200/90 shadow-2xs transition-all duration-300 hover:border-[#0056b3]/40 hover:shadow-md hover:-translate-y-0.5"
+                  className="group rounded-sm bg-white p-4 border border-stone-200/90 shadow-2xs transition-all duration-300 hover:border-[#0056b3]/40 hover:shadow-md hover:-translate-y-0.5"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className="p-2.5 bg-[#0056b3]/10 text-[#0056b3] rounded-xl group-hover:bg-[#0056b3] group-hover:text-white transition-colors duration-200">
+                    <div className="p-2.5 bg-[#0056b3]/10 text-[#0056b3] rounded-sm group-hover:bg-[#0056b3] group-hover:text-white transition-colors duration-200">
                       <Icon className="size-4" />
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">
@@ -125,21 +125,21 @@ export function CareersBanner() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <Link
                 href="#stories"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-[#0056b3]/20 transition-all hover:bg-[#004494] hover:shadow-lg hover:shadow-[#0056b3]/30"
+                className="group inline-flex items-center justify-center gap-2 rounded-sm bg-[#0056b3] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-[#0056b3]/20 transition-all hover:bg-[#004494] hover:shadow-lg hover:shadow-[#0056b3]/30"
               >
                 <span>Explore Delivery Models</span>
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white/90 backdrop-blur-md px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-2xs transition-all hover:border-stone-400 hover:bg-white hover:text-[#0056b3]"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1524] shadow-2xs transition-all hover:border-stone-400 hover:bg-white hover:text-[#0056b3]"
               >
                 <span>Discuss What to Move Offshore</span>
               </Link>
             </div>
 
             {/* Quick Metrics in Glass Pill */}
-            <div className="flex items-center gap-4 bg-white/80 backdrop-blur-md border border-stone-200/90 rounded-xl px-4 py-2 shadow-2xs">
+            <div className="flex items-center gap-4 bg-white border border-stone-200/90 rounded-sm px-4 py-2 shadow-2xs">
               {bannerStats.map((stat, idx) => (
                 <div key={idx} className="flex items-baseline gap-1.5 first:pl-0 pl-3 border-l first:border-l-0 border-stone-200">
                   <span className="text-sm font-extrabold text-[#0056b3]">{stat.value}</span>

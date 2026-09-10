@@ -49,3 +49,48 @@ Each file is referenced by path only. Drop a replacement at the same filename
 and the site picks it up — no code change needed. Keep the 3:2 landscape aspect
 ratio to avoid re-cropping, and run the new photograph through the grade script
 so it stays consistent with the rest.
+
+---
+
+# Home-page section photographs
+
+The photographs behind the home page sit in `public/images/bright/` and are
+rebuilt by `scripts/build_home_photos.py`, which holds the authoritative
+name → Pexels-id mapping. Each frame was chosen for the subject of the section
+it appears in — the previous set had US IRS tax forms behind an Australian SMSF
+service and a Lady Justice statue behind a standards notice, which is the
+failure mode this mapping exists to prevent.
+
+All are Pexels, under the Pexels License (free for commercial use, attribution
+not required). Credited here for traceability only.
+
+| File | Pexels | Section | Subject |
+|---|---|---|---|
+| announce-security.jpg | 1181354 | Announcement slider | Controlled access to the data floor |
+| announce-standards.jpg | 8171198 | Announcement slider | Reviewing documents against a reporting pack |
+| announce-scale.jpg | 7693700 | Announcement slider | Team working through printed schedules |
+| culture-team.jpg | 7108454 | Culture statement | Diverse team around a meeting table |
+| service-accounting.jpg | 8296970 | Services — Accounting & Finance | Ledger, calculator and working papers |
+| service-practice.jpg | 5439162 | Services — Practice Support | Firm-side review meeting |
+| service-smsf.jpg | 8441811 | Services — SMSF | Adviser walking clients through their fund |
+| service-finance.jpg | 8145328 | Services — Finance | Management reporting spread across the table |
+| service-operations.jpg | 8867246 | Services — Operations | Back-office support floor |
+| careers-quality.jpg | 7658433 | Careers banner | Delivery floor in India |
+| location-chennai.jpg | 9432498 | Locations | Chennai skyline (pairs with the Sydney frame) |
+| insight-security.jpg | 442150 | Insights | Access control at the network rack |
+| insight-practice.jpg | 7947999 | Insights | Reporting dashboard on the desk |
+| insight-smsf.jpg | 7821566 | Insights | Marked-up balance sheet |
+| insight-scaling.jpg | 7654129 | Insights | One person becoming a team |
+
+## Rebuilding or replacing one
+
+Change the id in `scripts/build_home_photos.py` and re-run it; the script
+downloads (cached in `/tmp/pexels-src`), crops to the 1200×900 card shape and
+applies the same fixed grade as the rest of the library, so a replacement stays
+consistent with the set:
+
+    python3 scripts/build_home_photos.py
+
+The hero frames (`hero-*.jpg`, 1376×768) and story frames (`story-*.jpg`, 1376×768)
+are custom generated high-end corporate photography matching the brand aesthetic
+and are **not** managed by this script.

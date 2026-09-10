@@ -12,13 +12,12 @@ import {
   Rocket,
   BadgeCheck,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -28,8 +27,10 @@ export const metadata: Metadata = {
     "How outsourcing with NICS works — communicate your requirements, set up the process and onboarding, manage the team with daily reporting, and run a continuous feedback mechanism.",
 };
 
-/** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/bright/page-how-it-works.jpg";
+/** This page's own hero plate — the four-step cycle drawn to sit behind the
+ *  banner scrim. Source vector: page-how-it-works-flow.svg (same directory).
+ *  The original photograph remains at /images/bright/page-how-it-works.jpg. */
+const heroImage = "/images/bright/page-how-it-works-flow.jpg";
 
 const steps = [
   {
@@ -123,7 +124,7 @@ const howItWorks = [
   },
   {
     title: "Best Practices",
-    icon: Sparkles,
+    icon: BadgeCheck,
     blurb: "What the firms who get the most from outsourcing do differently.",
     href: null,
   },
@@ -184,10 +185,10 @@ export default function HowItWorksPage() {
                         <StepIcon className="size-6" />
                       </div>
 
-                      <div className="grid gap-8 rounded-2xl border border-stone-200 bg-white p-8 transition-all hover:border-[#0056b3]/30 hover:shadow-lg lg:grid-cols-12 lg:gap-12 lg:p-10">
+                      <div className="grid gap-8 rounded-sm border border-stone-200 bg-white p-8 transition-all hover:border-[#0056b3]/30 hover:shadow-lg lg:grid-cols-12 lg:gap-12 lg:p-10">
                         <div className="lg:col-span-7">
                           <div className="flex items-center gap-4">
-                            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3] lg:hidden">
+                            <div className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3] lg:hidden">
                               <StepIcon className="size-6" />
                             </div>
                             <span className="text-2xl font-black text-[#0056b3]/30">{step.number}</span>
@@ -210,7 +211,7 @@ export default function HowItWorksPage() {
                         </div>
 
                         <div className="lg:col-span-5">
-                          <div className="rounded-xl border border-stone-200 bg-[#fbfbfa] p-6">
+                          <div className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-6">
                             <p className="text-xs font-bold uppercase tracking-wider text-stone-400">
                               What Happens In This Step
                             </p>
@@ -266,7 +267,7 @@ export default function HowItWorksPage() {
                 const cardBody = (
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-[#8bc7ff]">
+                      <div className="flex size-11 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
                         <ItemIcon className="size-5" />
                       </div>
                       {isCurrent && (
@@ -289,14 +290,14 @@ export default function HowItWorksPage() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
+                    className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
                   >
                     {cardBody}
                   </Link>
                 ) : (
                   <div
                     key={item.title}
-                    className={`flex flex-col justify-between rounded-2xl border p-6 backdrop-blur-sm ${
+                    className={`flex flex-col justify-between rounded-sm border p-6 ${
                       isCurrent ? "border-[#8bc7ff]/40 bg-white/10" : "border-white/10 bg-white/5"
                     }`}
                   >
@@ -309,42 +310,11 @@ export default function HowItWorksPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <ShieldCheck className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Let’s set up a truly customisable model to help you structure and run your process efficiently.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              Step one is a conversation about your objectives, your goals, and the skill set your business actually needs. Everything after that follows the process above.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Make an Enquiry
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href="#steps"
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Revisit the Four Steps
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

@@ -18,13 +18,13 @@ import {
   UserRoundCheck,
   Rocket,
   Globe2,
-  Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -184,10 +184,10 @@ export default function BuildYourTeamPage() {
                 return (
                   <div
                     key={role.id}
-                    className="group flex flex-col justify-between rounded-2xl border border-stone-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#0056b3]/30 hover:shadow-xl"
+                    className="group flex flex-col justify-between rounded-sm border border-stone-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#0056b3]/30 hover:shadow-sm"
                   >
                     <div>
-                      <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3] transition-colors group-hover:bg-[#0056b3] group-hover:text-white">
+                      <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3] transition-colors group-hover:bg-[#0056b3] group-hover:text-white">
                         <RoleIcon className="size-6" />
                       </div>
                       <h3 className="mt-5 text-lg font-bold text-[#0b1524] transition-colors group-hover:text-[#0056b3]">
@@ -229,7 +229,7 @@ export default function BuildYourTeamPage() {
                   {experienceLevels.map((level) => (
                     <div
                       key={level.label}
-                      className="rounded-xl border border-stone-200 bg-[#fbfbfa] p-5 transition-all hover:border-[#0056b3]/30 hover:bg-white"
+                      className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-5 transition-all hover:border-[#0056b3]/30 hover:bg-white"
                     >
                       <div className="text-base font-bold text-[#0056b3]">{level.label}</div>
                       <p className="mt-1.5 text-xs leading-relaxed text-stone-600">{level.detail}</p>
@@ -239,8 +239,8 @@ export default function BuildYourTeamPage() {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                <div className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-8">
+                  <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                     <Globe2 className="size-6" />
                   </div>
                   <h3 className="mt-5 text-xl font-bold text-[#0b1524]">Select Location</h3>
@@ -297,10 +297,10 @@ export default function BuildYourTeamPage() {
                 return (
                   <div
                     key={step.number}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
+                    className="rounded-sm border border-white/10 bg-white/5 p-7 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
                   >
                     <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-[#8bc7ff]">
+                      <div className="flex size-11 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
                         <StepIcon className="size-5" />
                       </div>
                       <span className="text-2xl font-black text-[#8bc7ff]/40">{step.number}</span>
@@ -325,42 +325,11 @@ export default function BuildYourTeamPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <ShieldCheck className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Tell us the role. We will bring you the people.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              Send us the role, the experience band, and the software you work in. We will come back with screened candidates for you to interview — and you decide who joins your team.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Request Candidates
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href="#roles"
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Browse All Roles
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

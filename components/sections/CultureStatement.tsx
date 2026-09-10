@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, Sparkles, HeartHandshake, Compass } from "lucide-react";
+import { Users, BadgeCheck, HeartHandshake, Compass } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 
@@ -19,7 +19,7 @@ const pillars = [
     description: "Access specialist accounting, finance, SMSF, audit, and operational resources to support new and existing service lines.",
   },
   {
-    icon: Sparkles,
+    icon: BadgeCheck,
     title: "Dedicated Delivery",
     description: "Process high-volume activities efficiently, complete project-based assignments, or establish a dedicated offshore function.",
   },
@@ -50,7 +50,7 @@ export function CultureStatement() {
           {/* Left: Image */}
           <div className="lg:col-span-5 order-2 lg:order-1 reveal-left">
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-sm ring-1 ring-black/5">
                 <Image
                   src="/images/bright/culture-team.jpg"
                   alt="Authentic, diverse team of business and finance professionals collaborating in bright natural light"
@@ -68,8 +68,7 @@ export function CultureStatement() {
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute -bottom-6 -right-4 sm:right-6 p-4 bg-white text-[#0b1524] rounded-2xl max-w-xs shadow-2xl border border-stone-200 hidden sm:block"
-                style={{ backdropFilter: "blur(12px)" }}
+                className="absolute -bottom-6 -right-4 sm:right-6 p-4 bg-white text-[#0b1524] max-w-xs border border-[#e4e2da] hidden sm:block"
               >
                 <div className="text-[10px] font-bold text-[#0056b3] uppercase tracking-wider mb-1">
                   Our Core Objective
@@ -85,9 +84,9 @@ export function CultureStatement() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-                className="absolute -top-4 -left-4 p-3 bg-[#0056b3] rounded-xl shadow-lg"
+                className="absolute -top-4 -left-4 p-3 bg-[#0056b3] rounded-sm shadow-lg"
               >
-                <div className="text-xl font-black text-white font-mono">100%</div>
+                <div className="text-xl font-black text-white tabular-nums">100%</div>
                 <div className="text-[9px] text-blue-200 uppercase tracking-wider">Tailored</div>
               </motion.div>
             </div>
@@ -127,7 +126,7 @@ export function CultureStatement() {
                   const Icon = p.icon;
                   return (
                     <div key={p.title} className="space-y-2 group">
-                      <div className="p-2.5 bg-white rounded-xl w-fit text-[#0056b3] border border-[#e6e4dc] group-hover:bg-[#0056b3] group-hover:text-white group-hover:border-[#0056b3] transition-all duration-300 shadow-xs">
+                      <div className="p-2.5 bg-white rounded-sm w-fit text-[#0056b3] border border-[#e6e4dc] group-hover:bg-[#0056b3] group-hover:text-white group-hover:border-[#0056b3] transition-all duration-300 shadow-xs">
                         <Icon className="w-4 h-4" />
                       </div>
                       <h3 className="text-sm font-bold text-[#0b1524]">{p.title}</h3>

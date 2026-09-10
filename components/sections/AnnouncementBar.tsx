@@ -30,8 +30,8 @@ export function AnnouncementBar() {
 
   const getCategoryIcon = (cat: string) => {
     switch (cat) {
-      case "Recognition": return <Award className="w-4 h-4 text-[#c89d5c]" />;
-      case "Sustainability": return <Globe className="w-4 h-4 text-[#00a3e0]" />;
+      case "Recognition": return <Award className="w-4 h-4 text-[#0056b3]" />;
+      case "Sustainability": return <Globe className="w-4 h-4 text-[#0099db]" />;
       default: return <Users className="w-4 h-4 text-[#0056b3]" />;
     }
   };
@@ -46,7 +46,7 @@ export function AnnouncementBar() {
       aria-label="Featured announcements"
     >
       {/* Subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0056b3]/[0.03] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0  pointer-events-none" />
 
       <Container size="default" className="relative z-10 py-6 sm:py-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
@@ -57,7 +57,7 @@ export function AnnouncementBar() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0056b3] animate-pulse-slow" />
                 Featured
               </div>
-              <div className="font-mono font-bold text-[#0b1524] text-xl">
+              <div className="tabular-nums font-bold text-[#0b1524] text-xl">
                 {String(currentIndex + 1).padStart(2, "0")}
                 <span className="text-stone-400 text-sm font-normal">
                   {" "}/ {String(total).padStart(2, "0")}
@@ -113,7 +113,7 @@ export function AnnouncementBar() {
           </div>
 
           {/* Right: image thumbnail */}
-          <div className="hidden md:block relative w-28 h-18 flex-shrink-0 overflow-hidden rounded-xl border border-stone-200 shadow-md">
+          <div className="hidden md:block relative w-28 h-18 flex-shrink-0 overflow-hidden rounded-sm border border-stone-200 shadow-md">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -138,7 +138,7 @@ export function AnnouncementBar() {
         {/* Progress bar */}
         <div className="w-full bg-stone-200 h-[2px] mt-5 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-[#0056b3] to-[#0099db]"
+            className="h-full bg-[#0056b3]"
             animate={{ width: `${((currentIndex + 1) / total) * 100}%` }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           />

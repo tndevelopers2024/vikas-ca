@@ -9,13 +9,13 @@ import {
   Newspaper,
   Tag,
   User,
-  Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import {
@@ -88,7 +88,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
               {/* Sidebar */}
               <aside className="lg:col-span-3 lg:order-last">
                 <div className="lg:sticky lg:top-24 space-y-6">
-                  <div className="rounded-2xl border border-stone-200 bg-white p-6">
+                  <div className="rounded-sm border border-stone-200 bg-white p-6">
                     <div className="flex items-center gap-2">
                       <Tag className="size-4 text-[#0056b3]" />
                       <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Categories</p>
@@ -124,7 +124,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
                     </nav>
                   </div>
 
-                  <div className="rounded-2xl border border-[#0056b3]/20 bg-white p-6">
+                  <div className="rounded-sm border border-[#0056b3]/20 bg-white p-6">
                     <h2 className="text-base font-bold text-[#0b1524]">Talk to our team</h2>
                     <p className="mt-2 text-xs leading-relaxed text-stone-600">
                       Have a question these notes do not answer? Put it to the people who do the work.
@@ -164,7 +164,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
                 {lead && (
                   <Link
                     href={`/blogs/${lead.id}`}
-                    className="group mt-8 block overflow-hidden rounded-2xl border border-stone-200 bg-white transition-all hover:border-[#0056b3]/30 hover:shadow-xl"
+                    className="group mt-8 block overflow-hidden rounded-sm border border-stone-200 bg-white transition-all hover:border-[#0056b3]/30 hover:shadow-sm"
                   >
                     <div className="grid md:grid-cols-2">
                       <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[280px]">
@@ -230,7 +230,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
                       <Link
                         key={article.id}
                         href={`/blogs/${article.id}`}
-                        className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white transition-all hover:-translate-y-1 hover:border-[#0056b3]/30 hover:shadow-xl"
+                        className="group flex flex-col overflow-hidden rounded-sm border border-stone-200 bg-white transition-all hover:-translate-y-1 hover:border-[#0056b3]/30 hover:shadow-sm"
                       >
                         <div className="relative aspect-[16/9]">
                           <Image
@@ -299,7 +299,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
               </p>
             </div>
 
-            <div className="mt-12 divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="mt-12 divide-y divide-white/10 rounded-sm border border-white/10 bg-white/5">
               {latestNewsItems.map((item) => (
                 <div key={item.id} className="flex flex-col gap-3 p-6 sm:flex-row sm:items-center sm:gap-6">
                   <span className="shrink-0 rounded bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-[#8bc7ff] sm:w-52">
@@ -316,57 +316,11 @@ export default async function BlogsPage({ searchParams }: PageProps) {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-16 lg:py-20">
-          {/* soft accent so the panel is not a flat wash */}
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-
-          <Container size="default" className="relative">
-            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                  <Newspaper className="size-3.5" />
-                  From Reading to Doing
-                </div>
-
-                <h2 className="mt-5 max-w-xl text-3xl font-extrabold leading-[1.15] tracking-tight text-[#0b1524] sm:text-4xl">
-                  Found something that maps to your practice?
-                </h2>
-
-                <p className="mt-4 max-w-lg text-base leading-relaxed text-stone-600">
-                  These notes come from the team that runs the work. If one of them describes a problem you are carrying, the next step is a short conversation about what to move offshore first.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5">
-                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#0056b3] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-                  >
-                    Make an Enquiry
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-
-                  <Link
-                    href="/how-it-works"
-                    className="group inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white px-7 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-                  >
-                    See How It Works
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

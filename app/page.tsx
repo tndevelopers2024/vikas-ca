@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Preloader } from "@/components/ui/Preloader";
+import React, { useEffect } from "react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Header } from "@/components/navigation/Header";
 import { Hero } from "@/components/sections/Hero";
+import { SoftwareStrip } from "@/components/sections/SoftwareStrip";
 import { AnnouncementBar } from "@/components/sections/AnnouncementBar";
+import { DeliveryProof } from "@/components/sections/DeliveryProof";
 import { CultureStatement } from "@/components/sections/CultureStatement";
 import { Services } from "@/components/sections/Services";
 import { ClientStories } from "@/components/sections/ClientStories";
@@ -14,28 +14,17 @@ import { CareersBanner } from "@/components/sections/CareersBanner";
 import { Locations } from "@/components/sections/Locations";
 import { Insights } from "@/components/sections/Insights";
 import { LatestNews } from "@/components/sections/LatestNews";
-import { ContactCTA } from "@/components/sections/ContactCTA";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 
 export default function HomePage() {
-  const [preloaderDone, setPreloaderDone] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: -999, y: -999 });
-
-  const handlePreloaderComplete = useCallback(() => {
-    setPreloaderDone(true);
-  }, []);
-
   /**
-   * Homepage sections only mount once the preloader finishes, so arriving from
-   * another page on a link like "/#stories" leaves the browser with nothing to
-   * scroll to and the visitor stranded at the top. Honour the hash as soon as
-   * the sections are actually on the page, and on any later hash change.
+   * Sections render immediately now that the preloader is gone, but a link like
+   * "/#stories" can still land before layout settles, so keep retrying until the
+   * target exists. Also honour any later hash change.
    */
   useEffect(() => {
-    if (!preloaderDone) return;
-
     let frame = 0;
 
     const scrollToHash = () => {
@@ -60,90 +49,75 @@ export default function HomePage() {
       cancelAnimationFrame(frame);
       window.removeEventListener("hashchange", scrollToHash);
     };
-  }, [preloaderDone]);
-
-  // Cursor glow tracker
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handler, { passive: true });
-    return () => window.removeEventListener("mousemove", handler);
   }, []);
 
   return (
     <>
-      {/* ── Cinematic Preloader ──────────────────────── */}
-      <Preloader onComplete={handlePreloaderComplete} />
-
-      {/* ── Ambient cursor glow (desktop only) ──────── */}
-      <div
-        className="cursor-glow hidden lg:block"
-        style={{
-          left: cursorPos.x,
-          top: cursorPos.y,
-        }}
-      />
-      <PremiumCursor />
-
       {/* ── Main site content ───────────────────────── */}
       <div className="flex flex-col min-h-screen bg-white text-[#0f172a]">
-        {/* Floating Navbar */}
         <Header />
 
         {/* Main scrollable content */}
         <ScrollReveal>
           <main>
-            {/* 1. Cinematic parallax hero */}
+            {/* 1. Hero */}
             <Hero />
 
-            {/* 2. News slider */}
+            {/* 2. What software we work in — the fastest category signal */}
+            <SoftwareStrip />
+
+            {/* 3. Announcements */}
             <div className="reveal">
               <AnnouncementBar />
             </div>
 
-            {/* 3. Culture statement */}
+            {/* 4. Who does the work, and where */}
+            <div className="reveal">
+              <DeliveryProof />
+            </div>
+
+            {/* 5. Culture statement */}
             <div className="reveal">
               <CultureStatement />
             </div>
 
-            {/* 4. Interactive services explorer */}
+            {/* 6. Services */}
             <div className="reveal">
               <Services />
             </div>
 
-            {/* 5. Client stories & case studies */}
+            {/* 7. Client stories */}
             <div className="reveal">
               <ClientStories />
             </div>
 
-            {/* 6. Careers banner */}
+            {/* 8. Careers */}
             <div className="reveal">
               <CareersBanner />
             </div>
 
-            {/* 7. Locations explorer */}
+            {/* 9. Locations */}
             <div className="reveal">
               <Locations />
             </div>
 
-            {/* 8. Insights magazine */}
+            {/* 10. Insights */}
             <div className="reveal">
               <Insights />
             </div>
 
-            {/* 9. Latest News & Announcements */}
+            {/* 11. Latest news */}
             <div className="reveal">
               <LatestNews />
             </div>
 
-            {/* 10. Final contact CTA */}
+            {/* 12. Contact */}
             <div className="reveal">
-              <ContactCTA />
+              <ReadyToScaleCTA />
             </div>
           </main>
 
-          {/* Floating footer */}
+          {/* Footer */}
           <Footer />
 
           <FloatingActions />

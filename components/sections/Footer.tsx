@@ -1,138 +1,213 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowUp, Globe } from "lucide-react";
-import { footerColumns, legalLinks } from "@/data/footerData";
-import { Container } from "@/components/ui/Container";
-import { BrandLockup } from "@/components/ui/BrandLockup";
+import { Phone, Clock, Mail } from "lucide-react";
+import {
+  quickLinks,
+  officeAddresses,
+  contactDetails,
+  socialLinks,
+} from "@/data/footerData";
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer className="relative mt-12 mx-4 mb-4 rounded-3xl overflow-hidden glass-footer border border-stone-200 shadow-xs bg-[#f8fafc]">
-      {/* Top gradient accent */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0056b3]/20 to-transparent" />
+    <footer
+      className="relative bg-[#003366] text-white bg-cover bg-no-repeat overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/footer-bg.jpg')",
+        backgroundColor: "#013b68",
+        backgroundPosition: "50% 0",
+      }}
+    >
+      <div className="max-w-[1340px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 pb-6">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
+          {/* ── Column 1: Brand Info & Certification ─────────────── */}
+          <div className="lg:pr-8 flex flex-col justify-start">
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/accsource-logo-white.png"
+                alt="AccSource"
+                width={260}
+                height={58}
+                priority
+                className="h-auto w-[210px] sm:w-[230px] select-none"
+              />
+            </Link>
 
-      {/* Ambient background glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 40% at 20% 80%, rgba(0,86,179,0.03) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 80% 20%, rgba(0,153,219,0.02) 0%, transparent 60%)",
-        }}
-      />
-
-      <Container size="default" className="relative z-10 pt-14 pb-8">
-        {/* ── Brand + Social + Back-to-top ────────────────── */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-10 border-b border-stone-200">
-          <div className="space-y-4 max-w-sm">
-            <BrandLockup
-              className="items-start"
-              logoClassName="h-[72px]"
-              wordClassName="text-[13px] tracking-[0.36em] indent-[0.36em]"
-            />
-            <p className="text-[13px] text-stone-600 leading-relaxed">
-              Flexible offshore delivery model for accounting practices and growing businesses.<br />
-              Scale your capacity without the cost and complexity of building every function internally.
+            <p className="mt-6 text-[13.5px] leading-[1.65] text-white/70">
+              AccSource specialises in operational, administrative, compliance
+              and accounting business processes for SME’s, Accounting firms,
+              Financial planners and Mortgage Brokers.
             </p>
 
-            {/* Social */}
-            <div className="flex items-center gap-2 pt-1">
-              {[
-                {
-                  label: "LinkedIn",
-                  href: "https://www.linkedin.com/company/nics/",
-                  icon: (
-                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z" />
-                    </svg>
-                  ),
-                },
-              ].map((s) => (
-                <motion.a
-                  key={s.label}
-                  href={s.href}
-                  target={s.href.startsWith("http") ? "_blank" : undefined}
-                  rel={s.href.startsWith("http") ? "noreferrer" : undefined}
-                  aria-label={s.label}
-                  className="p-2 bg-white hover:bg-[#0056b3] text-stone-600 hover:text-white rounded-lg border border-stone-200 hover:border-[#0056b3] shadow-2xs transition-all duration-200"
-                  whileHover={{ scale: 1.1, y: -1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {s.icon}
-                </motion.a>
+            <div className="mt-6 pt-1">
+              <Image
+                src="/images/iso-27001-certified.png"
+                alt="ISO/IEC 27001 Information Security Management CERTIFIED"
+                width={240}
+                height={122}
+                className="h-auto w-[180px] sm:w-[195px] select-none opacity-95"
+              />
+            </div>
+          </div>
+
+          {/* ── Column 2: QUICK LINKS ────────────────────────────── */}
+          <div className="lg:border-l lg:border-r lg:border-[#7b9aa3]/40 lg:px-8">
+            <h4 className="font-sans text-[17px] font-bold uppercase tracking-[0.06em] text-white mb-6">
+              QUICK LINKS
+            </h4>
+            <ul className="space-y-3.5">
+              {quickLinks.map((link) => (
+                <li key={link.title} className="relative pl-3.5">
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-0 top-[7.5px] size-[5px] rounded-full bg-[#00a99d]"
+                  />
+                  <Link
+                    href={link.href}
+                    className="text-[13.5px] text-white/70 hover:text-white hover:underline transition-colors block leading-snug"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Column 3: ADDRESS ────────────────────────────────── */}
+          <div className="lg:px-8">
+            <h4 className="font-sans text-[17px] font-bold uppercase tracking-[0.06em] text-white mb-6">
+              ADDRESS
+            </h4>
+            <div className="space-y-5 text-[13.5px] leading-[1.65] text-white/70">
+              {officeAddresses.map((addr) => (
+                <div key={addr.country}>
+                  {addr.href ? (
+                    <a
+                      href={addr.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-sans font-bold text-white hover:underline block"
+                    >
+                      {addr.country}
+                    </a>
+                  ) : (
+                    <p className="font-sans font-bold text-white">
+                      {addr.country}
+                    </p>
+                  )}
+                  {addr.lines.map((line, idx) => (
+                    <p key={idx} className="mt-0.5">
+                      {line}
+                    </p>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Back to top */}
-          <motion.button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 self-start px-4 py-2 bg-white hover:bg-stone-100 text-[12px] font-semibold text-stone-700 hover:text-[#0b1524] rounded-xl border border-stone-200 shadow-2xs transition-all cursor-pointer"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Back to top
-            <ArrowUp className="w-3.5 h-3.5 text-[#0056b3]" />
-          </motion.button>
-        </div>
-
-        {/* ── Directory Columns ────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-b border-stone-200">
-          {footerColumns.map((col, idx) => (
-            <div key={idx} className="space-y-4">
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#0b1524]">
-                {col.heading}
-              </h3>
-              <ul className="space-y-2">
-                {col.links.map((link, li) => (
-                  <li key={li}>
-                    <Link
-                      href={link.href}
-                      className="text-[13px] text-stone-600 hover:text-[#0056b3] transition-colors underline-grow"
+          {/* ── Column 4: CONTACT & STAY CONNECTED ────────────────── */}
+          <div className="lg:border-l lg:border-r lg:border-[#7b9aa3]/40 lg:px-8 flex flex-col justify-between">
+            <div>
+              <h4 className="font-sans text-[17px] font-bold uppercase tracking-[0.06em] text-white mb-6">
+                CONTACT
+              </h4>
+              <div className="space-y-2.5 text-[13.5px] text-white/70">
+                {contactDetails.map((item, idx) => {
+                  const isSecondBlock = idx === 3;
+                  return (
+                    <div
+                      key={idx}
+                      className={`flex items-center gap-2.5 ${
+                        isSecondBlock ? "pt-2" : ""
+                      }`}
                     >
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                      {item.type === "phone" && (
+                        <Phone className="size-3.5 shrink-0 text-white/80" />
+                      )}
+                      {item.type === "clock" && (
+                        <Clock className="size-3.5 shrink-0 text-white/80" />
+                      )}
+                      {item.type === "email" && (
+                        <Mail className="size-3.5 shrink-0 text-white/80" />
+                      )}
+
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="hover:text-white hover:underline transition-colors break-all"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span>{item.label}</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          ))}
+
+            {/* STAY CONNECTED */}
+            <div className="mt-8 pt-1">
+              <h4 className="font-sans text-[17px] font-bold uppercase tracking-[0.06em] text-white mb-4">
+                STAY CONNECTED
+              </h4>
+              <div className="flex items-center gap-2.5">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.platform}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.platform}
+                    className="size-10 rounded-full bg-white/10 hover:bg-[#00a99d] text-white flex items-center justify-center transition-all duration-200"
+                  >
+                    {s.platform === "LinkedIn" && (
+                      <svg
+                        className="size-4 fill-current"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+                      </svg>
+                    )}
+                    {s.platform === "Twitter" && (
+                      <svg
+                        className="size-4 fill-current"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                      </svg>
+                    )}
+                    {s.platform === "Facebook" && (
+                      <svg
+                        className="size-4 fill-current"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* ── NICS Professional Responsibility Notice ──────────────────── */}
-        <div className="py-6 border-b border-stone-200 space-y-2">
-          <div className="flex items-center gap-2 text-[12px] text-stone-800 font-semibold">
-            <Globe className="w-3.5 h-3.5 text-[#0056b3]" />
-            Professional Standards & Responsibility Notice
-          </div>
-          <p className="text-[11px] text-stone-600 leading-relaxed max-w-3xl">
-            NICS provides back-office, operational and administrative support. Where professional registration, review, advice or lodgement is required, the relevant responsibility remains with your registered practitioner, entity, or appropriately authorised licensee in your jurisdiction. Our role is to strengthen your delivery capability—not replace your professional responsibility.
-          </p>
-          <p className="text-[11px] text-stone-500">
-            Offshore delivery capability aligned with your local accounting, taxation and privacy requirements, and ISO/IEC 27001 information security principles.
+        {/* ── Bottom Copyright Bar ──────────────────────────────── */}
+        <div className="mt-14 pt-6 border-t border-white/10 text-left">
+          <p className="text-[13px] text-white/50">
+            &copy; 2026 AccSource. All rights reserved
           </p>
         </div>
-
-        {/* ── Legal strip ──────────────────────────────── */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
-          <span>
-            &copy; {new Date().getFullYear()} NICS. All rights reserved.
-          </span>
-          <div className="flex flex-wrap items-center gap-4">
-            {legalLinks.map((l, i) => (
-              <Link key={i} href={l.href} className="hover:text-[#0056b3] transition-colors">
-                {l.title}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </Container>
+      </div>
     </footer>
   );
 }
+

@@ -14,13 +14,13 @@ import {
   Clock,
   LifeBuoy,
   ShieldCheck,
-  Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -220,7 +220,7 @@ export default function DiscoverMorePage() {
                 return (
                   <div key={cat.id} id={cat.id} className="scroll-mt-24">
                     <div className="flex items-center gap-4 border-b border-stone-200 pb-5">
-                      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                      <div className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                         <CatIcon className="size-6" />
                       </div>
                       <div>
@@ -236,7 +236,7 @@ export default function DiscoverMorePage() {
                       {cat.faqs.map((faq, i) => (
                         <details
                           key={i}
-                          className="group rounded-2xl border border-stone-200 bg-white transition-all open:border-[#0056b3]/30 open:shadow-md hover:border-[#0056b3]/30"
+                          className="group rounded-sm border border-stone-200 bg-white transition-all open:border-[#0056b3]/30 open:shadow-md hover:border-[#0056b3]/30"
                         >
                           <summary className="flex cursor-pointer list-none items-start gap-4 p-6 [&::-webkit-details-marker]:hidden">
                             <span className="flex-1 text-base font-semibold leading-snug text-[#0b1524] transition-colors group-open:text-[#0056b3]">
@@ -262,14 +262,14 @@ export default function DiscoverMorePage() {
               })}
             </div>
 
-            <div className="mt-14 rounded-2xl border border-[#0056b3]/20 bg-white p-8 text-center">
+            <div className="mt-14 rounded-sm border border-[#0056b3]/20 bg-white p-8 text-center">
               <h3 className="text-lg font-bold text-[#0b1524]">Still have a question?</h3>
               <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-stone-600">
                 If your question is not answered above, put it to our team directly. We will tell you plainly whether we are the right fit for what you need.
               </p>
               <Link
                 href="/contact"
-                className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494]"
+                className="mt-6 inline-flex items-center gap-2 rounded-sm bg-[#0056b3] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494]"
               >
                 Ask Our Team
                 <ArrowRight className="size-4" />
@@ -301,7 +301,7 @@ export default function DiscoverMorePage() {
                 const cardBody = (
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-[#8bc7ff]">
+                      <div className="flex size-11 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
                         <ItemIcon className="size-5" />
                       </div>
                       {isCurrent && (
@@ -324,14 +324,14 @@ export default function DiscoverMorePage() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
+                    className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
                   >
                     {cardBody}
                   </Link>
                 ) : (
                   <div
                     key={item.title}
-                    className={`flex flex-col justify-between rounded-2xl border p-6 backdrop-blur-sm ${
+                    className={`flex flex-col justify-between rounded-sm border p-6 ${
                       isCurrent ? "border-[#8bc7ff]/40 bg-white/10" : "border-white/10 bg-white/5"
                     }`}
                   >
@@ -344,42 +344,11 @@ export default function DiscoverMorePage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <ShieldCheck className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Let’s set up a truly customisable model to help you structure and run your process efficiently.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              Size hardly matters — whether you are a small team or a large group, it comes down to your requirement, your budget, and your needs. Let’s work out which model fits.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Make an Enquiry
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href="#faqs"
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Back to the FAQs
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

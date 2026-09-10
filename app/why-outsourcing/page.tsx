@@ -12,13 +12,13 @@ import {
   Wallet,
   Award,
   ShieldCheck,
-  Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/bright/page-why-outsourcing.jpg";
+const heroImage = "/images/bright/why-outsourcing-banner.jpg";
 
 const pillars = [
   {
@@ -111,7 +111,7 @@ const whyOutsourcing = [
   },
   {
     title: "Empowering Business",
-    icon: Sparkles,
+    icon: BadgeCheck,
     blurb: "Free your senior team from support functions so they can focus on growth and client relationships.",
     href: null,
   },
@@ -153,24 +153,56 @@ export default function WhyOutsourcingPage() {
           cardBadge="Your Extended Team"
           cardTitle="Retain 100% Onshore Control"
           cardSubtitle="Delegate routine processing while keeping client relationships, strategy, and judgment in-house."
-          imageAlt="Strategic business growth and global team collaboration in bright conference room"
+          imageAlt="Executive leadership and offshore delivery partner establishing strategic collaboration in modern executive office"
         />
 
         {/* INTRO NARRATIVE */}
         <section className="border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-24">
-          <Container size="narrow">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">The Case for Outsourcing</p>
-            <div className="mt-6 space-y-6 text-base leading-relaxed text-stone-600">
-              <p>
-                When your business is growing, one of the biggest challenges you face is to ensure consistent quality and productivity. It is tempting to keep all business processes under one roof, thinking you have better control over them and can therefore guarantee quality and overall efficiency. Having an in-house team or partnering with a local agency may appear like the ideal solution.{" "}
-                <span className="font-semibold text-[#0b1524]">Pause and think again.</span>
-              </p>
-              <p>
-                Only a full-fledged and dedicated operations set-up can do justice if you want to retain or exceed the quality of your deliverables. Outsourcing may just be the answer to your concerns on efficiency, timeliness, and productivity — with the added benefits of an expert team, industry knowledge, market understanding, and a streamlined process.
-              </p>
-              <p>
-                With small and medium sized companies flooding the market, the need for a sound and reliable outsourcing partner has become the need of the hour. Statistics also show that a major percentage of SMEs are already outsourcing their services alongside building their brand and expanding their business.
-              </p>
+          <Container size="default">
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+              <div className="lg:col-span-7">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">The Case for Outsourcing</p>
+                <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl text-[#0b1524]">
+                  Pause and Think Again: Strategic Delegation Outperforms In-House Strain
+                </h2>
+                <div className="mt-6 space-y-5 text-base leading-relaxed text-stone-600">
+                  <p>
+                    When your business is growing, one of the biggest challenges you face is to ensure consistent quality and productivity. It is tempting to keep all business processes under one roof, thinking you have better control over them and can therefore guarantee quality and overall efficiency. Having an in-house team or partnering with a local agency may appear like the ideal solution.{" "}
+                    <span className="font-semibold text-[#0b1524]">Pause and think again.</span>
+                  </p>
+                  <p>
+                    Only a full-fledged and dedicated operations set-up can do justice if you want to retain or exceed the quality of your deliverables. Outsourcing may just be the answer to your concerns on efficiency, timeliness, and productivity — with the added benefits of an expert team, industry knowledge, market understanding, and a streamlined process.
+                  </p>
+                  <p>
+                    With small and medium sized companies flooding the market, the need for a sound and reliable outsourcing partner has become the need of the hour. Statistics also show that a major percentage of SMEs are already outsourcing their services alongside building their brand and expanding their business.
+                  </p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-2.5 shadow-xl transition-all hover:shadow-2xl">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+                    <Image
+                      src="/images/bright/why-outsourcing-collaboration.jpg"
+                      alt="Dedicated finance and accounting team collaborating at modern workstations"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 40vw, 90vw"
+                    />
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2">
+                      <span className="flex size-2 rounded-full bg-emerald-500" />
+                      <p className="text-xs font-bold uppercase tracking-wider text-[#0056b3]">
+                        Dedicated Extension Of Your Firm
+                      </p>
+                    </div>
+                    <p className="mt-2 text-sm font-semibold text-[#0b1524]">
+                      Retain 100% operational direction while our certified professionals manage daily execution.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
@@ -195,11 +227,11 @@ export default function WhyOutsourcingPage() {
                   <div
                     key={pillar.id}
                     id={pillar.id}
-                    className="scroll-mt-24 grid gap-8 rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg lg:grid-cols-12 lg:gap-12 lg:p-10"
+                    className="scroll-mt-24 grid gap-8 rounded-sm border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg lg:grid-cols-12 lg:gap-12 lg:p-10"
                   >
                     <div className="lg:col-span-7">
                       <div className="flex items-center gap-4">
-                        <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                        <div className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                           <PillarIcon className="size-6" />
                         </div>
                         <span className="text-xs font-bold uppercase tracking-[0.18em] text-stone-400">
@@ -221,7 +253,7 @@ export default function WhyOutsourcingPage() {
                     </div>
 
                     <div className="lg:col-span-5">
-                      <div className="rounded-xl border border-stone-200 bg-white p-6">
+                      <div className="rounded-sm border border-stone-200 bg-white p-6">
                         <p className="text-xs font-bold uppercase tracking-wider text-stone-400">
                           What This Means In Practice
                         </p>
@@ -275,7 +307,7 @@ export default function WhyOutsourcingPage() {
                 const cardBody = (
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-[#8bc7ff]">
+                      <div className="flex size-11 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
                         <ItemIcon className="size-5" />
                       </div>
                       {isCurrent && (
@@ -298,14 +330,14 @@ export default function WhyOutsourcingPage() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
+                    className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
                   >
                     {cardBody}
                   </Link>
                 ) : (
                   <div
                     key={item.title}
-                    className={`flex flex-col justify-between rounded-2xl border p-6 backdrop-blur-sm ${
+                    className={`flex flex-col justify-between rounded-sm border p-6 ${
                       isCurrent
                         ? "border-[#8bc7ff]/40 bg-white/10"
                         : "border-white/10 bg-white/5"
@@ -320,42 +352,11 @@ export default function WhyOutsourcingPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <ShieldCheck className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Let’s set up a truly customisable model to help you structure and run your process efficiently.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              Retain full control and be the decision-maker. Stay updated with cutting-edge technology and lead your market with the most effective practices.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Make an Enquiry
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href="#pillars"
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Revisit the Four Reasons
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

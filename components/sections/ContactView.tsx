@@ -17,7 +17,7 @@ import {
   Users,
   Laptop,
   FileCheck,
-  Sparkles,
+  BadgeCheck,
   Lock,
   MessageSquare,
   Globe,
@@ -28,6 +28,7 @@ import { PageBanner } from "@/components/sections/PageBanner";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { locationsData } from "@/data/locationsData";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 
 const faqs = [
   {
@@ -123,8 +124,8 @@ export function ContactView() {
       <section className="border-b border-stone-200 bg-[#fbfbfa] py-12">
         <Container size="default">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
+              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                 <Phone className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Direct Phone Support</h3>
@@ -145,8 +146,8 @@ export function ContactView() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
+              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                 <Mail className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Email Inquiries</h3>
@@ -167,8 +168,8 @@ export function ContactView() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
+              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                 <Building2 className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Global Practice Hubs</h3>
@@ -179,8 +180,8 @@ export function ContactView() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
+              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                 <Calendar className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Discovery Video Call</h3>
@@ -203,7 +204,7 @@ export function ContactView() {
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Form Card */}
-            <div className="lg:col-span-7 rounded-3xl border border-stone-200 bg-white p-8 sm:p-10 shadow-xl">
+            <div className="lg:col-span-7 rounded-sm border border-stone-200 bg-white p-8 sm:p-10 shadow-sm">
               {isSubmitted ? (
                 <div className="py-12 text-center space-y-5">
                   <div className="size-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center mx-auto">
@@ -215,7 +216,7 @@ export function ContactView() {
                   <p className="text-sm text-stone-600 max-w-md mx-auto leading-relaxed">
                     Thank you, <strong className="text-[#0b1524]">{fullName}</strong>. Your inquiry has been routed to our senior practice advisory team. We will review your requirements and reach out within 1 business day.
                   </p>
-                  <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 text-left max-w-md mx-auto text-xs text-stone-600 space-y-1.5">
+                  <div className="p-4 bg-stone-50 rounded-sm border border-stone-200 text-left max-w-md mx-auto text-xs text-stone-600 space-y-1.5">
                     <div className="font-bold text-[#0b1524] uppercase tracking-wider text-[11px] mb-2">
                       What happens next?
                     </div>
@@ -278,7 +279,7 @@ export function ContactView() {
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
                           placeholder="e.g. David Mitchell"
-                          className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                          className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         />
                       </div>
 
@@ -292,7 +293,7 @@ export function ContactView() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="name@yourfirm.com"
-                          className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                          className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         />
                       </div>
                     </div>
@@ -307,7 +308,7 @@ export function ContactView() {
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="Include your country code"
-                          className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                          className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         />
                       </div>
 
@@ -320,7 +321,7 @@ export function ContactView() {
                           value={companyName}
                           onChange={(e) => setCompanyName(e.target.value)}
                           placeholder="Mitchell & Co Chartered Accountants"
-                          className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                          className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         />
                       </div>
                     </div>
@@ -332,7 +333,7 @@ export function ContactView() {
                       <select
                         value={practiceType}
                         onChange={(e) => setPracticeType(e.target.value)}
-                        className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                        className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                       >
                         <option value="accounting-firm">Accounting & Tax Practice</option>
                         <option value="financial-planning">Financial Planning & Wealth Advisory</option>
@@ -358,7 +359,7 @@ export function ContactView() {
                         <select
                           value={selectedService}
                           onChange={(e) => setSelectedService(e.target.value)}
-                          className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                          className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         >
                           <option value="accounting-finance">Accounting, Bookkeeping & AP/AR</option>
                           <option value="practice-support">Practice Support & Tax Workpapers</option>
@@ -379,7 +380,7 @@ export function ContactView() {
                         <select
                           value={engagementModel}
                           onChange={(e) => setEngagementModel(e.target.value)}
-                          className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                          className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                         >
                           <option value="insourcing">Insourcing (Dedicated Full-Time Staff)</option>
                           <option value="insourcing-manager">Insourcing with Manager Support & QA</option>
@@ -433,7 +434,7 @@ export function ContactView() {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="e.g. Looking to onboard 2 full-time senior bookkeepers proficient in Xero and workflow manager by next month..."
-                        className="w-full rounded-xl border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
+                        className="w-full rounded-sm border border-stone-300 bg-stone-50/70 px-4 py-2.5 text-sm transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0056b3]/20"
                       />
                     </div>
                   </div>
@@ -463,7 +464,7 @@ export function ContactView() {
             {/* Right Column: Trust & Operational Assurance */}
             <div className="lg:col-span-5 space-y-8">
               {/* How onboarding works */}
-              <div className="rounded-3xl border border-stone-200 bg-[#fbfbfa] p-7">
+              <div className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-7">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
                   <Laptop className="size-4" />
                   Seamless 4-Step Transition
@@ -524,7 +525,7 @@ export function ContactView() {
               </div>
 
               {/* Security card */}
-              <div className="rounded-3xl border border-stone-200 bg-white p-7 shadow-sm">
+              <div className="rounded-sm border border-stone-200 bg-white p-7 shadow-sm">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-green-700">
                   <ShieldCheck className="size-4" />
                   Data Privacy & Compliance
@@ -556,9 +557,9 @@ export function ContactView() {
               </div>
 
               {/* Direct Practice Director Spotlight */}
-              <div className="rounded-3xl border border-[#0056b3]/20 bg-gradient-to-br from-[#0056b3]/10 via-[#f0f6ff] to-white p-6">
+              <div className="rounded-sm border border-[#0056b3]/20 bg-[#f4f7fb] p-6">
                 <div className="flex items-center gap-3">
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0056b3] text-white font-bold text-lg">
+                  <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3] text-white font-bold text-lg">
                     BM
                   </div>
                   <div>
@@ -598,7 +599,7 @@ export function ContactView() {
                 <button
                   key={loc.id}
                   onClick={() => setActiveOfficeId(loc.id)}
-                  className={`rounded-2xl border p-6 text-left transition-all cursor-pointer ${
+                  className={`rounded-sm border p-6 text-left transition-all cursor-pointer ${
                     isActive
                       ? "border-[#0056b3] bg-white shadow-lg ring-2 ring-[#0056b3]/20"
                       : "border-stone-200 bg-white/70 hover:bg-white hover:border-stone-300"
@@ -620,7 +621,7 @@ export function ContactView() {
           </div>
 
           {/* Active Office Detail Showcase */}
-          <div className="mt-6 rounded-3xl border border-stone-200 bg-white p-8 sm:p-10 shadow-sm">
+          <div className="mt-6 rounded-sm border border-stone-200 bg-white p-8 sm:p-10 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-4">
                 <div className="flex items-center gap-2">
@@ -661,14 +662,14 @@ export function ContactView() {
                 <div className="flex flex-wrap gap-4 pt-2">
                   <a
                     href={`tel:${activeOffice.phone.replace(/[^0-9+]/g, "")}`}
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-5 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#004494]"
+                    className="inline-flex items-center gap-2 rounded-sm bg-[#0056b3] px-5 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#004494]"
                   >
                     <Phone className="size-3.5" />
                     Call {activeOffice.phone}
                   </a>
                   <a
                     href={`mailto:${activeOffice.email}`}
-                    className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-5 py-2.5 text-xs font-semibold text-stone-700 transition-colors hover:bg-stone-50"
+                    className="inline-flex items-center gap-2 rounded-sm border border-stone-300 bg-white px-5 py-2.5 text-xs font-semibold text-stone-700 transition-colors hover:bg-stone-50"
                   >
                     <Mail className="size-3.5" />
                     {activeOffice.email}
@@ -677,7 +678,7 @@ export function ContactView() {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-stone-200 shadow-md">
+                <div className="relative aspect-[4/3] w-full rounded-sm overflow-hidden border border-stone-200 shadow-md">
                   <Image
                     src={activeOffice.image}
                     alt={`NICS ${activeOffice.name} office`}
@@ -721,7 +722,7 @@ export function ContactView() {
               return (
                 <div
                   key={index}
-                  className="rounded-2xl border border-stone-200 bg-[#fbfbfa] transition-all"
+                  className="rounded-sm border border-stone-200 bg-[#fbfbfa] transition-all"
                 >
                   <button
                     type="button"
@@ -747,33 +748,8 @@ export function ContactView() {
         </Container>
       </section>
 
-      {/* 6. BOTTOM BANNER */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#0056b3] via-[#004494] to-[#002e5b] py-16 text-white lg:py-20">
-        <Container size="narrow" className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
-            Ready to scale your delivery capacity?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-blue-100">
-            Let&apos;s map out your requirements and build a dependable team shaped around your firm.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="#consultation-form"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-[#002e5b] shadow-xl transition-all hover:bg-stone-100"
-            >
-              Start Consultation
-              <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="tel:+919632466477"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
-            >
-              <Phone className="size-4" />
-              Call +91 9632 466 477
-            </a>
-          </div>
-        </Container>
-      </section>
+      {/* 6. ENHANCED UNIFIED CTA BANNER */}
+      <ReadyToScaleCTA />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Mail, Lock, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Mail, Lock, BadgeCheck } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -300,7 +300,7 @@ export default function PrivacyPolicyPage() {
 
       <main>
         {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
+        <section className="relative isolate overflow-hidden bg-[#f8f7f4] pt-28 sm:pt-32 lg:pt-36">
           <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
           <Container size="default" className="relative pb-16 lg:pb-20">
             <Breadcrumbs
@@ -312,7 +312,7 @@ export default function PrivacyPolicyPage() {
             />
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                <Sparkles className="size-3.5" />
+                <BadgeCheck className="size-3.5" />
                 Legal
               </div>
               <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl text-[#0b1524]">
@@ -342,7 +342,7 @@ export default function PrivacyPolicyPage() {
               {/* Table of contents */}
               <aside className="lg:col-span-4">
                 <div className="lg:sticky lg:top-24">
-                  <div className="rounded-2xl border border-stone-200 bg-white p-6">
+                  <div className="rounded-sm border border-stone-200 bg-white p-6">
                     <p className="text-xs font-bold uppercase tracking-wider text-stone-400">On This Page</p>
                     <nav className="mt-4">
                       <ol className="space-y-2.5">
@@ -363,8 +363,8 @@ export default function PrivacyPolicyPage() {
                     </nav>
                   </div>
 
-                  <div className="mt-6 rounded-2xl border border-[#0056b3]/20 bg-white p-6">
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                  <div className="mt-6 rounded-sm border border-[#0056b3]/20 bg-white p-6">
+                    <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                       <Mail className="size-5" />
                     </div>
                     <h2 className="mt-4 text-base font-bold text-[#0b1524]">Privacy enquiries</h2>
@@ -389,7 +389,7 @@ export default function PrivacyPolicyPage() {
                     <article
                       key={section.id}
                       id={section.id}
-                      className="scroll-mt-24 rounded-2xl border border-stone-200 bg-white p-8 lg:p-10"
+                      className="scroll-mt-24 rounded-sm border border-stone-200 bg-white p-8 lg:p-10"
                     >
                       <div className="flex items-baseline gap-3">
                         <span className="text-xs font-bold tabular-nums text-[#0056b3]">
@@ -424,7 +424,7 @@ export default function PrivacyPolicyPage() {
                           }
 
                           return (
-                            <div key={bi} className="rounded-xl border border-stone-200 bg-[#fbfbfa] p-5">
+                            <div key={bi} className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-5">
                               <h3 className="text-sm font-bold text-[#0b1524]">{block.heading}</h3>
                               <ul className="mt-3 space-y-2.5">
                                 {block.items.map((item, ii) => (
@@ -447,42 +447,11 @@ export default function PrivacyPolicyPage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <ShieldCheck className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Questions about how we handle your data?
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              Data security and protection of your privacy is an integral part of any outsourcing relationship. If anything here needs clarifying before you share information with us, ask.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Contact Us
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href={`mailto:${PRIVACY_EMAIL}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Email the Privacy Officer
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

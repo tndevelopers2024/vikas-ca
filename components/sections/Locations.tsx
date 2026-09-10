@@ -42,7 +42,7 @@ export function Locations() {
             <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-[#e7e5dc] p-4 sm:p-6 lg:p-8 bg-[#fbfbfa]">
               <div className="text-xs font-bold uppercase tracking-[0.14em] text-stone-400 mb-4 px-3 flex items-center justify-between">
                 <span>Select an office</span>
-                <span className="font-mono text-stone-500">{locationsData.length} OFFICES</span>
+                <span className="tabular-nums text-stone-500">{locationsData.length} OFFICES</span>
               </div>
 
               <div className="space-y-1">
@@ -65,7 +65,7 @@ export function Locations() {
                       <div className="flex items-center gap-3">
                         <span
                           className={clsx(
-                            "text-xs font-mono w-5",
+                            "text-xs tabular-nums w-5",
                             isActive ? "text-blue-100 font-bold" : "text-stone-400"
                           )}
                         >

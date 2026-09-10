@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Four-step onboarding cycle: communicate requirements, set up and secure access, run daily execution, and feed results back continuously">
+  <title>The NICS four-step onboarding cycle</title>
+
+  <defs>
+    <!-- Ground: the banner sits on #f4f8fc, so the plate starts there and
+         deepens toward the right, where the white scrim thins to 10%. -->
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#f7fafd"/>
+      <stop offset="55%"  stop-color="#e9f2fb"/>
+      <stop offset="100%" stop-color="#d5e7f8"/>
+    </linearGradient>
+
+    <linearGradient id="card" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f2f7fd"/>
+    </linearGradient>
+
+    <linearGradient id="orbA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#7fb3e8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0056b3" stop-opacity="0.12"/>
+    </linearGradient>
+
+    <linearGradient id="orbB" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#cfe3f7" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#2b7fd4" stop-opacity="0.10"/>
+    </linearGradient>
+
+    <filter id="soften" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+
+    <filter id="lift" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0b3f7a" flood-opacity="0.14"/>
+    </filter>
+
+    <pattern id="dots" x="0" y="0" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#0056b3" opacity="0.16"/>
+    </pattern>
+
+    <marker id="tip" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M1 1 L10 6 L1 11 Z" fill="#0056b3" opacity="0.75"/>
+    </marker>
+
+    <!-- Glyphs are drawn once on a 24x24 grid and placed at 3.2x. -->
+    <g id="g-talk" fill="none" stroke="#0056b3" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 6.5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H8l-3.6 2.7V13.5H5a2 2 0 0 1-2-2Z"/>
+      <path d="M19 9.5h0a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-.6v2.4L15 17.5h-2.5"/>
+    </g>
+
+    <g id="g-shield" fill="none" stroke="#0056b3" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.6 4.5 5.8v6.1c0 4.6 3.1 8 7.5 9.5 4.4-1.5 7.5-4.9 7.5-9.5V5.8Z"/>
+      <path d="m8.6 11.9 2.5 2.5 4.4-4.7"/>
+    </g>
+
+    <g id="g-board" fill="none" stroke="#0056b3" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 4.2H6.4a1.9 1.9 0 0 0-1.9 1.9v13.2a1.9 1.9 0 0 0 1.9 1.9h11.2a1.9 1.9 0 0 0 1.9-1.9V6.1a1.9 1.9 0 0 0-1.9-1.9H16"/>
+      <rect x="8" y="2.3" width="8" height="3.8" rx="1.2"/>
+      <path d="m8.6 12 2 2 4.2-4.3M8.8 18h6.4"/>
+    </g>
+
+    <g id="g-loop" fill="none" stroke="#0056b3" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.4 11.2a8.4 8.4 0 0 0-14.6-4.4L2.9 9.6"/>
+      <path d="M3.6 12.8a8.4 8.4 0 0 0 14.6 4.4l2.9-2.8"/>
+      <path d="M2.9 4.4v5.2h5.2M21.1 19.6v-5.2h-5.2"/>
+    </g>
+  </defs>
+
+  <!-- ── Ground ─────────────────────────────────────────────────────── -->
+  <rect width="1920" height="1080" fill="url(#ground)"/>
+
+  <!-- Atmosphere. Two constraints shape this composition:
+       · the banner's scrim runs 98% white at the left edge down to 10% at the
+         right, so everything meaningful lives right of x≈1150;
+       · the banner is ~4:1 and the plate is 16:9, so object-fit:cover shows
+         only y≈300–780. Nothing important may sit outside that band. -->
+  <g filter="url(#soften)">
+    <circle cx="1650" cy="380" r="290" fill="url(#orbA)"/>
+    <circle cx="1290" cy="760" r="240" fill="url(#orbB)"/>
+    <circle cx="1890" cy="660" r="210" fill="url(#orbA)" opacity="0.6"/>
+  </g>
+
+  <rect x="1060" y="270" width="840" height="540" fill="url(#dots)" opacity="0.5"/>
+
+  <!-- ── The cycle ──────────────────────────────────────────────────── -->
+  <g>
+    <!-- Orbit: the loop the four steps run on -->
+    <circle cx="1500" cy="530" r="247" fill="none" stroke="#0056b3" stroke-opacity="0.22"
+            stroke-width="2" stroke-dasharray="3 13" stroke-linecap="round"/>
+
+    <!-- Directed connectors, closing back on step 01 -->
+    <g stroke="#0056b3" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round"
+       stroke-dasharray="14 12" fill="none" marker-end="url(#tip)">
+      <path d="M1370 400 H1618"/>
+      <path d="M1710 480 V568"/>
+      <path d="M1630 660 H1382"/>
+      <path d="M1290 580 V492"/>
+    </g>
+
+    <!-- 01 · Communicate requirements -->
+    <g filter="url(#lift)">
+      <rect x="1210" y="320" width="160" height="160" rx="26" fill="url(#card)" stroke="#d3e4f6" stroke-width="2"/>
+    </g>
+    <use href="#g-talk" transform="translate(1257.6,367.6) scale(2.7)"/>
+    <circle cx="1220" cy="330" r="24" fill="#0056b3"/>
+    <text x="1220" y="338" font-family="Inter, Helvetica, Arial, sans-serif" font-size="21"
+          font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">01</text>
+
+    <!-- 02 · Setup &amp; security -->
+    <g filter="url(#lift)">
+      <rect x="1630" y="320" width="160" height="160" rx="26" fill="url(#card)" stroke="#d3e4f6" stroke-width="2"/>
+    </g>
+    <use href="#g-shield" transform="translate(1677.6,367.6) scale(2.7)"/>
+    <circle cx="1640" cy="330" r="24" fill="#0056b3"/>
+    <text x="1640" y="338" font-family="Inter, Helvetica, Arial, sans-serif" font-size="21"
+          font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">02</text>
+
+    <!-- 03 · Daily execution -->
+    <g filter="url(#lift)">
+      <rect x="1630" y="580" width="160" height="160" rx="26" fill="url(#card)" stroke="#d3e4f6" stroke-width="2"/>
+    </g>
+    <use href="#g-board" transform="translate(1677.6,627.6) scale(2.7)"/>
+    <circle cx="1640" cy="590" r="24" fill="#0056b3"/>
+    <text x="1640" y="598" font-family="Inter, Helvetica, Arial, sans-serif" font-size="21"
+          font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">03</text>
+
+    <!-- 04 · Continuous feedback -->
+    <g filter="url(#lift)">
+      <rect x="1210" y="580" width="160" height="160" rx="26" fill="url(#card)" stroke="#d3e4f6" stroke-width="2"/>
+    </g>
+    <use href="#g-loop" transform="translate(1257.6,627.6) scale(2.7)"/>
+    <circle cx="1220" cy="590" r="24" fill="#0056b3"/>
+    <text x="1220" y="598" font-family="Inter, Helvetica, Arial, sans-serif" font-size="21"
+          font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">04</text>
+
+    <!-- Hub -->
+    <circle cx="1500" cy="530" r="62" fill="#ffffff" opacity="0.7"/>
+    <circle cx="1500" cy="530" r="62" fill="none" stroke="#0056b3" stroke-opacity="0.28" stroke-width="2"/>
+    <circle cx="1500" cy="530" r="38" fill="none" stroke="#0056b3" stroke-opacity="0.16" stroke-width="2"
+            stroke-dasharray="4 10" stroke-linecap="round"/>
+    <circle cx="1500" cy="530" r="11" fill="#0056b3" opacity="0.8"/>
+  </g>
+
+  <!-- Drifting chips, for depth behind the scrim's fade -->
+  <g opacity="0.5">
+    <rect x="1852" y="452" width="112" height="28" rx="14" fill="#ffffff" stroke="#cfe0f3" stroke-width="2"/>
+    <rect x="1074" y="486" width="92" height="26" rx="13" fill="#ffffff" stroke="#cfe0f3" stroke-width="2"/>
+    <rect x="1432" y="772" width="142" height="28" rx="14" fill="#ffffff" stroke="#cfe0f3" stroke-width="2"/>
+    <rect x="1398" y="300" width="124" height="26" rx="13" fill="#ffffff" stroke="#cfe0f3" stroke-width="2"/>
+  </g>
+</svg>

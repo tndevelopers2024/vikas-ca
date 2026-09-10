@@ -3,7 +3,6 @@ import { Header } from "@/components/navigation/Header";
 import { ContactView } from "@/components/sections/ContactView";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 
 export const metadata: Metadata = {
   title: "Contact NICS | Talk to Our Practice Advisory Team",
@@ -20,7 +19,6 @@ export default function ContactPage() {
       </main>
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

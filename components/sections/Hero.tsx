@@ -28,7 +28,7 @@ const slides = [
       label: "Discuss what to delegate",
       href: "#contact",
     },
-    image: "/images/bright/hero-main.jpg",
+    image: "/images/bright/hero-scale-business.jpg",
     imageAlt: "Modern sunlit corporate advisory office with panoramic skyline views",
   },
   {
@@ -239,13 +239,13 @@ export function Hero() {
                   aria-hidden="true"
                 />
 
-                {/* Floating Content Overlay (.hero__overlay) with clean spacing */}
-                <div className="hero__overlay absolute inset-0 z-[3] flex items-center pt-24 pb-24 sm:pt-28 sm:pb-28 lg:pt-32 lg:pb-32">
+                {/* Content Overlay (.hero__overlay) with clean spacing */}
+                <div className="hero__overlay absolute inset-0 z-[3] flex items-center py-12 sm:py-16 lg:py-20">
                   <Container size="default" className="w-full">
                     <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
                       {/* Eyebrow Pill */}
                       <div className={isActive ? "animate-banner-rise-1" : ""}>
-                        <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md px-3.5 sm:px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0056b3] shadow-xs">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-white px-3.5 sm:px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0056b3] shadow-xs">
                           <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0056b3] opacity-75" />
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0056b3]" />
@@ -270,14 +270,14 @@ export function Hero() {
                       <div className={`pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 ${isActive ? "animate-banner-rise-4" : ""}`}>
                         <Link
                           href={s.primaryCta.href}
-                          className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0056b3] px-7 py-3.5 sm:py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all duration-200 hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30 hover:-translate-y-0.5 active:translate-y-0"
+                          className="group inline-flex items-center justify-center gap-2.5 rounded-sm bg-[#0056b3] px-7 py-3.5 sm:py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all duration-200 hover:bg-[#004494] hover:shadow-sm hover:shadow-[#0056b3]/30 hover:-translate-y-0.5 active:translate-y-0"
                         >
                           <span>{s.primaryCta.label}</span>
                           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                         <Link
                           href={s.secondaryCta.href}
-                          className="inline-flex items-center justify-center gap-2 rounded-xl border border-stone-300/90 bg-white/90 backdrop-blur-md px-6 py-3.5 sm:py-4 text-sm font-semibold text-[#0b1524] shadow-2xs transition-all duration-200 hover:border-stone-400 hover:bg-white hover:text-[#0056b3]"
+                          className="inline-flex items-center justify-center gap-2 rounded-sm border border-stone-300/90 bg-white px-6 py-3.5 sm:py-4 text-sm font-semibold text-[#0b1524] shadow-2xs transition-all duration-200 hover:border-stone-400 hover:bg-white hover:text-[#0056b3]"
                         >
                           <span>{s.secondaryCta.label}</span>
                         </Link>
@@ -299,7 +299,7 @@ export function Hero() {
                 onClick={prevSlide}
                 type="button"
                 aria-label="Previous banner"
-                className="size-10 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
+                className="size-10 rounded-full border border-stone-300/80 bg-white text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
               >
                 <ChevronLeft className="size-4" />
               </button>
@@ -340,7 +340,7 @@ export function Hero() {
                 onClick={nextSlide}
                 type="button"
                 aria-label="Next banner"
-                className="size-10 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
+                className="size-10 rounded-full border border-stone-300/80 bg-white text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
               >
                 <ChevronRight className="size-4" />
               </button>
@@ -350,7 +350,7 @@ export function Hero() {
                 onClick={() => setIsPlaying(!isPlaying)}
                 type="button"
                 aria-label={isPlaying ? "Pause the banner" : "Play the banner"}
-                className="size-10 rounded-full border border-stone-300/80 bg-white/90 backdrop-blur-md text-[#0b1524] hover:bg-white hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer ml-1"
+                className="size-10 rounded-full border border-stone-300/80 bg-white text-[#0b1524] hover:bg-white hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer ml-1"
               >
                 {isPlaying ? (
                   <Pause className="size-3.5 text-stone-700" />
@@ -360,7 +360,7 @@ export function Hero() {
               </button>
 
               {/* Counter */}
-              <span className="text-xs font-mono text-stone-500 font-semibold ml-2">
+              <span className="text-xs tabular-nums text-stone-500 font-semibold ml-2">
                 0{currentSlide + 1} / 0{totalSlides}
               </span>
             </div>
@@ -371,7 +371,7 @@ export function Hero() {
       {/* ══════════════════════════════════════════════════════════════════════
           2. THE PROMISES RAIL (.section--promises) SEPARATELY BENEATH BANNER
          ══════════════════════════════════════════════════════════════════════ */}
-      <section className="section section--promises relative z-10 border-b border-stone-200 bg-[#faf9f6]">
+      <section className="section section--promises relative z-10 border-b border-stone-200 bg-white">
         <Container size="default">
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-stone-200/90 py-6 sm:py-7">
             {promises.map((p) => (
@@ -380,7 +380,7 @@ export function Hero() {
                   href={p.href}
                   className="group block h-full transition-transform duration-200 hover:-translate-y-1"
                 >
-                  <span className="font-mono text-xs font-bold text-[#c89d5c] tracking-wider block mb-1">
+                  <span className="tabular-nums text-xs font-bold text-[#0056b3] tracking-wider block mb-1">
                     {p.n}
                   </span>
                   <span className="text-sm font-bold text-[#0b1524] group-hover:text-[#0056b3] transition-colors block line-clamp-1">

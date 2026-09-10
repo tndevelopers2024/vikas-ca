@@ -9,7 +9,7 @@ import {
   FileCheck,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
+  BadgeCheck,
   Layers,
   Cpu,
   MonitorCheck,
@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
@@ -30,16 +30,15 @@ export const metadata: Metadata = {
     "With NICS outsourcing, your premise on IT security, privacy, information management and data integrity is upheld and sustained across every engagement model.",
 };
 
-const heroImage = "/images/bright/insight-security.jpg";
+const heroImage = "/images/bright/page-information-technology.jpg";
 
 export default function InformationTechnologyPage() {
   return (
     <>
-      <PremiumCursor />
       <Header />
 
       <main className="min-h-screen bg-stone-50 selection:bg-[#0056b3] selection:text-white">
-        {/* AccSource-Style Photographic Hero Page Banner */}
+        {/* Hero Page Banner */}
         <PageBanner
           breadcrumbs={[
             { label: "Home", href: "/" },
@@ -82,7 +81,7 @@ export default function InformationTechnologyPage() {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 bg-stone-50 rounded-2xl p-8 border border-stone-200 shadow-sm space-y-6">
+              <div className="lg:col-span-5 bg-stone-50 rounded-sm p-8 border border-stone-200 shadow-sm space-y-6">
                 <h3 className="text-lg font-bold text-[#0b1524] flex items-center gap-2.5">
                   <Lock className="size-5 text-[#0056b3]" />
                   <span>Core Security Commitments</span>
@@ -170,9 +169,9 @@ export default function InformationTechnologyPage() {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-200 flex flex-col"
+                    className="bg-white rounded-sm p-6 border border-stone-200 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-200 flex flex-col"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#0056b3]/10 flex items-center justify-center text-[#0056b3] mb-5">
+                    <div className="w-12 h-12 rounded-sm bg-[#0056b3]/10 flex items-center justify-center text-[#0056b3] mb-5">
                       <Icon className="size-6" />
                     </div>
                     <h3 className="text-lg font-bold text-[#0b1524] mb-4">{card.title}</h3>
@@ -222,7 +221,7 @@ export default function InformationTechnologyPage() {
                   desc: "Site-to-site encrypted VPN tunnels configured with static IP whitelisting ensuring only authorized personnel on designated subnets can access your files.",
                 },
               ].map((item, i) => (
-                <div key={i} className="rounded-2xl border border-stone-200 bg-stone-50/50 p-6 sm:p-8 space-y-4">
+                <div key={i} className="rounded-sm border border-stone-200 bg-stone-50/50 p-6 sm:p-8 space-y-4">
                   <div className="text-xs font-extrabold tracking-widest text-[#00a99d] uppercase">
                     Model {item.step}
                   </div>
@@ -234,28 +233,8 @@ export default function InformationTechnologyPage() {
           </Container>
         </section>
 
-        {/* Section 4: AccSource-Style Bottom Consultation Banner */}
-        <section className="py-16 sm:py-20 bg-[#002e5b] text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001738]/95 via-[#002e5b]/90 to-[#001738]/95" />
-          <Container size="default" className="relative z-10 text-center max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Let’s set up a truly customisable model to help you structure and run your process efficiently.
-            </h2>
-            <div className="w-16 h-1.5 bg-[#00a99d] rounded-full mx-auto" />
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
-              Schedule a technical security consultation with our practice directors to review our infrastructure blueprints, ISO certifications, and data governance policies.
-            </p>
-            <div className="pt-4 flex justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00a99d] hover:bg-[#008f85] px-8 py-4 text-sm font-bold text-white shadow-xl shadow-[#00a99d]/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <span>Make an Enquiry</span>
-                <ArrowRight className="size-4" />
-              </Link>
-            </div>
-          </Container>
-        </section>
+        {/* CALL TO ACTION */}
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />

@@ -40,7 +40,7 @@ export function Button({
     "primary-blue":
       "bg-[#0056b3] text-white hover:bg-[#004494] focus-visible:ring-[#0056b3] shadow-sm hover:shadow",
     "outline-white":
-      "border border-white/80 text-white hover:bg-white hover:text-[#0b1524] focus-visible:ring-white backdrop-blur-[2px]",
+      "border border-white/80 text-white hover:bg-white hover:text-[#0b1524] focus-visible:ring-white[2px]",
     "outline-dark":
       "border border-[#0b1524] text-[#0b1524] hover:bg-[#0b1524] hover:text-white focus-visible:ring-[#0b1524]",
     secondary:

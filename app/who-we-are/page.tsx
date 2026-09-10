@@ -13,13 +13,13 @@ import {
   Gift,
   Cake,
   Award,
-  Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -44,7 +44,7 @@ const visionPoints = [
     text: "To become the #1 business process outsourcing specialist across the globe, recognised for being customer-centric, people-powered, and value-based.",
   },
   {
-    icon: Sparkles,
+    icon: BadgeCheck,
     text: "To be synonymous with problem solving and global talent, while ethically offering top quality services through continuous learning, adaptability, and innovation.",
   },
   {
@@ -152,7 +152,7 @@ export default function WhoWeArePage() {
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                   <History className="size-6" />
                 </div>
                 <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">Our Story</p>
@@ -163,7 +163,7 @@ export default function WhoWeArePage() {
                   We started from a gap in the market: outsourcing that worked for large corporations, and almost nobody else.
                 </p>
 
-                <div className="mt-8 rounded-2xl border border-[#0056b3]/20 bg-white p-6">
+                <div className="mt-8 rounded-sm border border-[#0056b3]/20 bg-white p-6">
                   <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Where We Deliver From</p>
                   <ul className="mt-4 space-y-3">
                     {[
@@ -180,7 +180,7 @@ export default function WhoWeArePage() {
               </div>
 
               <div className="lg:col-span-7">
-                <div className="space-y-6 rounded-2xl border border-stone-200 bg-white p-8 lg:p-10">
+                <div className="space-y-6 rounded-sm border border-stone-200 bg-white p-8 lg:p-10">
                   {historyParagraphs.map((para, i) => (
                     <p key={i} className="text-base leading-relaxed text-stone-600">
                       {para}
@@ -207,9 +207,9 @@ export default function WhoWeArePage() {
 
             <div className="mt-14 grid gap-8 lg:grid-cols-2">
               {/* Vision */}
-              <div className="rounded-2xl border border-stone-200 bg-[#fbfbfa] p-8 lg:p-10">
+              <div className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-8 lg:p-10">
                 <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                  <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                     <Compass className="size-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-[#0b1524]">Vision</h3>
@@ -231,9 +231,9 @@ export default function WhoWeArePage() {
               </div>
 
               {/* Mission */}
-              <div id="mission" className="scroll-mt-24 rounded-2xl border border-[#0056b3]/20 bg-[#0b1524] p-8 text-white lg:p-10">
+              <div id="mission" className="scroll-mt-24 rounded-sm border border-[#0056b3]/20 bg-[#0b1524] p-8 text-white lg:p-10">
                 <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-white/10 text-[#8bc7ff]">
+                  <div className="flex size-12 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
                     <Target className="size-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">Mission</h3>
@@ -272,7 +272,7 @@ export default function WhoWeArePage() {
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <div className="flex size-12 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                   <HeartHandshake className="size-6" />
                 </div>
                 <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">How We Work</p>
@@ -300,9 +300,9 @@ export default function WhoWeArePage() {
                     return (
                       <div
                         key={ritual.title}
-                        className="rounded-2xl border border-stone-200 bg-white p-6 transition-all hover:border-[#0056b3]/30 hover:shadow-lg"
+                        className="rounded-sm border border-stone-200 bg-white p-6 transition-all hover:border-[#0056b3]/30 hover:shadow-lg"
                       >
-                        <div className="flex size-11 items-center justify-center rounded-xl bg-[#0056b3]/10 text-[#0056b3]">
+                        <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
                           <RitualIcon className="size-5" />
                         </div>
                         <h3 className="mt-4 text-base font-bold text-[#0b1524]">{ritual.title}</h3>
@@ -312,7 +312,7 @@ export default function WhoWeArePage() {
                   })}
                 </div>
 
-                <div className="mt-6 rounded-2xl border border-stone-200 bg-white p-8">
+                <div className="mt-6 rounded-sm border border-stone-200 bg-white p-8">
                   <p className="text-base leading-relaxed text-stone-600">
                     People who are trusted, developed, and recognised stay longer — and continuity of knowledge across your process is one of the things you are actually buying when you build a team with us.
                   </p>
@@ -352,7 +352,7 @@ export default function WhoWeArePage() {
                 const cardBody = (
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-[#8bc7ff]">
+                      <div className="flex size-11 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
                         <ItemIcon className="size-5" />
                       </div>
                       {isCurrent && (
@@ -375,14 +375,14 @@ export default function WhoWeArePage() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
+                    className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
                   >
                     {cardBody}
                   </Link>
                 ) : (
                   <div
                     key={item.title}
-                    className={`flex flex-col justify-between rounded-2xl border p-6 backdrop-blur-sm ${
+                    className={`flex flex-col justify-between rounded-sm border p-6 ${
                       isCurrent ? "border-[#8bc7ff]/40 bg-white/10" : "border-white/10 bg-white/5"
                     }`}
                   >
@@ -395,42 +395,11 @@ export default function WhoWeArePage() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="relative isolate overflow-hidden border-t border-stone-200 bg-gradient-to-br from-[#eef5ff] via-[#f6f9fd] to-[#fbfbfa] py-20 lg:py-24">
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #bcd9ff 0%, transparent 70%)" }}
-          />
-          <Container size="narrow" className="text-center">
-            <Users className="mx-auto size-12 text-[#0056b3]" />
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-              Need to get in touch with our team?
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              NICS specialises in operational, administrative, compliance, and accounting business processes for SMEs, accounting firms, financial planners, and mortgage brokers.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-8 py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494] hover:shadow-xl hover:shadow-[#0056b3]/30"
-              >
-                Contact Us
-                <ArrowRight className="size-4" />
-              </Link>
-              <a
-                href="#culture"
-                className="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-4 text-sm font-bold text-[#0b1524] shadow-sm transition-all hover:border-[#0056b3]/40 hover:text-[#0056b3] hover:shadow-md"
-              >
-                Read About Our Culture
-              </a>
-            </div>
-          </Container>
-        </section>
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

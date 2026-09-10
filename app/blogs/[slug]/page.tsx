@@ -15,9 +15,9 @@ import {
   User,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
+import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { PremiumCursor } from "@/components/ui/PremiumCursor";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import {
@@ -71,7 +71,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
       <main>
         {/* HERO SECTION */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f8fafc] to-white pt-32 sm:pt-40">
+        <section className="relative isolate overflow-hidden bg-[#f8f7f4] pt-28 sm:pt-32 lg:pt-36">
           <div className="absolute inset-0 hero-mesh opacity-60 pointer-events-none" />
           <Container size="default" className="relative pb-16 lg:pb-20">
             <Breadcrumbs
@@ -125,7 +125,7 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-stone-200 shadow-sm">
                   <Image
                     src={article.image}
                     alt={article.title}
@@ -149,7 +149,7 @@ export default async function ArticlePage({ params }: PageProps) {
               <aside className="lg:col-span-4 lg:order-last">
                 <div className="lg:sticky lg:top-24 space-y-6">
                   {content && content.sections.length > 0 && (
-                    <div className="rounded-2xl border border-stone-200 bg-white p-6">
+                    <div className="rounded-sm border border-stone-200 bg-white p-6">
                       <p className="text-xs font-bold uppercase tracking-wider text-stone-400">In This Article</p>
                       <ol className="mt-4 space-y-2.5">
                         {content.sections.map((section, i) => (
@@ -165,7 +165,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   )}
 
                   {article.tags.length > 0 && (
-                    <div className="rounded-2xl border border-stone-200 bg-white p-6">
+                    <div className="rounded-sm border border-stone-200 bg-white p-6">
                       <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Topics</p>
                       <div className="mt-4 flex flex-wrap gap-2">
                         {article.tags.map((tag) => (
@@ -180,7 +180,7 @@ export default async function ArticlePage({ params }: PageProps) {
                     </div>
                   )}
 
-                  <div className="rounded-2xl border border-[#0056b3]/20 bg-white p-6">
+                  <div className="rounded-sm border border-[#0056b3]/20 bg-white p-6">
                     <h2 className="text-base font-bold text-[#0b1524]">Discuss this with us</h2>
                     <p className="mt-2 text-xs leading-relaxed text-stone-600">
                       If this maps to something you are trying to solve, talk it through with the team that does the work.
@@ -198,7 +198,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
               {/* Body */}
               <div className="lg:col-span-8">
-                <article className="rounded-2xl border border-stone-200 bg-white p-8 lg:p-10">
+                <article className="rounded-sm border border-stone-200 bg-white p-8 lg:p-10">
                   {content ? (
                     <>
                       <p className="text-base leading-relaxed text-stone-700">{content.overview}</p>
@@ -220,7 +220,7 @@ export default async function ArticlePage({ params }: PageProps) {
                       </div>
 
                       {content.bullets && content.bullets.length > 0 && (
-                        <div className="mt-10 rounded-xl border border-stone-200 bg-[#fbfbfa] p-6">
+                        <div className="mt-10 rounded-sm border border-stone-200 bg-[#fbfbfa] p-6">
                           <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Key Points</p>
                           <ul className="mt-4 space-y-3">
                             {content.bullets.map((bullet, i) => (
@@ -234,7 +234,7 @@ export default async function ArticlePage({ params }: PageProps) {
                       )}
 
                       {content.keyTakeaway && (
-                        <div className="mt-8 rounded-xl border border-[#0056b3]/20 bg-[#0056b3]/5 p-6">
+                        <div className="mt-8 rounded-sm border border-[#0056b3]/20 bg-[#0056b3]/5 p-6">
                           <div className="flex items-center gap-2">
                             <Lightbulb className="size-4 text-[#0056b3]" />
                             <p className="text-xs font-bold uppercase tracking-wider text-[#0056b3]">
@@ -252,7 +252,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   <div className="mt-10 border-t border-stone-200 pt-6">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494]"
+                      className="inline-flex items-center gap-2 rounded-sm bg-[#0056b3] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all hover:bg-[#004494]"
                     >
                       Talk to our team
                       <ArrowRight className="size-4" />
@@ -284,7 +284,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   <Link
                     key={item.id}
                     href={`/blogs/${item.id}`}
-                    className="group flex flex-col justify-between rounded-2xl border border-stone-200 bg-[#fbfbfa] p-7 transition-all hover:-translate-y-1 hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
+                    className="group flex flex-col justify-between rounded-sm border border-stone-200 bg-[#fbfbfa] p-7 transition-all hover:-translate-y-1 hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
                   >
                     <div>
                       <span className="text-xs font-bold uppercase tracking-wider text-[#0056b3]">
@@ -306,11 +306,13 @@ export default async function ArticlePage({ params }: PageProps) {
             </Container>
           </section>
         )}
+
+        {/* CALL TO ACTION */}
+        <ReadyToScaleCTA />
       </main>
 
       <Footer />
       <FloatingActions />
-      <PremiumCursor />
     </div>
   );
 }

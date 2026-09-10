@@ -1,15 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/**
+ * Geist reads as a developer-tool typeface — it is Vercel's, and it carries
+ * that association onto anything set in it. A firm selling accounting capacity
+ * to practice partners needs the opposite signal, so headings run in a serif
+ * and body copy in its humanist sans companion.
+ */
+const bodySans = Source_Sans_3({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const headingSerif = Source_Serif_4({
+  variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
@@ -120,7 +126,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-US"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${bodySans.variable} ${headingSerif.variable} h-full antialiased scroll-smooth`}
     >
       <head>
         <script
