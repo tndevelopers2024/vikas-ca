@@ -25,15 +25,17 @@ export function Footer() {
     };
 
   return (
-    <footer
-      className="relative bg-[#003366] text-white bg-cover bg-no-repeat overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/footer-bg.jpg')",
-        backgroundColor: "#013b68",
-        backgroundPosition: "50% 0",
-      }}
-    >
-      <div className="max-w-[1340px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 pb-6">
+    <footer className="relative text-white overflow-hidden bg-gradient-to-b from-[#081528] via-[#060f1d] to-[#040912] border-t border-slate-800/80">
+      {/* Subtle top ambient glow from NICS brand blue */}
+      <div
+        className="absolute inset-x-0 top-0 h-48 pointer-events-none opacity-40"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 86, 179, 0.25) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative z-10 max-w-[1340px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 pb-6">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
           {/* ── Column 1: Brand Info & Certification ─────────────── */}
@@ -41,7 +43,7 @@ export function Footer() {
             <Link
               href="/"
               onClick={handleLinkClick("/")}
-              className="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+              className="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0099db] rounded"
               aria-label="NICS International — Home"
             >
               <BrandLockup
@@ -63,7 +65,7 @@ export function Footer() {
               <Link
                 href="/information-technology"
                 title="ISO/IEC 27001 Information Security Management Certified"
-                className="inline-block hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+                className="inline-block hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0099db] rounded"
               >
                 <Image
                   src="/images/iso-27001-certified.png"
@@ -77,7 +79,7 @@ export function Footer() {
           </div>
 
           {/* ── Column 2: QUICK LINKS ────────────────────────────── */}
-          <div className="lg:border-l lg:border-r lg:border-[#7b9aa3]/40 lg:px-8">
+          <div className="lg:border-l lg:border-r lg:border-white/10 lg:px-8">
             <h4 className="font-sans text-[17px] font-bold uppercase tracking-[0.06em] text-white mb-6">
               QUICK LINKS
             </h4>
@@ -86,7 +88,7 @@ export function Footer() {
                 <li key={link.title} className="relative pl-3.5">
                   <span
                     aria-hidden="true"
-                    className="absolute left-0 top-[7.5px] size-[5px] rounded-full bg-[#00a99d]"
+                    className="absolute left-0 top-[7.5px] size-[5px] rounded-full bg-[#0099db]"
                   />
                   <Link
                     href={link.href}
@@ -130,7 +132,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={`View ${addr.country} office on Google Maps`}
-                    className="block group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+                    className="block group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0099db] rounded"
                   >
                     {inner}
                   </a>
@@ -142,7 +144,7 @@ export function Footer() {
           </div>
 
           {/* ── Column 4: CONTACT & STAY CONNECTED ────────────────── */}
-          <div className="lg:border-l lg:border-r lg:border-[#7b9aa3]/40 lg:px-8 flex flex-col justify-between">
+          <div className="lg:border-l lg:border-r lg:border-white/10 lg:px-8 flex flex-col justify-between">
             <div>
               <h4 className="font-sans text-[17px] font-bold uppercase tracking-[0.06em] text-white mb-6">
                 CONTACT
@@ -170,7 +172,7 @@ export function Footer() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="hover:text-white hover:underline transition-colors break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+                          className="hover:text-white hover:underline transition-colors break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0099db] rounded"
                         >
                           {item.label}
                         </a>
@@ -196,7 +198,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit NICS on ${s.platform}`}
-                    className="size-10 rounded-full bg-white/10 hover:bg-[#00a99d] text-white flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d]"
+                    className="size-10 rounded-full bg-white/10 hover:bg-[#0056b3] text-white flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0099db]"
                   >
                     {s.platform === "LinkedIn" && (
                       <svg
