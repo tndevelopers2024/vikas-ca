@@ -3,7 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, Clock, Mail } from "lucide-react";
+import { BrandLockup } from "@/components/ui/BrandLockup";
 import {
   quickLinks,
   officeAddresses,
@@ -12,6 +14,16 @@ import {
 } from "@/data/footerData";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  const handleLinkClick =
+    (href: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (href === pathname) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
   return (
     <footer
       className="relative bg-[#003366] text-white bg-cover bg-no-repeat overflow-hidden"
@@ -26,31 +38,41 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
           {/* ── Column 1: Brand Info & Certification ─────────────── */}
           <div className="lg:pr-8 flex flex-col justify-start">
-            <Link href="/" className="inline-block">
-              <Image
-                src="/images/accsource-logo-white.png"
-                alt="AccSource"
-                width={260}
-                height={58}
-                priority
-                className="h-auto w-[210px] sm:w-[230px] select-none"
+            <Link
+              href="/"
+              onClick={handleLinkClick("/")}
+              className="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+              aria-label="NICS International — Home"
+            >
+              <BrandLockup
+                white
+                className="items-start"
+                logoClassName="h-11 sm:h-12 w-auto select-none transition-opacity group-hover:opacity-90"
+                wordClassName="text-[10px] sm:text-[11px] font-bold tracking-[0.32em] text-white/95 mt-1"
+                sizes="240px"
               />
             </Link>
 
             <p className="mt-6 text-[13.5px] leading-[1.65] text-white/70">
-              AccSource specialises in operational, administrative, compliance
-              and accounting business processes for SME’s, Accounting firms,
-              Financial planners and Mortgage Brokers.
+              NICS International specialises in operational, administrative, compliance
+              and accounting business processes for SMEs, accounting firms,
+              financial planners and mortgage brokers.
             </p>
 
             <div className="mt-6 pt-1">
-              <Image
-                src="/images/iso-27001-certified.png"
-                alt="ISO/IEC 27001 Information Security Management CERTIFIED"
-                width={240}
-                height={122}
-                className="h-auto w-[180px] sm:w-[195px] select-none opacity-95"
-              />
+              <Link
+                href="/information-technology"
+                title="ISO/IEC 27001 Information Security Management Certified"
+                className="inline-block hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+              >
+                <Image
+                  src="/images/iso-27001-certified.png"
+                  alt="ISO/IEC 27001 Information Security Management CERTIFIED"
+                  width={240}
+                  height={122}
+                  className="h-auto w-[180px] sm:w-[195px] select-none opacity-95"
+                />
+              </Link>
             </div>
           </div>
 
@@ -68,6 +90,7 @@ export function Footer() {
                   />
                   <Link
                     href={link.href}
+                    onClick={handleLinkClick(link.href)}
                     className="text-[13.5px] text-white/70 hover:text-white hover:underline transition-colors block leading-snug"
                   >
                     {link.title}
@@ -83,29 +106,38 @@ export function Footer() {
               ADDRESS
             </h4>
             <div className="space-y-5 text-[13.5px] leading-[1.65] text-white/70">
-              {officeAddresses.map((addr) => (
-                <div key={addr.country}>
-                  {addr.href ? (
-                    <a
-                      href={addr.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-sans font-bold text-white hover:underline block"
-                    >
-                      {addr.country}
-                    </a>
-                  ) : (
-                    <p className="font-sans font-bold text-white">
+              {officeAddresses.map((addr) => {
+                const inner = (
+                  <>
+                    <p className="font-sans font-bold text-white group-hover:underline group-hover:text-white">
                       {addr.country}
                     </p>
-                  )}
-                  {addr.lines.map((line, idx) => (
-                    <p key={idx} className="mt-0.5">
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              ))}
+                    {addr.lines.map((line, idx) => (
+                      <p
+                        key={idx}
+                        className="mt-0.5 text-white/70 group-hover:text-white/90 transition-colors"
+                      >
+                        {line}
+                      </p>
+                    ))}
+                  </>
+                );
+
+                return addr.href ? (
+                  <a
+                    key={addr.country}
+                    href={addr.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`View ${addr.country} office on Google Maps`}
+                    className="block group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={addr.country}>{inner}</div>
+                );
+              })}
             </div>
           </div>
 
@@ -138,7 +170,7 @@ export function Footer() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="hover:text-white hover:underline transition-colors break-all"
+                          className="hover:text-white hover:underline transition-colors break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d] rounded"
                         >
                           {item.label}
                         </a>
@@ -163,8 +195,8 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={s.platform}
-                    className="size-10 rounded-full bg-white/10 hover:bg-[#00a99d] text-white flex items-center justify-center transition-all duration-200"
+                    aria-label={`Visit NICS on ${s.platform}`}
+                    className="size-10 rounded-full bg-white/10 hover:bg-[#00a99d] text-white flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00a99d]"
                   >
                     {s.platform === "LinkedIn" && (
                       <svg
@@ -201,10 +233,33 @@ export function Footer() {
         </div>
 
         {/* ── Bottom Copyright Bar ──────────────────────────────── */}
-        <div className="mt-14 pt-6 border-t border-white/10 text-left">
+        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
           <p className="text-[13px] text-white/50">
-            &copy; 2026 AccSource. All rights reserved
+            &copy; {new Date().getFullYear()} NICS International. All rights reserved
           </p>
+          <div className="flex flex-wrap items-center gap-6 text-[12.5px] text-white/60">
+            <Link
+              href="/privacy-policy"
+              onClick={handleLinkClick("/privacy-policy")}
+              className="hover:text-white hover:underline transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/information-technology"
+              onClick={handleLinkClick("/information-technology")}
+              className="hover:text-white hover:underline transition-colors"
+            >
+              Information Security
+            </Link>
+            <Link
+              href="/contact"
+              onClick={handleLinkClick("/contact")}
+              className="hover:text-white hover:underline transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

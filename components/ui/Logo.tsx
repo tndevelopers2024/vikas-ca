@@ -8,6 +8,7 @@ interface LogoProps {
   alt?: string;
   /** Rendered width hint — the lockup never displays wider than ~220px. */
   sizes?: string;
+  white?: boolean;
 }
 
 /**
@@ -19,10 +20,11 @@ export function Logo({
   priority = false,
   alt = "NICS",
   sizes = "220px",
+  white = false,
 }: LogoProps) {
   return (
     <Image
-      src="/logo.png"
+      src={white ? "/images/nics-logo-white.png" : "/logo.png"}
       alt={alt}
       width={2400}
       height={685}

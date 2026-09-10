@@ -34,19 +34,21 @@ export const quickLinks: QuickLink[] = [
 export const officeAddresses: OfficeAddress[] = [
   {
     country: "Australia",
-    href: "https://maps.google.com/?q=13/33+Ryde+Road+Pymble+NSW+2073",
-    lines: ["13/33, Ryde Road,", "Pymble, NSW – 2073"],
+    href: "https://maps.google.com/?q=Bridgeport+Business+Park+Pymble+NSW+2073",
+    lines: ["Bridgeport Business Park,", "Pymble, NSW – 2073"],
   },
   {
     country: "Registered Office: India",
+    href: "https://maps.google.com/?q=Prince+Centre+709+Anna+Salai+Chennai+Tamil+Nadu+600006",
     lines: [
-      "Navin’s Presidium, 103, B Block 8th Floor,",
-      "Nelson Manickam Road, Aminjikarai,",
-      "Chennai – 600029",
+      "Prince Centre, 4th Floor Left Wing,",
+      "709 Pathari Road, Anna Salai,",
+      "Chennai, Tamil Nadu – 600006",
     ],
   },
   {
     country: "USA",
+    href: "https://maps.google.com/?q=Five+GreenTree+Center+525+Route+73+North+Marlton+NJ+08053",
     lines: [
       "Five GreenTree Center,",
       "525 Route 73 North STE 104,",
@@ -58,8 +60,8 @@ export const officeAddresses: OfficeAddress[] = [
 export const contactDetails: ContactItem[] = [
   {
     type: "phone",
-    label: "1300103145",
-    href: "tel:1300103145",
+    label: "+61 2 9000 1234",
+    href: "tel:+61290001234",
   },
   {
     type: "clock",
@@ -67,13 +69,13 @@ export const contactDetails: ContactItem[] = [
   },
   {
     type: "email",
-    label: "boobalan@accsource.net",
-    href: "mailto:boobalan@accsource.net",
+    label: "hello@nics.com",
+    href: "mailto:hello@nics.com",
   },
   {
     type: "phone",
-    label: "+91 44 42859506",
-    href: "tel:+914442859506",
+    label: "+91 9632 466 477",
+    href: "tel:+919632466477",
   },
   {
     type: "clock",
@@ -81,23 +83,23 @@ export const contactDetails: ContactItem[] = [
   },
   {
     type: "email",
-    label: "goravgupta@accsource.net",
-    href: "mailto:goravgupta@accsource.net",
+    label: "operations@nics.com",
+    href: "mailto:operations@nics.com",
   },
 ];
 
 export const socialLinks: SocialLink[] = [
   {
     platform: "LinkedIn",
-    href: "https://www.linkedin.com/company/accsource/?viewAsMember=true",
+    href: "https://www.linkedin.com/company/nics/",
   },
   {
     platform: "Twitter",
-    href: "https://twitter.com/AccSourceGlobal",
+    href: "https://twitter.com/NICSGlobal",
   },
   {
     platform: "Facebook",
-    href: "https://www.facebook.com/AccSource/",
+    href: "https://www.facebook.com/NICSInternational/",
   },
 ];
 

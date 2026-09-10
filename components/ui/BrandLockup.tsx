@@ -10,6 +10,7 @@ interface BrandLockupProps {
   className?: string;
   priority?: boolean;
   sizes?: string;
+  white?: boolean;
 }
 
 /**
@@ -24,6 +25,7 @@ export function BrandLockup({
   className,
   priority = false,
   sizes,
+  white = false,
 }: BrandLockupProps) {
   return (
     <span className={clsx("inline-flex flex-col items-center", className)}>
@@ -32,10 +34,12 @@ export function BrandLockup({
         alt="NICS International"
         priority={priority}
         sizes={sizes}
+        white={white}
       />
       <span
         className={clsx(
-          "block w-full text-center font-semibold uppercase leading-none text-[#0056b3]",
+          "block w-full text-center font-semibold uppercase leading-none",
+          white ? "text-white" : "text-[#0056b3]",
           wordClassName
         )}
       >
