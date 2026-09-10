@@ -22,6 +22,9 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { OutsourcingModels } from "@/components/sections/OutsourcingModels";
+import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
+import { ServiceCatalogue } from "@/components/sections/ServiceCatalogue";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
@@ -168,6 +171,7 @@ const operationalServices = [
 const industrySolutions = [
   {
     title: "Accounting Industry",
+    image: "/images/nics/operational-support-desk.jpg",
     icon: Building2,
     description:
       "Equip your accounting firm with dedicated client onboarding, identity verification, data validation, and practice communication support to maintain seamless client relations.",
@@ -179,6 +183,7 @@ const industrySolutions = [
   },
   {
     title: "Business Enterprises",
+    image: "/images/nics/privacy-support.jpg",
     icon: TrendingUp,
     description:
       "Empower growing commercial enterprises with 24/7 live chat support, technical troubleshooting, dispute resolution, and claims processing under strict SLAs.",
@@ -190,6 +195,7 @@ const industrySolutions = [
   },
   {
     title: "Financial Advisors",
+    image: "/images/nics/accounting-analyst.jpg",
     icon: Users,
     description:
       "Support paraplanning and advisory practices with robust client onboarding protocols, annual KYC health checks, CRM pipeline administration, and client outreach.",
@@ -280,192 +286,27 @@ export default function OperationalPage() {
         />
 
         {/* SERVICES SECTION */}
-        <section id="services" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">
-          <Container size="default">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">What We Provide</p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl text-[#0b1524]">
-                Operational Services
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-stone-600">
-                Comprehensive operational capabilities designed to elevate customer satisfaction, ensure regulatory compliance, and maintain flawless data hygiene.
-              </p>
-            </div>
-
-            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {operationalServices.map((item, index) => {
-                const IconComponent = item.icon;
-                const isFeatured = index === 0;
-                return (
-                  <div
-                    key={item.id}
-                    className={`group relative flex flex-col justify-between rounded-sm border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm ${
-                      isFeatured
-                        ? "border-[#0056b3]/40 shadow-md ring-1 ring-[#0056b3]/20 md:col-span-2 lg:col-span-1"
-                        : "border-stone-200 hover:border-[#0056b3]/30"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3] transition-colors group-hover:bg-[#0056b3] group-hover:text-white">
-                          <IconComponent className="size-6" />
-                        </div>
-                        <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-semibold text-stone-600">
-                          {item.tag}
-                        </span>
-                      </div>
-
-                      <h3 className="mt-5 text-xl font-bold text-[#0b1524] group-hover:text-[#0056b3] transition-colors">
-                        {item.name}
-                      </h3>
-
-                      <p className="mt-3 text-sm leading-relaxed text-stone-600">
-                        {item.description}
-                      </p>
-
-                      <div className="mt-6 border-t border-stone-100 pt-5">
-                        <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Key Capabilities</p>
-                        <ul className="mt-3 space-y-2.5">
-                          {item.points.map((pt, i) => (
-                            <li key={i} className="flex items-start gap-2.5 text-xs text-stone-600">
-                              <CheckCircle2 className="size-4 shrink-0 text-[#0056b3] mt-0.5" />
-                              <span>{pt}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="mt-6 pt-4">
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0056b3] transition-colors hover:text-[#004494]"
-                      >
-                        Enquire about {item.name}
-                        <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </Link>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
+        <ServiceCatalogue
+          title={"Operational Services"}
+          description={"Comprehensive operational capabilities designed to elevate customer satisfaction, ensure regulatory compliance, and maintain flawless data hygiene."}
+          items={operationalServices}
+        />
 
         {/* SOLUTIONS BY INDUSTRY */}
-        <section className="border-t border-stone-200 bg-white py-20 lg:py-28">
-          <Container size="default">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">Industry Focus</p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl text-[#0b1524]">
-                View Solutions by Industry
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-stone-600">
-                Discover how our operational expertise is configured to address the unique requirements of your industry.
-              </p>
-            </div>
-
-            <div className="mt-14 grid gap-8 md:grid-cols-3">
-              {industrySolutions.map((ind) => {
-                const IndIcon = ind.icon;
-                return (
-                  <div
-                    key={ind.title}
-                    className="flex flex-col justify-between rounded-sm border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg"
-                  >
-                    <div>
-                      <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
-                        <IndIcon className="size-6" />
-                      </div>
-                      <h3 className="mt-5 text-xl font-bold text-[#0b1524]">{ind.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-stone-600">{ind.description}</p>
-
-                      <div className="mt-6 border-t border-stone-200 pt-5">
-                        <p className="text-xs font-bold uppercase tracking-wider text-stone-500">Key Support Areas</p>
-                        <ul className="mt-3 space-y-2">
-                          {ind.benefits.map((b, i) => (
-                            <li key={i} className="flex items-start gap-2 text-xs text-stone-600">
-                              <span className="size-1.5 rounded-full bg-[#0056b3] mt-1.5 shrink-0" />
-                              <span>{b}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 border-t border-stone-100 pt-4">
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0056b3] hover:underline"
-                      >
-                        Explore industry workflows <ArrowRight className="size-3.5" />
-                      </Link>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
+        <IndustrySolutions
+          eyebrow={"Industry Focus"}
+          title={"View Solutions by Industry"}
+          description={"Discover how our operational expertise is configured to address the unique requirements of your industry."}
+          items={industrySolutions}
+        />
 
         {/* OUTSOURCING MODELS */}
-        <section className="border-t border-stone-200 bg-[#0b1524] py-20 text-white lg:py-28">
-          <Container size="default">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#8bc7ff]">
-                <Zap className="size-3.5" />
-                Delivery Flexibility
-              </div>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
-                Outsourcing Models
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-300">
-                Choose the model that fits your operational needs, internal management preferences, and scaling roadmap.
-              </p>
-            </div>
-
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {outsourcingModels.map((model) => (
-                <div
-                  key={model.title}
-                  className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
-                >
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-black text-[#8bc7ff]">{model.number}</span>
-                      <span className="rounded bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-slate-300">
-                        {model.tag}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-4 text-lg font-bold text-white">{model.title}</h3>
-                    <p className="mt-3 text-xs leading-relaxed text-slate-300">{model.description}</p>
-
-                    <div className="mt-5 border-t border-white/10 pt-4">
-                      <ul className="space-y-2">
-                        {model.highlights.map((hl, i) => (
-                          <li key={i} className="flex items-start gap-2 text-[12px] text-slate-300">
-                            <CheckCircle2 className="size-3.5 shrink-0 text-[#8bc7ff] mt-0.5" />
-                            <span>{hl}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 pt-2">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#8bc7ff] transition-colors hover:text-white"
-                    >
-                      Discuss this model <ArrowRight className="size-3" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        <OutsourcingModels
+          eyebrow={"Delivery Flexibility"}
+          title={"Outsourcing Models"}
+          description={"Choose the model that fits your operational needs, internal management preferences, and scaling roadmap."}
+          models={outsourcingModels}
+        />
 
         {/* CALL TO ACTION */}
         <ReadyToScaleCTA />

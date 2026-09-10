@@ -122,7 +122,17 @@ export default function InformationTechnologyPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Four pillars as quadrants around a central 360° emblem */}
+            <div className="relative">
+              <div
+                aria-hidden="true"
+                className="absolute left-1/2 top-1/2 z-10 hidden size-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[#0b1524] text-white shadow-2xl ring-8 ring-stone-50 md:flex"
+              >
+                <ShieldCheck className="size-8 text-[#8bc7ff]" />
+                <span className="mt-1 font-serif text-2xl font-bold">360°</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Security</span>
+              </div>
+            <div className="grid overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm md:grid-cols-2">
               {[
                 {
                   icon: UserCheck,
@@ -166,18 +176,32 @@ export default function InformationTechnologyPage() {
                 },
               ].map((card, idx) => {
                 const Icon = card.icon;
+                // Borders form the cross between quadrants; inner padding clears the emblem.
+                const quadrant = [
+                  "border-b md:border-r md:pb-20 md:pr-24",
+                  "border-b md:pb-20 md:pl-24",
+                  "border-b md:border-b-0 md:border-r md:pt-20 md:pr-24",
+                  "md:pt-20 md:pl-24",
+                ][idx];
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-sm p-6 border border-stone-200 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-200 flex flex-col"
+                    className={`group border-stone-200 p-8 transition-colors duration-300 hover:bg-[#0056b3]/[0.03] lg:p-12 ${quadrant}`}
                   >
-                    <div className="w-12 h-12 rounded-sm bg-[#0056b3]/10 flex items-center justify-center text-[#0056b3] mb-5">
-                      <Icon className="size-6" />
+                    <div className="flex items-center gap-4">
+                      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0056b3]/10 text-[#0056b3] transition-colors duration-300 group-hover:bg-[#0056b3] group-hover:text-white">
+                        <Icon className="size-6" />
+                      </span>
+                      <div>
+                        <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00a99d]">
+                          Pillar {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="text-xl font-bold text-[#0b1524]">{card.title}</h3>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-[#0b1524] mb-4">{card.title}</h3>
-                    <ul className="space-y-2.5 mt-auto">
+                    <ul className="mt-6 space-y-3">
                       {card.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-2 text-xs sm:text-[13px] text-stone-600 leading-snug">
+                        <li key={pIdx} className="flex items-start gap-2.5 text-sm text-stone-600 leading-snug">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#00a99d] shrink-0 mt-1.5" />
                           <span>{pt}</span>
                         </li>
@@ -186,6 +210,7 @@ export default function InformationTechnologyPage() {
                   </div>
                 );
               })}
+            </div>
             </div>
           </Container>
         </section>
@@ -203,7 +228,7 @@ export default function InformationTechnologyPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <ol className="border-t border-stone-200">
               {[
                 {
                   step: "01",
@@ -221,15 +246,23 @@ export default function InformationTechnologyPage() {
                   desc: "Site-to-site encrypted VPN tunnels configured with static IP whitelisting ensuring only authorized personnel on designated subnets can access your files.",
                 },
               ].map((item, i) => (
-                <div key={i} className="rounded-sm border border-stone-200 bg-stone-50/50 p-6 sm:p-8 space-y-4">
-                  <div className="text-xs font-extrabold tracking-widest text-[#00a99d] uppercase">
-                    Model {item.step}
+                <li
+                  key={i}
+                  className="group grid gap-4 border-b border-stone-200 py-8 transition-colors duration-300 hover:bg-stone-50/80 md:grid-cols-12 md:items-center md:gap-8 md:px-4"
+                >
+                  <div className="flex items-center gap-4 md:col-span-3">
+                    <span className="font-serif text-5xl font-bold leading-none text-[#00a99d]/25 transition-colors duration-300 group-hover:text-[#00a99d]/60">
+                      {item.step}
+                    </span>
+                    <span className="text-xs font-extrabold tracking-widest text-[#00a99d] uppercase">
+                      Model {item.step}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#0b1524]">{item.title}</h3>
-                  <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
-                </div>
+                  <h3 className="text-xl font-bold text-[#0b1524] md:col-span-4">{item.title}</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed md:col-span-5">{item.desc}</p>
+                </li>
               ))}
-            </div>
+            </ol>
           </Container>
         </section>
 

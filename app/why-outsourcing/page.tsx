@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
+import { ExploreFurther } from "@/components/sections/ExploreFurther";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
@@ -285,71 +286,14 @@ export default function WhyOutsourcingPage() {
         </section>
 
         {/* WHY OUTSOURCING CLUSTER */}
-        <section className="border-t border-stone-200 bg-[#0b1524] py-20 text-white lg:py-28">
-          <Container size="default">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#8bc7ff]">
-                <TrendingUp className="size-3.5" />
-                Explore Further
-              </div>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
-                Why Outsourcing
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-300">
-                Productivity is one part of the picture. Here is the rest of the case for building your team offshore.
-              </p>
-            </div>
-
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {whyOutsourcing.map((item) => {
-                const ItemIcon = item.icon;
-                const isCurrent = item.href === "/why-outsourcing";
-                const cardBody = (
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex size-11 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
-                        <ItemIcon className="size-5" />
-                      </div>
-                      {isCurrent && (
-                        <span className="rounded bg-[#8bc7ff]/20 px-2 py-0.5 text-[11px] font-semibold text-[#8bc7ff]">
-                          On this page
-                        </span>
-                      )}
-                      {!item.href && (
-                        <span className="rounded bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-slate-400">
-                          Coming soon
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
-                    <p className="mt-3 text-xs leading-relaxed text-slate-300">{item.blurb}</p>
-                  </div>
-                );
-
-                return item.href && !isCurrent ? (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="flex flex-col justify-between rounded-sm border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#8bc7ff]/40 hover:bg-white/10"
-                  >
-                    {cardBody}
-                  </Link>
-                ) : (
-                  <div
-                    key={item.title}
-                    className={`flex flex-col justify-between rounded-sm border p-6 ${
-                      isCurrent
-                        ? "border-[#8bc7ff]/40 bg-white/10"
-                        : "border-white/10 bg-white/5"
-                    }`}
-                  >
-                    {cardBody}
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
+        <ExploreFurther
+          eyebrowIcon={TrendingUp}
+          title={"Why Outsourcing"}
+          description={"Productivity is one part of the picture. Here is the rest of the case for building your team offshore."}
+          items={whyOutsourcing}
+          currentHref="/why-outsourcing"
+          images={["/images/nics/accounting-reporting.jpg", "/images/nics/home-boardroom.jpg", "/images/nics/accounting-tax.jpg", "/images/nics/blog-video-call.jpg"]}
+        />
 
         {/* CALL TO ACTION */}
         <ReadyToScaleCTA />
