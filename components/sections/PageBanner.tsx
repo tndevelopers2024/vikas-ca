@@ -44,7 +44,7 @@ export function PageBanner({
   return (
     <section className="relative isolate overflow-hidden min-h-[400px] sm:min-h-[440px] lg:min-h-[480px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-14 lg:pb-16 border-b border-stone-200 bg-[#f4f8fc]">
       {/* 1. Full-bleed Background Photograph */}
-      <div className="hero__still absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+      <div className="hero__still absolute inset-0 z-0 overflow-hidden">
         <Image
           src={image}
           alt={imageAlt}

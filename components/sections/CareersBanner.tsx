@@ -48,8 +48,8 @@ export function CareersBanner() {
       {/* Full-bleed Background Photograph */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/bright/careers-quality.jpg"
-          alt="NICS team achieving quality and ISO/IEC 27001 standards excellence"
+          src="/images/bright/hero-dedicated-teams.jpg"
+          alt="Indian professional delivery team achieving quality and ISO/IEC 27001 standards excellence"
           fill
           priority={false}
           className="object-cover object-center scale-100"

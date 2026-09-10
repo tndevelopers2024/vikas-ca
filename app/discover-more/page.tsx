@@ -198,7 +198,7 @@ export default function DiscoverMorePage() {
           cardBadge="Client Knowledge Hub"
           cardTitle="Operational Guidance & SLAs"
           cardSubtitle="Everything you need to know about IT security, data privacy, and governance."
-          imageAlt="Practice advisory consultation and client partnership discussion in modern sunny office"
+          imageAlt="Indian practice delivery director and operations team reviewing ISO 27001 governance frameworks and SLA metrics"
         />
 
         {/* FAQ SECTION */}

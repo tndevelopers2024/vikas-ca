@@ -153,7 +153,7 @@ export default function WhyOutsourcingPage() {
           cardBadge="Your Extended Team"
           cardTitle="Retain 100% Onshore Control"
           cardSubtitle="Delegate routine processing while keeping client relationships, strategy, and judgment in-house."
-          imageAlt="Executive leadership and offshore delivery partner establishing strategic collaboration in modern executive office"
+          imageAlt="Indian practice delivery director and international firm executive reviewing offshore capacity scaling in high-rise corporate suite"
         />
 
         {/* INTRO NARRATIVE */}

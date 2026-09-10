@@ -115,9 +115,9 @@ export function ContactView() {
         ]}
         image="/images/bright/page-contact.jpg"
         cardBadge="Global Advisory"
-          cardTitle="Corporate Consultation Suite"
-          cardSubtitle="Connect directly with our leadership to evaluate scope, SLAs, and dedicated talent."
-          imageAlt="Corporate reception and practice consultation suite in bright architectural space"
+        cardTitle="Corporate Consultation Suite"
+        cardSubtitle="Connect directly with our leadership to evaluate scope, SLAs, and dedicated talent."
+        imageAlt="Indian corporate client consultation suite and practice advisory reception at Chennai delivery headquarters"
       />
 
       {/* 2. DIRECT COMMUNICATION CHANNELS */}

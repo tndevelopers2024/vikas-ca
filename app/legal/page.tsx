@@ -232,7 +232,7 @@ export default function LegalPage() {
           cardBadge="NICS Legal Operations"
           cardTitle="Contract Management & Due Diligence"
           cardSubtitle="Paralegal support for law firms and corporate counsel under strict ISO 27001 data governance."
-          imageAlt="Legal contract administration, law volumes, and corporate due diligence"
+          imageAlt="Indian corporate paralegal and legal counsel reviewing commercial contracts, MSAs, and due diligence dossiers"
         />
 
         {/* SERVICES SECTION */}

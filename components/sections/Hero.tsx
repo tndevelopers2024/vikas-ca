@@ -28,8 +28,9 @@ const slides = [
       label: "Discuss what to delegate",
       href: "#contact",
     },
-    image: "/images/bright/hero-scale-business.jpg",
-    imageAlt: "Modern sunlit corporate advisory office with panoramic skyline views",
+    image: "/images/bright/hero-indian-professionals.jpg",
+    imageAlt:
+      "Indian corporate advisory and finance professionals reviewing documents in a modern sunlit office",
   },
   {
     id: "systems-talent",
@@ -46,8 +47,9 @@ const slides = [
       label: "Compliance & SMSF",
       href: "/compliance",
     },
-    image: "/images/bright/page-accounting.jpg",
-    imageAlt: "Chartered accountant analyzing ledgers and financial data in bright daylight",
+    image: "/images/bright/hero-indian-accountant.jpg",
+    imageAlt:
+      "Indian professional accountant analyzing financial reports and cloud software at modern workstation",
   },
   {
     id: "dedicated-teams",
@@ -64,8 +66,9 @@ const slides = [
       label: "Why choose outsourcing",
       href: "/why-outsourcing",
     },
-    image: "/images/bright/page-build-your-team.jpg",
-    imageAlt: "Diverse executive leadership and delivery specialists collaborating in bright corporate space",
+    image: "/images/bright/hero-indian-dedicated-team.jpg",
+    imageAlt:
+      "Indian dedicated offshore delivery team lead and analysts collaborating at modern workstations",
   },
   {
     id: "client-ownership",
@@ -82,41 +85,9 @@ const slides = [
       label: "Schedule consultation",
       href: "#contact",
     },
-    image: "/images/bright/page-why-outsourcing.jpg",
-    imageAlt: "Strategic business growth and global team collaboration in conference room",
-  },
-];
-
-const promises = [
-  {
-    n: "01",
-    title: "Flexible Capacity",
-    text: "Shoulder peak workloads and back-office volume without permanent in-house headcount overhead.",
-    href: "/why-outsourcing",
-  },
-  {
-    n: "02",
-    title: "ISO/IEC 27001 Security",
-    text: "Enterprise data segregation, biometric access controls, clean-desk policy, and secure client environments.",
-    href: "/discover-more",
-  },
-  {
-    n: "03",
-    title: "Certified CA/CPA Talent",
-    text: "Pre-vetted accountants and specialists trained on Australian and international statutory standards.",
-    href: "/accounting",
-  },
-  {
-    n: "04",
-    title: "100% Onshore Control",
-    text: "You retain client relationships, decision-making and final approvals while we execute behind the scenes.",
-    href: "/how-it-works",
-  },
-  {
-    n: "05",
-    title: "Guaranteed SLA Governance",
-    text: "Audit-ready deliverables, transparent tracking, daily standups, and rigorous partner-level QA review.",
-    href: "/build-your-team",
+    image: "/images/bright/hero-governance-partnership.jpg",
+    imageAlt:
+      "Indian corporate executives and managing partner reviewing strategic documentation in bright boardroom",
   },
 ];
 
@@ -172,22 +143,22 @@ export function Hero() {
   };
 
   return (
-    <>
-      {/* ══════════════════════════════════════════════════════════════════════
-          1. FULL-BLEED HERO BANNER CAROUSEL (matching dante-new.vercel.app)
-         ══════════════════════════════════════════════════════════════════════ */}
-      <section
-        id="home"
-        data-banner
-        className="hero hero--full hero--banner relative isolate w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[78vh] xl:min-h-[84vh] overflow-hidden bg-[#e8f1fb] text-[#0b1524] flex items-center"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        aria-roledescription="carousel"
-        aria-label="NICS Offshore Delivery Banner"
-      >
+    /* ══════════════════════════════════════════════════════════════════════
+        1. FULL-BLEED HERO BANNER CAROUSEL (100vh full-screen)
+       ══════════════════════════════════════════════════════════════════════ */
+    <section
+      id="home"
+      data-banner
+      className="hero hero--full hero--banner relative isolate w-full h-screen min-h-screen min-h-[100vh] overflow-hidden bg-[#e8f1fb] text-[#0b1524] flex items-center"
+      style={{ minHeight: "100vh" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      aria-roledescription="carousel"
+      aria-label="NICS Offshore Delivery Banner"
+    >
         {/* ── Slide Stage: Simultaneous DOM Stack (zero blank flash on transition) ── */}
         <div className="hero__stage absolute inset-0 z-0">
           {slides.map((s, idx) => {
@@ -207,7 +178,7 @@ export function Hero() {
                 }`}
               >
                 {/* Full-Bleed Photograph (.hero__still) with Ken Burns Drift */}
-                <div className="hero__still absolute inset-0 overflow-hidden" aria-hidden="true">
+                <div className="hero__still absolute inset-0 overflow-hidden">
                   <Image
                     src={s.image}
                     alt={s.imageAlt}
@@ -220,21 +191,21 @@ export function Hero() {
                   />
                 </div>
 
-                {/* Calibrated Directional Scrim matching Dante — ensures 100% crisp contrast */}
+                {/* Calibrated Directional Scrim — protects text legibility on left, leaves images 100% vivid & crystal clear */}
                 <div
                   className="hero__scrim absolute inset-0 z-[2] pointer-events-none hidden sm:block"
                   style={{
                     background:
-                      "linear-gradient(100deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 40%, rgba(255, 255, 255, 0.78) 60%, rgba(255, 255, 255, 0.28) 80%, rgba(255, 255, 255, 0) 100%)",
+                      "linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 28%, rgba(255, 255, 255, 0.35) 46%, rgba(255, 255, 255, 0) 60%)",
                   }}
                   aria-hidden="true"
                 />
-                {/* Mobile Scrim Layer */}
+                {/* Mobile Scrim Layer — protects header while revealing crisp imagery below */}
                 <div
                   className="hero__scrim-mobile absolute inset-0 z-[2] pointer-events-none sm:hidden"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 55%, rgba(255, 255, 255, 0.75) 100%)",
+                      "linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 42%, rgba(255, 255, 255, 0.20) 70%, rgba(255, 255, 255, 0) 85%)",
                   }}
                   aria-hidden="true"
                 />
@@ -366,39 +337,6 @@ export function Hero() {
             </div>
           </Container>
         </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════════════
-          2. THE PROMISES RAIL (.section--promises) SEPARATELY BENEATH BANNER
-         ══════════════════════════════════════════════════════════════════════ */}
-      <section className="section section--promises relative z-10 border-b border-stone-200 bg-white">
-        <Container size="default">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-stone-200/90 py-6 sm:py-7">
-            {promises.map((p) => (
-              <li key={p.n} className="py-3 sm:py-0 px-0 sm:px-4 lg:px-5 first:pl-0 last:pr-0">
-                <Link
-                  href={p.href}
-                  className="group block h-full transition-transform duration-200 hover:-translate-y-1"
-                >
-                  <span className="tabular-nums text-xs font-bold text-[#0056b3] tracking-wider block mb-1">
-                    {p.n}
-                  </span>
-                  <span className="text-sm font-bold text-[#0b1524] group-hover:text-[#0056b3] transition-colors block line-clamp-1">
-                    {p.title}
-                  </span>
-                  <span className="text-xs text-stone-500 leading-relaxed block mt-1 line-clamp-2">
-                    {p.text}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0056b3] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all mt-2">
-                    Learn more
-                    <ArrowRight className="size-3" />
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-    </>
+    </section>
   );
 }

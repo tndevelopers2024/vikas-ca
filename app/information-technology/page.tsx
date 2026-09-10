@@ -57,7 +57,7 @@ export default function InformationTechnologyPage() {
             { value: "256-bit", label: "Enterprise AES Encryption", unit: "SSL" },
           ]}
           image={heroImage}
-          imageAlt="Secure IT server operations, cybersecurity protocols, and enterprise infrastructure monitoring"
+          imageAlt="Indian cybersecurity and cloud systems engineers monitoring enterprise server security and ISO 27001 protocols in Network Operations Center"
         />
 
         {/* Section 1: Overview & Value Narrative */}

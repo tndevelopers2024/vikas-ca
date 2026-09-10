@@ -162,7 +162,7 @@ export default function BuildYourTeamPage() {
           cardBadge="Dedicated Specialists"
           cardTitle="Pre-Vetted Talent Selection"
           cardSubtitle="Interview and select accountants and specialists matched to your software stack."
-          imageAlt="Executive talent interview and candidate recruitment consultation in bright glass suite"
+          imageAlt="Indian talent acquisition director and senior partners conducting recruitment consultation for pre-vetted accountants"
         />
 
         {/* ROLES */}

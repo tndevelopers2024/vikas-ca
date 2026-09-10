@@ -250,7 +250,7 @@ export default function AccountingPage() {
           cardBadge="NICS Accounting"
           cardTitle="Ledgers, Cycles & Reporting Handled End to End"
           cardSubtitle="Deadline-driven accounting capacity that protects your margins and elevates your client experience."
-          imageAlt="Chartered accountant analyzing financial spreadsheets and ledgers in bright daylight"
+          imageAlt="Indian Chartered Accountant reviewing general ledgers, trial balances, and cloud management dashboards in a modern sunlit office"
         />
 
         {/* SERVICES SECTION */}

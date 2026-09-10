@@ -78,7 +78,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
           cardBadge="Industry Intelligence"
           cardTitle="Briefings From the Delivery Floor"
           cardSubtitle="Technical practice notes, ATO updates, and operational analysis."
-          imageAlt="Industry research, financial briefings, and practice intelligence publishing"
+          imageAlt="Indian financial research analysts and practice directors reviewing statutory compliance briefings and industry insights"
         />
 
         {/* ARTICLES */}

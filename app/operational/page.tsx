@@ -276,7 +276,7 @@ export default function OperationalPage() {
           cardBadge="NICS Operations"
           cardTitle="24/7 Contact Centre & KYC Support"
           cardSubtitle="Scalable customer care and back-office operations with guaranteed SLA performance."
-          imageAlt="Customer operations specialist with headset managing CRM workflows in bright modern office"
+          imageAlt="Indian customer operations specialists and delivery floor analysts managing CRM workflows and transaction processing"
         />
 
         {/* SERVICES SECTION */}

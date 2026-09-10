@@ -144,7 +144,7 @@ export default function WhoWeArePage() {
           cardBadge="People Powered"
           cardTitle="Strategic Human Capital & SME Focus"
           cardSubtitle="Exceptional business acumen and delivery excellence scaling alongside your leadership."
-          imageAlt="Diverse corporate leadership and delivery team collaborating in sunlit modern headquarters"
+          imageAlt="Indian corporate founders and executive leadership team collaborating in the modern architectural headquarters"
         />
 
         {/* HISTORY */}

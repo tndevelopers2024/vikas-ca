@@ -247,7 +247,7 @@ export default function AdministrativePage() {
           cardBadge="NICS Administration"
           cardTitle="Dedicated Virtual Assistants & Data Hygiene"
           cardSubtitle="High-accuracy clerical, scheduling, and document preparation workflows."
-          imageAlt="Executive virtual assistant modern sunlit desk setup with productivity tools"
+          imageAlt="Indian administrative coordinator and executive support specialist managing multi-channel scheduling and back-office operations"
         />
 
         {/* SERVICES SECTION */}

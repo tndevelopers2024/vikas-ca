@@ -221,7 +221,7 @@ export default function CompliancePage() {
           cardBadge="NICS Compliance"
           cardTitle="Statutory Filings, SMSF & Audit Support"
           cardSubtitle="Disciplined documentation behind every lodgement — your team retains full review and sign-off."
-          imageAlt="Auditors reviewing compliance dossiers and tax documentation in natural light"
+          imageAlt="Indian tax compliance specialists and auditors cross-verifying SMSF workpapers and statutory filing schedules"
         />
 
         {/* SERVICES SECTION */}
