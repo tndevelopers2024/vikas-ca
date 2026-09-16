@@ -112,6 +112,7 @@ export function ClientStories() {
                   alt="Why Businesses Work With NICS — Accounting & Finance Capability"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute top-3 left-3">
                   <Badge variant="navy" size="sm">
@@ -161,6 +162,7 @@ export function ClientStories() {
                   alt="NICS Delivery Models — Dedicated Resources, Managed Functions, and BOT"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute top-3 left-3">
                   <Badge variant="navy" size="sm">

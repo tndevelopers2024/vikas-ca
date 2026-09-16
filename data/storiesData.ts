@@ -43,7 +43,7 @@ export const featuredCaseStudy: ClientStory = {
   ],
   linkText: "Discuss how we structure ownership",
   href: "#contact",
-  image: "/img/Business Meeting.avif",
+  image: "/img/business-meeting.avif",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Model"]
 };
 

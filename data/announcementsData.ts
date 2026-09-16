@@ -20,7 +20,7 @@ export const announcementsData: AnnouncementItem[] = [
     date: "Current Practice",
     linkText: "Read about our security approach",
     href: "#insights",
-    image: "/img/Secure Data Protection.avif"
+    image: "/img/secure-data-protection.avif"
   },
   {
     id: "standards-alignment",

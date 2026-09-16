@@ -43,7 +43,7 @@ export const featuredInsight: InsightArticle = {
   },
   featured: true,
   tags: ["ISO/IEC 27001", "Access Control", "Confidentiality", "Data Protection"],
-  image: "/img/Secure Data Protection.avif",
+  image: "/img/secure-data-protection.avif",
   href: "#insights",
   fullContent: {
     overview: "When delegating sensitive financial, tax, or operational workflows offshore, information governance is paramount. NICS embeds ISO/IEC 27001 security principles directly into every layer of our operating architecture—from physical workstation controls in Chennai to encrypted cloud access protocols.",

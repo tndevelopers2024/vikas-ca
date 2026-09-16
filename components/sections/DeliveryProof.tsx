@@ -48,7 +48,7 @@ export function DeliveryProof() {
           <div className="lg:col-span-6 flex flex-col">
             <div className="relative aspect-square overflow-hidden border border-[#e4e2da]">
               <Image
-                src="/img/People at Laptops.avif"
+                src="/img/people-at-laptops.avif"
                 alt="NICS delivery team presentation on compliance, workflow, and progress on the managed floor in Chennai"
                 fill
                 className="object-cover"
