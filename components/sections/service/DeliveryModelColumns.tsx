@@ -58,7 +58,7 @@ export function DeliveryModelColumns({
                 <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden border border-white/15">
                   <Image
                     src={model.image}
-                    alt=""
+                    alt={`${model.title} - ${model.tag}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 25vw"

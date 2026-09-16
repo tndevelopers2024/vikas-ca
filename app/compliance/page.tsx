@@ -83,6 +83,8 @@ const industrySolutions = [
     stat: "Peak Season Scaling",
     statDetail: "Zero review bottleneck",
     image: "/images/solutions/accounting-industry.jpg",
+    imageAlt:
+      "Indian chartered accountants and tax specialists reviewing compliance workpapers and financial statements",
     icon: Building2,
     description:
       "Give your practice consistent compliance capacity through peak season — workpapers, financial statements, and returns prepared to your templates and review standards.",
@@ -99,6 +101,8 @@ const industrySolutions = [
     stat: "Group Consolidation",
     statDetail: "Audit-ready reconciliation trails",
     image: "/images/solutions/business-enterprises.jpg",
+    imageAlt:
+      "Indian corporate finance executive presenting enterprise performance and consolidation reports in boardroom",
     icon: TrendingUp,
     description:
       "Keep statutory obligations on schedule with dedicated support for indirect tax returns, year-end reporting packs, and audit readiness across entities.",
@@ -115,6 +119,8 @@ const industrySolutions = [
     stat: "Bundled Delivery",
     statDetail: "Accounts & independent audit unified",
     image: "/images/solutions/smsf-specialists.jpg",
+    imageAlt:
+      "Indian compliance auditor and SMSF specialist reviewing superannuation fund audit files and financial schedules",
     icon: Scale,
     description:
       "A one-stop bundled service for SMSF administrators and specialist firms, covering fund accounting through to audit documentation under one delivery workflow.",

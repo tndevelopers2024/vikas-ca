@@ -153,7 +153,7 @@ const discoverMore = [
     title: "Information Technology",
     icon: Cpu,
     blurb: "The infrastructure, systems, and security controls behind the delivery centre.",
-    href: null,
+    href: "/information-technology",
   },
   {
     title: "India, Geographical Advantage",

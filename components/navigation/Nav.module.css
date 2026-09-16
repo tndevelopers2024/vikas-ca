@@ -169,7 +169,7 @@
   border-radius: 8px;
   box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
   padding: 8px;
-  z-index: 50;
+  z-index: 100;
 }
 
 /* Invisible bridge so moving cursor down doesn't trigger mouseleave */
@@ -340,6 +340,18 @@
     font-weight: 600;
     color: #0f172a;
     text-decoration: none;
+  }
+
+  .mobileNavButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
   }
 
   .mobileNavLinkActive {

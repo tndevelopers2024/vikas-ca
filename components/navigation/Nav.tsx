@@ -50,6 +50,13 @@ export function Nav({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Ensure window scrolls to top on route change unless navigating to a hash
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  }, [pathname]);
+
   // Any completed navigation closes whatever was open
   const [renderedPath, setRenderedPath] = useState(pathname);
   if (renderedPath !== pathname) {
@@ -97,7 +104,7 @@ export function Nav({
 
   const scheduleClose = () => {
     cancelClose();
-    closeTimer.current = setTimeout(() => setOpenMenu(null), 150);
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 250);
   };
 
   const handleNavigate = useCallback(
@@ -125,6 +132,12 @@ export function Nav({
           target.scrollIntoView({ behavior: "smooth", block: "start" });
           window.history.replaceState(null, "", `#${hash}`);
         }
+        return;
+      }
+
+      // Navigating to another page without hash -> ensure top of viewport
+      if (!hash) {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       }
     },
     [pathname]
@@ -170,8 +183,18 @@ export function Nav({
                       href={item.href}
                       className={`${styles.navLink} ${current ? styles.navLinkActive : ""}`}
                       aria-current={isCurrentPage(item.href, pathname) ? "page" : undefined}
-                      onClick={handleNavigate(item.href)}
-                      onFocus={item.links ? () => setOpenMenu(item.label) : () => setOpenMenu(null)}
+                      aria-expanded={item.links ? expanded : undefined}
+                      aria-haspopup={item.links ? "true" : undefined}
+                      onClick={(e) => {
+                        if (item.links) {
+                          e.preventDefault();
+                          cancelClose();
+                          setOpenMenu((prev) => (prev === item.label ? null : item.label));
+                        } else {
+                          handleNavigate(item.href)(e);
+                        }
+                      }}
+                      onFocus={item.links ? () => { cancelClose(); setOpenMenu(item.label); } : () => setOpenMenu(null)}
                     >
                       <span>{item.label}</span>
                       {item.links && (
@@ -248,28 +271,29 @@ export function Nav({
               return (
                 <li key={item.label} className={styles.mobileNavItem}>
                   <div className={styles.mobileNavRow}>
-                    <Link
-                      href={item.href}
-                      className={`${styles.mobileNavLink} ${current ? styles.mobileNavLinkActive : ""}`}
-                      aria-current={isCurrentPage(item.href, pathname) ? "page" : undefined}
-                      onClick={handleNavigate(item.href)}
-                    >
-                      {item.label}
-                    </Link>
-
-                    {item.links && (
+                    {item.links ? (
                       <button
                         type="button"
-                        className={styles.mobileDisclosure}
+                        className={`${styles.mobileNavLink} ${current ? styles.mobileNavLinkActive : ""} ${styles.mobileNavButton}`}
                         aria-expanded={expanded}
                         aria-label={`${expanded ? "Hide" : "Show"} ${item.label} submenu`}
                         onClick={() => setMobileExpanded(expanded ? null : item.label)}
                       >
+                        <span>{item.label}</span>
                         <ChevronDown
                           className={`${styles.chevron} ${expanded ? styles.chevronOpen : ""}`}
                           aria-hidden="true"
                         />
                       </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`${styles.mobileNavLink} ${current ? styles.mobileNavLinkActive : ""}`}
+                        aria-current={isCurrentPage(item.href, pathname) ? "page" : undefined}
+                        onClick={handleNavigate(item.href)}
+                      >
+                        {item.label}
+                      </Link>
                     )}
                   </div>
 

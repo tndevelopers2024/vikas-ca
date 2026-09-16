@@ -14,6 +14,7 @@ export interface ServiceIndustry {
   benefits: string[];
   /** Optional column photograph and headline figure. */
   image?: string;
+  imageAlt?: string;
   badge?: string;
   stat?: string;
   statDetail?: string;
@@ -55,7 +56,7 @@ export function IndustryColumns({ eyebrow, title, intro, items }: IndustryColumn
                   <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden border border-[#e4e2da]">
                     <Image
                       src={ind.image}
-                      alt=""
+                      alt={ind.imageAlt || ind.title}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"
