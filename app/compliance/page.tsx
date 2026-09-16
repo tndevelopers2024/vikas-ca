@@ -1,31 +1,20 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
   ClipboardCheck,
   FileCheck2,
   PiggyBank,
   Scale,
   Building2,
   TrendingUp,
-  ShieldCheck,
-  Zap,
-  ArrowUpRight,
-  BadgeCheck,
-  Sparkles,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { OutsourcingModels } from "@/components/sections/OutsourcingModels";
-import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
-import { ServiceCatalogue } from "@/components/sections/ServiceCatalogue";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CapabilityList } from "@/components/sections/service/CapabilityList";
+import { IndustryColumns } from "@/components/sections/service/IndustryColumns";
+import { DeliveryModelColumns } from "@/components/sections/service/DeliveryModelColumns";
 
 export const metadata: Metadata = {
   title: "Compliance Services We Provide | NICS",
@@ -33,7 +22,7 @@ export const metadata: Metadata = {
     "Statutory filings and compliance support from NICS — SMSF compliance, financial statement preparation, GST and VAT returns, individual and company tax returns, and audit back office support.",
 };
 
-const heroImage = "/images/nics/compliance-calculation.jpg";
+const heroImage = "/images/bright/page-compliance.jpg";
 
 const complianceServices = [
   {
@@ -41,7 +30,7 @@ const complianceServices = [
     name: "SMSF Compliance",
     tag: "Bundled Accounts & Audit",
     icon: PiggyBank,
-    image: "/images/nics/compliance-review.jpg",
+    image: "/images/compliance/smsf-compliance.jpg",
     imageAlt: "SMSF compliance and audit specialists reviewing fund financials and tax documentation",
     description:
       "Comprehensive back-office support for SMSF compliance (year-end financial statements and tax returns) and administration. Our industry-leading SMSF bundled service (accounts and audit) offers a one-stop solution for all your SMSF needs and is a great value addition for your business.",
@@ -57,7 +46,7 @@ const complianceServices = [
     name: "Compliance Processes",
     tag: "Statutory Filings",
     icon: FileCheck2,
-    image: "/images/nics/accounting-tax.jpg",
+    image: "/images/compliance/compliance-processes.jpg",
     imageAlt: "Accountants preparing statutory filings, financial disclosures, and GST VAT returns",
     description:
       "Statutory filings and compliances encompassing financial statements preparation, GST and VAT returns, individual tax returns, and company tax returns.",
@@ -73,7 +62,7 @@ const complianceServices = [
     name: "Audit Back Office Support",
     tag: "Assurance & Risk",
     icon: ClipboardCheck,
-    image: "/images/nics/accounting-desk.jpg",
+    image: "/images/compliance/audit-back-office-support.jpg",
     imageAlt: "Assurance team examining audit workpapers, lead schedules, and risk checklists",
     description:
       "Have an expert team of industry experts, accountants and finance professionals undertake your audit support requirements. Be it audit, tax or advisory work, execute any-and-all audit related work from sophisticated accountants who harness newer technologies and industry best practices to ensure a comprehensive support service.",
@@ -93,7 +82,7 @@ const industrySolutions = [
     badge: "Practices & CPA Firms",
     stat: "Peak Season Scaling",
     statDetail: "Zero review bottleneck",
-    image: "/images/nics/accounting-review.jpg",
+    image: "/images/solutions/accounting-industry.jpg",
     icon: Building2,
     description:
       "Give your practice consistent compliance capacity through peak season — workpapers, financial statements, and returns prepared to your templates and review standards.",
@@ -109,7 +98,7 @@ const industrySolutions = [
     badge: "Corporate & Multi-Entity",
     stat: "Group Consolidation",
     statDetail: "Audit-ready reconciliation trails",
-    image: "/images/nics/blog-sales-review.jpg",
+    image: "/images/solutions/business-enterprises.jpg",
     icon: TrendingUp,
     description:
       "Keep statutory obligations on schedule with dedicated support for indirect tax returns, year-end reporting packs, and audit readiness across entities.",
@@ -125,7 +114,7 @@ const industrySolutions = [
     badge: "Administrators & Trustees",
     stat: "Bundled Delivery",
     statDetail: "Accounts & independent audit unified",
-    image: "/images/nics/accounting-analyst.jpg",
+    image: "/images/solutions/smsf-specialists.jpg",
     icon: Scale,
     description:
       "A one-stop bundled service for SMSF administrators and specialist firms, covering fund accounting through to audit documentation under one delivery workflow.",
@@ -144,7 +133,7 @@ const outsourcingModels = [
     tag: "Dedicated Extension",
     stat: "100% Dedicated",
     statDetail: "Direct seat in your practice",
-    image: "/images/nics/build-team-meeting.jpg",
+    image: "/images/models/insourcing.jpg",
     description:
       "Dedicated full-time compliance resources working directly inside your systems and workflows, operating seamlessly as an integrated extension of your internal team.",
     highlights: [
@@ -159,7 +148,7 @@ const outsourcingModels = [
     tag: "Managed Governance",
     stat: "Manager QA Oversight",
     statDetail: "Dual-layer review & SOPs",
-    image: "/images/nics/administrative-partners.jpg",
+    image: "/images/models/manager-support.jpg",
     description:
       "Dedicated preparers backed by experienced compliance managers and team leads who ensure quality control, SLA adherence, and ongoing technical coaching.",
     highlights: [
@@ -174,7 +163,7 @@ const outsourcingModels = [
     tag: "On-Demand & Scalable",
     stat: "On-Demand Surge",
     statDetail: "Pay-as-you-go capacity",
-    image: "/images/nics/discover-workstation.jpg",
+    image: "/images/models/job-by-job.jpg",
     description:
       "A flexible, pay-as-you-go delivery model where compliance work is submitted per job or per file, ideal for handling lodgement deadlines and overflow work.",
     highlights: [
@@ -189,7 +178,7 @@ const outsourcingModels = [
     tag: "Build · Operate · Transfer",
     stat: "Enterprise Asset",
     statDetail: "Seamless unit transition",
-    image: "/images/nics/who-we-are-unity.jpg",
+    image: "/images/models/bot-model.jpg",
     description:
       "We recruit, train, and build your dedicated offshore compliance unit, manage daily operations under stringent SLAs, and transfer complete operational ownership when ready.",
     highlights: [
@@ -206,7 +195,6 @@ export default function CompliancePage() {
       <Header />
 
       <main>
-        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
         <PageBanner
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Compliance" }]}
           badge="Compliance & SMSF"
@@ -224,35 +212,31 @@ export default function CompliancePage() {
           cardBadge="NICS Compliance"
           cardTitle="Statutory Filings, SMSF & Audit Support"
           cardSubtitle="Disciplined documentation behind every lodgement — your team retains full review and sign-off."
-          imageAlt="Accountant checking figures on a calculator beside a stack of compliance documents"
+          imageAlt="Indian tax compliance specialists and auditors cross-verifying SMSF workpapers and statutory filing schedules"
         />
 
-        {/* SERVICES SECTION */}
-        <ServiceCatalogue
-          title={"Compliance Services"}
-          description={"From SMSF compliance and statutory filings to full audit back office support, our accountants prepare the workpapers, statements, and returns your team reviews and signs off."}
+        <CapabilityList
+          eyebrow="What We Provide"
+          title="Compliance Services"
+          intro="From SMSF compliance and statutory filings to full audit back office support, our accountants prepare the workpapers, statements, and returns your team reviews and signs off."
           items={complianceServices}
+          ctaLabel="Discuss your compliance workload"
         />
 
-        {/* SOLUTIONS BY INDUSTRY */}
-        <IndustrySolutions
-          eyebrow={"Industry-Configured Delivery"}
-          title={"View Solutions by Industry"}
-          description={"Discover how our compliance expertise is configured to address the specific obligations, peak calendars, and regulatory mandates of your sector."}
+        <IndustryColumns
+          eyebrow="Industry-Configured Delivery"
+          title="View Solutions by Industry"
+          intro="Discover how our compliance expertise is configured to address the specific obligations, peak calendars, and regulatory mandates of your sector."
           items={industrySolutions}
-          supportTag="Standardised SOPs"
         />
 
-        {/* OUTSOURCING MODELS */}
-        <OutsourcingModels
-          eyebrow={"Delivery Flexibility & Frameworks"}
-          title={"Outsourcing Models"}
-          description={"Choose the operating framework configured for your firm's compliance volume, partner review workflows, and long-term scaling horizon."}
-          models={outsourcingModels}
-          highlightsLabel="Operating Highlights"
+        <DeliveryModelColumns
+          eyebrow="Delivery Flexibility & Frameworks"
+          title="Outsourcing Models"
+          intro="Choose the operating framework configured for your firm's compliance volume, partner review workflows, and long-term scaling horizon."
+          items={outsourcingModels}
         />
 
-        {/* CALL TO ACTION */}
         <ReadyToScaleCTA />
       </main>
 

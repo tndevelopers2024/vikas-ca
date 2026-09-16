@@ -41,15 +41,15 @@ export function DeliveryProof() {
     <section
       id="delivery-centre"
       aria-labelledby="delivery-proof-heading"
-      className="bg-white py-20 lg:py-28 border-b border-[#e4e2da]"
+      className="bg-white py-12 lg:py-16 border-b border-[#e4e2da]"
     >
       <Container size="default">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] overflow-hidden border border-[#e4e2da]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+          <div className="lg:col-span-6 flex flex-col">
+            <div className="relative aspect-square overflow-hidden border border-[#e4e2da]">
               <Image
-                src="/images/nics/operational-support-desk.jpg"
-                alt="Specialists with headsets at work on a modern delivery floor"
+                src="/img/People at Laptops.avif"
+                alt="NICS delivery team presentation on compliance, workflow, and progress on the managed floor in Chennai"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

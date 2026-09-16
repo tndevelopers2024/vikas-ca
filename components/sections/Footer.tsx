@@ -35,7 +35,7 @@ export function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="relative z-10 max-w-[1340px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 pb-6">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-6 pt-16 pb-6">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
           {/* ── Column 1: Brand Info & Certification ─────────────── */}
@@ -151,13 +151,10 @@ export function Footer() {
               </h4>
               <div className="space-y-2.5 text-[13.5px] text-white/70">
                 {contactDetails.map((item, idx) => {
-                  const isSecondBlock = idx === 3;
                   return (
                     <div
                       key={idx}
-                      className={`flex items-center gap-2.5 ${
-                        isSecondBlock ? "pt-2" : ""
-                      }`}
+                      className="flex items-center gap-2.5"
                     >
                       {item.type === "phone" && (
                         <Phone className="size-3.5 shrink-0 text-white/80" />

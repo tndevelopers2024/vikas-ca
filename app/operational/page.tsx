@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
   PhoneCall,
   Users,
   MessageSquareText,
@@ -15,21 +11,15 @@ import {
   Fingerprint,
   Building2,
   TrendingUp,
-  ShieldCheck,
-  Zap,
-  ArrowUpRight,
-  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { OutsourcingModels } from "@/components/sections/OutsourcingModels";
-import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
-import { ServiceCatalogue } from "@/components/sections/ServiceCatalogue";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CapabilityList } from "@/components/sections/service/CapabilityList";
+import { IndustryColumns } from "@/components/sections/service/IndustryColumns";
+import { DeliveryModelColumns } from "@/components/sections/service/DeliveryModelColumns";
 
 export const metadata: Metadata = {
   title: "Operational Services We Provide | NICS",
@@ -37,7 +27,7 @@ export const metadata: Metadata = {
     "Explore the operational services we provide and our flexible outsourcing models at NICS. Inbound Call Centre, CRM Management, 24/7 Live Chat, Complaints Resolution, Client Onboarding, Data Validation, Technical Support, Claim Services, and KYC Verification.",
 };
 
-const heroImage = "/images/nics/operational-support-desk.jpg";
+const heroImage = "/images/bright/page-operational.jpg";
 
 const operationalServices = [
   {
@@ -171,7 +161,6 @@ const operationalServices = [
 const industrySolutions = [
   {
     title: "Accounting Industry",
-    image: "/images/nics/operational-support-desk.jpg",
     icon: Building2,
     description:
       "Equip your accounting firm with dedicated client onboarding, identity verification, data validation, and practice communication support to maintain seamless client relations.",
@@ -183,7 +172,6 @@ const industrySolutions = [
   },
   {
     title: "Business Enterprises",
-    image: "/images/nics/privacy-support.jpg",
     icon: TrendingUp,
     description:
       "Empower growing commercial enterprises with 24/7 live chat support, technical troubleshooting, dispute resolution, and claims processing under strict SLAs.",
@@ -195,7 +183,6 @@ const industrySolutions = [
   },
   {
     title: "Financial Advisors",
-    image: "/images/nics/accounting-analyst.jpg",
     icon: Users,
     description:
       "Support paraplanning and advisory practices with robust client onboarding protocols, annual KYC health checks, CRM pipeline administration, and client outreach.",
@@ -264,7 +251,6 @@ export default function OperationalPage() {
       <Header />
 
       <main>
-        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
         <PageBanner
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Operational" }]}
           badge="Operational Services"
@@ -285,30 +271,30 @@ export default function OperationalPage() {
           imageAlt="Indian customer operations specialists and delivery floor analysts managing CRM workflows and transaction processing"
         />
 
-        {/* SERVICES SECTION */}
-        <ServiceCatalogue
-          title={"Operational Services"}
-          description={"Comprehensive operational capabilities designed to elevate customer satisfaction, ensure regulatory compliance, and maintain flawless data hygiene."}
+        <CapabilityList
+          eyebrow="What We Provide"
+          title="Operational Services"
+          intro="Comprehensive operational capabilities designed to elevate customer satisfaction, ensure regulatory compliance, and maintain flawless data hygiene."
+          image="/images/bright/service-operations.jpg"
+          imageAlt="NICS operations specialists managing customer support, compliance checks and data hygiene on the Chennai delivery floor"
           items={operationalServices}
+          ctaLabel="Discuss your operational workload"
         />
 
-        {/* SOLUTIONS BY INDUSTRY */}
-        <IndustrySolutions
-          eyebrow={"Industry Focus"}
-          title={"View Solutions by Industry"}
-          description={"Discover how our operational expertise is configured to address the unique requirements of your industry."}
+        <IndustryColumns
+          eyebrow="Industry Focus"
+          title="View Solutions by Industry"
+          intro="Discover how our operational expertise is configured to address the unique requirements of your industry."
           items={industrySolutions}
         />
 
-        {/* OUTSOURCING MODELS */}
-        <OutsourcingModels
-          eyebrow={"Delivery Flexibility"}
-          title={"Outsourcing Models"}
-          description={"Choose the model that fits your operational needs, internal management preferences, and scaling roadmap."}
-          models={outsourcingModels}
+        <DeliveryModelColumns
+          eyebrow="Delivery Flexibility"
+          title="Outsourcing Models"
+          intro="Choose the model that fits your operational needs, internal management preferences, and scaling roadmap."
+          items={outsourcingModels}
         />
 
-        {/* CALL TO ACTION */}
         <ReadyToScaleCTA />
       </main>
 

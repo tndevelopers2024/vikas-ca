@@ -9,7 +9,7 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 
 export function LatestNews() {
   return (
-    <section id="news" className="bg-[#f7f6f2] py-16 lg:py-24 border-b border-[#e6e4dc]">
+    <section id="news" className="bg-[#f7f6f2] py-12 lg:py-16 border-b border-[#e6e4dc]">
       <Container size="default">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column: Heading & Newsletter Subscribe Callout */}
@@ -25,10 +25,10 @@ export function LatestNews() {
             </div>
 
             <p className="text-sm text-stone-600 leading-relaxed">
-              Stay informed on information security practices, compliance benchmarks, and offshore delivery workflows with our regular briefings.
+              Regular briefings on security practice, compliance and delivery.
             </p>
 
-            <div className="p-5 bg-white border border-[#e6e4dc] rounded-xs space-y-3">
+            <div className="space-y-3 border-t-2 border-[#0b1524] pt-5">
               <div className="flex items-center gap-2 text-xs font-bold text-[#0b1524] uppercase tracking-wider">
                 <BellRing className="w-4 h-4 text-[#0056b3]" />
                 Practice & Security Briefings
@@ -43,12 +43,12 @@ export function LatestNews() {
           </div>
 
           {/* Right Column: Compact Editorial List with Dividers */}
-          <div className="lg:col-span-8 bg-white border border-[#e6e4dc] rounded-xs divide-y divide-[#e6e4dc] shadow-xs">
+          <div className="lg:col-span-8 divide-y divide-[#e4e2da] border-y border-[#e4e2da]">
             {latestNewsItems.map((item) => (
               <Link
                 key={item.id}
                 href={item.href}
-                className="group flex flex-col sm:flex-row sm:items-center justify-between p-5 sm:p-6 hover:bg-stone-50 transition-colors gap-3"
+                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-5 transition-colors sm:py-6"
               >
                 <div className="space-y-1 sm:max-w-xl">
                   <div className="flex items-center gap-3 text-xs text-stone-400">

@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
   FileSpreadsheet,
   FileText,
   Headset,
@@ -14,21 +10,15 @@ import {
   Building2,
   TrendingUp,
   Users,
-  ShieldCheck,
-  Zap,
-  ArrowUpRight,
-  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { OutsourcingModels } from "@/components/sections/OutsourcingModels";
-import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
-import { ServiceCatalogue } from "@/components/sections/ServiceCatalogue";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CapabilityList } from "@/components/sections/service/CapabilityList";
+import { IndustryColumns } from "@/components/sections/service/IndustryColumns";
+import { DeliveryModelColumns } from "@/components/sections/service/DeliveryModelColumns";
 
 export const metadata: Metadata = {
   title: "Administrative Services We Provide | NICS",
@@ -36,7 +26,7 @@ export const metadata: Metadata = {
     "Find out the administrative services we provide and the outsourcing models of NICS. Virtual Assistant, Data Entry, Back Office Admin, SOA Preparation, Transcription, and Mortgage Broking.",
 };
 
-const heroImage = "/images/nics/administrative-review.jpg";
+const heroImage = "/images/bright/page-administrative.jpg";
 
 const administrativeServices = [
   {
@@ -142,7 +132,6 @@ const administrativeServices = [
 const industrySolutions = [
   {
     title: "Accounting Industry",
-    image: "/images/nics/administrative-review.jpg",
     icon: Building2,
     description:
       "Empower your accounting practice by offloading client document chasing, workpaper digitisation, CRM updates, and admin tasks so your team can focus on client advisory.",
@@ -154,7 +143,6 @@ const industrySolutions = [
   },
   {
     title: "Business Enterprises",
-    image: "/images/nics/administrative-partners.jpg",
     icon: TrendingUp,
     description:
       "Optimize enterprise back-office workflows, transaction entries, vendor billing, and executive scheduling with seamless virtual assistant support.",
@@ -166,7 +154,6 @@ const industrySolutions = [
   },
   {
     title: "Financial Advisors",
-    image: "/images/nics/how-it-works-collaboration.jpg",
     icon: Users,
     description:
       "Provide paraplanners and independent financial advisers with dedicated pre-SOA data gathering, compliant draft preparation, and post-advice implementation.",
@@ -235,7 +222,6 @@ export default function AdministrativePage() {
       <Header />
 
       <main>
-        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
         <PageBanner
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Administrative" }]}
           badge="Administrative Services"
@@ -253,33 +239,33 @@ export default function AdministrativePage() {
           cardBadge="NICS Administration"
           cardTitle="Dedicated Virtual Assistants & Data Hygiene"
           cardSubtitle="High-accuracy clerical, scheduling, and document preparation workflows."
-          imageAlt="Administrative specialists reviewing work together at a laptop in a bright office"
+          imageAlt="Indian administrative coordinator and executive support specialist managing multi-channel scheduling and back-office operations"
         />
 
-        {/* SERVICES SECTION */}
-        <ServiceCatalogue
-          title={"Administrative Services"}
-          description={"From virtual assistance and precision data entry to specialized paraplanning and loan processing, our team handles routine administration so your onshore talent can focus on high-impact work."}
+        <CapabilityList
+          eyebrow="What We Provide"
+          title="Administrative Services"
+          intro="From virtual assistance and precision data entry to specialized paraplanning and loan processing, our team handles routine administration so your onshore talent can focus on high-impact work."
+          image="/images/bright/page-administrative.jpg"
+          imageAlt="NICS administrative support specialists handling virtual assistance, data entry and document workflows on the Chennai delivery floor"
           items={administrativeServices}
+          ctaLabel="Discuss your administrative workload"
         />
 
-        {/* SOLUTIONS BY INDUSTRY */}
-        <IndustrySolutions
-          eyebrow={"Industry Focus"}
-          title={"View Solutions by Industry"}
-          description={"Discover how our administrative expertise is configured to address the specific challenges of your sector."}
+        <IndustryColumns
+          eyebrow="Industry Focus"
+          title="View Solutions by Industry"
+          intro="Discover how our administrative expertise is configured to address the specific challenges of your sector."
           items={industrySolutions}
         />
 
-        {/* OUTSOURCING MODELS */}
-        <OutsourcingModels
-          eyebrow={"Delivery Flexibility"}
-          title={"Outsourcing Models"}
-          description={"Choose the model that fits your operational needs, internal management preferences, and scaling roadmap."}
-          models={outsourcingModels}
+        <DeliveryModelColumns
+          eyebrow="Delivery Flexibility"
+          title="Outsourcing Models"
+          intro="Choose the model that fits your operational needs, internal management preferences, and scaling roadmap."
+          items={outsourcingModels}
         />
 
-        {/* CALL TO ACTION */}
         <ReadyToScaleCTA />
       </main>
 
@@ -288,4 +274,3 @@ export default function AdministrativePage() {
     </div>
   );
 }
-

@@ -10,7 +10,6 @@ import {
   ChevronUp,
   BadgeCheck,
   CheckCircle2,
-  BookOpen,
   ShieldCheck,
 } from "lucide-react";
 import clsx from "clsx";
@@ -33,13 +32,13 @@ export function Insights() {
   };
 
   return (
-    <section id="insights" className="bg-white py-20 lg:py-32 border-b border-stone-200">
+    <section id="insights" className="bg-white py-12 lg:py-16 border-b border-stone-200">
       <Container size="default">
         {/* Section Heading */}
         <SectionHeading
           eyebrow="Security & Practice Intelligence"
           title="Information Security & Standards"
-          description="Our operating approach is designed around recognized information security principles, ISO/IEC 27001, and the reporting standards professional practices work to."
+          description="Built around ISO/IEC 27001 principles and the reporting standards your practice works to."
           align="split"
           action={
             <Button
@@ -54,10 +53,10 @@ export function Insights() {
         />
 
         {/* Major Editorial Grid: 1 Dominant Feature + 3 Secondary Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           {/* Dominant Flagship Publication Card */}
           <div className="lg:col-span-6 xl:col-span-6 bg-white text-[#0b1524] rounded-sm overflow-hidden border border-stone-200 shadow-md flex flex-col justify-between group transition-all duration-300">
-            <div className="relative aspect-[16/10] w-full overflow-hidden">
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src={featuredInsight.image}
                 alt={featuredInsight.title}
@@ -207,10 +206,10 @@ export function Insights() {
                   key={art.id}
                   id={`insight-card-${art.id}`}
                   className={clsx(
-                    "border rounded-xs p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between group",
+                    "flex flex-1 flex-col justify-between border-t-2 pt-5 transition-colors duration-300 group",
                     isExpanded
-                      ? "bg-white border-[#0056b3]/50 shadow-md ring-1 ring-[#0056b3]/20"
-                      : "bg-[#fbfbfa] border-[#e7e5dc] hover:border-stone-400"
+                      ? "border-[#0056b3]"
+                      : "border-[#0b1524]/20 hover:border-[#0056b3]/50"
                   )}
                 >
                   <div className="space-y-3">

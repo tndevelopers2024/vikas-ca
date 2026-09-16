@@ -29,7 +29,7 @@ export function CultureStatement() {
   return (
     <section
       id="culture"
-      className="relative bg-[#f7f6f2] py-24 lg:py-36 overflow-hidden border-b border-[#e6e4dc]"
+      className="relative bg-[#f7f6f2] py-12 lg:py-16 overflow-hidden border-b border-[#e6e4dc]"
     >
       {/* Background grain texture */}
       <div
@@ -46,17 +46,17 @@ export function CultureStatement() {
       <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-[#0056b3]/5 pointer-events-none" />
 
       <Container size="default" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
-          {/* Left: Image */}
-          <div className="lg:col-span-5 order-2 lg:order-1 reveal-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Right: Image */}
+          <div className="lg:col-span-6 order-2 lg:order-2 reveal-left">
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-sm ring-1 ring-black/5">
+              <div className="relative aspect-square rounded-sm overflow-hidden shadow-sm ring-1 ring-black/5">
                 <Image
-                  src="/images/nics/who-we-are-team.jpg"
-                  alt="Team joining hands over a shared worktable with laptops"
+                  src="/images/bright/culture-team.jpg"
+                  alt="Authentic, diverse team of business and finance professionals collaborating in bright natural light"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0b1524]/20 via-transparent to-transparent" />
@@ -92,8 +92,8 @@ export function CultureStatement() {
             </div>
           </div>
 
-          {/* Right: Content */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          {/* Left: Content */}
+          <div className="lg:col-span-6 order-1 lg:order-1">
             <div className="reveal-right">
               <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.14em] uppercase text-[#0056b3] mb-4">
                 <Users className="w-4 h-4" />

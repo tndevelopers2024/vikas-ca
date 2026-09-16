@@ -6,10 +6,8 @@ import {
   ArrowUpRight,
   CalendarDays,
   Clock,
-  Newspaper,
   Tag,
   User,
-  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
@@ -17,7 +15,6 @@ import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import {
   featuredInsight,
   secondaryInsights,
@@ -74,21 +71,21 @@ export default async function BlogsPage({ searchParams }: PageProps) {
             { value: `${categories.length}`, label: "Practice Categories" },
             { value: `${latestNewsItems.length}`, label: "Industry Updates" },
           ]}
-          image="/images/nics/blog-library.jpg"
+          image="/img/people-at-desk-with-laptop.avif"
           cardBadge="Industry Intelligence"
           cardTitle="Briefings From the Delivery Floor"
           cardSubtitle="Technical practice notes, ATO updates, and operational analysis."
-          imageAlt="Laptop beside a stack of reference books in a library setting"
+          imageAlt="Indian financial research analysts and practice directors reviewing statutory compliance briefings and industry insights"
         />
 
         {/* ARTICLES */}
-        <section id="articles" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-16 lg:py-24">
+        <section id="articles" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               {/* Sidebar */}
               <aside className="lg:col-span-3 lg:order-last">
                 <div className="lg:sticky lg:top-24 space-y-6">
-                  <div className="rounded-sm border border-stone-200 bg-white p-6">
+                  <div className="border-t-2 border-[#0b1524] pt-6">
                     <div className="flex items-center gap-2">
                       <Tag className="size-4 text-[#0056b3]" />
                       <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Categories</p>
@@ -167,7 +164,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
                     className="group mt-8 block overflow-hidden rounded-sm border border-stone-200 bg-white transition-all hover:border-[#0056b3]/30 hover:shadow-sm"
                   >
                     <div className="grid md:grid-cols-2">
-                      <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[280px]">
+                      <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[360px]">
                         <Image
                           src={lead.image}
                           alt={lead.title}
@@ -232,7 +229,7 @@ export default async function BlogsPage({ searchParams }: PageProps) {
                         href={`/blogs/${article.id}`}
                         className="group flex flex-col overflow-hidden rounded-sm border border-stone-200 bg-white transition-all hover:-translate-y-1 hover:border-[#0056b3]/30 hover:shadow-sm"
                       >
-                        <div className="relative aspect-[16/9]">
+                        <div className="relative aspect-[4/3]">
                           <Image
                             src={article.image}
                             alt={article.title}
@@ -279,38 +276,6 @@ export default async function BlogsPage({ searchParams }: PageProps) {
                   </div>
                 )}
               </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* PR / LATEST UPDATES */}
-        <section className="border-t border-stone-200 bg-[#0b1524] py-20 text-white lg:py-24">
-          <Container size="default">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#8bc7ff]">
-                <Newspaper className="size-3.5" />
-                Press &amp; Updates
-              </div>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
-                Latest From NICS
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-300">
-                Shorter notes on standards, delivery practice, and what we are changing across client workflows.
-              </p>
-            </div>
-
-            <div className="mt-12 divide-y divide-white/10 rounded-sm border border-white/10 bg-white/5">
-              {latestNewsItems.map((item) => (
-                <div key={item.id} className="flex flex-col gap-3 p-6 sm:flex-row sm:items-center sm:gap-6">
-                  <span className="shrink-0 rounded bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-[#8bc7ff] sm:w-52">
-                    {item.category}
-                  </span>
-                  <p className="flex-1 text-sm font-medium leading-snug text-white">{item.title}</p>
-                  <span className="shrink-0 text-xs text-slate-400">
-                    {item.date} · {item.readTime}
-                  </span>
-                </div>
-              ))}
             </div>
           </Container>
         </section>

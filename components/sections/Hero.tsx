@@ -1,35 +1,34 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Play,
-  Pause,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 const slides = [
   {
-    id: "capacity-growth",
-    badge: "Offshore Delivery Partner",
-    badgeHighlight: "ISO/IEC 27001 Aligned",
-    headline: "Scale your business without building every function in-house",
+    id: "client-ownership",
+    badge: "Shared Governance Architecture",
+    badgeHighlight: "Global Delivery Standards",
+    headline: "Outsource the repetitive work. Keep the core business.",
     description:
-      "Shoulder up to 80% of routine accounting, tax compliance, and back-office administration so your onshore leadership can focus on high-value client advisory and business growth.",
+      "You retain client relationships, commercial decisions, professional judgement, and final approvals. NICS manages resource allocation, day-to-day processing, staff coordination, and quality review.",
     primaryCta: {
-      label: "Explore our services",
-      href: "#services",
+      label: "Explore delivery models",
+      href: "#stories",
     },
     secondaryCta: {
-      label: "Discuss what to delegate",
+      label: "Schedule consultation",
       href: "#contact",
     },
-    image: "/images/nics/home-boardroom.jpg",
-    imageAlt: "Leadership team meeting around a boardroom table with skyline views",
+    image: "/img/partner-handshake.avif",
+    imageAlt:
+      "Client and NICS partner shaking hands across a boardroom table after agreeing an engagement",
   },
   {
     id: "systems-talent",
@@ -46,8 +45,9 @@ const slides = [
       label: "Compliance & SMSF",
       href: "/compliance",
     },
-    image: "/images/nics/accounting-tax.jpg",
-    imageAlt: "Accountant preparing a tax return with a calculator and laptop",
+    image: "/img/people-at-a-table-with-laptops.avif",
+    imageAlt:
+      "Indian professional accountants and delivery team collaborating with laptops and reports around conference table",
   },
   {
     id: "dedicated-teams",
@@ -64,35 +64,15 @@ const slides = [
       label: "Why choose outsourcing",
       href: "/why-outsourcing",
     },
-    image: "/images/nics/blog-video-call.jpg",
-    imageAlt: "Offshore team on a video call with their onshore colleagues",
-  },
-  {
-    id: "client-ownership",
-    badge: "Shared Governance Architecture",
-    badgeHighlight: "Australia & Global Standards",
-    headline: "Outsource the repetitive work. Keep the core business.",
-    description:
-      "You retain client relationships, commercial decisions, professional judgement, and final approvals. NICS manages resource allocation, day-to-day processing, staff coordination, and quality review.",
-    primaryCta: {
-      label: "Explore delivery models",
-      href: "#stories",
-    },
-    secondaryCta: {
-      label: "Schedule consultation",
-      href: "#contact",
-    },
-    image: "/images/nics/why-outsourcing-analysis.jpg",
-    imageAlt: "Two professionals reviewing financial charts and budget reports",
+    image: "/img/hero-dedicated-team.avif",
+    imageAlt:
+      "Dedicated offshore delivery team working through client files together at a table with a laptop",
   },
 ];
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
   const totalSlides = slides.length;
-  const slideDuration = 7500;
 
   // Mobile swipe support
   const touchStartXRef = useRef<number | null>(null);
@@ -109,13 +89,6 @@ export function Hero() {
   const goToSlide = useCallback((index: number) => {
     setCurrentSlide(index);
   }, []);
-
-  // Timer resets on manual navigation or pause/hover
-  useEffect(() => {
-    if (!isPlaying || isHovered) return;
-    const timer = setInterval(nextSlide, slideDuration);
-    return () => clearInterval(timer);
-  }, [isPlaying, isHovered, nextSlide, slideDuration, currentSlide]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartXRef.current = e.targetTouches[0].clientX;
@@ -147,8 +120,6 @@ export function Hero() {
       data-banner
       className="hero hero--full hero--banner relative isolate w-full h-screen min-h-screen min-h-[100vh] overflow-hidden bg-[#e8f1fb] text-[#0b1524] flex items-center"
       style={{ minHeight: "100vh" }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -173,17 +144,15 @@ export function Hero() {
                     : "opacity-0 z-0 pointer-events-none"
                 }`}
               >
-                {/* Full-Bleed Photograph (.hero__still) with Ken Burns Drift */}
+                {/* Full-Bleed Photograph (.hero__still) */}
                 <div className="hero__still absolute inset-0 overflow-hidden">
                   <Image
                     src={s.image}
                     alt={s.imageAlt}
                     fill
-                    priority={idx === 0}
+                    priority={idx <= 1}
                     sizes="100vw"
-                    className={`object-cover object-[75%_center] lg:object-center filter saturate-[1.06] contrast-[1.02] ${
-                      isActive ? "animate-banner-drift" : "scale-100"
-                    }`}
+                    className="object-cover object-right lg:object-right filter saturate-[1.06] contrast-[1.02]"
                   />
                 </div>
 
@@ -208,13 +177,12 @@ export function Hero() {
 
                 {/* Content Overlay (.hero__overlay) with clean spacing */}
                 <div className="hero__overlay absolute inset-0 z-[3] flex items-center py-12 sm:py-16 lg:py-20">
-                  <Container size="default" className="w-full">
+                  <Container size="full" className="w-full">
                     <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
                       {/* Eyebrow Pill */}
-                      <div className={isActive ? "animate-banner-rise-1" : ""}>
-                        <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-white px-3.5 sm:px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#0056b3] shadow-xs">
-                          <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0056b3] opacity-75" />
+                      <div>
+                        <div className="inline-flex max-w-full flex-wrap items-center gap-1.5 sm:gap-2 rounded-2xl sm:rounded-full border border-stone-300/80 bg-white px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#0056b3] shadow-xs">
+                          <span className="relative flex h-2 w-2 shrink-0">
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0056b3]" />
                           </span>
                           <span>{s.badge}</span>
@@ -224,17 +192,17 @@ export function Hero() {
                       </div>
 
                       {/* Display Headline */}
-                      <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.10] tracking-[-0.03em] text-[#0b1524] text-balance max-w-2xl ${isActive ? "animate-banner-rise-2" : ""}`}>
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.10] tracking-[-0.03em] text-[#0b1524] text-balance max-w-2xl">
                         {s.headline}
                       </h1>
 
                       {/* Descriptive Subtitle */}
-                      <p className={`text-base sm:text-lg text-stone-700 leading-relaxed font-normal max-w-xl ${isActive ? "animate-banner-rise-3" : ""}`}>
+                      <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal max-w-xl">
                         {s.description}
                       </p>
 
                       {/* Action CTAs */}
-                      <div className={`pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 ${isActive ? "animate-banner-rise-4" : ""}`}>
+                      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                         <Link
                           href={s.primaryCta.href}
                           className="group inline-flex items-center justify-center gap-2.5 rounded-sm bg-[#0056b3] px-7 py-3.5 sm:py-4 text-sm font-bold text-white shadow-lg shadow-[#0056b3]/25 transition-all duration-200 hover:bg-[#004494] hover:shadow-sm hover:shadow-[#0056b3]/30 hover:-translate-y-0.5 active:translate-y-0"
@@ -259,7 +227,7 @@ export function Hero() {
 
         {/* ── Standing Foot Controls (.hero__foot) exactly matching Dante ── */}
         <div className="hero__foot absolute bottom-5 sm:bottom-7 left-0 right-0 z-20 pointer-events-none">
-          <Container size="default">
+          <Container size="full">
             <div className="flex items-center gap-3 pointer-events-auto">
               {/* Prev Button */}
               <button
@@ -271,7 +239,7 @@ export function Hero() {
                 <ChevronLeft className="size-4" />
               </button>
 
-              {/* Dots with Animated Progress Bar */}
+              {/* Dots */}
               <div className="flex items-center gap-2 px-1" role="tablist" aria-label="Choose a banner">
                 {slides.map((s, idx) => {
                   const isActive = currentSlide === idx;
@@ -283,21 +251,10 @@ export function Hero() {
                       aria-selected={isActive}
                       aria-label={`Go to banner ${idx + 1}: ${s.badge}`}
                       onClick={() => goToSlide(idx)}
-                      className={`relative h-2.5 rounded-full transition-all duration-300 cursor-pointer overflow-hidden ${
-                        isActive ? "w-12 bg-stone-300/80" : "w-2.5 bg-stone-400/50 hover:bg-stone-600"
+                      className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        isActive ? "w-8 bg-[#0056b3]" : "w-2.5 bg-stone-300 hover:bg-stone-400"
                       }`}
-                    >
-                      {isActive && (
-                        <div
-                          key={`bar-${currentSlide}`}
-                          style={{
-                            animationDuration: `${slideDuration}ms`,
-                            animationPlayState: isPlaying && !isHovered ? "running" : "paused",
-                          }}
-                          className="h-full bg-[#0056b3] rounded-full animate-banner-fill"
-                        />
-                      )}
-                    </button>
+                    />
                   );
                 })}
               </div>
@@ -310,20 +267,6 @@ export function Hero() {
                 className="size-10 rounded-full border border-stone-300/80 bg-white text-[#0b1524] hover:bg-white hover:border-[#0056b3] hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer"
               >
                 <ChevronRight className="size-4" />
-              </button>
-
-              {/* Play/Pause Toggle Button */}
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                type="button"
-                aria-label={isPlaying ? "Pause the banner" : "Play the banner"}
-                className="size-10 rounded-full border border-stone-300/80 bg-white text-[#0b1524] hover:bg-white hover:text-[#0056b3] hover:-translate-y-0.5 shadow-2xs transition-all flex items-center justify-center cursor-pointer ml-1"
-              >
-                {isPlaying ? (
-                  <Pause className="size-3.5 text-stone-700" />
-                ) : (
-                  <Play className="size-3.5 text-stone-700 fill-current ml-0.5" />
-                )}
               </button>
 
               {/* Counter */}

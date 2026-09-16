@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, ShieldCheck, Mail, Lock, BadgeCheck } from "lucide-react";
+import { ArrowRight, Mail, Lock, BadgeCheck } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
@@ -311,8 +309,7 @@ export default function PrivacyPolicyPage() {
                 { label: "Privacy Policy" },
               ]}
             />
-            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-            <div className="max-w-3xl lg:col-span-7">
+            <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#0056b3]/20 bg-[#0056b3]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
                 <BadgeCheck className="size-3.5" />
                 Legal
@@ -325,40 +322,26 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <span className="inline-flex items-center gap-2 rounded-lg border border-stone-200 bg-white px-3.5 py-2 text-xs font-semibold text-stone-600">
+                <span className="inline-flex items-center gap-2 rounded-sm border border-[#e7e5dc] bg-white px-3.5 py-2 text-xs font-semibold text-stone-600">
                   <Lock className="size-3.5 text-[#0056b3]" />
                   ISO 27001 aligned security measures
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-lg border border-stone-200 bg-white px-3.5 py-2 text-xs font-semibold text-stone-600">
+                <span className="inline-flex items-center gap-2 rounded-sm border border-[#e7e5dc] bg-white px-3.5 py-2 text-xs font-semibold text-stone-600">
                   Last updated: {LAST_UPDATED}
                 </span>
               </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xl">
-                <Image
-                  src="/images/nics/privacy-support.jpg"
-                  alt="Client support specialist handling an enquiry by phone at her desk"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 40vw, 90vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
             </div>
           </Container>
         </section>
 
         {/* POLICY BODY */}
-        <section className="border-t border-stone-200 bg-[#fbfbfa] py-16 lg:py-24">
+        <section className="border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               {/* Table of contents */}
               <aside className="lg:col-span-4">
                 <div className="lg:sticky lg:top-24">
-                  <div className="rounded-sm border border-stone-200 bg-white p-6">
+                  <div className="border-t-2 border-[#0b1524] pt-6">
                     <p className="text-xs font-bold uppercase tracking-wider text-stone-400">On This Page</p>
                     <nav className="mt-4">
                       <ol className="space-y-2.5">
@@ -405,7 +388,7 @@ export default function PrivacyPolicyPage() {
                     <article
                       key={section.id}
                       id={section.id}
-                      className="scroll-mt-24 rounded-sm border border-stone-200 bg-white p-8 lg:p-10"
+                      className="scroll-mt-24 border-t border-[#0b1524]/15 pt-8"
                     >
                       <div className="flex items-baseline gap-3">
                         <span className="text-xs font-bold tabular-nums text-[#0056b3]">
@@ -440,7 +423,7 @@ export default function PrivacyPolicyPage() {
                           }
 
                           return (
-                            <div key={bi} className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-5">
+                            <div key={bi} className="border-l-2 border-[#0056b3]/25 pl-5">
                               <h3 className="text-sm font-bold text-[#0b1524]">{block.heading}</h3>
                               <ul className="mt-3 space-y-2.5">
                                 {block.items.map((item, ii) => (

@@ -24,6 +24,8 @@ export interface PageBannerProps {
   metrics?: PageBannerMetric[];
   image: string;
   imageAlt: string;
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
   cardBadge?: string;
   cardTitle?: string;
   cardSubtitle?: string;
@@ -40,19 +42,50 @@ export function PageBanner({
   metrics,
   image,
   imageAlt,
+  imagePosition,
+  imageFit = "cover",
 }: PageBannerProps) {
   return (
-    <section className="relative isolate overflow-hidden min-h-[400px] sm:min-h-[440px] lg:min-h-[480px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-14 lg:pb-16 border-b border-stone-200 bg-[#f4f8fc]">
+    <section className="relative isolate overflow-hidden min-h-[440px] sm:min-h-[480px] lg:min-h-[540px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-14 lg:pb-16 border-b border-stone-200 bg-[#f4f8fc]">
       {/* 1. Full-bleed Background Photograph */}
       <div className="hero__still absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[80%_center] lg:object-[82%_center] filter saturate-[1.05] contrast-[1.02]"
-        />
+        {imageFit === "contain" ? (
+          <>
+            {/* Blurred cover backdrop so the full photo still reads as full-bleed */}
+            <Image
+              src={image}
+              alt=""
+              aria-hidden="true"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover scale-110 blur-2xl opacity-30 saturate-[1.05]"
+            />
+            <div className="absolute inset-0 bg-[#f4f8fc]/80" aria-hidden="true" />
+            {/* Uncropped photo, entirely visible */}
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-contain filter saturate-[1.05] contrast-[1.02]"
+              style={imagePosition ? { objectPosition: imagePosition } : undefined}
+            />
+          </>
+        ) : (
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className={`object-cover filter saturate-[1.05] contrast-[1.02] ${
+              imagePosition ? "" : "object-[80%_18%] lg:object-[82%_18%]"
+            }`}
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          />
+        )}
       </div>
 
       {/* 2. Calibrated Directional White Scrim matching homepage Hero — guarantees crisp contrast for dark text */}
@@ -75,7 +108,7 @@ export function PageBanner({
       />
 
       {/* 3. Hero Content Container */}
-      <Container size="default" className="relative z-10 w-full">
+      <Container size="full" className="relative z-10 w-full">
         {/* Breadcrumb Navigation */}
         <Breadcrumbs items={breadcrumbs} variant="default" className="mb-4" />
 

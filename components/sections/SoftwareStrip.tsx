@@ -27,12 +27,12 @@ export function SoftwareStrip() {
   return (
     <section
       aria-labelledby="software-strip-heading"
-      className="bg-[#f8f7f4] border-y border-[#e4e2da] py-12 lg:py-16"
+      className="bg-[#f8f7f4] border-y border-[#e4e2da] py-8 lg:py-10"
     >
       <Container size="default">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center">
           <div className="lg:col-span-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0056b3] mb-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0056b3] mb-1.5">
               No migration required
             </p>
             <h2
@@ -43,18 +43,31 @@ export function SoftwareStrip() {
             </h2>
           </div>
 
-          <ul className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6">
-            {platforms.map((p) => (
-              <li key={p.name} className="border-l border-[#d9d6cc] pl-3">
-                <span className="block text-[15px] font-semibold text-[#0b1524] leading-tight">
-                  {p.name}
-                </span>
-                <span className="block text-[11px] uppercase tracking-wider text-stone-500 mt-1">
-                  {p.note}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div
+            className="lg:col-span-8 relative overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%)",
+            }}
+          >
+            <ul className="animate-marquee flex w-max items-center gap-3">
+              {[...platforms, ...platforms].map((p, idx) => (
+                <li key={`${p.name}-${idx}`} className="shrink-0">
+                  <div className="group flex items-center gap-2 rounded-full border border-[#e4e2da] bg-white pl-4 pr-3.5 py-2 shadow-[0_1px_2px_rgba(11,21,36,0.04)] transition-all duration-200 hover:border-[#0056b3]/40 hover:shadow-[0_4px_12px_rgba(11,21,36,0.08)] hover:-translate-y-0.5">
+                    <span className="text-[13px] font-bold text-[#0b1524] whitespace-nowrap">
+                      {p.name}
+                    </span>
+                    <span className="h-3 w-px shrink-0 bg-[#d9d6cc] group-hover:bg-[#0056b3]/30" />
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-stone-500 whitespace-nowrap">
+                      {p.note}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
     </section>

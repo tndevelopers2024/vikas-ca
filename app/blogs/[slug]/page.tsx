@@ -142,7 +142,7 @@ export default async function ArticlePage({ params }: PageProps) {
         </section>
 
         {/* ARTICLE BODY */}
-        <section className="border-t border-stone-200 bg-[#fbfbfa] py-16 lg:py-24">
+        <section className="border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               {/* Sidebar */}
@@ -266,7 +266,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
         {/* RELATED */}
         {related.length > 0 && (
-          <section className="border-t border-stone-200 bg-white py-16 lg:py-24">
+          <section className="border-t border-stone-200 bg-white py-12 lg:py-16">
             <Container size="default">
               <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-stone-200 pb-5">
                 <h2 className="text-2xl font-bold tracking-tight text-[#0b1524]">Keep Reading</h2>

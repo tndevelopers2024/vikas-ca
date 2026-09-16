@@ -33,11 +33,6 @@ export const quickLinks: QuickLink[] = [
 
 export const officeAddresses: OfficeAddress[] = [
   {
-    country: "Australia",
-    href: "https://maps.google.com/?q=Bridgeport+Business+Park+Pymble+NSW+2073",
-    lines: ["Bridgeport Business Park,", "Pymble, NSW – 2073"],
-  },
-  {
     country: "Registered Office: India",
     href: "https://maps.google.com/?q=Prince+Centre+709+Anna+Salai+Chennai+Tamil+Nadu+600006",
     lines: [
@@ -46,32 +41,9 @@ export const officeAddresses: OfficeAddress[] = [
       "Chennai, Tamil Nadu – 600006",
     ],
   },
-  {
-    country: "USA",
-    href: "https://maps.google.com/?q=Five+GreenTree+Center+525+Route+73+North+Marlton+NJ+08053",
-    lines: [
-      "Five GreenTree Center,",
-      "525 Route 73 North STE 104,",
-      "Marlton, New Jersey 08053",
-    ],
-  },
 ];
 
 export const contactDetails: ContactItem[] = [
-  {
-    type: "phone",
-    label: "+61 2 9000 1234",
-    href: "tel:+61290001234",
-  },
-  {
-    type: "clock",
-    label: "8:00 AM to 5:00 PM AEST",
-  },
-  {
-    type: "email",
-    label: "hello@nics.com",
-    href: "mailto:hello@nics.com",
-  },
   {
     type: "phone",
     label: "+91 9632 466 477",
@@ -85,6 +57,11 @@ export const contactDetails: ContactItem[] = [
     type: "email",
     label: "operations@nics.com",
     href: "mailto:operations@nics.com",
+  },
+  {
+    type: "email",
+    label: "vikas@abcdca.com",
+    href: "mailto:vikas@abcdca.com",
   },
 ];
 

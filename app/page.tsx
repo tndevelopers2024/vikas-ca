@@ -5,7 +5,6 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Header } from "@/components/navigation/Header";
 import { Hero } from "@/components/sections/Hero";
 import { SoftwareStrip } from "@/components/sections/SoftwareStrip";
-import { AnnouncementBar } from "@/components/sections/AnnouncementBar";
 import { DeliveryProof } from "@/components/sections/DeliveryProof";
 import { CultureStatement } from "@/components/sections/CultureStatement";
 import { Services } from "@/components/sections/Services";
@@ -65,11 +64,6 @@ export default function HomePage() {
 
             {/* 2. What software we work in — the fastest category signal */}
             <SoftwareStrip />
-
-            {/* 3. Announcements */}
-            <div className="reveal">
-              <AnnouncementBar />
-            </div>
 
             {/* 4. Who does the work, and where */}
             <div className="reveal">

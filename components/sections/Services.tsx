@@ -18,13 +18,13 @@ export function Services() {
   const activeService = servicesData.find((s) => s.id === activeId) || servicesData[0];
 
   return (
-    <section id="services" className="bg-white py-20 lg:py-32 border-b border-stone-200">
+    <section id="services" className="bg-white py-12 lg:py-16 border-b border-stone-200">
       <Container size="default">
         {/* Section Heading */}
         <SectionHeading
           eyebrow="Delivery Capabilities & Solutions"
           title="Our Services"
-          description="Disciplined accounting, SMSF, audit, financial services, legal operations, and business administrative capabilities engineered for accounting practices and growing businesses."
+          description="Accounting, SMSF, audit, financial services, legal and admin capability — built for accounting practices."
           align="split"
           action={
             <Button
@@ -88,7 +88,7 @@ export function Services() {
         </div>
 
         {/* Desktop Active Service Explorer Body */}
-        <div className="hidden lg:grid grid-cols-12 gap-12 xl:gap-16 items-start bg-[#fbfbfa] border border-[#e7e5dc] p-8 xl:p-12 rounded-xs shadow-xs">
+        <div className="hidden lg:grid grid-cols-12 gap-12 xl:gap-16 items-start border-t border-[#0b1524]/15 pt-10 xl:pt-12">
           {/* Left Content Column */}
           <div className="col-span-7 space-y-6">
             <AnimatePresence mode="wait">
@@ -117,12 +117,8 @@ export function Services() {
               {activeService.leadSummary}
             </p>
 
-            <p className="text-sm text-stone-600 leading-relaxed">
-              {activeService.fullDescription}
-            </p>
-
             {/* Key Metric Card */}
-            <div className="p-4 bg-white border border-[#e7e5dc] rounded-xs flex items-center gap-4">
+            <div className="flex items-center gap-4 border-y border-[#e4e2da] py-4">
               <div className="text-2xl xl:text-3xl font-extrabold text-[#0056b3] tabular-nums whitespace-nowrap">
                 {activeService.keyMetric.value}
               </div>
@@ -141,21 +137,16 @@ export function Services() {
                 {activeService.subServices.map((sub, idx) => (
                   <div
                     key={idx}
-                    className="p-3 bg-white hover:bg-stone-100/80 border border-stone-200/80 rounded-xs transition-colors group"
+                    className="flex items-center justify-between gap-2 border-t border-[#e4e2da] pt-2.5 group"
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-[#0b1524] group-hover:text-[#0056b3] transition-colors">
-                        {sub.name}
-                      </span>
-                      {sub.tag && (
-                        <Badge variant="blue" size="sm" className="text-[9px] px-1.5 py-0">
-                          {sub.tag}
-                        </Badge>
-                      )}
-                    </div>
-                    <p className="text-[11px] text-stone-500 mt-1 line-clamp-2">
-                      {sub.description}
-                    </p>
+                    <span className="text-xs font-bold text-[#0b1524] transition-colors group-hover:text-[#0056b3]">
+                      {sub.name}
+                    </span>
+                    {sub.tag && (
+                      <Badge variant="blue" size="sm" className="text-[9px] px-1.5 py-0">
+                        {sub.tag}
+                      </Badge>
+                    )}
                   </div>
                 ))}
               </div>
@@ -205,7 +196,7 @@ export function Services() {
 
             {/* Featured Case study snippet */}
             {activeService.featuredCaseStudy && (
-              <div className="p-5 bg-white border border-[#e7e5dc] rounded-xs">
+              <div className="border-l-2 border-[#0056b3]/25 pl-5">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-1">
                   Representative Engagement
                 </div>
@@ -227,11 +218,11 @@ export function Services() {
             return (
               <div
                 key={svc.id}
-                className="border border-[#e7e5dc] bg-[#fbfbfa] rounded-xs overflow-hidden"
+                className="border-b border-[#e4e2da]"
               >
                 <button
                   onClick={() => setActiveId(isExpanded ? "" : svc.id)}
-                  className="w-full flex items-center justify-between p-5 text-left bg-white transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between py-5 text-left transition-colors cursor-pointer"
                   aria-expanded={isExpanded}
                 >
                   <div className="flex items-center gap-3">
@@ -269,10 +260,6 @@ export function Services() {
                       {svc.leadSummary}
                     </p>
 
-                    <p className="text-xs text-stone-600 leading-relaxed">
-                      {svc.fullDescription}
-                    </p>
-
                     <div className="space-y-2 pt-2">
                       <div className="text-xs font-bold uppercase tracking-wider text-stone-400">
                         Capabilities
@@ -281,10 +268,9 @@ export function Services() {
                         {svc.subServices.map((sub, idx) => (
                           <div
                             key={idx}
-                            className="p-2.5 bg-white border border-stone-200 rounded text-xs"
+                            className="border-t border-[#e4e2da] pt-2.5 text-xs"
                           >
                             <div className="font-bold text-[#0b1524]">{sub.name}</div>
-                            <div className="text-stone-500 text-[11px] mt-0.5">{sub.description}</div>
                           </div>
                         ))}
                       </div>

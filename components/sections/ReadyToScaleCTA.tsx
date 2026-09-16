@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Phone, CheckCircle2, ShieldCheck, Sparkles, Lock } from "lucide-react";
+import { ArrowRight, Phone, Check, Lock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 export interface ReadyToScaleCTAProps {
@@ -19,11 +19,21 @@ export interface ReadyToScaleCTAProps {
   className?: string;
 }
 
+/**
+ * A floating panel rather than a full-bleed band: the card is held inside the
+ * site measure, lifted off the ground with a shadow, and overlaps the top of
+ * the footer so it reads as one object sitting on the page. Every page ends
+ * with this immediately before <Footer />, so the overlap is safe everywhere —
+ * the footer carries the extra top padding that makes room for it.
+ *
+ * The props are unchanged from the banded version, so all seventeen call sites
+ * keep working untouched.
+ */
 export function ReadyToScaleCTA({
   id = "contact",
   badge = "Direct Offshore Delivery Model",
   title = "Ready to scale your delivery capacity?",
-  subtitle = "Let\u2019s map out your requirements and build a dependable team shaped around your firm.",
+  subtitle = "Let’s map out your requirements and build a dependable team shaped around your firm.",
   primaryCtaText = "Start Consultation",
   primaryCtaHref = "/contact#consultation-form",
   secondaryCtaText = "Call +91 9632 466 477",
@@ -56,97 +66,101 @@ export function ReadyToScaleCTA({
     <section
       id={id}
       aria-label="Ready to scale delivery capacity"
-      className={`relative isolate overflow-hidden bg-gradient-to-br from-[#061833] via-[#004a99] to-[#002f68] py-20 lg:py-28 text-white border-t border-blue-900/40 ${className}`}
+      className={`relative isolate bg-[#f7f6f2] pt-12 lg:pt-16 ${className}`}
     >
-      {/* 1. Ambient Lighting & Glow Orbs */}
+      {/*
+        The lower half of this band is painted in the footer's own top colour,
+        so the panel straddles the seam and floats across it. Overlapping the
+        footer with a negative margin instead would paint under it on the home
+        page, where the .reveal wrapper's transform makes a stacking context.
+      */}
       <div
-        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[360px] rounded-full opacity-35 blur-3xl"
-        style={{
-          background: "radial-gradient(circle, #38bdf8 0%, rgba(0, 86, 179, 0.4) 50%, transparent 75%)",
-        }}
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-24 -right-24 w-[420px] h-[420px] rounded-full bg-cyan-400/10 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-24 -left-24 w-[420px] h-[420px] rounded-full bg-blue-600/15 blur-3xl"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[#081528]"
         aria-hidden="true"
       />
 
-      {/* 2. Top luminous accent line */}
-      <div
-        className="pointer-events-none absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#38bdf8]/50 to-transparent"
-        aria-hidden="true"
-      />
+      <Container size="default" className="relative z-10">
+        <div className="relative isolate overflow-hidden rounded-sm bg-gradient-to-br from-[#06172f] via-[#00478f] to-[#002f68] px-6 py-10 shadow-[0_30px_60px_-24px_rgba(4,16,36,0.65)] sm:px-10 lg:px-14 lg:py-14">
+          {/* One soft light source, top-left, and a faint dot field */}
+          <div
+            className="pointer-events-none absolute -left-24 -top-32 h-[420px] w-[560px] rounded-full opacity-30 blur-3xl"
+            style={{
+              background:
+                "radial-gradient(circle, #38bdf8 0%, rgba(0, 86, 179, 0.35) 55%, transparent 75%)",
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"
+            aria-hidden="true"
+          />
 
-      {/* 3. Subtle Constellation / Network Grid SVG Background */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"
-        aria-hidden="true"
-      />
+          <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
+            {/* The argument */}
+            <div className="lg:col-span-7">
+              {badge && (
+                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8bc7ff]">
+                  <span className="inline-block h-0.5 w-6 bg-[#8bc7ff]" aria-hidden="true" />
+                  {badge}
+                </div>
+              )}
 
-      <Container size="default" className="relative z-10 text-center">
-        {/* Eyebrow Pill Badge */}
-        {badge && (
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#a5d8ff] backdrop-blur-md shadow-sm">
-            <Sparkles className="size-3.5 text-[#38bdf8]" />
-            <span>{badge}</span>
-          </div>
-        )}
+              <h2 className="mt-4 text-3xl font-extrabold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                {title}
+              </h2>
 
-        {/* High-Impact Heading */}
-        <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-[1.12] max-w-3xl mx-auto">
-          {title}
-        </h2>
+              {subtitle && (
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-blue-100/90">
+                  {subtitle}
+                </p>
+              )}
 
-        {/* Subtitle */}
-        {subtitle && (
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-blue-100/90 leading-relaxed font-normal">
-            {subtitle}
-          </p>
-        )}
+              {trustPoints && trustPoints.length > 0 && (
+                <ul className="mt-7 grid grid-cols-1 gap-x-8 gap-y-2.5 border-t border-white/15 pt-6 sm:grid-cols-2">
+                  {trustPoints.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-center gap-2.5 text-[13px] font-medium text-blue-100"
+                    >
+                      <Check className="size-3.5 shrink-0 text-[#38bdf8]" aria-hidden="true" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
 
-        {/* Trust Badges Strip */}
-        {trustPoints && trustPoints.length > 0 && (
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 max-w-3xl mx-auto">
-            {trustPoints.map((point, index) => (
-              <div
-                key={index}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1 text-xs font-medium text-blue-100 backdrop-blur-sm shadow-xs"
-              >
-                <CheckCircle2 className="size-3.5 text-[#38bdf8] shrink-0" />
-                <span>{point}</span>
+            {/* The action */}
+            <div className="lg:col-span-5 lg:pl-6">
+              <div className="flex flex-col gap-3">
+                <Link
+                  href={finalPrimaryHref}
+                  onClick={handleStartConsultationClick}
+                  className="group inline-flex w-full items-center justify-between gap-3 rounded-sm bg-white px-6 py-4 text-sm font-bold text-[#003a78] transition-colors duration-200 hover:bg-blue-50 sm:text-base"
+                >
+                  <span>{primaryCtaText}</span>
+                  <ArrowRight className="size-4.5 shrink-0 transition-transform duration-200 group-hover:translate-x-1.5" />
+                </Link>
+
+                <a
+                  href={secondaryCtaHref}
+                  className="inline-flex w-full items-center justify-between gap-3 rounded-sm border border-white/30 px-6 py-4 text-sm font-semibold text-white transition-colors duration-200 hover:border-white hover:bg-white/10 sm:text-base"
+                >
+                  <span className="inline-flex items-center gap-2.5">
+                    <Phone className="size-4 shrink-0 text-[#8bc7ff]" aria-hidden="true" />
+                    {secondaryCtaText}
+                  </span>
+                </a>
               </div>
-            ))}
+
+              <p className="mt-5 flex items-start gap-2 text-[11px] leading-relaxed text-blue-200/70">
+                <Lock className="mt-0.5 size-3.5 shrink-0 text-[#38bdf8]/80" aria-hidden="true" />
+                <span>
+                  Strict confidentiality · Non-Disclosure Agreement (NDA) · 1 business day response
+                </span>
+              </p>
+            </div>
           </div>
-        )}
-
-        {/* Dual Action Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href={finalPrimaryHref}
-            onClick={handleStartConsultationClick}
-            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-lg bg-white px-8 py-4 text-sm sm:text-base font-bold text-[#003a78] shadow-lg shadow-black/20 transition-all duration-200 hover:bg-blue-50 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-          >
-            <span>{primaryCtaText}</span>
-            <ArrowRight className="size-4.5 transition-transform duration-200 group-hover:translate-x-1.5" />
-          </Link>
-
-          <a
-            href={secondaryCtaHref}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-lg border border-white/25 bg-white/10 px-7 py-4 text-sm sm:text-base font-semibold text-white backdrop-blur-md shadow-sm transition-all duration-200 hover:bg-white/20 hover:-translate-y-0.5 active:translate-y-0"
-          >
-            <Phone className="size-4 text-[#8bc7ff]" />
-            <span>{secondaryCtaText}</span>
-          </a>
-        </div>
-
-        {/* Security & Confidentiality Reassurance Note */}
-        <div className="mt-8 flex items-center justify-center gap-2 text-xs text-blue-200/70">
-          <Lock className="size-3.5 text-[#38bdf8]/80 shrink-0" />
-          <span>Strict confidentiality · Non-Disclosure Agreement (NDA) · 1 business day response</span>
         </div>
       </Container>
     </section>

@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
   FileText,
   FileSpreadsheet,
   FileEdit,
@@ -12,22 +8,16 @@ import {
   BookOpen,
   Building2,
   TrendingUp,
-  ShieldCheck,
-  Zap,
-  ArrowUpRight,
-  BadgeCheck,
   Scale,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { OutsourcingModels } from "@/components/sections/OutsourcingModels";
-import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
-import { ServiceCatalogue } from "@/components/sections/ServiceCatalogue";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CapabilityList } from "@/components/sections/service/CapabilityList";
+import { IndustryColumns } from "@/components/sections/service/IndustryColumns";
+import { DeliveryModelColumns } from "@/components/sections/service/DeliveryModelColumns";
 
 export const metadata: Metadata = {
   title: "Legal Process Outsourcing (LPO) | NICS",
@@ -35,7 +25,7 @@ export const metadata: Metadata = {
     "Explore Legal Process Outsourcing (LPO) services and delivery models at NICS. Contract Management, Contract Abstract & Summary, Contract Drafting, Due Diligence, General Legal Administration, and Legal Research.",
 };
 
-const heroImage = "/images/nics/legal-contract.jpg";
+const heroImage = "/images/bright/page-legal.jpg";
 
 const legalServices = [
   {
@@ -127,7 +117,6 @@ const legalServices = [
 const industrySolutions = [
   {
     title: "Law Firms & Solictors",
-    image: "/images/nics/discover-focus.jpg",
     icon: Scale,
     description:
       "Empower solicitors and partners to maximize billable advisory hours by delegating brief collation, transcription, due diligence indexing, and legal research.",
@@ -139,7 +128,6 @@ const industrySolutions = [
   },
   {
     title: "Corporate Legal Departments",
-    image: "/images/nics/home-boardroom.jpg",
     icon: Building2,
     description:
       "Scale in-house corporate legal capacity with structured contract registers, vendor agreement abstracting, compliance tracking, and M&A data room reviews.",
@@ -151,7 +139,6 @@ const industrySolutions = [
   },
   {
     title: "Multi-Disciplinary Practices",
-    image: "/images/nics/blog-strategy.jpg",
     icon: TrendingUp,
     description:
       "Bridge the gap between accounting, wealth, and commercial services with structured legal administration, corporate secretarial filing, and trust deed compliance.",
@@ -220,7 +207,6 @@ export default function LegalPage() {
       <Header />
 
       <main>
-        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
         <PageBanner
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Legal Process Outsourcing" }]}
           badge="Legal Process Outsourcing"
@@ -238,33 +224,33 @@ export default function LegalPage() {
           cardBadge="NICS Legal Operations"
           cardTitle="Contract Management & Due Diligence"
           cardSubtitle="Paralegal support for law firms and corporate counsel under strict ISO 27001 data governance."
-          imageAlt="Legal professional reviewing a contract beside the scales of justice"
+          imageAlt="Indian corporate paralegal and legal counsel reviewing commercial contracts, MSAs, and due diligence dossiers"
         />
 
-        {/* SERVICES SECTION */}
-        <ServiceCatalogue
-          title={"Legal Support Services"}
-          description={"Comprehensive back-office capabilities designed to accelerate document turnaround, reduce overheads, and streamline legal administration."}
+        <CapabilityList
+          eyebrow="What We Provide"
+          title="Legal Support Services"
+          intro="Comprehensive back-office capabilities designed to accelerate document turnaround, reduce overheads, and streamline legal administration."
+          image="/images/bright/page-legal.jpg"
+          imageAlt="NICS legal support specialists preparing documentation and contract reviews on the Chennai delivery floor"
           items={legalServices}
+          ctaLabel="Discuss your legal support workload"
         />
 
-        {/* SOLUTIONS BY INDUSTRY */}
-        <IndustrySolutions
-          eyebrow={"Industry Focus"}
-          title={"View Solutions by Industry"}
-          description={"Discover how our legal process outsourcing capabilities are tailored for law firms, corporate counsel, and commercial practices."}
+        <IndustryColumns
+          eyebrow="Industry Focus"
+          title="View Solutions by Industry"
+          intro="Discover how our legal process outsourcing capabilities are tailored for law firms, corporate counsel, and commercial practices."
           items={industrySolutions}
         />
 
-        {/* OUTSOURCING MODELS */}
-        <OutsourcingModels
-          eyebrow={"Delivery Flexibility"}
-          title={"Outsourcing Models"}
-          description={"Choose the engagement structure that best fits your practice requirements and confidentiality standards."}
-          models={outsourcingModels}
+        <DeliveryModelColumns
+          eyebrow="Delivery Flexibility"
+          title="Outsourcing Models"
+          intro="Choose the engagement structure that best fits your practice requirements and confidentiality standards."
+          items={outsourcingModels}
         />
 
-        {/* CALL TO ACTION */}
         <ReadyToScaleCTA />
       </main>
 

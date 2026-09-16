@@ -11,17 +11,14 @@ import {
   TrendingUp,
   Wallet,
   Award,
-  ShieldCheck,
   BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { ExploreFurther } from "@/components/sections/ExploreFurther";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Why Outsourcing | NICS",
@@ -30,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/nics/why-outsourcing-analysis.jpg";
+const heroImage = "/img/why-outsourcing-hero-new.jpg";
 
 const pillars = [
   {
@@ -151,14 +148,15 @@ export default function WhyOutsourcingPage() {
             { value: "Zero", label: "Infrastructure CapEx" },
           ]}
           image={heroImage}
+          imagePosition="82% 45%"
           cardBadge="Your Extended Team"
           cardTitle="Retain 100% Onshore Control"
           cardSubtitle="Delegate routine processing while keeping client relationships, strategy, and judgment in-house."
-          imageAlt="Two professionals reviewing financial charts and budget reports at a desk"
+          imageAlt="Indian practice delivery director and international firm executive reviewing offshore capacity scaling in high-rise corporate suite"
         />
 
         {/* INTRO NARRATIVE */}
-        <section className="border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-24">
+        <section className="border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
               <div className="lg:col-span-7">
@@ -181,11 +179,11 @@ export default function WhyOutsourcingPage() {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-2.5 shadow-xl transition-all hover:shadow-2xl">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+                <div className="relative overflow-hidden border border-[#e4e2da]">
+                  <div className="relative aspect-[5/4] w-full overflow-hidden">
                     <Image
-                      src="/images/nics/how-it-works-collaboration.jpg"
-                      alt="Finance team gathered around a laptop reviewing work together"
+                      src="/images/bright/why-outsourcing-collaboration.jpg"
+                      alt="Dedicated finance and accounting team collaborating at modern workstations"
                       fill
                       className="object-cover"
                       sizes="(min-width: 1024px) 40vw, 90vw"
@@ -209,7 +207,7 @@ export default function WhyOutsourcingPage() {
         </section>
 
         {/* PILLAR SECTIONS */}
-        <section id="pillars" className="scroll-mt-20 border-t border-stone-200 bg-white py-20 lg:py-28">
+        <section id="pillars" className="scroll-mt-20 border-t border-stone-200 bg-white py-12 lg:py-16">
           <Container size="default">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">What Changes For You</p>
@@ -228,13 +226,11 @@ export default function WhyOutsourcingPage() {
                   <div
                     key={pillar.id}
                     id={pillar.id}
-                    className="scroll-mt-24 grid gap-8 rounded-sm border border-stone-200 bg-[#fbfbfa] p-8 transition-all hover:border-[#0056b3]/30 hover:bg-white hover:shadow-lg lg:grid-cols-12 lg:gap-12 lg:p-10"
+                    className="scroll-mt-24 grid gap-8 border-t border-[#0b1524]/15 pt-8 lg:grid-cols-12 lg:gap-12"
                   >
                     <div className="lg:col-span-7">
                       <div className="flex items-center gap-4">
-                        <div className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
-                          <PillarIcon className="size-6" />
-                        </div>
+                        <PillarIcon className="size-5 shrink-0 text-[#0056b3]" aria-hidden="true" />
                         <span className="text-xs font-bold uppercase tracking-[0.18em] text-stone-400">
                           {pillar.eyebrow}
                         </span>
@@ -254,7 +250,7 @@ export default function WhyOutsourcingPage() {
                     </div>
 
                     <div className="lg:col-span-5">
-                      <div className="rounded-sm border border-stone-200 bg-white p-6">
+                      <div className="border-l-2 border-[#0056b3]/25 pl-6">
                         <p className="text-xs font-bold uppercase tracking-wider text-stone-400">
                           What This Means In Practice
                         </p>
@@ -286,14 +282,69 @@ export default function WhyOutsourcingPage() {
         </section>
 
         {/* WHY OUTSOURCING CLUSTER */}
-        <ExploreFurther
-          eyebrowIcon={TrendingUp}
-          title={"Why Outsourcing"}
-          description={"Productivity is one part of the picture. Here is the rest of the case for building your team offshore."}
-          items={whyOutsourcing}
-          currentHref="/why-outsourcing"
-          images={["/images/nics/accounting-reporting.jpg", "/images/nics/home-boardroom.jpg", "/images/nics/accounting-tax.jpg", "/images/nics/blog-video-call.jpg"]}
-        />
+        <section className="border-t border-stone-200 bg-[#0b1524] py-20 text-white lg:py-28">
+          <Container size="default">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#8bc7ff]">
+                <TrendingUp className="size-3.5" />
+                Explore Further
+              </div>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
+                Why Outsourcing
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-slate-300">
+                Productivity is one part of the picture. Here is the rest of the case for building your team offshore.
+              </p>
+            </div>
+
+            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
+              {whyOutsourcing.map((item) => {
+                const ItemIcon = item.icon;
+                const isCurrent = item.href === "/why-outsourcing";
+                const cardBody = (
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <ItemIcon className="size-5 text-[#8bc7ff]" aria-hidden="true" />
+                      {isCurrent && (
+                        <span className="rounded bg-[#8bc7ff]/20 px-2 py-0.5 text-[11px] font-semibold text-[#8bc7ff]">
+                          On this page
+                        </span>
+                      )}
+                      {!item.href && (
+                        <span className="rounded bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-slate-400">
+                          Coming soon
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-300">{item.blurb}</p>
+                  </div>
+                );
+
+                return item.href && !isCurrent ? (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="group flex flex-col border-t border-white/20 pt-5 transition-colors duration-300 hover:border-[#8bc7ff]"
+                  >
+                    {cardBody}
+                  </Link>
+                ) : (
+                  <div
+                    key={item.title}
+                    className={`flex flex-col justify-between rounded-sm border p-6 ${
+                      isCurrent
+                        ? "border-[#8bc7ff]/40 bg-white/10"
+                        : "border-white/10 bg-white/5"
+                    }`}
+                  >
+                    {cardBody}
+                  </div>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
 
         {/* CALL TO ACTION */}
         <ReadyToScaleCTA />

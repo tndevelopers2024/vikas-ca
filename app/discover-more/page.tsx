@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
   Plus,
   Handshake,
   Lock,
@@ -13,17 +11,15 @@ import {
   Globe2,
   Clock,
   LifeBuoy,
-  ShieldCheck,
-  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { ExploreFurther } from "@/components/sections/ExploreFurther";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 
 export const metadata: Metadata = {
   title: "Discover More | NICS FAQs",
@@ -32,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/nics/discover-analytics.jpg";
+const heroImage = "/img/discover-more-banner.jpg";
 
 const faqCategories = [
   {
@@ -173,8 +169,6 @@ const discoverMore = [
   },
 ];
 
-const totalFaqs = faqCategories.reduce((sum, cat) => sum + cat.faqs.length, 0);
-
 export default function DiscoverMorePage() {
   return (
     <div className="min-h-screen bg-white text-[#0b1524]">
@@ -196,109 +190,100 @@ export default function DiscoverMorePage() {
             { value: "ISO 27001", label: "Certified Delivery Centre" },
           ]}
           image={heroImage}
+          imagePosition="82% 45%"
           cardBadge="Client Knowledge Hub"
           cardTitle="Operational Guidance & SLAs"
           cardSubtitle="Everything you need to know about IT security, data privacy, and governance."
-          imageAlt="Analyst reviewing financial charts on a laptop beside a calculator"
+          imageAlt="Indian practice delivery director and operations team reviewing ISO 27001 governance frameworks and SLA metrics"
         />
 
         {/* FAQ SECTION */}
-        <section id="faqs" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">
+        <section id="faqs" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
-            <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-12">
-              <div className="lg:col-span-7">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">Your Questions</p>
-                <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-                  Answers Before You Commit
-                </h2>
-              </div>
-              <p className="text-base leading-relaxed text-stone-600 lg:col-span-5">
-                Grouped by what firms usually want to settle first. If something here is not covered, ask us — we would rather answer it up front.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+              {/*
+                Held left column: the framing, an index into the five groups, and
+                the way out if the answer is not here. Ten questions in one
+                undifferentiated stack gave a reader no way to navigate.
+              */}
+              <div className="lg:col-span-4">
+                <div className="lg:sticky lg:top-28">
+                  <SectionHeading
+                    eyebrow="Your Questions"
+                    title="Answers Before You Commit"
+                    description="Grouped by what firms usually want to settle first."
+                    align="left"
+                    className="mb-8"
+                  />
 
-            <div className="mt-14 grid gap-12 lg:mt-16 lg:grid-cols-12 lg:gap-16">
-              {/* Sticky help-centre rail: photo summary + topic index */}
-              <aside className="lg:col-span-4">
-                <div className="space-y-8 lg:sticky lg:top-32">
-                  <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-stone-100 shadow-xl lg:aspect-[4/3]">
-                    <Image
-                      src="/images/nics/discover-workstation.jpg"
-                      alt="Professional typing on a laptop late in the evening"
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 100vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/90 via-[#0b1524]/30 to-transparent" />
-                    <p className="absolute bottom-5 left-6 flex items-baseline gap-2 text-white">
-                      <span className="font-serif text-5xl font-bold">{totalFaqs}</span>
-                      <span className="text-sm font-semibold uppercase tracking-wider text-slate-200">
-                        questions · {faqCategories.length} topics
-                      </span>
-                    </p>
-                  </div>
-
-                  <nav aria-label="FAQ topics">
-                    <ol className="border-l-2 border-stone-200">
-                      {faqCategories.map((cat) => {
-                        const CatIcon = cat.icon;
-                        return (
-                          <li key={cat.id}>
-                            <a
-                              href={`#${cat.id}`}
-                              className="group -ml-0.5 flex items-center gap-3 border-l-2 border-transparent py-2.5 pl-5 transition-colors hover:border-[#0056b3]"
-                            >
-                              <CatIcon className="size-4 text-stone-400 transition-colors group-hover:text-[#0056b3]" />
-                              <span className="text-sm font-semibold text-stone-700 transition-colors group-hover:text-[#0056b3]">
-                                {cat.name}
-                              </span>
-                              <span className="ml-auto text-xs tabular-nums text-stone-400">{cat.faqs.length}</span>
-                            </a>
-                          </li>
-                        );
-                      })}
+                  <nav aria-label="Question groups">
+                    <ol className="divide-y divide-[#e4e2da] border-y border-[#e4e2da]">
+                      {faqCategories.map((cat, index) => (
+                        <li key={cat.id}>
+                          <a
+                            href={`#${cat.id}`}
+                            className="group flex items-baseline gap-3 py-3 transition-colors hover:text-[#0056b3]"
+                          >
+                            <span className="w-5 shrink-0 text-xs font-bold tabular-nums text-[#0056b3]">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                            <span className="flex-1 text-sm font-semibold text-[#0b1524] transition-colors group-hover:text-[#0056b3]">
+                              {cat.name}
+                            </span>
+                            <span className="text-xs tabular-nums text-stone-400">
+                              {cat.faqs.length}
+                            </span>
+                          </a>
+                        </li>
+                      ))}
                     </ol>
                   </nav>
-                </div>
-              </aside>
 
-              {/* Topics and questions */}
-              <div className="space-y-16 lg:col-span-8">
-                {faqCategories.map((cat, ci) => {
-                  const CatIcon = cat.icon;
-                  return (
-                    <div key={cat.id} id={cat.id} className="scroll-mt-32">
-                      <div className="flex flex-wrap items-center gap-4">
-                        <span className="font-serif text-5xl font-bold leading-none tabular-nums text-[#0056b3]/15">
-                          {String(ci + 1).padStart(2, "0")}
+                  <div className="mt-8">
+                    <p className="text-sm leading-relaxed text-stone-600">
+                      Not covered here? Put it to our team directly — we will tell
+                      you plainly whether we are the right fit.
+                    </p>
+                    <ArrowLink href="/contact" variant="navy" size="md" className="mt-4">
+                      Ask our team
+                    </ArrowLink>
+                  </div>
+                </div>
+              </div>
+
+              {/* The answers themselves */}
+              <div className="lg:col-span-8">
+                <div className="space-y-12">
+                  {faqCategories.map((cat, index) => (
+                    <div key={cat.id} id={cat.id} className="scroll-mt-28">
+                      <div className="flex items-baseline gap-3 border-t-2 border-[#0b1524] pt-5">
+                        <span className="text-xs font-bold tabular-nums text-[#0056b3]">
+                          {String(index + 1).padStart(2, "0")}
                         </span>
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#0056b3]/10 text-[#0056b3]">
-                          <CatIcon className="size-5" />
-                        </span>
-                        <div className="min-w-0">
-                          <h3 className="text-2xl font-bold text-[#0b1524]">{cat.name}</h3>
-                          <p className="mt-0.5 text-sm text-stone-500">{cat.blurb}</p>
+                        <div>
+                          <h3 className="text-lg font-bold tracking-tight text-[#0b1524]">
+                            {cat.name}
+                          </h3>
+                          <p className="mt-0.5 text-[13px] text-stone-500">{cat.blurb}</p>
                         </div>
-                        <span className="ml-auto rounded-full bg-white px-3 py-1 text-xs font-semibold text-stone-500 ring-1 ring-stone-200">
-                          {cat.faqs.length} {cat.faqs.length === 1 ? "question" : "questions"}
-                        </span>
                       </div>
 
-                      <div className="mt-6 border-t border-stone-200">
+                      <div className="mt-3">
                         {cat.faqs.map((faq, i) => (
-                          <details key={i} className="group border-b border-stone-200">
-                            <summary className="flex cursor-pointer list-none items-start gap-5 py-6 [&::-webkit-details-marker]:hidden">
-                              <span className="flex-1 font-serif text-lg font-semibold leading-snug text-[#0b1524] transition-colors group-hover:text-[#0056b3] group-open:text-[#0056b3] sm:text-xl">
+                          <details key={i} className="group border-b border-[#e4e2da]">
+                            <summary className="flex cursor-pointer list-none items-start gap-4 py-4 [&::-webkit-details-marker]:hidden">
+                              <span className="flex-1 text-[15px] font-semibold leading-snug text-[#0b1524] transition-colors group-open:text-[#0056b3]">
                                 {faq.q}
                               </span>
-                              <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full border border-stone-300 text-[#0056b3] transition-all duration-300 group-open:rotate-45 group-open:border-[#0056b3] group-open:bg-[#0056b3] group-open:text-white">
-                                <Plus className="size-4" />
-                              </span>
+                              <Plus
+                                className="mt-0.5 size-4 shrink-0 text-[#0056b3] transition-transform duration-300 group-open:rotate-45"
+                                aria-hidden="true"
+                              />
                             </summary>
 
-                            <div className="mb-7 ml-1 max-w-3xl space-y-4 border-l-2 border-[#0056b3] pl-5">
+                            <div className="space-y-3 pb-5 pl-0 sm:pl-6">
                               {faq.a.map((para, pi) => (
-                                <p key={pi} className="text-base leading-relaxed text-stone-600">
+                                <p key={pi} className="text-sm leading-relaxed text-stone-600">
                                   {para}
                                 </p>
                               ))}
@@ -307,34 +292,7 @@ export default function DiscoverMorePage() {
                         ))}
                       </div>
                     </div>
-                  );
-                })}
-
-                {/* Still have a question — dark photo banner */}
-                <div className="relative overflow-hidden rounded-2xl bg-[#0b1524] p-8 text-white shadow-xl sm:p-10">
-                  <Image
-                    src="/images/nics/discover-focus.jpg"
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 55vw, 100vw"
-                    className="object-cover opacity-30"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b1524] via-[#0b1524]/85 to-[#0056b3]/60" />
-                  <div className="relative gap-8 sm:flex sm:items-center sm:justify-between">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white">Still have a question?</h3>
-                      <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-300">
-                        If your question is not answered above, put it to our team directly. We will tell you plainly whether we are the right fit for what you need.
-                      </p>
-                    </div>
-                    <Link
-                      href="/contact"
-                      className="group/btn mt-6 inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#0b1524] transition-colors hover:bg-[#8bc7ff] sm:mt-0"
-                    >
-                      Ask Our Team
-                      <ArrowRight className="size-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Link>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -342,14 +300,62 @@ export default function DiscoverMorePage() {
         </section>
 
         {/* DISCOVER MORE CLUSTER */}
-        <ExploreFurther
-          eyebrowIcon={LifeBuoy}
-          title={"Discover More"}
-          description={"The detail behind the answers — our technology, our location, and how the working day lines up with yours."}
-          items={discoverMore}
-          currentHref="/discover-more"
-          images={["/images/nics/blog-library.jpg", "/images/nics/accounting-analyst.jpg", "/images/nics/home-boardroom.jpg", "/images/nics/contact-connect.jpg"]}
-        />
+        <section className="border-t border-stone-200 bg-[#0b1524] py-20 text-white lg:py-28">
+          <Container size="default">
+            <SectionHeading
+              eyebrow="Explore Further"
+              title="Discover More"
+              description="The detail behind the answers — our technology, our location, and how the working day lines up with yours."
+              align="split"
+              dark
+            />
+
+            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
+              {discoverMore.map((item) => {
+                const ItemIcon = item.icon;
+                const isCurrent = item.href === "/discover-more";
+                const cardBody = (
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <ItemIcon className="size-5 text-[#8bc7ff]" aria-hidden="true" />
+                      {isCurrent && (
+                        <span className="rounded bg-[#8bc7ff]/20 px-2 py-0.5 text-[11px] font-semibold text-[#8bc7ff]">
+                          On this page
+                        </span>
+                      )}
+                      {!item.href && (
+                        <span className="rounded bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-slate-400">
+                          Coming soon
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-300">{item.blurb}</p>
+                  </div>
+                );
+
+                return item.href && !isCurrent ? (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="group flex flex-col border-t border-white/20 pt-5 transition-colors duration-300 hover:border-[#8bc7ff]"
+                  >
+                    {cardBody}
+                  </Link>
+                ) : (
+                  <div
+                    key={item.title}
+                    className={`flex flex-col border-t pt-5 ${
+                      isCurrent ? "border-[#8bc7ff]" : "border-white/20"
+                    }`}
+                  >
+                    {cardBody}
+                  </div>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
 
         {/* CALL TO ACTION */}
         <ReadyToScaleCTA />

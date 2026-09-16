@@ -22,7 +22,7 @@ export function ContactCTA() {
   const activeOffice = locationsData.find((l) => l.id === selectedOffice) || locationsData[0];
 
   return (
-    <section id="contact" className="bg-[#f8f7f4] text-[#0b1524] py-24 lg:py-36 relative overflow-hidden border-b border-stone-200">
+    <section id="contact" className="bg-[#f8f7f4] text-[#0b1524] py-12 lg:py-16 relative overflow-hidden border-b border-stone-200">
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0056b3]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0099db]/5 rounded-full blur-3xl pointer-events-none" />
@@ -51,7 +51,7 @@ export function ContactCTA() {
             </div>
 
             {/* Direct office quick details card */}
-            <div className="p-6 bg-white border border-stone-200 shadow-sm rounded-sm space-y-4">
+            <div className="space-y-4 border-t-2 border-[#0b1524] pt-6">
               <div className="flex items-center justify-between text-xs text-stone-500 border-b border-stone-100 pb-3">
                 <span className="uppercase tracking-wider font-bold text-stone-600">Direct Office Connection</span>
                 <span className="text-[#0056b3] tabular-nums font-bold">3 GLOBAL OFFICES</span>

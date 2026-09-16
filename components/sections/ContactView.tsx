@@ -1,23 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import {
   Send,
   CheckCircle2,
   Phone,
   Mail,
-  MapPin,
-  Clock,
   ShieldCheck,
   Calendar,
   ArrowRight,
   ChevronDown,
   Building2,
-  Users,
   Laptop,
   FileCheck,
-  BadgeCheck,
   Lock,
   MessageSquare,
   Globe,
@@ -25,9 +20,10 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { locationsData } from "@/data/locationsData";
+import { OfficeCard } from "@/components/ui/OfficeCard";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 
 const faqs = [
@@ -77,9 +73,6 @@ export function ContactView() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Office Location Selector State
-  const [activeOfficeId, setActiveOfficeId] = useState(locationsData[0].id);
-
   // FAQ Accordion State
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -92,9 +85,6 @@ export function ContactView() {
       setIsSubmitted(true);
     }, 600);
   };
-
-  const activeOffice =
-    locationsData.find((l) => l.id === activeOfficeId) || locationsData[0];
 
   return (
     <div className="bg-white text-[#0b1524]">
@@ -113,19 +103,19 @@ export function ContactView() {
           { value: "ISO 27001", label: "Aligned Security Standard" },
           { value: "100%", label: "Onshore Control Retained" },
         ]}
-        image="/images/nics/contact-connect.jpg"
+        image="/images/bright/page-contact.jpg"
         cardBadge="Global Advisory"
         cardTitle="Corporate Consultation Suite"
         cardSubtitle="Connect directly with our leadership to evaluate scope, SLAs, and dedicated talent."
-        imageAlt="Professional in a suit using a smartphone to get in touch"
+        imageAlt="Indian corporate client consultation suite and practice advisory reception at Chennai delivery headquarters"
       />
 
       {/* 2. DIRECT COMMUNICATION CHANNELS */}
       <section className="border-b border-stone-200 bg-[#fbfbfa] py-12">
         <Container size="default">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="border-t border-[#0b1524]/20 pt-5">
+              <div className="text-[#0056b3]">
                 <Phone className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Direct Phone Support</h3>
@@ -135,19 +125,14 @@ export function ContactView() {
                   href="tel:+919632466477"
                   className="block text-sm font-semibold text-[#0056b3] hover:underline"
                 >
-                  +91 9632 466 477 (Chennai HQ)
+                  +91 9632 466 477
                 </a>
-                <a
-                  href="tel:+919632466477"
-                  className="block text-xs text-stone-600 hover:text-[#0056b3]"
-                >
-                  +61 2 9000 1234 (Sydney)
-                </a>
+                <p className="text-xs text-stone-600">8:00 AM – 6:00 PM IST</p>
               </div>
             </div>
 
-            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="border-t border-[#0b1524]/20 pt-5">
+              <div className="text-[#0056b3]">
                 <Mail className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Email Inquiries</h3>
@@ -168,20 +153,19 @@ export function ContactView() {
               </div>
             </div>
 
-            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="border-t border-[#0b1524]/20 pt-5">
+              <div className="text-[#0056b3]">
                 <Building2 className="size-5" />
               </div>
-              <h3 className="mt-4 text-base font-bold text-[#0b1524]">Global Practice Hubs</h3>
-              <p className="mt-1 text-xs text-stone-500">Chennai HQ &amp; client relations</p>
+              <h3 className="mt-4 text-base font-bold text-[#0b1524]">Registered Office (HQ)</h3>
+              <p className="mt-1 text-xs text-stone-500">Chennai, Tamil Nadu, India</p>
               <div className="mt-4 text-xs text-stone-700 leading-relaxed">
-                <span className="font-semibold text-[#0b1524]">Chennai HQ:</span> Prince Centre, Anna Salai <br />
-                <span className="font-semibold text-[#0b1524]">Sydney:</span> Pymble NSW
+                Prince Centre, 4th Floor Left Wing, 709 Pathari Road, Anna Salai, Chennai 600006
               </div>
             </div>
 
-            <div className="rounded-sm border border-stone-200 bg-white p-6 shadow-sm transition-all hover:border-[#0056b3]/30 hover:shadow-md">
-              <div className="flex size-11 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+            <div className="border-t border-[#0b1524]/20 pt-5">
+              <div className="text-[#0056b3]">
                 <Calendar className="size-5" />
               </div>
               <h3 className="mt-4 text-base font-bold text-[#0b1524]">Discovery Video Call</h3>
@@ -200,7 +184,7 @@ export function ContactView() {
       </section>
 
       {/* 3. MAIN INTERACTIVE FORM & ADVISORY SECTION */}
-      <section id="consultation-form" className="py-20 lg:py-28">
+      <section id="consultation-form" className="py-12 lg:py-16">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Form Card */}
@@ -464,7 +448,7 @@ export function ContactView() {
             {/* Right Column: Trust & Operational Assurance */}
             <div className="lg:col-span-5 space-y-8">
               {/* How onboarding works */}
-              <div className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-7">
+              <div className="border-t-2 border-[#0b1524] pt-6">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0056b3]">
                   <Laptop className="size-4" />
                   Seamless 4-Step Transition
@@ -525,7 +509,7 @@ export function ContactView() {
               </div>
 
               {/* Security card */}
-              <div className="rounded-sm border border-stone-200 bg-white p-7 shadow-sm">
+              <div className="border-t-2 border-[#0b1524] pt-6">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-green-700">
                   <ShieldCheck className="size-4" />
                   Data Privacy & Compliance
@@ -576,132 +560,40 @@ export function ContactView() {
         </Container>
       </section>
 
-      {/* 4. GLOBAL PRACTICE OFFICES EXPLORER */}
-      <section className="border-t border-stone-200 bg-[#f8fafc] py-20 lg:py-28">
+      {/* 4. CORE DELIVERY OFFICE */}
+      <section className="border-t border-stone-200 bg-[#f8fafc] py-12 lg:py-16">
         <Container size="default">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-stone-700">
               <Globe className="size-3.5 text-[#0056b3]" />
-              Global Practice Presence
+              Core Delivery Centre
             </div>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-[#0b1524]">
-              Our Global Offices
+              Our Delivery Office
             </h2>
             <p className="mt-3 text-base text-stone-600">
-              A core delivery hub in Chennai paired with client-facing practice directors close to the markets we serve.
+              A dedicated delivery hub in Chennai operating with disciplined processes and ISO/IEC 27001 security.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {locationsData.map((loc) => {
-              const isActive = loc.id === activeOfficeId;
-              return (
-                <button
-                  key={loc.id}
-                  onClick={() => setActiveOfficeId(loc.id)}
-                  className={`rounded-sm border p-6 text-left transition-all cursor-pointer ${
-                    isActive
-                      ? "border-[#0056b3] bg-white shadow-lg ring-2 ring-[#0056b3]/20"
-                      : "border-stone-200 bg-white/70 hover:bg-white hover:border-stone-300"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#0056b3]">
-                      {loc.country}
-                    </span>
-                    <span className="rounded bg-stone-100 px-2 py-0.5 text-[11px] font-medium text-stone-600">
-                      {loc.state}
-                    </span>
-                  </div>
-                  <h3 className="mt-2 text-xl font-bold text-[#0b1524]">{loc.name}</h3>
-                  <p className="mt-2 text-xs text-stone-500 line-clamp-2">{loc.description}</p>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Office Detail Showcase */}
-          <div className="mt-6 rounded-sm border border-stone-200 bg-white p-8 sm:p-10 shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-4">
-                <div className="flex items-center gap-2">
-                  <span className="rounded-md bg-[#0056b3]/10 px-2.5 py-1 text-xs font-bold text-[#0056b3]">
-                    {activeOffice.country} Office Hub
-                  </span>
-                  <span className="text-xs text-stone-500 font-medium">
-                    {activeOffice.partnersCount} Advisory Partners
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0b1524]">
-                  NICS {activeOffice.name}
-                </h3>
-
-                <p className="text-sm text-stone-600 leading-relaxed">
-                  {activeOffice.description}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-stone-100 pt-4 text-xs">
-                  <div>
-                    <div className="font-bold text-stone-400 uppercase tracking-wider mb-1 flex items-center gap-1">
-                      <MapPin className="size-3 text-[#0056b3]" />
-                      Address
-                    </div>
-                    <div className="text-stone-700 font-medium">{activeOffice.address}</div>
-                  </div>
-                  <div>
-                    <div className="font-bold text-stone-400 uppercase tracking-wider mb-1 flex items-center gap-1">
-                      <Users className="size-3 text-[#0056b3]" />
-                      Office Leadership
-                    </div>
-                    <div className="text-[#0b1524] font-bold">{activeOffice.leadPartner}</div>
-                    <div className="text-stone-500">{activeOffice.leadPartnerTitle}</div>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-4 pt-2">
-                  <a
-                    href={`tel:${activeOffice.phone.replace(/[^0-9+]/g, "")}`}
-                    className="inline-flex items-center gap-2 rounded-sm bg-[#0056b3] px-5 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#004494]"
-                  >
-                    <Phone className="size-3.5" />
-                    Call {activeOffice.phone}
-                  </a>
-                  <a
-                    href={`mailto:${activeOffice.email}`}
-                    className="inline-flex items-center gap-2 rounded-sm border border-stone-300 bg-white px-5 py-2.5 text-xs font-semibold text-stone-700 transition-colors hover:bg-stone-50"
-                  >
-                    <Mail className="size-3.5" />
-                    {activeOffice.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5">
-                <div className="relative aspect-[4/3] w-full rounded-sm overflow-hidden border border-stone-200 shadow-md">
-                  <Image
-                    src={activeOffice.image}
-                    alt={`NICS ${activeOffice.name} office`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <div className="text-xs uppercase tracking-wider font-semibold text-[#8bc7ff]">
-                      Delivery Location
-                    </div>
-                    <div className="text-base font-bold">{activeOffice.name}, {activeOffice.state}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="mt-12 max-w-2xl mx-auto">
+            {locationsData.map((loc) => (
+              <OfficeCard
+                key={loc.id}
+                office={loc}
+                footer={
+                  <ArrowLink href="#consultation-form" variant="navy" size="md">
+                    Brief the {loc.name} team
+                  </ArrowLink>
+                }
+              />
+            ))}
           </div>
         </Container>
       </section>
 
       {/* 5. FREQUENTLY ASKED QUESTIONS */}
-      <section className="border-t border-stone-200 bg-white py-20 lg:py-28">
+      <section className="border-t border-stone-200 bg-white py-12 lg:py-16">
         <Container size="narrow">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-stone-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-stone-700">
@@ -722,12 +614,12 @@ export function ContactView() {
               return (
                 <div
                   key={index}
-                  className="rounded-sm border border-stone-200 bg-[#fbfbfa] transition-all"
+                  className="border-b border-[#e4e2da] transition-colors"
                 >
                   <button
                     type="button"
                     onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between p-6 text-left font-bold text-[#0b1524] cursor-pointer"
+                    className="flex w-full items-center justify-between py-5 text-left font-bold text-[#0b1524] cursor-pointer"
                   >
                     <span className="text-base sm:text-lg pr-4">{faq.question}</span>
                     <ChevronDown
@@ -737,7 +629,7 @@ export function ContactView() {
                     />
                   </button>
                   {isOpen && (
-                    <div className="border-t border-stone-200/60 px-6 pb-6 pt-3 text-sm leading-relaxed text-stone-600">
+                    <div className="pb-5 text-sm leading-relaxed text-stone-600">
                       {faq.answer}
                     </div>
                   )}

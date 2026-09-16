@@ -27,7 +27,9 @@ export const featuredCaseStudy: ClientStory = {
   category: "Operating Principle",
   headline: "What You Keep. What We Take Care Of.",
   subheadline: "A successful offshore model requires clear ownership. You control the outcome. We help deliver the work.",
-  quote: "You retain client relationships, commercial decisions, professional judgement, and final approvals. NICS manages resource allocation, day-to-day processing, staff coordination, and quality review.",
+  // Trimmed: the full version of this line is the hero's opening slide, so the
+  // home page was printing the same thirty words twice within two screens.
+  quote: "You keep the client relationships, the judgement and the final sign-off. We handle the processing, the coordination and the review.",
   author: {
     name: "Operating Principle",
     title: "Shared Governance Framework",
@@ -41,7 +43,7 @@ export const featuredCaseStudy: ClientStory = {
   ],
   linkText: "Discuss how we structure ownership",
   href: "#contact",
-  image: "/images/nics/administrative-partners.jpg",
+  image: "/img/Business Meeting.avif",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Model"]
 };
 
@@ -54,7 +56,7 @@ export const podcastStory: ClientStory = {
   synopsis: "Access flexible capacity when workloads peak, professional capability across accounting and operations, structured delivery with SOPs, scalable resourcing, technology enablement in your existing software, quality review focus, cost efficiency, and true integration.",
   linkText: "Read about our client advantages",
   href: "#contact",
-  image: "/images/nics/accounting-analyst.jpg",
+  image: "/img/office-scene.avif",
   tags: ["Flexible Capacity", "Structured Delivery", "Quality Focus", "Cost Efficiency"]
 };
 
@@ -72,6 +74,6 @@ export const peopleQAStory: ClientStory = {
   },
   linkText: "Explore our 4 engagement models",
   href: "#contact",
-  image: "/images/nics/how-it-works-collaboration.jpg",
+  image: "/img/people-at-a-table-with-laptop.avif",
   tags: ["Dedicated Resource", "Managed Function", "Project Support", "BOT Transition"]
 };

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -17,12 +16,10 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { ExploreFurther } from "@/components/sections/ExploreFurther";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Who We Are | NICS",
@@ -31,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/nics/who-we-are-team.jpg";
+const heroImage = "/images/bright/page-who-we-are.jpg";
 
 const historyParagraphs = [
   "Traditional BPO was built for large corporations. For small and medium businesses and independent accounting practitioners, the models on offer were too rigid, too large, and too far removed from how a practice actually works — so most firms simply carried the load themselves.",
@@ -54,7 +51,7 @@ const visionPoints = [
   },
   {
     icon: Compass,
-    text: "Business expansion into the US and Canada, followed by EU markets starting with the UK and Ireland.",
+    text: "Business expansion into leading international accounting markets with trusted, ethical talent.",
   },
 ];
 
@@ -145,15 +142,15 @@ export default function WhoWeArePage() {
           cardBadge="People Powered"
           cardTitle="Strategic Human Capital & SME Focus"
           cardSubtitle="Exceptional business acumen and delivery excellence scaling alongside your leadership."
-          imageAlt="Team joining hands over a shared worktable with laptops"
+          imageAlt="Indian corporate founders and executive leadership team collaborating in the modern architectural headquarters"
         />
 
         {/* HISTORY */}
-        <section id="history" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">
+        <section id="history" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+                <div className="text-[#0056b3]">
                   <History className="size-6" />
                 </div>
                 <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">Our Story</p>
@@ -164,12 +161,12 @@ export default function WhoWeArePage() {
                   We started from a gap in the market: outsourcing that worked for large corporations, and almost nobody else.
                 </p>
 
-                <div className="mt-8 rounded-sm border border-[#0056b3]/20 bg-white p-6">
+                <div className="mt-8 border-t-2 border-[#0b1524] pt-6">
                   <p className="text-xs font-bold uppercase tracking-wider text-stone-400">Where We Deliver From</p>
                   <ul className="mt-4 space-y-3">
                     {[
-                      "Chennai — HQ delivery centre",
-                      "Sydney — client relations",
+                      "Chennai — HQ delivery centre (Prince Centre, Anna Salai)",
+                      "Tamil Nadu, India",
                     ].map((loc, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-stone-600">
                         <CheckCircle2 className="size-4 shrink-0 text-[#0056b3] mt-0.5" />
@@ -181,7 +178,7 @@ export default function WhoWeArePage() {
               </div>
 
               <div className="lg:col-span-7">
-                <div className="space-y-6 rounded-sm border border-stone-200 bg-white p-8 lg:p-10">
+                <div className="space-y-6 border-t border-[#0b1524]/15 pt-8">
                   {historyParagraphs.map((para, i) => (
                     <p key={i} className="text-base leading-relaxed text-stone-600">
                       {para}
@@ -194,7 +191,7 @@ export default function WhoWeArePage() {
         </section>
 
         {/* VISION & MISSION */}
-        <section id="vision" className="scroll-mt-20 border-t border-stone-200 bg-white py-20 lg:py-28">
+        <section id="vision" className="scroll-mt-20 border-t border-stone-200 bg-white py-12 lg:py-16">
           <Container size="default">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">Where We Are Going</p>
@@ -208,9 +205,9 @@ export default function WhoWeArePage() {
 
             <div className="mt-14 grid gap-8 lg:grid-cols-2">
               {/* Vision */}
-              <div className="rounded-sm border border-stone-200 bg-[#fbfbfa] p-8 lg:p-10">
+              <div className="border-t-2 border-[#0b1524] pt-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+                  <div className="text-[#0056b3]">
                     <Compass className="size-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-[#0b1524]">Vision</h3>
@@ -221,7 +218,7 @@ export default function WhoWeArePage() {
                     const PointIcon = point.icon;
                     return (
                       <li key={i} className="flex items-start gap-4">
-                        <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#0056b3] ring-1 ring-stone-200">
+                        <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center text-[#0056b3]">
                           <PointIcon className="size-4" />
                         </div>
                         <p className="text-sm leading-relaxed text-stone-600">{point.text}</p>
@@ -232,9 +229,9 @@ export default function WhoWeArePage() {
               </div>
 
               {/* Mission */}
-              <div id="mission" className="scroll-mt-24 rounded-sm border border-[#0056b3]/20 bg-[#0b1524] p-8 text-white lg:p-10">
+              <div id="mission" className="scroll-mt-24 bg-[#0b1524] p-8 text-white lg:p-10">
                 <div className="flex items-center gap-4">
-                  <div className="flex size-12 items-center justify-center rounded-sm bg-white/10 text-[#8bc7ff]">
+                  <div className="text-[#8bc7ff]">
                     <Target className="size-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">Mission</h3>
@@ -245,7 +242,7 @@ export default function WhoWeArePage() {
                     const PointIcon = point.icon;
                     return (
                       <li key={i} className="flex items-start gap-4">
-                        <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#8bc7ff]">
+                        <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center text-[#8bc7ff]">
                           <PointIcon className="size-4" />
                         </div>
                         <p className="text-sm leading-relaxed text-slate-300">{point.text}</p>
@@ -269,11 +266,11 @@ export default function WhoWeArePage() {
         </section>
 
         {/* CULTURE */}
-        <section id="culture" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">
+        <section id="culture" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <div className="flex size-12 items-center justify-center rounded-sm bg-[#0056b3]/10 text-[#0056b3]">
+                <div className="text-[#0056b3]">
                   <HeartHandshake className="size-6" />
                 </div>
                 <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">How We Work</p>
@@ -295,40 +292,26 @@ export default function WhoWeArePage() {
               </div>
 
               <div className="lg:col-span-7">
-                {/* Photo with the rituals as a floating timeline over its lower edge */}
-                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-stone-100 shadow-xl">
-                  <Image
-                    src="/images/nics/blog-video-call.jpg"
-                    alt="Team smiling together on a video call with colleagues"
-                    fill
-                    sizes="(min-width: 1024px) 55vw, 100vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/50 via-transparent to-transparent" />
-                </div>
-
-                <ol className="relative mx-3 -mt-14 divide-y divide-stone-200 rounded-2xl bg-white shadow-xl ring-1 ring-stone-200 sm:mx-8">
+                <div className="grid gap-5 sm:grid-cols-3">
                   {cultureRituals.map((ritual) => {
                     const RitualIcon = ritual.icon;
                     return (
-                      <li key={ritual.title} className="group flex items-start gap-5 p-5 sm:p-6">
-                        <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#0056b3]/10 text-[#0056b3] transition-colors duration-300 group-hover:bg-[#0056b3] group-hover:text-white">
+                      <div
+                        key={ritual.title}
+                        className="border-t border-[#0b1524]/20 pt-5"
+                      >
+                        <div className="text-[#0056b3]">
                           <RitualIcon className="size-5" />
-                        </span>
-                        <div>
-                          <h3 className="text-lg font-bold text-[#0b1524]">{ritual.title}</h3>
-                          <p className="mt-1 text-sm leading-relaxed text-stone-600">{ritual.text}</p>
                         </div>
-                      </li>
+                        <h3 className="mt-4 text-base font-bold text-[#0b1524]">{ritual.title}</h3>
+                        <p className="mt-2 text-xs leading-relaxed text-stone-600">{ritual.text}</p>
+                      </div>
                     );
                   })}
-                </ol>
+                </div>
 
-                <blockquote className="relative mt-12 border-l-4 border-[#0056b3] pl-6 sm:pl-8">
-                  <span aria-hidden="true" className="absolute -top-8 left-3 font-serif text-8xl leading-none text-[#0056b3]/15">
-                    &ldquo;
-                  </span>
-                  <p className="relative font-serif text-xl leading-relaxed text-[#0b1524] sm:text-2xl">
+                <div className="mt-8 border-t border-[#0b1524]/15 pt-6">
+                  <p className="text-base leading-relaxed text-stone-600">
                     People who are trusted, developed, and recognised stay longer — and continuity of knowledge across your process is one of the things you are actually buying when you build a team with us.
                   </p>
                   <Link
@@ -338,21 +321,76 @@ export default function WhoWeArePage() {
                     Meet the team behind your process
                     <ArrowRight className="size-3.5" />
                   </Link>
-                </blockquote>
+                </div>
               </div>
             </div>
           </Container>
         </section>
 
         {/* WHO WE ARE CLUSTER */}
-        <ExploreFurther
-          eyebrowIcon={Users}
-          title={"Who We Are"}
-          description={"The people, and what the partnership is worth — from both sides of it."}
-          items={whoWeAre}
-          currentHref="/who-we-are"
-          images={["/images/nics/home-boardroom.jpg", "/images/nics/blog-video-call.jpg", "/images/nics/blog-sales-review.jpg", "/images/nics/how-it-works-presentation.jpg"]}
-        />
+        <section className="border-t border-stone-200 bg-[#0b1524] py-20 text-white lg:py-28">
+          <Container size="default">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#8bc7ff]">
+                <Users className="size-3.5" />
+                Explore Further
+              </div>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
+                Who We Are
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-slate-300">
+                The people, and what the partnership is worth — from both sides of it.
+              </p>
+            </div>
+
+            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
+              {whoWeAre.map((item) => {
+                const ItemIcon = item.icon;
+                const isCurrent = item.href === "/who-we-are";
+                const cardBody = (
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <div className="text-[#8bc7ff]">
+                        <ItemIcon className="size-5" />
+                      </div>
+                      {isCurrent && (
+                        <span className="rounded bg-[#8bc7ff]/20 px-2 py-0.5 text-[11px] font-semibold text-[#8bc7ff]">
+                          On this page
+                        </span>
+                      )}
+                      {!item.href && (
+                        <span className="rounded bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-slate-400">
+                          Coming soon
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-300">{item.blurb}</p>
+                  </div>
+                );
+
+                return item.href && !isCurrent ? (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="group flex flex-col border-t border-white/20 pt-5 transition-colors duration-300 hover:border-[#8bc7ff]"
+                  >
+                    {cardBody}
+                  </Link>
+                ) : (
+                  <div
+                    key={item.title}
+                    className={`flex flex-col border-t pt-5 ${
+                      isCurrent ? "border-[#8bc7ff]" : "border-white/20"
+                    }`}
+                  >
+                    {cardBody}
+                  </div>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
 
         {/* CALL TO ACTION */}
         <ReadyToScaleCTA />

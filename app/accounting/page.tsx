@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
   BookOpen,
   Boxes,
   ReceiptText,
@@ -14,21 +10,15 @@ import {
   Building2,
   TrendingUp,
   Users,
-  ShieldCheck,
-  Zap,
-  ArrowUpRight,
-  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { OutsourcingModels } from "@/components/sections/OutsourcingModels";
-import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
-import { ServiceCatalogue } from "@/components/sections/ServiceCatalogue";
 import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
-import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CapabilityList } from "@/components/sections/service/CapabilityList";
+import { IndustryColumns } from "@/components/sections/service/IndustryColumns";
+import { DeliveryModelColumns } from "@/components/sections/service/DeliveryModelColumns";
 
 export const metadata: Metadata = {
   title: "Accounting Services We Provide | NICS",
@@ -36,7 +26,7 @@ export const metadata: Metadata = {
     "Find out the accounting services we provide at NICS — Bookkeeping, Inventory Management, Accounts Payable (P2P), Accounts Receivable (O2C), Management Reporting, Financial Planning support, and Mortgage Brokering.",
 };
 
-const heroImage = "/images/nics/accounting-reporting.jpg";
+const heroImage = "/images/bright/page-accounting.jpg";
 
 const accountingServices = [
   {
@@ -142,7 +132,6 @@ const accountingServices = [
 const industrySolutions = [
   {
     title: "Accounting Industry",
-    image: "/images/nics/accounting-review.jpg",
     anchor: "accounting-industry",
     icon: Building2,
     description:
@@ -155,7 +144,6 @@ const industrySolutions = [
   },
   {
     title: "Business Enterprises",
-    image: "/images/nics/blog-sales-review.jpg",
     anchor: "business-enterprises",
     icon: TrendingUp,
     description:
@@ -168,7 +156,6 @@ const industrySolutions = [
   },
   {
     title: "Financial Planning & Mortgage Brokers",
-    image: "/images/nics/accounting-desk.jpg",
     anchor: "financial-services",
     icon: Users,
     description:
@@ -238,7 +225,6 @@ export default function AccountingPage() {
       <Header />
 
       <main>
-        {/* HERO BANNER (matching dante-new.vercel.app full-bleed banner) */}
         <PageBanner
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Accounting" }]}
           badge="Accounting Services"
@@ -256,33 +242,33 @@ export default function AccountingPage() {
           cardBadge="NICS Accounting"
           cardTitle="Ledgers, Cycles & Reporting Handled End to End"
           cardSubtitle="Deadline-driven accounting capacity that protects your margins and elevates your client experience."
-          imageAlt="Accountant reviewing management reports and financial dashboards at a multi-screen workstation"
+          imageAlt="Indian Chartered Accountant reviewing general ledgers, trial balances, and cloud management dashboards in a modern sunlit office"
         />
 
-        {/* SERVICES SECTION */}
-        <ServiceCatalogue
-          title={"Accounting Services"}
-          description={"From day-to-day bookkeeping and full payables and receivables cycles to management reporting, paraplanning, and loan processing — our accountants keep your obligations on schedule."}
+        <CapabilityList
+          eyebrow="What We Provide"
+          title="Accounting Services"
+          intro="From day-to-day bookkeeping and full payables and receivables cycles to management reporting, paraplanning, and loan processing — our accountants keep your obligations on schedule."
+          image="/images/bright/service-accounting.jpg"
+          imageAlt="NICS accounting specialists reviewing balance sheets, reconciliation dashboards, and cloud ledgers in a modern corporate office"
           items={accountingServices}
+          ctaLabel="Discuss your accounting workload"
         />
 
-        {/* SOLUTIONS BY INDUSTRY */}
-        <IndustrySolutions
-          eyebrow={"Industry Focus"}
-          title={"View Solutions by Industry"}
-          description={"Discover how our accounting expertise is configured to address the specific pressures of your sector."}
+        <IndustryColumns
+          eyebrow="Industry Focus"
+          title="View Solutions by Industry"
+          intro="Discover how our accounting expertise is configured to address the specific pressures of your sector."
           items={industrySolutions}
         />
 
-        {/* OUTSOURCING MODELS */}
-        <OutsourcingModels
-          eyebrow={"Delivery Flexibility"}
-          title={"Outsourcing Models"}
-          description={"Choose the model that fits your reporting calendar, internal review preferences, and scaling roadmap."}
-          models={outsourcingModels}
+        <DeliveryModelColumns
+          eyebrow="Delivery Flexibility"
+          title="Outsourcing Models"
+          intro="Choose the model that fits your reporting calendar, internal review preferences, and scaling roadmap."
+          items={outsourcingModels}
         />
 
-        {/* CALL TO ACTION */}
         <ReadyToScaleCTA />
       </main>
 

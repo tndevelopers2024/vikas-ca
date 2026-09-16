@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowUpRight,
   CheckCircle2,
   Calculator,
   BookOpen,
@@ -18,7 +16,6 @@ import {
   UserRoundCheck,
   Rocket,
   Globe2,
-  BadgeCheck,
 } from "lucide-react";
 import { Header } from "@/components/navigation/Header";
 import { PageBanner } from "@/components/sections/PageBanner";
@@ -26,7 +23,8 @@ import { ReadyToScaleCTA } from "@/components/sections/ReadyToScaleCTA";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingActions } from "@/components/ui/FloatingActions";
 import { Container } from "@/components/ui/Container";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FeatureGrid } from "@/components/sections/service/FeatureGrid";
 
 export const metadata: Metadata = {
   title: "Build Your Team | NICS",
@@ -35,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 /** This page's own hero photograph — pages no longer share the category image. */
-const heroImage = "/images/nics/build-team-celebration.jpg";
+const heroImage = "/img/build-your-team-banner.jpg";
 
 const roles = [
   {
@@ -159,81 +157,37 @@ export default function BuildYourTeamPage() {
             { value: "10–14d", label: "Average Setup Time" },
           ]}
           image={heroImage}
+          imagePosition="82% 48%"
           cardBadge="Dedicated Specialists"
           cardTitle="Pre-Vetted Talent Selection"
           cardSubtitle="Interview and select accountants and specialists matched to your software stack."
-          imageAlt="Team celebrating together around a boardroom table"
+          imageAlt="Indian talent acquisition director and senior partners conducting recruitment consultation for pre-vetted accountants"
         />
 
         {/* ROLES */}
-        <section id="roles" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-20 lg:py-28">
+        <section id="roles" className="scroll-mt-20 border-t border-stone-200 bg-[#fbfbfa] py-12 lg:py-16">
           <Container size="default">
-            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-              {/* Sticky intro with photo */}
-              <div className="lg:col-span-4">
-                <div className="lg:sticky lg:top-32">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0056b3]">Select a Job Role</p>
-                  <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#0b1524]">
-                    Roles You Can Build With Us
-                  </h2>
-                  <p className="mt-4 text-base leading-relaxed text-stone-600">
-                    Every role below can be staffed as a dedicated resource, a managed function, or a job-by-job arrangement. Pick the role — we will shape the model around it.
-                  </p>
-                  <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl shadow-xl lg:aspect-[4/5]">
-                    <Image
-                      src="/images/nics/how-it-works-presentation.jpg"
-                      alt="Team lead presenting a plan to colleagues"
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 100vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1524]/85 via-[#0b1524]/10 to-transparent" />
-                    <p className="absolute bottom-5 left-6 flex items-baseline gap-2 text-white">
-                      <span className="font-serif text-5xl font-bold">{roles.length}</span>
-                      <span className="text-sm font-semibold uppercase tracking-wider text-slate-200">roles</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <SectionHeading
+              eyebrow="Select a Job Role"
+              title="Roles You Can Build With Us"
+              description="Every role below can be staffed as a dedicated resource, a managed function, or a job-by-job arrangement. Pick the role — we will shape the model around it."
+              align="split"
+            />
 
-              {/* Role directory */}
-              <ol className="grid border-t border-stone-200 sm:grid-cols-2 lg:col-span-8">
-                {roles.map((role, i) => {
-                  const RoleIcon = role.icon;
-                  return (
-                    <li
-                      key={role.id}
-                      className="group flex flex-col border-b border-stone-200 py-8 sm:odd:pr-8 sm:even:border-l sm:even:pl-8"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-bold tabular-nums text-stone-400">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="flex size-10 items-center justify-center rounded-full bg-[#0056b3]/10 text-[#0056b3] transition-colors duration-300 group-hover:bg-[#0056b3] group-hover:text-white">
-                          <RoleIcon className="size-5" />
-                        </span>
-                      </div>
-                      <h3 className="mt-4 text-xl font-bold text-[#0b1524] transition-colors group-hover:text-[#0056b3]">
-                        {role.name}
-                      </h3>
-                      <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{role.description}</p>
-                      <Link
-                        href="/contact"
-                        className="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-[#0056b3] transition-colors hover:text-[#004494]"
-                      >
-                        Request a {role.name} profile
-                        <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ol>
-            </div>
+            <FeatureGrid
+              className="mt-12"
+              columns={3}
+              items={roles.map((role) => ({
+                icon: role.icon,
+                title: role.name,
+                description: role.description,
+              }))}
+            />
           </Container>
         </section>
 
         {/* EXPERIENCE & LOCATION */}
-        <section className="border-t border-stone-200 bg-white py-20 lg:py-28">
+        <section className="border-t border-stone-200 bg-white py-12 lg:py-16">
           <Container size="default">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
@@ -245,65 +199,43 @@ export default function BuildYourTeamPage() {
                   Not every task needs a senior. Tell us the band that fits the work and the review capacity you have onshore, and we will scope the team accordingly.
                 </p>
 
-                {/* Seniority scale — each band's bar grows with experience */}
-                <ol className="mt-10 space-y-5">
-                  {experienceLevels.map((level, i) => (
-                    <li
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {experienceLevels.map((level) => (
+                    <div
                       key={level.label}
-                      className="group grid grid-cols-[5.5rem_1fr] items-start gap-5 sm:grid-cols-[7rem_1fr]"
+                      className="border-t border-[#0b1524]/20 pt-4"
                     >
-                      <span className="pt-0.5 text-right font-serif text-lg font-bold leading-none text-[#0056b3]">
-                        {level.label}
-                      </span>
-                      <div>
-                        <div className="h-2.5 overflow-hidden rounded-full bg-stone-100">
-                          <div
-                            className="h-full rounded-full bg-gradient-to-r from-[#8bc7ff] to-[#0056b3] transition-[filter] duration-300 group-hover:brightness-110"
-                            style={{ width: `${((i + 1) / experienceLevels.length) * 100}%` }}
-                          />
-                        </div>
-                        <p className="mt-2 text-sm leading-relaxed text-stone-600">{level.detail}</p>
-                      </div>
-                    </li>
+                      <div className="text-base font-bold text-[#0056b3]">{level.label}</div>
+                      <p className="mt-1.5 text-xs leading-relaxed text-stone-600">{level.detail}</p>
+                    </div>
                   ))}
-                </ol>
+                </div>
               </div>
 
               <div className="lg:col-span-5">
-                <div className="relative overflow-hidden rounded-2xl bg-[#0b1524] p-8 text-white shadow-xl sm:p-10">
-                  <Image
-                    src="/images/nics/blog-video-call.jpg"
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    className="object-cover opacity-25"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0b1524] via-[#0b1524]/90 to-[#0056b3]/70" />
+                <div className="border-t-2 border-[#0b1524] pt-6">
+                  <Globe2 className="size-5 text-[#0056b3]" aria-hidden="true" />
+                  <h3 className="mt-4 text-xl font-bold text-[#0b1524]">Select Location</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-stone-600">
+                    We build teams for firms operating in these markets, aligned to your working hours and regulatory context.
+                  </p>
 
-                  <div className="relative">
-                    <div className="flex size-12 items-center justify-center rounded-full bg-white/10 text-[#8bc7ff]">
-                      <Globe2 className="size-6" />
-                    </div>
-                    <h3 className="mt-5 text-2xl font-bold text-white">Select Location</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                      We build teams for firms operating in these markets, aligned to your working hours and regulatory context.
-                    </p>
+                  <ul className="mt-6 space-y-3">
+                    {locations.map((loc) => (
+                      <li key={loc} className="flex items-start gap-2.5 text-sm text-stone-600">
+                        <CheckCircle2 className="size-4 shrink-0 text-[#0056b3] mt-0.5" />
+                        <span>{loc}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                    <ul className="mt-8 divide-y divide-white/10 border-y border-white/10">
-                      {locations.map((loc) => (
-                        <li key={loc} className="flex items-center justify-between gap-4 py-4 text-base font-semibold text-white">
-                          <span>{loc}</span>
-                          <CheckCircle2 className="size-4 shrink-0 text-[#8bc7ff]" />
-                        </li>
-                      ))}
-                    </ul>
-
-                    <p className="mt-6 text-xs leading-relaxed text-slate-400">
-                      Delivery runs from our Chennai centre, with client relations handled from Sydney.
+                  <div className="mt-7 border-t border-stone-200 pt-5">
+                    <p className="text-xs leading-relaxed text-stone-500">
+                      Delivery runs directly from our core Chennai delivery centre.
                     </p>
                     <Link
                       href="/contact"
-                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#8bc7ff] transition-colors hover:text-white"
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#0056b3] transition-colors hover:text-[#004494]"
                     >
                       Discuss timezone coverage
                       <ArrowRight className="size-3.5" />
@@ -331,28 +263,17 @@ export default function BuildYourTeamPage() {
               </p>
             </div>
 
-            {/* Connected three-step flow */}
-            <ol className="relative mt-16 grid gap-14 md:grid-cols-3 md:gap-10">
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-[16.66%] right-[16.66%] top-8 hidden border-t-2 border-dashed border-[#8bc7ff]/30 md:block"
-              />
-              {steps.map((step) => {
-                const StepIcon = step.icon;
-                return (
-                  <li key={step.number} className="group relative text-center">
-                    <div className="relative mx-auto flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-[#8bc7ff] to-[#0056b3] text-white shadow-[0_0_40px_rgba(0,86,179,0.45)] ring-8 ring-[#0b1524] transition-transform duration-300 group-hover:scale-110">
-                      <StepIcon className="size-6" />
-                    </div>
-                    <span className="mt-6 block font-mono text-xs font-bold tracking-[0.2em] text-[#8bc7ff]">
-                      STEP {step.number}
-                    </span>
-                    <h3 className="mt-2 text-xl font-bold text-white">{step.title}</h3>
-                    <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-slate-300">{step.description}</p>
-                  </li>
-                );
-              })}
-            </ol>
+            <FeatureGrid
+              className="mt-12"
+              columns={3}
+              tone="dark"
+              numbered
+              items={steps.map((step) => ({
+                number: step.number,
+                title: step.title,
+                description: step.description,
+              }))}
+            />
 
             <div className="mt-12 text-center">
               <Link
