@@ -173,6 +173,9 @@ const outsourcingModels = [
     number: "01",
     title: "Insourcing",
     tag: "Dedicated Extension",
+    stat: "100% Dedicated",
+    statDetail: "Direct seat in your practice",
+    image: "/images/models/insourcing-v2.jpg",
     description:
       "Dedicated full-time accountants working directly inside your systems and workflows, operating seamlessly as an integrated extension of your internal team.",
     highlights: [
@@ -185,6 +188,9 @@ const outsourcingModels = [
     number: "02",
     title: "Insourcing with Manager Support",
     tag: "Managed Governance",
+    stat: "Manager QA Oversight",
+    statDetail: "Dual-layer review & SOPs",
+    image: "/images/models/manager-support-v2.jpg",
     description:
       "Dedicated preparers backed by experienced finance managers and team leads who ensure quality control, SLA adherence, and ongoing technical coaching.",
     highlights: [
@@ -197,6 +203,9 @@ const outsourcingModels = [
     number: "03",
     title: "Job-by-Job",
     tag: "On-Demand & Scalable",
+    stat: "On-Demand Surge",
+    statDetail: "Pay-as-you-go capacity",
+    image: "/images/models/job-by-job-v2.jpg",
     description:
       "A flexible, pay-as-you-go delivery model where work is submitted on a per-task or per-file basis, ideal for handling seasonal spikes and overflow work.",
     highlights: [
@@ -209,6 +218,9 @@ const outsourcingModels = [
     number: "04",
     title: "BOT Model",
     tag: "Build · Operate · Transfer",
+    stat: "Enterprise Asset",
+    statDetail: "Seamless unit transition",
+    image: "/images/models/bot-model-v2.jpg",
     description:
       "We recruit, train, and build your dedicated offshore finance unit, manage daily operations under stringent SLAs, and transfer complete operational ownership when ready.",
     highlights: [

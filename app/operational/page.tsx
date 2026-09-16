@@ -199,6 +199,9 @@ const outsourcingModels = [
     number: "01",
     title: "Insourcing",
     tag: "Dedicated Extension",
+    stat: "100% Dedicated",
+    statDetail: "Direct seat in your operations",
+    image: "/images/models/insourcing-v2.jpg",
     description:
       "Dedicated full-time operational specialists embedded directly into your customer support and back-office tools, operating seamlessly as part of your team.",
     highlights: [
@@ -211,6 +214,9 @@ const outsourcingModels = [
     number: "02",
     title: "Insourcing with Manager Support",
     tag: "Managed Governance",
+    stat: "Manager QA Oversight",
+    statDetail: "Call calibration & SOP audit",
+    image: "/images/models/manager-support-v2.jpg",
     description:
       "Dedicated agents backed by experienced operational managers and team leads who ensure quality control, call calibration, and SLA governance.",
     highlights: [
@@ -223,6 +229,9 @@ const outsourcingModels = [
     number: "03",
     title: "Job-by-Job",
     tag: "On-Demand & Scalable",
+    stat: "On-Demand Surge",
+    statDetail: "Pay-as-you-go capacity",
+    image: "/images/models/job-by-job-v2.jpg",
     description:
       "A flexible, batch-based delivery model where tasks such as dataset cleansing, KYC refresh runs, or seasonal campaign surges are billed per project.",
     highlights: [
@@ -235,6 +244,9 @@ const outsourcingModels = [
     number: "04",
     title: "BOT Model",
     tag: "Build · Operate · Transfer",
+    stat: "Enterprise Asset",
+    statDetail: "Seamless unit transition",
+    image: "/images/models/bot-model-v2.jpg",
     description:
       "We build your dedicated offshore customer operations center, operate and mature the processes under strict performance metrics, and transfer full ownership when ready.",
     highlights: [

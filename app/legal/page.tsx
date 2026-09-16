@@ -155,6 +155,9 @@ const outsourcingModels = [
     number: "01",
     title: "Insourcing",
     tag: "Dedicated Paralegal",
+    stat: "100% Dedicated",
+    statDetail: "Embedded in practice systems",
+    image: "/images/models/insourcing-v2.jpg",
     description:
       "Dedicated full-time legal support specialists and paralegals embedded directly in your practice systems, working under your direct instructions.",
     highlights: [
@@ -167,6 +170,9 @@ const outsourcingModels = [
     number: "02",
     title: "Insourcing with Manager Support",
     tag: "Managed Governance",
+    stat: "Team Lead QA",
+    statDetail: "Built-in review & SLA checks",
+    image: "/images/models/manager-support-v2.jpg",
     description:
       "Dedicated paralegal staff backed by an experienced legal operations team lead who ensures strict quality control, formatting standards, and SLA compliance.",
     highlights: [
@@ -179,6 +185,9 @@ const outsourcingModels = [
     number: "03",
     title: "Job-by-Job",
     tag: "On-Demand Project",
+    stat: "Matter-by-Matter",
+    statDetail: "Per-file flexible capacity",
+    image: "/images/models/job-by-job-v2.jpg",
     description:
       "A flexible delivery model where specific projects—such as M&A due diligence batches, lease abstract runs, or court bundle collations—are billed per matter.",
     highlights: [
@@ -191,6 +200,9 @@ const outsourcingModels = [
     number: "04",
     title: "BOT Model",
     tag: "Build · Operate · Transfer",
+    stat: "Enterprise Asset",
+    statDetail: "ISO 27001 unit transfer",
+    image: "/images/models/bot-model-v2.jpg",
     description:
       "We recruit, train, and build your dedicated offshore legal operations unit under strict ISO 27001 data governance, and transfer full management when scaled.",
     highlights: [
