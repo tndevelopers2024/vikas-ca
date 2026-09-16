@@ -221,6 +221,7 @@ export default function LegalPage() {
             { value: "ISO 27001", label: "Data Governance" },
           ]}
           image={heroImage}
+          imagePosition="65% 30%"
           cardBadge="NICS Legal Operations"
           cardTitle="Contract Management & Due Diligence"
           cardSubtitle="Paralegal support for law firms and corporate counsel under strict ISO 27001 data governance."

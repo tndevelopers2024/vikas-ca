@@ -566,17 +566,17 @@ export function ContactView() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-stone-700">
               <Globe className="size-3.5 text-[#0056b3]" />
-              Core Delivery Centre
+              Global Presence
             </div>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-[#0b1524]">
-              Our Delivery Office
+              Our Offices
             </h2>
             <p className="mt-3 text-base text-stone-600">
-              A dedicated delivery hub in Chennai operating with disciplined processes and ISO/IEC 27001 security.
+              Our core delivery capability in Chennai paired with international client relations.
             </p>
           </div>
 
-          <div className="mt-12 max-w-2xl mx-auto">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {locationsData.map((loc) => (
               <OfficeCard
                 key={loc.id}

@@ -33,4 +33,20 @@ export const locationsData: OfficeLocation[] = [
     specialties: ["Global Delivery Centre", "Accounting & Finance Ops", "SMSF & Audit Support", "Information Security"],
     image: "/images/bright/location-chennai.jpg"
   },
+  {
+    id: "sydney-client-relations",
+    name: "Sydney",
+    state: "NSW",
+    country: "Australia",
+    role: "Client relations office",
+    address: "Bridgeport Business Park, Pymble NSW 2073",
+    phone: "+61 2 9000 1234",
+    email: "hello@nics.com",
+    description: "Our client relations office manages client relationships, practice onboarding, and strategic alignment for accounting firms and growing enterprises across our international markets.",
+    leadPartner: "Boobalan Madhavan",
+    leadPartnerTitle: "Founder & MD",
+    partnersCount: 5,
+    specialties: ["Client Practice Liaison", "Engagement Models", "Reporting Standards Alignment", "Client Governance"],
+    image: "/images/bright/location-sydney.jpg"
+  },
 ];

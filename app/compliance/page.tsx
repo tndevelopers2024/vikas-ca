@@ -31,7 +31,7 @@ const complianceServices = [
     tag: "Bundled Accounts & Audit",
     icon: PiggyBank,
     image: "/images/compliance/smsf-compliance.jpg",
-    imageAlt: "SMSF compliance and audit specialists reviewing fund financials and tax documentation",
+    imageAlt: "Indian SMSF compliance and audit specialists reviewing Australian tax returns and fund workpapers in a modern corporate office",
     description:
       "Comprehensive back-office support for SMSF compliance (year-end financial statements and tax returns) and administration. Our industry-leading SMSF bundled service (accounts and audit) offers a one-stop solution for all your SMSF needs and is a great value addition for your business.",
     points: [
@@ -219,6 +219,8 @@ export default function CompliancePage() {
           eyebrow="What We Provide"
           title="Compliance Services"
           intro="From SMSF compliance and statutory filings to full audit back office support, our accountants prepare the workpapers, statements, and returns your team reviews and signs off."
+          image="/images/bright/service-compliance.jpg"
+          imageAlt="NICS compliance specialists and chartered accountants reviewing statutory filings, tax workpapers, and SMSF audit schedules in a modern corporate office"
           items={complianceServices}
           ctaLabel="Discuss your compliance workload"
         />

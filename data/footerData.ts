@@ -41,9 +41,28 @@ export const officeAddresses: OfficeAddress[] = [
       "Chennai, Tamil Nadu – 600006",
     ],
   },
+  {
+    country: "Australia",
+    href: "https://maps.google.com/?q=Bridgeport+Business+Park+Pymble+NSW+2073",
+    lines: ["Bridgeport Business Park,", "Pymble, NSW – 2073"],
+  },
 ];
 
 export const contactDetails: ContactItem[] = [
+  {
+    type: "phone",
+    label: "+61 2 9000 1234",
+    href: "tel:+61290001234",
+  },
+  {
+    type: "clock",
+    label: "8:00 AM to 5:00 PM AEST",
+  },
+  {
+    type: "email",
+    label: "hello@nics.com",
+    href: "mailto:hello@nics.com",
+  },
   {
     type: "phone",
     label: "+91 9632 466 477",

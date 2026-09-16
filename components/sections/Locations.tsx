@@ -16,9 +16,9 @@ export function Locations() {
     <section id="locations" className="bg-[#f7f6f2] py-12 lg:py-16 border-b border-[#e6e4dc]">
       <Container size="default">
         <SectionHeading
-          eyebrow="Core Delivery Centre"
-          title="NICS Delivery Centre"
-          description="Our India-based core delivery capability operating with disciplined processes and ISO/IEC 27001 security."
+          eyebrow="Global Presence"
+          title="NICS Delivery & Practice Offices"
+          description="Our India-based core delivery capability paired with international client relations and practice governance."
           align="split"
           action={
             <ArrowLink href="#contact" variant="blue" size="sm">
@@ -27,7 +27,7 @@ export function Locations() {
           }
         />
 
-        <div className="mt-8 max-w-3xl mx-auto">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           {locationsData.map((loc) => (
             <OfficeCard
               key={loc.id}
