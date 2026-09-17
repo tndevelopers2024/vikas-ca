@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, Clock, Mail } from "lucide-react";
 import { BrandLockup } from "@/components/ui/BrandLockup";
+import { Container } from "@/components/ui/Container";
 import {
   quickLinks,
   officeAddresses,
@@ -35,7 +36,7 @@ export function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-6 pt-16 pb-6">
+      <Container className="relative z-10 pt-16 pb-6">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
           {/* ── Column 1: Brand Info & Certification ─────────────── */}
@@ -260,7 +261,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

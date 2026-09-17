@@ -161,7 +161,8 @@ export function Hero() {
                   className="hero__scrim absolute inset-0 z-[2] pointer-events-none hidden sm:block"
                   style={{
                     background:
-                      "linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 28%, rgba(255, 255, 255, 0.35) 46%, rgba(255, 255, 255, 0) 60%)",
+                      // Stops are offset from the 1280px container's left edge so the fade tracks the text, not the viewport
+                      "linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) calc(max(0px, (100% - 1280px) / 2) + 560px), rgba(255, 255, 255, 0.55) calc(max(0px, (100% - 1280px) / 2) + 780px), rgba(255, 255, 255, 0) calc(max(0px, (100% - 1280px) / 2) + 1040px))",
                   }}
                   aria-hidden="true"
                 />
@@ -177,7 +178,7 @@ export function Hero() {
 
                 {/* Content Overlay (.hero__overlay) with clean spacing */}
                 <div className="hero__overlay absolute inset-0 z-[3] flex items-center py-12 sm:py-16 lg:py-20">
-                  <Container size="full" className="w-full">
+                  <Container className="w-full">
                     <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
                       {/* Eyebrow Pill */}
                       <div>
@@ -227,7 +228,7 @@ export function Hero() {
 
         {/* ── Standing Foot Controls (.hero__foot) exactly matching Dante ── */}
         <div className="hero__foot absolute bottom-5 sm:bottom-7 left-0 right-0 z-20 pointer-events-none">
-          <Container size="full">
+          <Container>
             <div className="flex items-center gap-3 pointer-events-auto">
               {/* Prev Button */}
               <button

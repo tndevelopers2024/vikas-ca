@@ -93,7 +93,8 @@ export function PageBanner({
         className="absolute inset-0 z-[1] pointer-events-none hidden sm:block"
         style={{
           background:
-            "linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 38%, rgba(255, 255, 255, 0.65) 58%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0.05) 100%)",
+            // Stops are offset from the 1280px container's left edge so the fade tracks the text, not the viewport
+            "linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) calc(max(0px, (100% - 1280px) / 2) + 720px), rgba(255, 255, 255, 0.65) calc(max(0px, (100% - 1280px) / 2) + 940px), rgba(255, 255, 255, 0.2) calc(max(0px, (100% - 1280px) / 2) + 1180px), rgba(255, 255, 255, 0.05) 100%)",
         }}
         aria-hidden="true"
       />
@@ -108,7 +109,7 @@ export function PageBanner({
       />
 
       {/* 3. Hero Content Container */}
-      <Container size="full" className="relative z-10 w-full">
+      <Container className="relative z-10 w-full">
         {/* Breadcrumb Navigation */}
         <Breadcrumbs items={breadcrumbs} variant="default" className="mb-4" />
 
