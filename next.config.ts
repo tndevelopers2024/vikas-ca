@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 2592000,
+    // Vercel Image Optimization quota exhausted (402 OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED).
+    // Serve pre-compressed files from /public directly instead.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
