@@ -148,6 +148,7 @@ export default function HowItWorksPage() {
             { value: "Step 04", label: "Continuous Feedback" },
           ]}
           image={heroImage}
+          imagePosition="right center"
           cardBadge="Seamless Onboarding"
           cardTitle="Structured 4-Step Integration"
           cardSubtitle="From initial communication to daily execution and ongoing feedback loops."
